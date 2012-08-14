@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the B-WET General feature.
+ */
+
+include_once 'b_wet_general.features.inc';
