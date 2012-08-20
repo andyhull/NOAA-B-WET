@@ -1,0 +1,31 @@
+name = mwee
+description = Twitter bootstrap subtheme
+version = 0.1
+core = 7.x
+base theme = twitter_bootstrap
+
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+
+stylesheets[all][] = stylesheets/style.css
+
+settings[toggle_name] = 0
+settings[toggle_search] = 1
+
+settings[mwee_js_files] =
+"http://twitter.github.com/bootstrap/assets/js/bootstrap-alerts.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-twipsy.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-tabs.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-buttons.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js
+http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"

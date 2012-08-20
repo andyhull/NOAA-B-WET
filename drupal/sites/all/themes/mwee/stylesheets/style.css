@@ -1,0 +1,13 @@
+/* line 5, ../sass/_form.scss */
+.form-wrapper {
+  clear: both;
+}
+
+/* line 8, ../sass/_form.scss */
+.form-type-radio {
+  display: inline;
+  padding: 5px 20px;
+  margin: 5px 10px;
+  background: pink;
+  float: left;
+}

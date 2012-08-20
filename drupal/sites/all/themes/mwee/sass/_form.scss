@@ -1,0 +1,19 @@
+@mixin forms() {
+	.node-form {
+		// background: blue;
+	}
+	.form-wrapper {
+		clear: both;
+	}
+	.form-type-radio {
+		display: inline;
+		padding: 5px 20px;
+		margin: 5px 10px;
+		background: pink;
+		float: left;
+		label {
+			// width: 20%;
+			// float: left;
+		}
+	}
+}
