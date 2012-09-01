@@ -1,13 +1,117 @@
-/* line 5, ../sass/_form.scss */
+/* line 4, ../sass/_form.scss */
+.node-form label {
+  background-color: whiteSmoke;
+  border-top: 1px solid #E5E5E5;
+  color: #000;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* line 12, ../sass/_form.scss */
 .form-wrapper {
   clear: both;
 }
 
-/* line 8, ../sass/_form.scss */
+/* line 15, ../sass/_form.scss */
 .form-type-radio {
   display: inline;
   padding: 5px 20px;
   margin: 5px 10px;
-  background: pink;
   float: left;
+}
+
+/* line 26, ../sass/_form.scss */
+.controls label {
+  background: transparent;
+  color: #000;
+  font-weight: normal;
+  font-size: 12px;
+  border: none;
+}
+
+/* line 36, ../sass/_form.scss */
+.form-item-field-region-und-select label, .form-item-field-organization-und-select label, .form-item-field-evaluation-und-select label {
+  background-color: whiteSmoke;
+  border-top: 1px solid #E5E5E5;
+  color: #000;
+  padding: 5px;
+  font-size: 14px;
+}
+/* line 44, ../sass/_form.scss */
+.form-item-field-region-und-select .controls label, .form-item-field-organization-und-select .controls label, .form-item-field-evaluation-und-select .controls label {
+  background: transparent;
+  color: #000;
+  font-weight: normal;
+  font-size: 12px;
+  border: none;
+  padding-left: 20px;
+  margin: 1px;
+}
+
+/* line 58, ../sass/_form.scss */
+.form-item-field-noaa-funding-und, .form-item-field-funding-all-und, .form-item-field-organization-und-select,
+.form-item-field-hours-taught-und, .form-item-field-hours-taught-outdoors-und, .form-item-field-length-participation-und,
+.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-und-select {
+  display: block;
+  float: none;
+  padding-left: 20px;
+  margin: 1px;
+}
+
+/* line 65, ../sass/_form.scss */
+.vertical-tabs {
+  display: none;
+}
+
+/* line 68, ../sass/_form.scss */
+.likertScale {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #6d0d0d), color-stop(100%, #50a15c));
+  background-image: -webkit-linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: -moz-linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: -o-linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: linear-gradient(left, #6d0d0d, #50a15c);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: 60%;
+  padding: 5px;
+  margin-left: 70px;
+  font-weight: bold;
+  color: #fff;
+}
+/* line 76, ../sass/_form.scss */
+.likertScale .likertEnd {
+  text-align: right;
+  float: right;
+}
+
+/* line 81, ../sass/_form.scss */
+.likertScaleSmall {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #6d0d0d), color-stop(100%, #50a15c));
+  background-image: -webkit-linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: -moz-linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: -o-linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: linear-gradient(left, #6d0d0d, #50a15c);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: 40%;
+  padding: 5px;
+  margin-left: 190px;
+  font-weight: bold;
+  color: #fff;
+}
+/* line 89, ../sass/_form.scss */
+.likertScaleSmall .likertEnd {
+  text-align: right;
+  float: right;
+}
+
+/* line 94, ../sass/_form.scss */
+.noMargin {
+  margin-left: 70px;
 }

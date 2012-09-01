@@ -98,10 +98,58 @@
 </div>
 
 <script>
-//remove N/A's from all forms
 (function($) {
-  console.log($('.form-radio[value=_none]'))
+    //remove N/A's from all forms
     $('.form-radio[value=_none]').parent().hide();
+    //set the fieldset display equal to elements inside it. allows for correct toggling
+    $('.form-radio').change(function(){
+      $.each($('.field-group-fieldset'), function(){
+        var container = $(this)
+        setTimeout(function(){
+          $(container).css('display', $('.form-wrapper', container).css('display'))
+        }, 1)
+      })
+    })
+    //hide the fieldset titles if elements inside it are hidden
+    $.each($('.field-group-fieldset'), function(){
+      var container = $(this)
+      //have to set a slight delay to capture the inline elements added by the field dependencies
+      setTimeout(function(){
+        $(container).css('display', $('.form-wrapper', container).css('display'))
+      }, 1)
+    })
+    var likertArrayAgree = ['#edit-field-public-familiar-und','#edit-field-improve-env-edu-und',
+    '#edit-field-impact-env-edu-und', '#edit-field-impact-edu-policy-und','#edit-field-impact-health-und','#edit-field-impact-env-policy-und']
+    $.each(likertArrayAgree, function(intIndex, objValue){
+      $(objValue).prepend('<div class="likertScale">'+
+        '<span class="likertStart">Strongly Disagree</span><span class="likertEnd">Strongly Agree</span></div>')
+    })
+    var likertArrayExtent = ['#edit-field-develop-proposal-und', '#edit-field-implementing-grant-und',
+    '#edit-field-evaluating-grant-und','#edit-field-teacher-school-district-und','#edit-field-teacher-state-standards-und',
+    '#edit-field-teacher-national-standards-und', '#edit-field-teacher-regional-prioritie-und',
+    '#edit-field-standards-school-district-und','#edit-field-standards-state-und','#edit-field-standards-national-und',
+    '#edit-field-standards-regional-und']
+    $.each(likertArrayExtent, function(intIndex, objValue){
+      if(intIndex < 3){
+        $(objValue).prepend('<div class="likertScaleSmall noMargin">'+
+        '<span class="likertStart">Not at all</span><span class="likertEnd">To a great extent</span></div>')
+      } else {
+        $(objValue).prepend('<div class="likertScaleSmall">'+
+          '<span class="likertStart">Not at all</span><span class="likertEnd">To a great extent</span></div>')
+        
+      }
+    })
+    var likertArrayLikely = ['#edit-field-one-on-one-und','#edit-field-network-my-region-und',
+    '#edit-field-network-other-region-und', '#edit-field-virtual-interaction-und',
+    '#edit-field-subject-matter-experts-und','#edit-field-noaa-datasets-und','#edit-field-noaa-lessonplans-und',
+    '#edit-field-access-research-und', '#edit-field-best-practices-und', '#edit-field-evaluation-assistance-und',
+    '#edit-field-grant-management-assistanc-und', '#edit-field-grant-budgeting-assistance-und','#edit-field-learn-watershed-und',
+    '#edit-field-learn-environmental-issues-und', '#edit-field-learn-local-policy-und', '#edit-field-learn-national-policy-und']
+    $.each(likertArrayLikely, function(intIndex, objValue){
+      $(objValue).prepend('<div class="likertScale">'+
+        '<span class="likertStart">Extremely unlikely</span><span class="likertEnd">Extremely likely</span></div>')
+    })
+    
   
 })(jQuery);
 </script>

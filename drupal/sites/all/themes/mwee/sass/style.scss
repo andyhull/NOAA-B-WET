@@ -1,3 +1,6 @@
+@import "compass/css3";
+@import "compass/layout.scss";
+@import "compass/support";
 @import "form";
 
 @include forms();	
