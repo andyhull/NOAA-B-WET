@@ -1,0 +1,6 @@
+@import "form";
+
+body {
+	background: green;
+	@include forms();
+}

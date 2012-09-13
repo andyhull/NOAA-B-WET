@@ -1,0 +1,10 @@
+/* line 3, ../sass/style.scss */
+body {
+  background: pink;
+}
+/* line 3, /Users/Andy/Documents/Code/noaa/NOAA-B-WET/drupal/sites/all/themes/twitter_bootstrap/sass/_form.scss */
+body form .form-type-radio {
+  display: inline;
+  padding: 5px 20px;
+  margin: 5px;
+}
