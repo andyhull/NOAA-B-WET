@@ -65,7 +65,7 @@ echo "<script>var allData = ". $js_array . "; var dataLabels = ". $header_array.
       $('#'+result).append('<div class="'+result+'More">Unanswered:<br/>Number: '+resultsArray[result][data]+'</div>')  
       } else {
         var percent = parseFloat((resultsArray[result][data]/sum )* 100)
-        $('#'+result).append('<div class="'+result+'More">Answer '+data+':<br/>Number: '+resultsArray[result][data]+' Percent of total: '+percent+'</div>')
+        $('#'+result).append('<div class="'+result+'More">Answer '+data+':<br/>Number: '+resultsArray[result][data]+' Percent of total: '+Math.round(percent)+'%</div>')
         $('.bar', '#'+result).append('<span class="color'+data+' '+result+'bar'+data+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+data+' Number: '+resultsArray[result][data]+' ('+Math.round(percent)+'% of total)</div></span>')
       }
       $('.'+result+'More').hide()
@@ -78,7 +78,8 @@ echo "<script>var allData = ". $js_array . "; var dataLabels = ". $header_array.
       })
     }
     $('#'+result+'More').click(function(){
-      $('.'+result+'More').toggle()
+      var resultToggle = $(this).attr('id')
+      $('.'+resultToggle).toggle()
     })
   }
   // $("[rel=tooltip]").tooltip();
