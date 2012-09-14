@@ -126,20 +126,30 @@
 .bar {
   background: #eee;
   width: 400px;
-  height: 15px;
+  height: 20px;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 1px 1px 10px #eeeeee;
+  -moz-box-shadow: 1px 1px 10px #eeeeee;
+  box-shadow: 1px 1px 10px #eeeeee;
 }
-/* line 11, ../sass/_results.scss */
+/* line 13, ../sass/_results.scss */
 .bar span {
-  height: 15px;
+  height: 20px;
   float: left;
 }
-
 /* line 16, ../sass/_results.scss */
+.bar span:hover {
+  -webkit-box-shadow: 1px 1px 20px #666666;
+  -moz-box-shadow: 1px 1px 20px #666666;
+  box-shadow: 1px 1px 20px #666666;
+}
+
+/* line 21, ../sass/_results.scss */
 .barLabel {
   width: 400px;
 }
 
-/* line 19, ../sass/_results.scss */
+/* line 24, ../sass/_results.scss */
 .more {
   cursor: pointer;
   background: #000;
@@ -160,17 +170,17 @@
   -moz-box-shadow: 1px 1px 10px #333333;
   box-shadow: 1px 1px 10px #333333;
 }
-/* line 32, ../sass/_results.scss */
+/* line 37, ../sass/_results.scss */
 .more a {
   padding: 5px;
   display: block;
 }
-/* line 35, ../sass/_results.scss */
+/* line 40, ../sass/_results.scss */
 .more a:hover {
   text-decoration: underline;
 }
 
-/* line 41, ../sass/_results.scss */
+/* line 46, ../sass/_results.scss */
 .more:before {
   content: ' ';
   position: absolute;
@@ -182,7 +192,7 @@
   border-color: transparent transparent transparent  transparent;
 }
 
-/* line 52, ../sass/_results.scss */
+/* line 57, ../sass/_results.scss */
 .more:after {
   content: ' ';
   position: absolute;
@@ -194,27 +204,27 @@
   border-color: #000 transparent transparent transparent;
 }
 
-/* line 65, ../sass/_results.scss */
+/* line 70, ../sass/_results.scss */
 .color1 {
   background-color: #6d0d0d;
 }
 
-/* line 66, ../sass/_results.scss */
+/* line 71, ../sass/_results.scss */
 .color2 {
   background-color: #c81818;
 }
 
-/* line 67, ../sass/_results.scss */
+/* line 72, ../sass/_results.scss */
 .color3 {
   background-color: #eb5b5b;
 }
 
-/* line 68, ../sass/_results.scss */
+/* line 73, ../sass/_results.scss */
 .color4 {
   background-color: #8fc898;
 }
 
-/* line 69, ../sass/_results.scss */
+/* line 74, ../sass/_results.scss */
 .color5 {
   background-color: #50a15c;
 }

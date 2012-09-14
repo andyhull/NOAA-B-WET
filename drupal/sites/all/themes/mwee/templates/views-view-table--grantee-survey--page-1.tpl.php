@@ -58,15 +58,15 @@ echo "<script>var allData = ". $js_array . "; var dataLabels = ". $header_array.
         sum+=parseFloat(answer)
       }
     });
-    $('#mainResults').append('<div id="'+result+'"><div class="questionTitle">'+question+'</div><div class="bar"></div><div class="barLabel"><span class="likertStart">1 - Not at all</span><span class="likertEnd">To a great extent - 7</div><div id="'+result+'More" class="btn">See more..</div></div>')
+    $('#mainResults').append('<div id="'+result+'"><div class="questionTitle">'+question+'</div><div class="bar"></div><div class="barLabel"><span class="likertStart">1 - Not at all</span><span class="likertEnd">To a great extent - 5</div><div id="'+result+'More" class="btn">See Details</div></div>')
     for(data in resultsArray[result]){
       // console.log(resultsArray[result][data])
       if([data] == '') {
-      $('#'+result).append('<div class="'+result+'More">Unanswered:<br/>Number: '+resultsArray[result][data]+'</div>')  
+      $('#'+result).append('<div class="'+result+'More">Unanswered:<br/>Count: '+resultsArray[result][data]+'</div>')  
       } else {
         var percent = parseFloat((resultsArray[result][data]/sum )* 100)
-        $('#'+result).append('<div class="'+result+'More">Answer '+data+':<br/>Number: '+resultsArray[result][data]+' Percent of total: '+Math.round(percent)+'%</div>')
-        $('.bar', '#'+result).append('<span class="color'+data+' '+result+'bar'+data+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+data+' Number: '+resultsArray[result][data]+' ('+Math.round(percent)+'% of total)</div></span>')
+        $('#'+result).append('<div class="'+result+'More">Answer '+data+':<br/>Count: '+resultsArray[result][data]+' Percent of total: '+Math.round(percent)+'%</div>')
+        $('.bar', '#'+result).append('<span class="color'+data+' '+result+'bar'+data+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+data+' Count: '+resultsArray[result][data]+' ('+Math.round(percent)+'% of total)</div></span>')
       }
       $('.'+result+'More').hide()
       $('.more', '.'+result+'bar'+data).hide()

@@ -7,10 +7,15 @@
 	.bar {
 		background: #eee;
 		width: 400px;
-		height: 15px;
+		height: 20px;
+		border: 1px solid #ccc;
+    @include box-shadow(1px 1px 10px #eee);
 		span {
-			height: 15px;
+			height: 20px;
 			float: left;
+			&:hover{
+				@include box-shadow(1px 1px 20px #666);
+			}
 		}
 	}
 	.barLabel {
