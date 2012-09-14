@@ -15,6 +15,13 @@ function b_wet_general_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function b_wet_general_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function b_wet_general_node_info() {

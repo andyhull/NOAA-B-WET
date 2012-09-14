@@ -73,10 +73,10 @@
 		margin-left: 70px;
 		font-weight: bold;
 		color: #fff;
-		.likertEnd {
-			text-align: right;
-			float: right;
-		}
+	}
+	.likertEnd {
+		text-align: right;
+		float: right;
 	}
 	.likertScaleSmall {
 		@include background-image(linear-gradient(left, #6D0D0D, #50a15c));

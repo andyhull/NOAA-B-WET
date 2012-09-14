@@ -1,0 +1,70 @@
+@import "colors";
+
+@mixin granteeQuestions() {
+	.questionTitle {
+		font-weight: bold;
+	}
+	.bar {
+		background: #eee;
+		width: 400px;
+		height: 15px;
+		span {
+			height: 15px;
+			float: left;
+		}
+	}
+	.barLabel {
+		width: 400px;
+	}
+	.more {
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    width: 200px;
+    float: left;
+    position: relative;
+		top: -50px;
+		left: 40px;
+		text-align: center;
+		padding: 5px;
+		@include border-radius(5px);
+    @include box-shadow(1px 1px 10px #333);
+    a {
+      padding: 5px;
+      display: block;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .more:before
+  {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 28px;
+    top: 18px;
+    border: 11px solid;
+    border-color: transparent transparent transparent  transparent  ;
+  }
+  .more:after
+  {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 27px;
+        top: 24px;
+        border: 13px solid;
+        border-color: #000 transparent transparent transparent;
+  }
+}
+
+@mixin scaleColors() {
+	.color1 { background-color: $one;}
+	.color2 { background-color: $two;}
+	.color3 { background-color: $three;}
+	.color4 { background-color: $four;}
+	.color5 { background-color: $five;}
+}

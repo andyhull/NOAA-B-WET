@@ -81,8 +81,9 @@
   font-weight: bold;
   color: #fff;
 }
-/* line 76, ../sass/_form.scss */
-.likertScale .likertEnd {
+
+/* line 77, ../sass/_form.scss */
+.likertEnd {
   text-align: right;
   float: right;
 }
@@ -114,4 +115,106 @@
 /* line 94, ../sass/_form.scss */
 .noMargin {
   margin-left: 70px;
+}
+
+/* line 4, ../sass/_results.scss */
+.questionTitle {
+  font-weight: bold;
+}
+
+/* line 7, ../sass/_results.scss */
+.bar {
+  background: #eee;
+  width: 400px;
+  height: 15px;
+}
+/* line 11, ../sass/_results.scss */
+.bar span {
+  height: 15px;
+  float: left;
+}
+
+/* line 16, ../sass/_results.scss */
+.barLabel {
+  width: 400px;
+}
+
+/* line 19, ../sass/_results.scss */
+.more {
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  width: 200px;
+  float: left;
+  position: relative;
+  top: -50px;
+  left: 40px;
+  text-align: center;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 10px #333333;
+  -moz-box-shadow: 1px 1px 10px #333333;
+  box-shadow: 1px 1px 10px #333333;
+}
+/* line 32, ../sass/_results.scss */
+.more a {
+  padding: 5px;
+  display: block;
+}
+/* line 35, ../sass/_results.scss */
+.more a:hover {
+  text-decoration: underline;
+}
+
+/* line 41, ../sass/_results.scss */
+.more:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 28px;
+  top: 18px;
+  border: 11px solid;
+  border-color: transparent transparent transparent  transparent;
+}
+
+/* line 52, ../sass/_results.scss */
+.more:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 27px;
+  top: 24px;
+  border: 13px solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+/* line 65, ../sass/_results.scss */
+.color1 {
+  background-color: #6d0d0d;
+}
+
+/* line 66, ../sass/_results.scss */
+.color2 {
+  background-color: #c81818;
+}
+
+/* line 67, ../sass/_results.scss */
+.color3 {
+  background-color: #eb5b5b;
+}
+
+/* line 68, ../sass/_results.scss */
+.color4 {
+  background-color: #8fc898;
+}
+
+/* line 69, ../sass/_results.scss */
+.color5 {
+  background-color: #50a15c;
 }

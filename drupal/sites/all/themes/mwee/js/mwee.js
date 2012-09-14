@@ -5,7 +5,7 @@
 
 
   $.each($('.field-group-fieldset'), function(){
-    console.log($(this))
+    // console.log($(this))
   })
   
 })(jQuery);

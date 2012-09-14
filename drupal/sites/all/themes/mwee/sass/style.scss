@@ -2,5 +2,9 @@
 @import "compass/layout.scss";
 @import "compass/support";
 @import "form";
+@import "results";
+@import "colors";
 
-@include forms();	
+@include forms();
+@include granteeQuestions();	
+@include scaleColors();
