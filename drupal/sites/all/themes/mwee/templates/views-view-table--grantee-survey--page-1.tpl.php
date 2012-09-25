@@ -34,17 +34,23 @@ foreach ($rows as $key =>$field){
           $resultArray = $allResults->$question;
         }
       $newKey = (string) $question.$questionKey;
+      // print $questionKey;
       //add in the values to the question object
       if(!property_exists($resultArray, $newKey)){
         $resultArray->$newKey = 1;
       } else {
         $resultArray->$newKey += 1;
       }
+      // usort($resultArray>$newKey, "cmp");
     }
   }
 }
+function cmp($a, $b)
+{
+    return strcmp($a, $b);
+}
 
-// $js_array = json_encode($rows);
+
 $header_array = json_encode($header);
 $json_array = json_encode($allResults);
 echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_array ."; console.log(resultData);</script>";
@@ -53,29 +59,12 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
 <script>
 // We define a function that takes one parameter named $.
 (function ($) { 
-  
-  // var resultsArray = new Object()
-  // var fields = Object.keys(allData[0])
-  // for(field in fields){
-  //   if(fields[field]!=='title'){
-  //     if(!resultsArray[fields[field]]){
-  //       resultsArray[fields[field]] = new Object()
-  //     }
-  //     for(data in allData){
-  //       var newData = allData[data][fields[field]]
-  //       if(!resultsArray[fields[field]][newData]){
-  //         resultsArray[fields[field]][newData] = 1
-  //       } else {
-  //         resultsArray[fields[field]][newData] = parseFloat(resultsArray[fields[field]][newData]+1)
-  //       }
-  //     }
-  //   }
-  // }
   for(result in resultData) {
     var sum = 0;
     var unanswered = 0;
     var cleanLabel;
     var question = dataLabels[result]
+    var format = Array();
     //get the total of answered and unanswered questions
     $.each(resultData[result],function(i){
       //remove the field name from the value label
@@ -88,35 +77,75 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
         } else {
           sum+=parseFloat(answer)
         }
+      } else {
+        format = resultData[result]['type'].split(" ");
       }
     });
 
-    $('#mainResults').append('<div id="'+result+'"><div class="questionTitle">'+question+'</div>')
-    // console.log(Object.keys(resultData[result]))
-    var format = Array();
-    for(data in resultData[result]){
-      switch (format[0]) {
-        case 'number':
-          if(!$('#'+result+'More').length) {
-            //add the formatted label and more button
-            $('#' + result).append('<div class="bar"></div><div class="barLabel"><span class="likertStart">1 - Not at all</span><span class="likertEnd">To a great extent - 5</div><div id="'+result+'More" class="btn">See Details</div></div>')  
-          }
-          createNumber(resultData[result][data], result, data, sum)
-          format = resultData[result]['type'].split(" ")
-          break;
-        case 'text':
-          if(format[1] == "structured") {
+    if(format[1]) {
+      $('#mainResults').append('<div id="'+result+'" class="'+format[1]+'"><div class="questionTitle">'+question+'</div>')
+    } else {
+      $('#mainResults').append('<div id="'+result+'"><div class="questionTitle">'+question+'</div>')
+    }
+    
+    //if this is a plain text object create a scale of answered vs. unanswered    
+    if(format[0] == "text") {
+      if(!$('#'+result+'More').length) {
+      //add the formatted label and more button
+      $('#' + result).append('<div class="bar"></div><div class="barLabel"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See details</div></div>')  
+      }
+      var percent1 = parseFloat((unanswered/(sum + unanswered))* 100) 
+      $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+unanswered+'" style="width:'+percent1+'%;">&nbsp;;<div class="more">Unanswered: '+unanswered+' ('+Math.round(percent1)+'% of total)</div></span>') 
+      var percent = parseFloat((sum/(sum + unanswered))* 100)
+
+      $('.bar', '#'+result).append('<span class="color5 '+result+'bar'+sum+'" style="width:'+percent+'%;">&nbsp;<div class="more">Answered: '+sum+' ('+Math.round(percent)+'% of total)</div></span>')
+      //controls the hover labels
+      $('.'+result+'More').hide()
+      $('.more', '.'+result+'bar'+sum).hide()
+      $('.'+result+'bar'+sum).mouseover(function() {
+        $('.more', this).show();
+      })
+      $('.'+result+'bar'+sum).mouseout(function() {
+        $('.more', this).hide();
+      })
+
+      $('.more', '.'+result+'bar'+unanswered).hide()
+      $('.'+result+'bar'+unanswered).mouseover(function() {
+        $('.more', this).show();
+      })
+      $('.'+result+'bar'+unanswered).mouseout(function() {
+        $('.more', this).hide();
+      })
+    
+    }
+    console.log(sortObject(resultData[result]))
+    for(data in sortObject(resultData[result])){
+      console.log(data)
+      if(data != 'type') {
+        switch (format[0]) {
+          case 'number':
             if(!$('#'+result+'More').length) {
-            //add the formatted label and more button
-            $('#' + result).append('<div class="bar"></div><div class="barLabel"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See Details</div></div>')  
+              //add the formatted label and more button
+              $('#' + result).append('<div class="bar"></div><div class="barLabel"><span class="likertStart label">1 - Not at all</span><span class="likertEnd label">To a great extent - 5</span><span id="'+result+'More" class="btn details">See details</span></div>')  
             }
-            createText(resultData[result][data], result, data, sum, 'structured')
-          }
-          createText(resultData[result][data], result, data, sum)
-          format = resultData[result]['type'].split(" ")
-          break; 
-        default:
-          format = resultData[result]['type'].split(" ")      
+            createNumber(resultData[result][data], result, data, sum)
+            break;
+          case 'text':
+            if(!$('#'+result+'More').length) {
+              //add the formatted label and more button
+              $('#' + result).append('<div id="'+result+'More" class="btn">See details</div>')  
+            }
+            createText(resultData[result][data], result, data, sum)
+            break; 
+          case 'structured':
+            if(!$('#'+result+'More').length) {
+              //add the formatted label and more button
+              $('#' + result).append('<div id="'+result+'More" class="btn">See details</div>')  
+            }
+            createText(resultData[result][data], result, data, sum)
+            break; 
+          default:
+        }
       }
     }
     $('#'+result+'More').click(function(){
@@ -131,12 +160,19 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     var re = new RegExp(field,"g");
     var cleanData = data.replace(re, '')
     if(cleanData == '') {
-    $('#'+field).append('<div class="'+field+'More">Unanswered:<br/>Count: '+resultData+'</div>')  
+    $('#'+field).append('<div class="'+field+'More"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+resultData+'</span></div>')  
     } else {
       var percent = parseFloat((resultData/sum )* 100)
-      $('#'+result).append('<div class="'+result+'More">Answer '+cleanData+':<br/>Count: '+resultData+' Percent of total: '+Math.round(percent)+'%</div>')
-      $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+      $('#'+result).append('<div class="'+result+'More"><span class="label">'+cleanData+'</span>&nbsp;'+resultData+' Respondant ('+Math.round(percent)+'%)</div>')
+      if(parseFloat(cleanData *1) > 0){
+        $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+      } else {
+        var labelHolder = cleanData
+        cleanData =cleanData.replace(/[\$\,\-\%\ ]/g, '')
+        $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+labelHolder+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+      }
     }
+    $('.more').hide()
     $('.'+result+'More').hide()
     $('.more', '.'+result+'bar'+cleanData).hide()
     $('.'+result+'bar'+cleanData).mouseover(function() {
@@ -148,37 +184,49 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
   }
 
   //for all strings
-  function createText(resultData, field, data, sum, structured) {
+  function createText(resultData, field, data, sum) {
     var re = new RegExp(field,"g");
     var cleanData = data.replace(re, '')
-    if (!structured ) {
-      structured = ''
-      if(cleanData == '') {
-        $('#'+field).append('<div class="'+field+'More">Unanswered:<br/>Count: '+resultData+'</div>')  
-      } else {
-        $('#'+result).append('<div class="'+result+'More">Answer '+cleanData+' ('+resultData+')</div>')
-      }
+    if(cleanData == '') {
+      $('#'+field).append('<div class="'+field+'More">Unanswered:<br/>Count: '+resultData+'</div>') 
     } else {
-      if(cleanData == '') {
-        $('#'+field).append('<div class="'+field+'More">Unanswered:<br/>Count: '+resultData+'</div>')  
-      } else {
-        var percent = parseFloat((resultData/sum )* 100)
-        console.log(cleanData.replace(', ', ''))
-        $('#'+result).append('<div class="'+result+'More">Answer '+cleanData+':<br/>Count: '+resultData+' Percent of total: '+Math.round(percent)+'%</div>')
-        $('.bar', '#'+result).append('<span class="color'+cleanData.replace(', ', '')+' '+result+'bar'+cleanData.replace(', ', '')+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
-      }
-      $('.'+result+'More').hide()
-      $('.more', '.'+result+'bar'+cleanData.replace(', ', '')).hide()
-      $('.'+result+'bar'+cleanData.replace(', ', '')).mouseover(function() {
-        $('.more', this).show();
-      })
-      $('.'+result+'bar'+cleanData.replace(', ', '')).mouseout(function() {
-        $('.more', this).hide();
-      })
+      var percent = parseFloat((resultData/sum )* 100)
+      $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
     }
-    // $('.'+result+'More').hide()
   }
+  //groups !!!
+  $('#mainResults').append('<div id="overview"><h2>About grantee respondents and their organizations</h2></div>')
+  $('#mainResults').append("<div id='students'><h2>Grantees' student MWEE participants</h2></div>")
+  $('#mainResults').append('<div id="teachers"><h2>About teacher professional development participants</h2></div>')
 
+  $.each($('.groupStudent'), function(){
+    $('#students').append($(this))
+  })
+  $.each($('.groupTeachers'), function(){
+    $('#teachers').append($(this))
+  })
+  $.each($('.groupOverview'), function(){
+    $('#overview').append($(this))
+  })
+
+//sorting function http://stackoverflow.com/questions/1359761/sorting-a-javascript-object
+  function sortObject(o) {
+    var sorted = {},
+    key, a = [];
+
+    for (key in o) {
+        if (o.hasOwnProperty(key)) {
+                a.push(key);
+        }
+    }
+
+    a.sort();
+
+    for (key = 0; key < a.length; key++) {
+        sorted[a[key]] = o[a[key]];
+    }
+    return sorted;
+}
 // Here we immediately call the function with jQuery as the parameter.
 }(jQuery));
 

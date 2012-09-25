@@ -1,12 +1,10 @@
+@import "helpers";
+
 @mixin forms() {
 	.node-form {
 		//main questions
 		label {
-			background-color: whiteSmoke;
-			border-top: 1px solid #E5E5E5;
-			color: #000;
-			padding: 5px;
-			font-size: 14px;
+			@include labels();
 		}
 	}
 	.form-wrapper {
@@ -66,7 +64,7 @@
 		display: none;
 	}
 	.likertScale {
-		@include background-image(linear-gradient(left, #6D0D0D, #50a15c));
+		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
 		width: 60%;
 		padding: 5px;
@@ -79,13 +77,14 @@
 		float: right;
 	}
 	.likertScaleSmall {
-		@include background-image(linear-gradient(left, #6D0D0D, #50a15c));
+		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
 		width: 40%;
 		padding: 5px;
 		margin-left: 190px;
 		font-weight: bold;
 		color: #fff;
+		@include text-shadow(-1px 1px 5px lighten($five, 50));
 		.likertEnd {
 			text-align: right;
 			float: right;

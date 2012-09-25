@@ -4,6 +4,7 @@
 @import "form";
 @import "results";
 @import "colors";
+@import "helpers";
 
 @include forms();
 @include granteeQuestions();	

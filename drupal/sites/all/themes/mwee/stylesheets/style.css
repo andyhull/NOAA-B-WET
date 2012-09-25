@@ -1,4 +1,4 @@
-/* line 4, ../sass/_form.scss */
+/* line 6, ../sass/_form.scss */
 .node-form label {
   background-color: whiteSmoke;
   border-top: 1px solid #E5E5E5;
@@ -7,12 +7,12 @@
   font-size: 14px;
 }
 
-/* line 12, ../sass/_form.scss */
+/* line 10, ../sass/_form.scss */
 .form-wrapper {
   clear: both;
 }
 
-/* line 15, ../sass/_form.scss */
+/* line 13, ../sass/_form.scss */
 .form-type-radio {
   display: inline;
   padding: 5px 20px;
@@ -20,7 +20,7 @@
   float: left;
 }
 
-/* line 26, ../sass/_form.scss */
+/* line 24, ../sass/_form.scss */
 .controls label {
   background: transparent;
   color: #000;
@@ -29,7 +29,7 @@
   border: none;
 }
 
-/* line 36, ../sass/_form.scss */
+/* line 34, ../sass/_form.scss */
 .form-item-field-region-und-select label, .form-item-field-organization-und-select label, .form-item-field-evaluation-und-select label {
   background-color: whiteSmoke;
   border-top: 1px solid #E5E5E5;
@@ -37,7 +37,7 @@
   padding: 5px;
   font-size: 14px;
 }
-/* line 44, ../sass/_form.scss */
+/* line 42, ../sass/_form.scss */
 .form-item-field-region-und-select .controls label, .form-item-field-organization-und-select .controls label, .form-item-field-evaluation-und-select .controls label {
   background: transparent;
   color: #000;
@@ -48,7 +48,7 @@
   margin: 1px;
 }
 
-/* line 58, ../sass/_form.scss */
+/* line 56, ../sass/_form.scss */
 .form-item-field-noaa-funding-und, .form-item-field-funding-all-und, .form-item-field-organization-und-select,
 .form-item-field-hours-taught-und, .form-item-field-hours-taught-outdoors-und, .form-item-field-length-participation-und,
 .form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-und-select {
@@ -58,18 +58,18 @@
   margin: 1px;
 }
 
-/* line 65, ../sass/_form.scss */
+/* line 63, ../sass/_form.scss */
 .vertical-tabs {
   display: none;
 }
 
-/* line 68, ../sass/_form.scss */
+/* line 66, ../sass/_form.scss */
 .likertScale {
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #6d0d0d), color-stop(100%, #50a15c));
-  background-image: -webkit-linear-gradient(left, #6d0d0d, #50a15c);
-  background-image: -moz-linear-gradient(left, #6d0d0d, #50a15c);
-  background-image: -o-linear-gradient(left, #6d0d0d, #50a15c);
-  background-image: linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffcc), color-stop(100%, #184563));
+  background-image: -webkit-linear-gradient(left, #ffffcc, #184563);
+  background-image: -moz-linear-gradient(left, #ffffcc, #184563);
+  background-image: -o-linear-gradient(left, #ffffcc, #184563);
+  background-image: linear-gradient(left, #ffffcc, #184563);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -82,19 +82,19 @@
   color: #fff;
 }
 
-/* line 77, ../sass/_form.scss */
+/* line 75, ../sass/_form.scss */
 .likertEnd {
   text-align: right;
   float: right;
 }
 
-/* line 81, ../sass/_form.scss */
+/* line 79, ../sass/_form.scss */
 .likertScaleSmall {
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #6d0d0d), color-stop(100%, #50a15c));
-  background-image: -webkit-linear-gradient(left, #6d0d0d, #50a15c);
-  background-image: -moz-linear-gradient(left, #6d0d0d, #50a15c);
-  background-image: -o-linear-gradient(left, #6d0d0d, #50a15c);
-  background-image: linear-gradient(left, #6d0d0d, #50a15c);
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffcc), color-stop(100%, #184563));
+  background-image: -webkit-linear-gradient(left, #ffffcc, #184563);
+  background-image: -moz-linear-gradient(left, #ffffcc, #184563);
+  background-image: -o-linear-gradient(left, #ffffcc, #184563);
+  background-image: linear-gradient(left, #ffffcc, #184563);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -105,51 +105,58 @@
   margin-left: 190px;
   font-weight: bold;
   color: #fff;
+  text-shadow: -1px 1px 5px #95c5e5;
 }
-/* line 89, ../sass/_form.scss */
+/* line 88, ../sass/_form.scss */
 .likertScaleSmall .likertEnd {
   text-align: right;
   float: right;
 }
 
-/* line 94, ../sass/_form.scss */
+/* line 93, ../sass/_form.scss */
 .noMargin {
   margin-left: 70px;
 }
 
-/* line 4, ../sass/_results.scss */
+/* line 5, ../sass/_results.scss */
 .questionTitle {
   font-weight: bold;
+  background-color: whiteSmoke;
+  border-top: 1px solid #E5E5E5;
+  color: #000;
+  padding: 5px;
+  font-size: 14px;
 }
 
-/* line 7, ../sass/_results.scss */
+/* line 9, ../sass/_results.scss */
 .bar {
   background: #eee;
   width: 400px;
   height: 20px;
   border: 1px solid #ccc;
+  margin: 10px;
   -webkit-box-shadow: 1px 1px 10px #eeeeee;
   -moz-box-shadow: 1px 1px 10px #eeeeee;
   box-shadow: 1px 1px 10px #eeeeee;
 }
-/* line 13, ../sass/_results.scss */
+/* line 16, ../sass/_results.scss */
 .bar span {
   height: 20px;
   float: left;
 }
-/* line 16, ../sass/_results.scss */
+/* line 19, ../sass/_results.scss */
 .bar span:hover {
   -webkit-box-shadow: 1px 1px 20px #666666;
   -moz-box-shadow: 1px 1px 20px #666666;
   box-shadow: 1px 1px 20px #666666;
 }
 
-/* line 21, ../sass/_results.scss */
+/* line 24, ../sass/_results.scss */
 .barLabel {
   width: 400px;
 }
 
-/* line 24, ../sass/_results.scss */
+/* line 27, ../sass/_results.scss */
 .more {
   cursor: pointer;
   background: #000;
@@ -170,17 +177,17 @@
   -moz-box-shadow: 1px 1px 10px #333333;
   box-shadow: 1px 1px 10px #333333;
 }
-/* line 37, ../sass/_results.scss */
+/* line 40, ../sass/_results.scss */
 .more a {
   padding: 5px;
   display: block;
 }
-/* line 40, ../sass/_results.scss */
+/* line 43, ../sass/_results.scss */
 .more a:hover {
   text-decoration: underline;
 }
 
-/* line 46, ../sass/_results.scss */
+/* line 49, ../sass/_results.scss */
 .more:before {
   content: ' ';
   position: absolute;
@@ -192,7 +199,7 @@
   border-color: transparent transparent transparent  transparent;
 }
 
-/* line 57, ../sass/_results.scss */
+/* line 60, ../sass/_results.scss */
 .more:after {
   content: ' ';
   position: absolute;
@@ -204,27 +211,34 @@
   border-color: #000 transparent transparent transparent;
 }
 
-/* line 70, ../sass/_results.scss */
-.color1 {
-  background-color: #6d0d0d;
-}
-
-/* line 71, ../sass/_results.scss */
-.color2 {
-  background-color: #c81818;
-}
-
-/* line 72, ../sass/_results.scss */
-.color3 {
-  background-color: #eb5b5b;
-}
-
-/* line 73, ../sass/_results.scss */
-.color4 {
-  background-color: #8fc898;
-}
-
 /* line 74, ../sass/_results.scss */
+.details {
+  position: relative;
+  left: 350px;
+  top: -33px;
+}
+
+/* line 82, ../sass/_results.scss */
+.color1 {
+  background-color: #ffffcc;
+}
+
+/* line 83, ../sass/_results.scss */
+.color2 {
+  background-color: #ffff66;
+}
+
+/* line 84, ../sass/_results.scss */
+.color3 {
+  background-color: #7fcdbb;
+}
+
+/* line 85, ../sass/_results.scss */
+.color4 {
+  background-color: #2c7eb5;
+}
+
+/* line 86, ../sass/_results.scss */
 .color5 {
-  background-color: #50a15c;
+  background-color: #184563;
 }

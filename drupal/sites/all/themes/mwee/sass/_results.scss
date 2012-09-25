@@ -1,14 +1,17 @@
 @import "colors";
+@import "helpers";
 
 @mixin granteeQuestions() {
 	.questionTitle {
 		font-weight: bold;
+    @include labels();
 	}
 	.bar {
 		background: #eee;
 		width: 400px;
 		height: 20px;
 		border: 1px solid #ccc;
+    margin: 10px;
     @include box-shadow(1px 1px 10px #eee);
 		span {
 			height: 20px;
@@ -63,6 +66,15 @@
         top: 24px;
         border: 13px solid;
         border-color: #000 transparent transparent transparent;
+  }
+  .groupStudent {
+  	// background: green;
+  }
+  //for the See Details button
+  .details {
+    position: relative;
+    left: 350px;
+    top: -33px;
   }
 }
 
