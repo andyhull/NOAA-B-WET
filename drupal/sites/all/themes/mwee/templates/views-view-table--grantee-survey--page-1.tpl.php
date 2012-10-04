@@ -83,7 +83,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     });
 
     if(format[1]) {
-      $('#mainResults').append('<div id="'+result+'" class="'+format[1]+'"><div class="questionTitle">'+question+'</div>')
+      $('#mainResults').append('<div id="'+result+'" class="'+format[1]+' result"><div class="questionTitle">'+question+'</div>')
     } else {
       $('#mainResults').append('<div id="'+result+'"><div class="questionTitle">'+question+'</div>')
     }
@@ -92,7 +92,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     if(format[0] == "text") {
       if(!$('#'+result+'More').length) {
       //add the formatted label and more button
-      $('#' + result).append('<div class="bar"></div><div class="barLabel"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See details</div></div>')  
+      $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See details</div></div>')  
       }
       var percent1 = parseFloat((unanswered/(sum + unanswered))* 100) 
       $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+unanswered+'" style="width:'+percent1+'%;">&nbsp;;<div class="more">Unanswered: '+unanswered+' ('+Math.round(percent1)+'% of total)</div></span>') 
@@ -126,7 +126,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
           case 'number':
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
-              $('#' + result).append('<div class="bar"></div><div class="barLabel"><span class="likertStart label">1 - Not at all</span><span class="likertEnd label">To a great extent - 5</span><span id="'+result+'More" class="btn details">See details</span></div>')  
+              $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart label">1 - Not at all</span><span class="likertEnd label">To a great extent - 5</span><span id="'+result+'More" class="btn details">See details</span></div>')  
             }
             createNumber(resultData[result][data], result, data, sum)
             break;
@@ -160,10 +160,10 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     var re = new RegExp(field,"g");
     var cleanData = data.replace(re, '')
     if(cleanData == '') {
-    $('#'+field).append('<div class="'+field+'More"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+resultData+'</span></div>')  
+    $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+resultData+'</span></div>')  
     } else {
       var percent = parseFloat((resultData/sum )* 100)
-      $('#'+result).append('<div class="'+result+'More"><span class="label">'+cleanData+'</span>&nbsp;'+resultData+' Respondant ('+Math.round(percent)+'%)</div>')
+      $('#'+result).append('<div class="'+result+'More resultDetail"><span class="label">'+cleanData+'</span>&nbsp;'+resultData+' Respondent ('+Math.round(percent)+'%)</div>')
       if(parseFloat(cleanData *1) > 0){
         $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
       } else {
@@ -198,15 +198,19 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
   $('#mainResults').append('<div id="overview"><h2>About grantee respondents and their organizations</h2></div>')
   $('#mainResults').append("<div id='students'><h2>Grantees' student MWEE participants</h2></div>")
   $('#mainResults').append('<div id="teachers"><h2>About teacher professional development participants</h2></div>')
+  $('#mainResults').append('<div id="evaluation"><h2>Grantees MWEE evaluation practices &amp; findings</h2></div>')
 
   $.each($('.groupStudent'), function(){
     $('#students').append($(this))
   })
-  $.each($('.groupTeachers'), function(){
+  $.each($('.groupTeacher'), function(){
     $('#teachers').append($(this))
   })
   $.each($('.groupOverview'), function(){
     $('#overview').append($(this))
+  })
+  $.each($('.groupEvaluation'), function(){
+    $('#evaluation').append($(this))
   })
 
 //sorting function http://stackoverflow.com/questions/1359761/sorting-a-javascript-object

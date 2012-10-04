@@ -10,7 +10,6 @@
 		background: #eee;
 		width: 400px;
 		height: 20px;
-		border: 1px solid #ccc;
     margin: 10px;
     @include box-shadow(1px 1px 10px #eee);
 		span {
@@ -23,6 +22,7 @@
 	}
 	.barLabel {
 		width: 400px;
+    margin: 10px;
 	}
 	.more {
     cursor: pointer;
@@ -32,7 +32,7 @@
     float: left;
     position: relative;
 		top: -50px;
-		left: 40px;
+		// left: 40px;
 		text-align: center;
 		padding: 5px;
 		@include border-radius(5px);
@@ -75,6 +75,10 @@
     position: relative;
     left: 350px;
     top: -33px;
+  }
+  .resultDetail {
+    margin: 0px 10px;
+    padding: 5px;
   }
 }
 

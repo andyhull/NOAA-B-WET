@@ -133,27 +133,27 @@
   background: #eee;
   width: 400px;
   height: 20px;
-  border: 1px solid #ccc;
   margin: 10px;
   -webkit-box-shadow: 1px 1px 10px #eeeeee;
   -moz-box-shadow: 1px 1px 10px #eeeeee;
   box-shadow: 1px 1px 10px #eeeeee;
 }
-/* line 16, ../sass/_results.scss */
+/* line 15, ../sass/_results.scss */
 .bar span {
   height: 20px;
   float: left;
 }
-/* line 19, ../sass/_results.scss */
+/* line 18, ../sass/_results.scss */
 .bar span:hover {
   -webkit-box-shadow: 1px 1px 20px #666666;
   -moz-box-shadow: 1px 1px 20px #666666;
   box-shadow: 1px 1px 20px #666666;
 }
 
-/* line 24, ../sass/_results.scss */
+/* line 23, ../sass/_results.scss */
 .barLabel {
   width: 400px;
+  margin: 10px;
 }
 
 /* line 27, ../sass/_results.scss */
@@ -165,7 +165,6 @@
   float: left;
   position: relative;
   top: -50px;
-  left: 40px;
   text-align: center;
   padding: 5px;
   -webkit-border-radius: 5px;
@@ -218,27 +217,33 @@
   top: -33px;
 }
 
-/* line 82, ../sass/_results.scss */
+/* line 79, ../sass/_results.scss */
+.resultDetail {
+  margin: 0px 10px;
+  padding: 5px;
+}
+
+/* line 86, ../sass/_results.scss */
 .color1 {
   background-color: #ffffcc;
 }
 
-/* line 83, ../sass/_results.scss */
+/* line 87, ../sass/_results.scss */
 .color2 {
   background-color: #ffff66;
 }
 
-/* line 84, ../sass/_results.scss */
+/* line 88, ../sass/_results.scss */
 .color3 {
   background-color: #7fcdbb;
 }
 
-/* line 85, ../sass/_results.scss */
+/* line 89, ../sass/_results.scss */
 .color4 {
   background-color: #2c7eb5;
 }
 
-/* line 86, ../sass/_results.scss */
+/* line 90, ../sass/_results.scss */
 .color5 {
   background-color: #184563;
 }
