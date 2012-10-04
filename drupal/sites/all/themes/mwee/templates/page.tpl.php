@@ -99,6 +99,21 @@
 
 <script>
 (function($) {
+  //here we replace the truncated cck label text with text from the help text field. 
+  //help text must contain a "longText" class to be used for replacement
+  $.each($('label.control-label').siblings('.controls'), function(){
+    if($('.help-block>.longText', $(this)).length) {
+      var helpText  = $('.help-block>.longText', $(this))
+      $(this).siblings('label').text($(helpText).text())
+      $(helpText).hide();
+    }
+  });
+console.log($('.fieldset-title'))
+  $.each($('fieldset.longText'), function() {
+    
+    var legendText = $('.fieldset-legend', $(this).children('a'))
+    console.log($(legendText))
+  })
     //remove N/A's from all forms
     $('.form-radio[value=_none]').parent().hide();
     //set the fieldset display equal to elements inside it. allows for correct toggling

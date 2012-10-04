@@ -193,12 +193,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'How many students, schools, and school districts were served directly by your organization this past grant year as a result of y',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'How many students, schools, and school districts were served directly by your organization this past grant year as a result of your B-WET grant? (Please provide one number, NOT a range.)',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_number_students|node|grantee_survey|form'] = $field_group;

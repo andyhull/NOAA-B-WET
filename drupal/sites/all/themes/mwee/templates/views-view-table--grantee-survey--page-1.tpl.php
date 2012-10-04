@@ -20,6 +20,7 @@
 <?php
 $allResults = new stdClass();
 //loop through rows
+print_r($rows);
 foreach ($rows as $key =>$field){
   //get the question field names
   foreach($field as $question => $questionKey) {

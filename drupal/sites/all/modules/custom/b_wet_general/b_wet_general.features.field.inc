@@ -928,7 +928,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1466,7 +1466,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2963,7 +2963,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3035,7 +3035,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3989,7 +3989,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional development or MWEEs.</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -11512,7 +11512,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '(for the past grant year)',
+      'description' => '<span class="longText">About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -13511,7 +13511,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '(for the past grant year)',
+      'description' => '<span class="longText">About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -16123,7 +16123,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -16230,7 +16230,6 @@ Pacific Northwest',
   t('(events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic)');
   t('(examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!
 ');
-  t('(for the past grant year)');
   t('(i.e., an instructional strategy based on the idea that learning may be facilitated by giving students the opportunity to explore an idea or question on their own. To arrive at an answer or to better understand the concept, students often collect and analyze data)');
   t('(i.e., an instructional strategy that gives students the opportunity to explore an idea or question. To arrive at an answer or to better understand the concept, students often collect and analyze data)');
   t('(i.e., an instructional strategy that integrates meaningful community service with instruction and reflection to enrich the learning experience, teach civic responsibility, and strengthen communities)');
@@ -16246,6 +16245,14 @@ Pacific Northwest',
   t('(training for individuals who provide teacher professional development)');
   t('(usually on consecutive days that cumulatively consist of 40 hours of more)');
   t('(verbal, mental, or physical)');
+  t('<span class="longText">About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?</span>');
+  t('<span class="longText">About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?</span>');
+  t('<span class="longText">Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)</span>');
+  t('<span class="longText">Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)</span>');
+  t('<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
+  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE</span>');
+  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE</span>');
+  t('<span class="longText">To what extent do you (dis)agree with the following statement: The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional development or MWEEs.</span>');
   t('A college-level course');
   t('About');
   t('About ____ K-12 schools served');
