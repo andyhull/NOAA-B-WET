@@ -218,6 +218,73 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_be_better_able_to_make_inf'.
+  $fields['node-grantee_survey-field_be_better_able_to_make_inf'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_be_better_able_to_make_inf',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Don\'t Know',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 251,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_be_better_able_to_make_inf',
+      'label' => 'Be better able to make informed decisions about how to protect or restore watersheds',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '150',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_best_practices'.
   $fields['node-grantee_survey-field_best_practices'] = array(
     'field_config' => array(
@@ -351,7 +418,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '62',
+        'weight' => '153',
       ),
     ),
   );
@@ -418,7 +485,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '63',
+        'weight' => '154',
       ),
     ),
   );
@@ -621,7 +688,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '60',
+        'weight' => '151',
       ),
     ),
   );
@@ -688,7 +755,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '58',
+        'weight' => '148',
       ),
     ),
   );
@@ -980,8 +1047,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1047,8 +1115,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1114,8 +1183,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1181,8 +1251,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1248,8 +1319,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1315,8 +1387,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1382,8 +1455,9 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => 'Don\'t know',
-          1 => 'No',
-          2 => 'Yes',
+          1 => 'Not Measured',
+          2 => 'No',
+          3 => 'Yes',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -1776,7 +1850,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '57',
+        'weight' => '147',
       ),
     ),
   );
@@ -1843,7 +1917,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '61',
+        'weight' => '152',
       ),
     ),
   );
@@ -1910,7 +1984,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '56',
+        'weight' => '146',
       ),
     ),
   );
@@ -2005,7 +2079,7 @@ function b_wet_general_field_default_fields() {
           2 => '$50,001-$100,000',
           3 => '$100,001-$200,000',
           4 => '$200,001-$300,000',
-          5 => '$300-001 or greater',
+          5 => '$300,001 or greater',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -4196,7 +4270,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4424,6 +4498,140 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '23',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_know_more_about_climate_ch'.
+  $fields['node-grantee_survey-field_know_more_about_climate_ch'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_know_more_about_climate_ch',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Don\'t Know',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 250,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_know_more_about_climate_ch',
+      'label' => 'Know more about climate change',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '145',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_know_more_about_the_ocean_'.
+  $fields['node-grantee_survey-field_know_more_about_the_ocean_'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_know_more_about_the_ocean_',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Don\'t Know',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 249,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_know_more_about_the_ocean_',
+      'label' => 'Know more about the ocean',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '144',
       ),
     ),
   );
@@ -4779,7 +4987,7 @@ function b_wet_general_field_default_fields() {
           'sort_options' => 0,
         ),
         'type' => 'select_or_other_buttons',
-        'weight' => '18',
+        'weight' => '11',
       ),
     ),
   );
@@ -4920,7 +5128,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '59',
+        'weight' => '149',
       ),
     ),
   );
@@ -5450,7 +5658,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '64',
+        'weight' => '155',
       ),
     ),
   );
@@ -5898,7 +6106,7 @@ function b_wet_general_field_default_fields() {
           2 => '$50,001-$100,000',
           3 => '$100,001-$200,000',
           4 => '$200,001-$300,000',
-          5 => '$300-001 or greater',
+          5 => '$300,001 or greater',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -6219,6 +6427,148 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_opportunities_change'.
+  $fields['node-grantee_survey-field_opportunities_change'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_opportunities_change',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          1 => '1',
+          2 => '2',
+          3 => '3',
+          4 => '4',
+          5 => '5',
+          6 => '6',
+          7 => '7',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 246,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_opportunities_change',
+      'label' => 'Opportunities to learn about climate iteracy principles',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '30',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_opportunities_ocean'.
+  $fields['node-grantee_survey-field_opportunities_ocean'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_opportunities_ocean',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          1 => '1',
+          2 => '2',
+          3 => '3',
+          4 => '4',
+          5 => '5',
+          6 => '6',
+          7 => '7',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 247,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_opportunities_ocean',
+      'label' => 'Opportunities to learn about ocean literacy principles',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '31',
       ),
     ),
   );
@@ -6696,7 +7046,7 @@ School/school district',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '37',
+        'weight' => '38',
       ),
     ),
   );
@@ -6766,6 +7116,72 @@ School/school district',
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '35',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_per_other'.
+  $fields['node-grantee_survey-field_per_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_per_other',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 248,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_per_other',
+      'label' => 'Other',
+      'required' => 0,
+      'settings' => array(
+        'max' => '100',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '37',
       ),
     ),
   );
@@ -7079,7 +7495,7 @@ School/school district',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -9699,7 +10115,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '114',
+        'weight' => '115',
       ),
     ),
   );
@@ -9831,7 +10247,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '111',
+        'weight' => '112',
       ),
     ),
   );
@@ -10029,7 +10445,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '116',
+        'weight' => '117',
       ),
     ),
   );
@@ -10360,7 +10776,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '113',
+        'weight' => '114',
       ),
     ),
   );
@@ -11268,7 +11684,7 @@ Pacific Northwest',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '77',
+        'weight' => '78',
       ),
     ),
   );
@@ -11540,7 +11956,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '79',
+        'weight' => '21',
       ),
     ),
   );
@@ -13406,6 +13822,68 @@ Pacific Northwest',
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_teacher_other_per'.
+  $fields['node-grantee_survey-field_teacher_other_per'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_other_per',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 252,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_other_per',
+      'label' => 'Other',
+      'required' => 0,
+      'settings' => array(
+        'max' => '100',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '77',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_teacher_other_pro_interact'.
   $fields['node-grantee_survey-field_teacher_other_pro_interact'] = array(
     'field_config' => array(
@@ -13539,7 +14017,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '80',
+        'weight' => '22',
       ),
     ),
   );
@@ -13738,7 +14216,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '115',
+        'weight' => '116',
       ),
     ),
   );
@@ -13932,7 +14410,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '112',
+        'weight' => '113',
       ),
     ),
   );
@@ -15425,7 +15903,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '78',
+        'weight' => '20',
       ),
     ),
   );
@@ -16252,6 +16730,7 @@ Pacific Northwest',
   t('<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE</span>');
+  t('<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>');
   t('<span class="longText">To what extent do you (dis)agree with the following statement: The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional development or MWEEs.</span>');
   t('A college-level course');
   t('About');
@@ -16276,6 +16755,7 @@ Pacific Northwest',
   t('Assisted teachers with establishing schoolyard habitats');
   t('Assisted with the use of equipment or technologies');
   t('Be better able to conduct scientific investigations');
+  t('Be better able to make informed decisions about how to protect or restore watersheds');
   t('Be more confident in their ability to protect and/or restore watersheds');
   t('Be more engaged in their science learning');
   t('Be more enthusiastic about teaching science');
@@ -16361,6 +16841,8 @@ Pacific Northwest',
   t('Installed a rain barrel at school');
   t('Installed a rain barrel at school or at home');
   t('Issue investigation');
+  t('Know more about climate change');
+  t('Know more about the ocean');
   t('Limited or avoided the use of household chemicals including fertilizers, herbicides and pesticides');
   t('MWEE professional development or support for teachers');
   t('MWEEs for students/youth who are between the ages of 4-18 (or grades PreK-12) ');
@@ -16389,10 +16871,13 @@ Pacific Northwest',
   t('On-line professional development support');
   t('One day workshops (usually less than 8 hours)');
   t('One-on-one time with B-WET program staff (i.e., regional or national coordinators)');
+  t('Opportunities to learn about climate iteracy principles');
   t('Opportunities to learn about local or regional environmental issues');
   t('Opportunities to learn about local or regional policy efforts impacting environmental education');
   t('Opportunities to learn about national policy efforts impacting environmental education');
+  t('Opportunities to learn about ocean literacy principles');
   t('Opportunities to learn about watershed science');
+  t('Other');
   t('Outcome');
   t('Outdoor field trip');
   t('Overall, what grade would you give the support you received from your region\'s NOAA B-WET staff over the past grant year?');

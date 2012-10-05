@@ -20,7 +20,6 @@
 <?php
 $allResults = new stdClass();
 //loop through rows
-print_r($rows);
 foreach ($rows as $key =>$field){
   //get the question field names
   foreach($field as $question => $questionKey) {
@@ -119,9 +118,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
       })
     
     }
-    console.log(sortObject(resultData[result]))
     for(data in sortObject(resultData[result])){
-      console.log(data)
       if(data != 'type') {
         switch (format[0]) {
           case 'number':

@@ -101,6 +101,8 @@ function b_wet_general_field_group_info() {
       13 => 'field_learn_environmental_issues',
       14 => 'field_learn_local_policy',
       15 => 'field_learn_national_policy',
+      16 => 'field_opportunities_change',
+      17 => 'field_opportunities_ocean',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -248,7 +250,6 @@ function b_wet_general_field_group_info() {
       2 => 'field_years_noaa_funding',
       3 => 'field_project_existence',
       4 => 'field_organization',
-      5 => 'group_programs',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -342,8 +343,9 @@ function b_wet_general_field_group_info() {
     'children' => array(
       0 => 'field_program_other',
       1 => 'field_evaluation',
-      2 => 'group_evaluation',
-      3 => 'group_report_evidence',
+      2 => 'field_led_evaluation',
+      3 => 'group_evaluation',
+      4 => 'group_report_evidence',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -429,6 +431,7 @@ function b_wet_general_field_group_info() {
       2 => 'field_per_6_8',
       3 => 'field_per_9_12',
       4 => 'field_per_dont_know',
+      5 => 'field_per_other',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -510,16 +513,15 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Does the evaluation report include evidence of',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
-      0 => 'field_led_evaluation',
-      1 => 'field_eval_increase_knowledge',
-      2 => 'field_eval_change_attitude',
-      3 => 'field_eval_increase_in_skiills',
-      4 => 'field_eval_intentions_to_act',
-      5 => 'field_eval_engage_in_actions',
-      6 => 'field_eval_improved_water_qualit',
-      7 => 'field_eval_academic_performance',
+      0 => 'field_eval_increase_knowledge',
+      1 => 'field_eval_change_attitude',
+      2 => 'field_eval_increase_in_skiills',
+      3 => 'field_eval_intentions_to_act',
+      4 => 'field_eval_engage_in_actions',
+      5 => 'field_eval_improved_water_qualit',
+      6 => 'field_eval_academic_performance',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -670,12 +672,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Did students participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds durin',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'Did students participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds during your organization’s B-WET-funded MWEEs? (please indicate no or yes for each activity)',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_student_restore|node|grantee_survey|form'] = $field_group;
@@ -770,6 +773,9 @@ function b_wet_general_field_group_info() {
       6 => 'field_better_academically',
       7 => 'field_better_standardized_tests',
       8 => 'field_more_engaged',
+      9 => 'field_know_more_about_the_ocean_',
+      10 => 'field_know_more_about_climate_ch',
+      11 => 'field_be_better_able_to_make_inf',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -794,7 +800,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to',
-    'weight' => '28',
+    'weight' => '31',
     'children' => array(
       0 => 'field_teacher_define_watershed',
       1 => 'field_teacher_identify_local_wat',
@@ -828,7 +834,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'To what extent was your organization\'s MWEE professional development content aligned with:',
-    'weight' => '20',
+    'weight' => '23',
     'children' => array(
       0 => 'field_teacher_school_district',
       1 => 'field_teacher_state_standards',
@@ -858,7 +864,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which characteristics describe your organization\'s typical MWEE professional development this past grant year?',
-    'weight' => '26',
+    'weight' => '29',
     'children' => array(
       0 => 'field_teacher_local_connections',
       1 => 'field_teacher_noaa_interaction',
@@ -893,7 +899,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded MWEE professional development that teachers will',
-    'weight' => '29',
+    'weight' => '32',
     'children' => array(
       0 => 'field_teacher_teach_watershed',
       1 => 'field_teacher_implement_mwee',
@@ -932,19 +938,22 @@ function b_wet_general_field_group_info() {
     'label' => 'Please answer the following questions with regard to the professional development your organization provides to teachers.',
     'weight' => '8',
     'children' => array(
-      0 => 'group_teacher_pro_development',
-      1 => 'group_teachers_number_supported',
-      2 => 'group_teacher_per_taught',
-      3 => 'group_teacher_dev_align',
-      4 => 'group_teacher_resources_group',
-      5 => 'group_teacher_edu_methods',
-      6 => 'group_teacher_science',
-      7 => 'group_teacher_workshops',
-      8 => 'group_teacher_support',
-      9 => 'group_teacher_dev_character',
-      10 => 'group_teacher_watershed',
-      11 => 'group_teacher_able',
-      12 => 'group_teacher_dev_goal',
+      0 => 'field_teacher_teach_science',
+      1 => 'field_teacher_hours_pro_developm',
+      2 => 'field_teacher_outdoor_activity',
+      3 => 'group_teacher_pro_development',
+      4 => 'group_teachers_number_supported',
+      5 => 'group_teacher_per_taught',
+      6 => 'group_teacher_dev_align',
+      7 => 'group_teacher_resources_group',
+      8 => 'group_teacher_edu_methods',
+      9 => 'group_teacher_science',
+      10 => 'group_teacher_workshops',
+      11 => 'group_teacher_support',
+      12 => 'group_teacher_dev_character',
+      13 => 'group_teacher_watershed',
+      14 => 'group_teacher_able',
+      15 => 'group_teacher_dev_goal',
     ),
     'format_type' => 'multipage-group',
     'format_settings' => array(
@@ -971,7 +980,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What education methods were used during your MWEE professional development?',
-    'weight' => '22',
+    'weight' => '25',
     'children' => array(
       0 => 'field_teacher_method_outdoor',
       1 => 'field_teacher_method_field_work',
@@ -1009,9 +1018,7 @@ function b_wet_general_field_group_info() {
       2 => 'field_teacher_grades_6_8',
       3 => 'field_teacher_grades_9_12',
       4 => 'field_teacher_grades_dont_know',
-      5 => 'field_teacher_teach_science',
-      6 => 'field_teacher_hours_pro_developm',
-      7 => 'field_teacher_outdoor_activity',
+      5 => 'field_teacher_other_per',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1069,7 +1076,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which NOAA resources were incorporated into your organization\'s typical B-WET-funded MWEE professional development?',
-    'weight' => '21',
+    'weight' => '24',
     'children' => array(
       0 => 'field_teacher_resources_none',
       1 => 'field_teacher_resources_noaa_dat',
@@ -1103,7 +1110,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which of the following steps did you include? Engaged teachers in',
-    'weight' => '23',
+    'weight' => '26',
     'children' => array(
       0 => 'field_teacher_science_questions',
       1 => 'field_teacher_science_hypotheses',
@@ -1135,7 +1142,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What types of support did your organization typically provide to teachers participating in MWEE professional development this pa',
-    'weight' => '25',
+    'weight' => '28',
     'children' => array(
       0 => 'field_teacher_conduct_fieldwork',
       1 => 'field_teacher_habitats',
@@ -1149,12 +1156,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'What types of support did your organization typically provide to teachers participating in MWEE professional development this pa',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'What types of support did your organization typically provide to teachers participating in MWEE professional development this past grant year?',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_teacher_support|node|grantee_survey|form'] = $field_group;
@@ -1170,7 +1178,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds durin',
-    'weight' => '27',
+    'weight' => '30',
     'children' => array(
       0 => 'field_teacher_created_habitat',
       1 => 'field_teacher_installed_rain_bar',
@@ -1184,12 +1192,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds durin',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds during their MWEE professional development?',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_teacher_watershed|node|grantee_survey|form'] = $field_group;
@@ -1205,7 +1214,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'As part of your B-WET professional development workshops or institutes this past grant year, did your organization typically inc',
-    'weight' => '24',
+    'weight' => '27',
     'children' => array(
       0 => 'field_teacher_ex_integration',
       1 => 'field_teacher_discuss_integratio',
@@ -1222,12 +1231,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'As part of your B-WET professional development workshops or institutes this past grant year, did your organization typically inc',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'As part of your B-WET professional development workshops or institutes this past grant year, did your organization typically include the following:',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_teacher_workshops|node|grantee_survey|form'] = $field_group;
@@ -1251,12 +1261,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'For about how many teachers, schools, and school districts did your organization provide professional development or support',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'For about how many teachers, schools, and school districts did your organization provide professional development or support (e.g., trained in workshops, coached at schools or in the field) this past grant year as a result of your B-WET grant? (Please provide one number, NOT a range.)',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_teachers_number_supported|node|grantee_survey|form'] = $field_group;
