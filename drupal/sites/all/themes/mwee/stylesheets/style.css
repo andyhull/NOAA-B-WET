@@ -1,3 +1,9 @@
+/* line 1, ../sass/_typography.scss */
+.smallEm {
+  font-size: 12px;
+  font-style: italic;
+}
+
 /* line 6, ../sass/_form.scss */
 .node-form label {
   background-color: whiteSmoke;
@@ -54,7 +60,6 @@
 .form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-und-select {
   display: block;
   float: none;
-  padding-left: 20px;
   margin: 1px;
 }
 

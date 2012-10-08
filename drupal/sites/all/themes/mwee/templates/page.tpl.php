@@ -100,7 +100,7 @@
 <script>
 (function($) {
   //helper text for the award number
-  $('.form-item-title').append('<div class="titleHelp">The award number will be used <strong>ONLY</strong> to 1) identify your BWET region, not your organization, and 2) allow us to link information you provide with that of data that may be provided by your project’s teachers');
+  $('.form-item-title').append('<div class="titleHelp">Your NOAA B-WET award number has 14 digits such as NA12NMF4638049. The award number will be used <strong>ONLY</strong> to 1) identify your BWET region, not your organization, and 2) allow us to link information you provide with that of data that may be provided by your project’s teachers');
   //helper text for the end of the survey
   $('#multistep-group_page8').append('<div class="footerHelp well"><p><strong>OMB Control Number: 0648-xxxx   Expires: xx/xx/20xx </strong></p><h3>Paperwork Reduction Act Statement</h3>Public reporting burden for this collection of information is estimated to average 30-60 minutes per response, including the time for reviewing instructions, searching existing data sources, gathering and maintaining the data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other suggestions for reducing this burden to Bronwen Rice, NOAA Office of Education, Herbert C. Hoover Building, Room 6863, 14th and Constitution Avenue, NW Washington, DC 20230.</p><p>Responses are voluntary and collected and maintained as anonymous data.  Information will be treated in accordance with the Freedom of Information Act (5 USC 552). </p><p>Notwithstanding any other provision of the law, no person is required to respond to, nor shall any person be subject to a penalty for failure to comply with, a collection of information subject to the requirements of the Paperwork Reduction Act, unless that collection of information displays a currently valid OMB Control Number.</p></div>');
   //helper text for the start of the survey
@@ -125,6 +125,7 @@
   })
     //remove N/A's from all forms
     $('.form-radio[value=_none]').parent().hide();
+    $('.form-radio[value=""]').parent().hide();
     var addNA = ['#edit-field-standards-school-district-und-none','#edit-field-standards-state-und-none',
     '#edit-field-standards-national-und-none', '#edit-field-standards-regional-und-none',
     '#edit-field-know-more-about-the-ocean-und-none', '#edit-field-know-more-about-climate-ch-und-none',
@@ -134,7 +135,6 @@
     '#edit-field-express-interest-und-none', '#edit-field-better-academically-und-none',
     '#edit-field-better-standardized-tests-und-none', '#edit-field-more-engaged-und-none'];
     $.each(addNA, function(intIndex, objValue){
-      console.log(objValue)
       if($(objValue).length) {
         $(objValue).parent().show();
       }
@@ -193,6 +193,3 @@
   
 })(jQuery);
 </script>
-
-	
-
