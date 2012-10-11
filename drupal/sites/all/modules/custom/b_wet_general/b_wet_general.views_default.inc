@@ -245,10 +245,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_zipcode']['field_api_classes'] = 0;
-  /* Field: Content: In which region(s) were your organization's MWEEs offered this past grant year? */
+  /* Field: Content: In which region(s) were your organization's MWEEs offered this past grant year? (check all that apply) */
   $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
   $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
   $handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+  $handler->display->display_options['fields']['field_region']['label'] = 'In which region(s) were your organization\'s MWEEs offered this past grant year?';
   $handler->display->display_options['fields']['field_region']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_region']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_region']['alter']['absolute'] = 0;
@@ -417,10 +418,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_project_existence']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_project_existence']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_project_existence']['field_api_classes'] = 0;
-  /* Field: Content: For what type of organization do you work? */
+  /* Field: Content: For what type of organization do you work? (choose one) */
   $handler->display->display_options['fields']['field_organization']['id'] = 'field_organization';
   $handler->display->display_options['fields']['field_organization']['table'] = 'field_data_field_organization';
   $handler->display->display_options['fields']['field_organization']['field'] = 'field_organization';
+  $handler->display->display_options['fields']['field_organization']['label'] = 'For what type of organization do you work?';
   $handler->display->display_options['fields']['field_organization']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_organization']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_organization']['alter']['absolute'] = 0;
@@ -513,10 +515,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_evaluation_assistance']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_evaluation_assistance']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_evaluation_assistance']['field_api_classes'] = 0;
-  /* Field: Content: Assistance with grant budgeting */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['id'] = 'field_grant_budgeting_assistance';
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['table'] = 'field_data_field_grant_budgeting_assistance';
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['field'] = 'field_grant_budgeting_assistance';
+  $handler->display->display_options['fields']['field_grant_budgeting_assistance']['label'] = 'Assistance with grant budgeting';
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['alter']['absolute'] = 0;
@@ -536,7 +539,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_grant_budgeting_assistance']['field_api_classes'] = 0;
   /* Field: Content: Briefly describe why you selected this grade */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
@@ -561,10 +563,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_grade_explain']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_grade_explain']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_grade_explain']['field_api_classes'] = 0;
-  /* Field: Content: Email listserv, web forum, or other tools for virtual interaction with other grantees */
+  /* Field: Content: Email listserv, web forum, Facebook page, or other tools for virtual interaction with other grantees */
   $handler->display->display_options['fields']['field_virtual_interaction']['id'] = 'field_virtual_interaction';
   $handler->display->display_options['fields']['field_virtual_interaction']['table'] = 'field_data_field_virtual_interaction';
   $handler->display->display_options['fields']['field_virtual_interaction']['field'] = 'field_virtual_interaction';
+  $handler->display->display_options['fields']['field_virtual_interaction']['label'] = 'Email listserv, web forum, or other tools for virtual interaction with other grantees';
   $handler->display->display_options['fields']['field_virtual_interaction']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_virtual_interaction']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_virtual_interaction']['alter']['absolute'] = 0;
@@ -1041,10 +1044,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['field_api_classes'] = 0;
-  /* Field: Content: Grades 4-5 */
+  /* Field: Content: Elementary */
   $handler->display->display_options['fields']['field_per_4_5']['id'] = 'field_per_4_5';
   $handler->display->display_options['fields']['field_per_4_5']['table'] = 'field_data_field_per_4_5';
   $handler->display->display_options['fields']['field_per_4_5']['field'] = 'field_per_4_5';
+  $handler->display->display_options['fields']['field_per_4_5']['label'] = 'Grades 4-5';
   $handler->display->display_options['fields']['field_per_4_5']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_per_4_5']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_per_4_5']['alter']['absolute'] = 0;
@@ -1069,10 +1073,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_per_4_5']['field_api_classes'] = 0;
-  /* Field: Content: Grades 6-8 */
+  /* Field: Content: Middle */
   $handler->display->display_options['fields']['field_per_6_8']['id'] = 'field_per_6_8';
   $handler->display->display_options['fields']['field_per_6_8']['table'] = 'field_data_field_per_6_8';
   $handler->display->display_options['fields']['field_per_6_8']['field'] = 'field_per_6_8';
+  $handler->display->display_options['fields']['field_per_6_8']['label'] = 'Grades 6-8';
   $handler->display->display_options['fields']['field_per_6_8']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_per_6_8']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_per_6_8']['alter']['absolute'] = 0;
@@ -1125,10 +1130,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['field_api_classes'] = 0;
-  /* Field: Content: Grades 9-12 */
+  /* Field: Content: High */
   $handler->display->display_options['fields']['field_per_9_12']['id'] = 'field_per_9_12';
   $handler->display->display_options['fields']['field_per_9_12']['table'] = 'field_data_field_per_9_12';
   $handler->display->display_options['fields']['field_per_9_12']['field'] = 'field_per_9_12';
+  $handler->display->display_options['fields']['field_per_9_12']['label'] = 'Grades 9-12';
   $handler->display->display_options['fields']['field_per_9_12']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_per_9_12']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_per_9_12']['alter']['absolute'] = 0;
@@ -1209,10 +1215,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_teacher_prek_3']['field_api_classes'] = 0;
-  /* Field: Content: Grades PreK-3 */
+  /* Field: Content: PreK */
   $handler->display->display_options['fields']['field_per_prek_3']['id'] = 'field_per_prek_3';
   $handler->display->display_options['fields']['field_per_prek_3']['table'] = 'field_data_field_per_prek_3';
   $handler->display->display_options['fields']['field_per_prek_3']['field'] = 'field_per_prek_3';
+  $handler->display->display_options['fields']['field_per_prek_3']['label'] = 'Grades PreK-3';
   $handler->display->display_options['fields']['field_per_prek_3']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_per_prek_3']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_per_prek_3']['alter']['absolute'] = 0;
@@ -2901,10 +2908,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_gave_presentations']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_teacher_gave_presentations']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_teacher_gave_presentations']['field_api_classes'] = 0;
-  /* Field: Content: Help clean up or take care of a local stream, or beach */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_help_cleanup']['id'] = 'field_goal_help_cleanup';
   $handler->display->display_options['fields']['field_goal_help_cleanup']['table'] = 'field_data_field_goal_help_cleanup';
   $handler->display->display_options['fields']['field_goal_help_cleanup']['field'] = 'field_goal_help_cleanup';
+  $handler->display->display_options['fields']['field_goal_help_cleanup']['label'] = 'Help clean up or take care of a local stream, or beach';
   $handler->display->display_options['fields']['field_goal_help_cleanup']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup']['alter']['absolute'] = 0;
@@ -2924,7 +2932,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_help_cleanup']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_help_cleanup']['field_api_classes'] = 0;
   /* Field: Content: Helped clean up or take care of a local stream or beach */
   $handler->display->display_options['fields']['field_clean_up']['id'] = 'field_clean_up';
   $handler->display->display_options['fields']['field_clean_up']['table'] = 'field_data_field_clean_up';
@@ -3189,10 +3196,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_told_others']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_teacher_told_others']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_teacher_told_others']['field_api_classes'] = 0;
-  /* Field: Content: Create a schoolyard or backyard habitat */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_create_habitat']['id'] = 'field_goal_create_habitat';
   $handler->display->display_options['fields']['field_goal_create_habitat']['table'] = 'field_data_field_goal_create_habitat';
   $handler->display->display_options['fields']['field_goal_create_habitat']['field'] = 'field_goal_create_habitat';
+  $handler->display->display_options['fields']['field_goal_create_habitat']['label'] = 'Create a schoolyard or backyard habitat';
   $handler->display->display_options['fields']['field_goal_create_habitat']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_create_habitat']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_create_habitat']['alter']['absolute'] = 0;
@@ -3212,11 +3220,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_create_habitat']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_create_habitat']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_create_habitat']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_create_habitat']['field_api_classes'] = 0;
-  /* Field: Content: Give presentation(s) about the local watershed */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_give_presentations']['id'] = 'field_goal_give_presentations';
   $handler->display->display_options['fields']['field_goal_give_presentations']['table'] = 'field_data_field_goal_give_presentations';
   $handler->display->display_options['fields']['field_goal_give_presentations']['field'] = 'field_goal_give_presentations';
+  $handler->display->display_options['fields']['field_goal_give_presentations']['label'] = 'Give presentation(s) about the local watershed';
   $handler->display->display_options['fields']['field_goal_give_presentations']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_give_presentations']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_give_presentations']['alter']['absolute'] = 0;
@@ -3236,11 +3244,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_give_presentations']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_give_presentations']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_give_presentations']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_give_presentations']['field_api_classes'] = 0;
-  /* Field: Content: Help clean up or take care of a local stream, or beach */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['id'] = 'field_goal_help_cleanup_1';
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['table'] = 'field_data_field_goal_help_cleanup';
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['field'] = 'field_goal_help_cleanup';
+  $handler->display->display_options['fields']['field_goal_help_cleanup_1']['label'] = 'Help clean up or take care of a local stream, or beach';
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['alter']['absolute'] = 0;
@@ -3260,11 +3268,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_help_cleanup_1']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_help_cleanup_1']['field_api_classes'] = 0;
-  /* Field: Content: Install a rain barrel at school or at home */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['id'] = 'field_goal_install_rain_barrel';
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['table'] = 'field_data_field_goal_install_rain_barrel';
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['field'] = 'field_goal_install_rain_barrel';
+  $handler->display->display_options['fields']['field_goal_install_rain_barrel']['label'] = 'Install a rain barrel at school or at home';
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['alter']['absolute'] = 0;
@@ -3284,11 +3292,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_install_rain_barrel']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_install_rain_barrel']['field_api_classes'] = 0;
-  /* Field: Content: Participate in a restoration activity */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_participate_restorati']['id'] = 'field_goal_participate_restorati';
   $handler->display->display_options['fields']['field_goal_participate_restorati']['table'] = 'field_data_field_goal_participate_restorati';
   $handler->display->display_options['fields']['field_goal_participate_restorati']['field'] = 'field_goal_participate_restorati';
+  $handler->display->display_options['fields']['field_goal_participate_restorati']['label'] = 'Participate in a restoration activity';
   $handler->display->display_options['fields']['field_goal_participate_restorati']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_restorati']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_restorati']['alter']['absolute'] = 0;
@@ -3308,11 +3316,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_participate_restorati']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_restorati']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_restorati']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_participate_restorati']['field_api_classes'] = 0;
-  /* Field: Content: Participate in an event to raise awareness about the importance of watersheds */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_participate_event']['id'] = 'field_goal_participate_event';
   $handler->display->display_options['fields']['field_goal_participate_event']['table'] = 'field_data_field_goal_participate_event';
   $handler->display->display_options['fields']['field_goal_participate_event']['field'] = 'field_goal_participate_event';
+  $handler->display->display_options['fields']['field_goal_participate_event']['label'] = 'Participate in an event to raise awareness about the importance of watersheds';
   $handler->display->display_options['fields']['field_goal_participate_event']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_event']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_event']['alter']['absolute'] = 0;
@@ -3332,11 +3340,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_participate_event']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_event']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_participate_event']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_participate_event']['field_api_classes'] = 0;
-  /* Field: Content: Save water at school or home to protect the local watershed */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_save_water']['id'] = 'field_goal_save_water';
   $handler->display->display_options['fields']['field_goal_save_water']['table'] = 'field_data_field_goal_save_water';
   $handler->display->display_options['fields']['field_goal_save_water']['field'] = 'field_goal_save_water';
+  $handler->display->display_options['fields']['field_goal_save_water']['label'] = 'Save water at school or home to protect the local watershed';
   $handler->display->display_options['fields']['field_goal_save_water']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_save_water']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_save_water']['alter']['absolute'] = 0;
@@ -3356,11 +3364,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_save_water']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_save_water']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_save_water']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_save_water']['field_api_classes'] = 0;
-  /* Field: Content: Tell others about ways they can protect their local watershed */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_goal_tell_others']['id'] = 'field_goal_tell_others';
   $handler->display->display_options['fields']['field_goal_tell_others']['table'] = 'field_data_field_goal_tell_others';
   $handler->display->display_options['fields']['field_goal_tell_others']['field'] = 'field_goal_tell_others';
+  $handler->display->display_options['fields']['field_goal_tell_others']['label'] = 'Tell others about ways they can protect their local watershed';
   $handler->display->display_options['fields']['field_goal_tell_others']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_goal_tell_others']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_goal_tell_others']['alter']['absolute'] = 0;
@@ -3380,7 +3388,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_goal_tell_others']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_goal_tell_others']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_goal_tell_others']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_goal_tell_others']['field_api_classes'] = 0;
   /* Field: Content: Be better able to conduct scientific investigations */
   $handler->display->display_options['fields']['field_conduct_investigations']['id'] = 'field_conduct_investigations';
   $handler->display->display_options['fields']['field_conduct_investigations']['table'] = 'field_data_field_conduct_investigations';
@@ -5157,10 +5164,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_teach_watershed']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_teacher_teach_watershed']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_teacher_teach_watershed']['field_api_classes'] = 0;
-  /* Field: Content: Did your organization provide other B-WET funded programs? */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_program_other']['id'] = 'field_program_other';
   $handler->display->display_options['fields']['field_program_other']['table'] = 'field_data_field_program_other';
   $handler->display->display_options['fields']['field_program_other']['field'] = 'field_program_other';
+  $handler->display->display_options['fields']['field_program_other']['label'] = 'Did your organization provide other B-WET funded programs?';
   $handler->display->display_options['fields']['field_program_other']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_program_other']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_program_other']['alter']['absolute'] = 0;
@@ -5180,7 +5188,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_program_other']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_program_other']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_program_other']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_program_other']['field_api_classes'] = 0;
   /* Field: Content: Impact */
   $handler->display->display_options['fields']['field_impact']['id'] = 'field_impact';
   $handler->display->display_options['fields']['field_impact']['table'] = 'field_data_field_impact';

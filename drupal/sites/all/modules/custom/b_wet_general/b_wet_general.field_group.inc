@@ -95,14 +95,13 @@ function b_wet_general_field_group_info() {
       7 => 'field_access_research',
       8 => 'field_best_practices',
       9 => 'field_evaluation_assistance',
-      10 => 'field_grant_budgeting_assistance',
-      11 => 'field_grant_management_assistanc',
-      12 => 'field_learn_watershed',
-      13 => 'field_learn_environmental_issues',
-      14 => 'field_learn_local_policy',
-      15 => 'field_learn_national_policy',
-      16 => 'field_opportunities_change',
-      17 => 'field_opportunities_ocean',
+      10 => 'field_grant_management_assistanc',
+      11 => 'field_learn_watershed',
+      12 => 'field_learn_environmental_issues',
+      13 => 'field_learn_local_policy',
+      14 => 'field_learn_national_policy',
+      15 => 'field_opportunities_change',
+      16 => 'field_opportunities_ocean',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -209,6 +208,34 @@ function b_wet_general_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_outcome_impact|node|grantee_survey|form';
+  $field_group->group_name = 'group_outcome_impact';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'grantee_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_page6';
+  $field_group->data = array(
+    'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_led_evaluation',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organization completed more than one outcome or impact evaluation, please answer the following questions based on the evaluation with the most rigorous research (e.g., valid/reliable instruments, appropriate sampling, use of control/comparison groups, content analysis of qualitative data, etc.) methods:',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_outcome_impact|node|grantee_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_page1|node|grantee_survey|form';
   $field_group->group_name = 'group_page1';
   $field_group->entity_type = 'node';
@@ -217,13 +244,11 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 1',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'field_operate_program',
-      1 => 'field_zipcode',
-      2 => 'field_region',
-      3 => 'title',
-      4 => 'group_involvement',
+      1 => 'title',
+      2 => 'group_involvement',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -243,13 +268,15 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 2',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_noaa_funding',
-      1 => 'field_funding_all',
-      2 => 'field_years_noaa_funding',
-      3 => 'field_project_existence',
-      4 => 'field_organization',
+      0 => 'field_zipcode',
+      1 => 'field_noaa_funding',
+      2 => 'field_funding_all',
+      3 => 'field_years_noaa_funding',
+      4 => 'field_project_existence',
+      5 => 'field_region',
+      6 => 'field_organization',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -269,7 +296,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 3',
-    'weight' => '7',
+    'weight' => '3',
     'children' => array(
       0 => 'field_grade',
       1 => 'field_grade_explain',
@@ -293,7 +320,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 4',
-    'weight' => '8',
+    'weight' => '4',
     'children' => array(
       0 => 'field_mwee_students',
       1 => 'group_student_instruction',
@@ -316,7 +343,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 5',
-    'weight' => '9',
+    'weight' => '5',
     'children' => array(
       0 => 'field_mwee_professional',
       1 => 'group_teacher_development',
@@ -339,13 +366,12 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 6',
-    'weight' => '10',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_program_other',
-      1 => 'field_evaluation',
-      2 => 'field_led_evaluation',
-      3 => 'group_evaluation',
-      4 => 'group_report_evidence',
+      0 => 'field_evaluation',
+      1 => 'group_evaluation',
+      2 => 'group_report_evidence',
+      3 => 'group_outcome_impact',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -365,7 +391,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 7',
-    'weight' => '11',
+    'weight' => '7',
     'children' => array(
       0 => 'field_public_familiar',
       1 => 'field_public_familiar_text',
@@ -398,7 +424,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page 8',
-    'weight' => '12',
+    'weight' => '8',
     'children' => array(
       0 => 'field_question_complete',
       1 => 'field_question_informative',
@@ -423,7 +449,7 @@ function b_wet_general_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_student_instruction';
   $field_group->data = array(
-    'label' => 'What percent of the students/youth directly served by your organization were in each of the following grades?',
+    'label' => 'What percent of the students/youth directly served by your organization were in each of the following grade levels? (total shoul',
     'weight' => '33',
     'children' => array(
       0 => 'field_per_prek_3',
@@ -435,12 +461,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'What percent of the students/youth directly served by your organization were in each of the following grade levels? (total shoul',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'What percent of the students/youth directly served by your organization were in each of the following grade levels? (total should equal 100%)',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_percent_students|node|grantee_survey|form'] = $field_group;

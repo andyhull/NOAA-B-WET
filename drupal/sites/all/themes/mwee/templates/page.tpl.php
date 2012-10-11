@@ -155,7 +155,7 @@
       //have to set a slight delay to capture the inline elements added by the field dependencies
       setTimeout(function(){
         $(container).css('display', $('.form-wrapper', container).css('display'))
-      }, 1)
+      }, 2)
     })
     var likertArrayAgree = ['#edit-field-public-familiar-und','#edit-field-improve-env-edu-und',
     '#edit-field-impact-env-edu-und', '#edit-field-impact-edu-policy-und','#edit-field-impact-health-und','#edit-field-impact-env-policy-und']
