@@ -1,4 +1,6 @@
 @import "helpers";
+@import "compass/css3/images";
+@import "compass/utilities";
 
 @mixin forms() {
 	.node-form {
@@ -67,9 +69,14 @@
 		display: none;
 	}
 	.likertScale {
+		// filter-gradient is for IE see:
+		//http://compass-style.org/reference/compass/css3/images/#mixin-filter-gradient
+		@include filter-gradient($one, $five, horizontal);
+	  /* Fallback: */
+	  background: $five;
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
-		width: 60%;
+		width: 70%;
 		padding: 5px;
 		margin-left: 70px;
 		font-weight: bold;
@@ -80,6 +87,9 @@
 		float: right;
 	}
 	.likertScaleSmall {
+		@include filter-gradient($one, $five, horizontal);
+	  /* Fallback: */
+	  background: $five;
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
 		width: 40%;

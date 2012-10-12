@@ -5641,6 +5641,72 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_noaa_resources_teachers'.
+  $fields['node-grantee_survey-field_noaa_resources_teachers'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_resources_teachers',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 254,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_resources_teachers',
+      'label' => 'Were any NOAA resources were used as part of MWEEs for teachers?',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '24',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_off_site_programs'.
   $fields['node-grantee_survey-field_off_site_programs'] = array(
     'field_config' => array(
@@ -13927,7 +13993,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '84',
+        'weight' => '85',
       ),
     ),
   );
@@ -15831,6 +15897,72 @@ Pacific Northwest',
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_were_any_noaa_resources_we'.
+  $fields['node-grantee_survey-field_were_any_noaa_resources_we'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_were_any_noaa_resources_we',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 253,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_were_any_noaa_resources_we',
+      'label' => 'Were any NOAA resources were used as part of MWEEs for students?',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '42',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_years_noaa_funding'.
   $fields['node-grantee_survey-field_years_noaa_funding'] = array(
     'field_config' => array(
@@ -16178,6 +16310,8 @@ Pacific Northwest',
   t('The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional');
   t('This questionnaire was ....');
   t('Told others about ways they can protect their local watershed');
+  t('Were any NOAA resources were used as part of MWEEs for students?');
+  t('Were any NOAA resources were used as part of MWEEs for teachers?');
   t('Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?');
   t('What is the total amount of funding for this project, from all sources, this past grant year?');
   t('What is the total amount of funding you received this past grant year from NOAA for your B-WET project?');
