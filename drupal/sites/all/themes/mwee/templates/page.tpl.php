@@ -133,7 +133,23 @@
     '#edit-field-confident-to-protect-und-none', '#edit-field-likely-to-protect-und-none',
     '#edit-field-be-better-able-to-make-inf-und-none', '#edit-field-conduct-investigations-und-none',
     '#edit-field-express-interest-und-none', '#edit-field-better-academically-und-none',
-    '#edit-field-better-standardized-tests-und-none', '#edit-field-more-engaged-und-none'];
+    '#edit-field-better-standardized-tests-und-none', '#edit-field-more-engaged-und-none', 
+    '#edit-field-define-watershed-und-none', '#edit-field-identify-local-watershed-und-none', 
+    '#edit-field-identify-watershed-connect-und-none', '#edit-field-identify-watershed-functio-und-none',
+    '#edit-field-recognize-processes-und-none', '#edit-field-identify-human-connections-und-none', 
+    '#edit-field-identify-pollution-und-none','#edit-field-identify-actions-und-none',
+    '#edit-field-teacher-school-district-und-none', '#edit-field-teacher-state-standards-und-none',
+    '#edit-field-teacher-national-standards-und-none', '#edit-field-teacher-regional-prioritie-und-none',
+    '#edit-field-teacher-define-watershed-und-none', '#edit-field-teacher-identify-local-wat-und-none',
+    '#edit-field-teacher-identify-watershed-und-none', '#edit-field-teacher-id-watershed-funct-und-none',
+    '#edit-field-teacher-recognize-processe-und-none', '#edit-field-teacher-identify-human-con-und-none',
+    '#edit-field-teacher-identify-pollution-und-none', '#edit-field-teacher-identify-actions-und-none', 
+    '#edit-field-teacher-teach-watershed-und-none', '#edit-field-teacher-implement-mwee-und-none',
+    '#edit-field-teacher-implement-mwee-aft-und-none', '#edit-field-teacher-use-resources-und-none',
+    '#edit-field-teacher-guide-students-und-none', '#edit-field-teacher-science-instructio-und-none',
+    '#edit-field-teacher-outdoor-instructio-und-none', '#edit-field-teacher-local-resources-und-none',
+    '#edit-field-teacher-interdisciplinary-und-none', '#edit-field-teacher-enthusiastic-und-none', 
+    '#edit-field-teacher-act-to-protect-und-none'];
     $.each(addNA, function(intIndex, objValue){
       if($(objValue).length) {
         $(objValue).parent().show();

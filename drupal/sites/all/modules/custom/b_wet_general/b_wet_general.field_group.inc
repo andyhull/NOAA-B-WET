@@ -32,12 +32,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'What education methods were used by your organization’s staff with students during your organization\'s typical B-WET-funded MWEE',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'What education methods were used by your organization’s staff with students during your organization\'s typical B-WET-funded MWEE?',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_education_methods|node|grantee_survey|form'] = $field_group;
@@ -575,14 +576,13 @@ function b_wet_general_field_group_info() {
     'label' => 'Which NOAA resources were used as part of MWEEs for students, if any?',
     'weight' => '42',
     'children' => array(
-      0 => 'field_resources_none',
-      1 => 'field_information_for_noaa',
-      2 => 'field_resources_noaa_data',
-      3 => 'field_resources_noaa_expert',
-      4 => 'field_resources_education_progra',
-      5 => 'field_resources_facilities',
-      6 => 'field_resources_marine_sanctuary',
-      7 => 'field_resources_estuarine_resear',
+      0 => 'field_information_for_noaa',
+      1 => 'field_resources_noaa_data',
+      2 => 'field_resources_noaa_expert',
+      3 => 'field_resources_education_progra',
+      4 => 'field_resources_facilities',
+      5 => 'field_resources_marine_sanctuary',
+      6 => 'field_resources_estuarine_resear',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -655,9 +655,8 @@ function b_wet_general_field_group_info() {
       11 => 'group_education_methods',
       12 => 'group_science',
       13 => 'group_student_restore',
-      14 => 'group_students_likely',
-      15 => 'group_students_will',
-      16 => 'group_students_able',
+      14 => 'group_students_will',
+      15 => 'group_students_able',
     ),
     'format_type' => 'multipage-group',
     'format_settings' => array(

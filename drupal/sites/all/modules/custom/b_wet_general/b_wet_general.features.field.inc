@@ -3780,8 +3780,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\',
+  2 =>\'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -4543,8 +4547,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => \'Not Sure\',
+  1 => \'No\',
+  2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -4609,8 +4617,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => \'Not Sure\',
+  1 => \'No\',
+  2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -4675,8 +4687,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => \'Not Sure\',
+  1 => \'No\',
+  2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -4742,8 +4758,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => \'Not Sure\',
+  1 => \'No\',
+  2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -4808,8 +4828,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => \'Not Sure\',
+  1 => \'No\',
+  2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -4874,8 +4898,12 @@ function b_wet_general_field_default_fields() {
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => \'Not Sure\',
+  1 => \'No\',
+  2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -5107,7 +5135,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_mwee_professional',
-      'label' => 'MWEE professional development or support for teachers',
+      'label' => 'Did your organization provide B-WET-funded MWEE professional development or support for teachers?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -7466,10 +7494,13 @@ Pacific Northwest',
         'module' => 'select_or_other',
         'settings' => array(
           'available_options' => '0|No',
-          'available_options_php' => '',
+          'available_options_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\'
+);',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Yes',
-          'other_title' => 'Name the curricula or programs:',
+          'other_title' => 'If Yes name the curricula or programs:',
           'other_unknown_defaults' => 'ignore',
           'sort_options' => 0,
         ),
@@ -7500,8 +7531,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\',
+  2 =>\'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -7607,10 +7642,13 @@ Pacific Northwest',
         'module' => 'select_or_other',
         'settings' => array(
           'available_options' => '0|No',
-          'available_options_php' => '',
+          'available_options_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\'
+);',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Yes',
-          'other_title' => 'Name the lab or facility:',
+          'other_title' => 'If Yes name the lab or facility:',
           'other_unknown_defaults' => 'ignore',
           'sort_options' => 0,
         ),
@@ -7641,8 +7679,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\',
+  2 =>\'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -7748,10 +7790,13 @@ Pacific Northwest',
         'module' => 'select_or_other',
         'settings' => array(
           'available_options' => '0|No',
-          'available_options_php' => '',
+          'available_options_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\'
+);',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Yes',
-          'other_title' => 'Name the NOAA data source:',
+          'other_title' => 'If Yes name the NOAA data source:',
           'other_unknown_defaults' => 'ignore',
           'sort_options' => 0,
         ),
@@ -7782,8 +7827,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 =>\'Not Sure\',
+  1 =>\'No\',
+  2 =>\'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -7823,76 +7872,6 @@ Pacific Northwest',
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '45',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_resources_none'.
-  $fields['node-grantee_survey-field_resources_none'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_resources_none',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
-        ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => array(
-        0 => array(
-          'value' => '0',
-        ),
-      ),
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 60,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_resources_none',
-      'label' => 'None',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '42',
       ),
     ),
   );
@@ -10373,8 +10352,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -10791,7 +10774,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_grades_4_5',
-      'label' => 'Grades 4-5',
+      'label' => 'Elementary',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -10853,7 +10836,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_grades_6_8',
-      'label' => 'Grades 6-8',
+      'label' => 'Middle',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -10915,7 +10898,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_grades_9_12',
-      'label' => 'Grades 9-12',
+      'label' => 'High',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -11891,8 +11874,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12354,8 +12341,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12420,8 +12411,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12486,8 +12481,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12552,8 +12551,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12618,8 +12621,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13571,7 +13578,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_prek_3',
-      'label' => 'Grades PreK-3',
+      'label' => 'PreK',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -13987,10 +13994,13 @@ Pacific Northwest',
         'module' => 'select_or_other',
         'settings' => array(
           'available_options' => '0|No',
-          'available_options_php' => '',
+          'available_options_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\'
+);',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Yes',
-          'other_title' => 'Name the curricula or programs',
+          'other_title' => 'If Yes name the curricula or programs',
           'other_unknown_defaults' => 'ignore',
           'sort_options' => 0,
         ),
@@ -14021,8 +14031,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -14128,10 +14142,13 @@ Pacific Northwest',
         'module' => 'select_or_other',
         'settings' => array(
           'available_options' => '0|No',
-          'available_options_php' => '',
+          'available_options_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\'
+);',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Yes',
-          'other_title' => 'Name the lab or facility',
+          'other_title' => 'If Yes name the lab or facility',
           'other_unknown_defaults' => 'ignore',
           'sort_options' => 0,
         ),
@@ -14162,8 +14179,12 @@ Pacific Northwest',
           0 => 'No',
           1 => 'Yes',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\',
+	2 => \'Yes\'
+);',
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -14269,81 +14290,18 @@ Pacific Northwest',
         'module' => 'select_or_other',
         'settings' => array(
           'available_options' => '0|No',
-          'available_options_php' => '',
+          'available_options_php' => 'return array (
+	0 => \'Not Sure\',
+	1 => \'No\'
+);',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Yes',
-          'other_title' => 'Name the NOAA data source',
+          'other_title' => 'If Yes name the NOAA data source',
           'other_unknown_defaults' => 'ignore',
           'sort_options' => 0,
         ),
         'type' => 'select_or_other_buttons',
         'weight' => '18',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_resources_none'.
-  $fields['node-grantee_survey-field_teacher_resources_none'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_resources_none',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
-        ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 138,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_resources_none',
-      'label' => 'None',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '16',
       ),
     ),
   );
@@ -16092,6 +16050,7 @@ Pacific Northwest',
   t('Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external gr');
   t('Did the majority of participating teachers teach science?');
   t('Did you operate a NOAA B-WET funded program this past grant year?');
+  t('Did your organization provide B-WET-funded MWEE professional development or support for teachers?');
   t('Did your organization provide B-WET-funded MWEEs for students/youth who are between the ages of 4-18 (or grades PreK-12)?');
   t('Discussed alignment of MWEEs with state, regional, or national standards');
   t('Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities');
@@ -16114,10 +16073,6 @@ Pacific Northwest',
   t('Formulating scientific questions they can answer using data');
   t('Gave presentation(s) about the local watershed');
   t('Gave presentation(s) about the local watershed (e.g., for school, other organizations)');
-  t('Grades 4-5');
-  t('Grades 6-8');
-  t('Grades 9-12');
-  t('Grades PreK-3');
   t('Helped clean up or take care of a local stream or beach');
   t('Helped make connections to local community organizations and resources');
   t('High');
@@ -16149,7 +16104,6 @@ Pacific Northwest',
   t('Know more about climate change');
   t('Know more about the ocean');
   t('Limited or avoided the use of household chemicals including fertilizers, herbicides and pesticides');
-  t('MWEE professional development or support for teachers');
   t('Making conclusions and adjusting predictions/hypotheses');
   t('Making predictions or hypotheses');
   t('Middle');
@@ -16166,7 +16120,6 @@ Pacific Northwest',
   t('NOAA materials and lesson plans relevant to watersheds');
   t('National education standards');
   t('Needs assessment');
-  t('None');
   t('Off-site field programs during the school day');
   t('Offered continuing education credits');
   t('Offered graduate credits');

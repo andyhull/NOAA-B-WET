@@ -29,8 +29,11 @@
 			border: none;
 		}
 	}
-	//special formatting for certain form items. they are special for some reason
-	.form-item-field-region-und-select, .form-item-field-organization-und-select, .form-item-field-evaluation-und-select {
+	//special formatting for certain form items. these are the fields with a custom 'other' field
+	.form-item-field-region-und-select, .form-item-field-organization-und-select, .form-item-field-evaluation-und-select,
+	.form-item-field-resources-noaa-data-und-select, .form-item-field-resources-education-progra-und-select,
+	.form-item-field-resources-facilities-und-select, .form-item-field-teacher-resources-noaa-dat-und-select,
+	.form-item-field-teacher-resources-edu-prog-und-select, .form-item-field-teacher-resources-faciliti-und-select {
 		label {
 			background-color: whiteSmoke;
 			border-top: 1px solid #E5E5E5;

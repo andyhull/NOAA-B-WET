@@ -1016,10 +1016,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_classroom_programs']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_classroom_programs']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_classroom_programs']['field_api_classes'] = 0;
-  /* Field: Content: Grades 4-5 */
+  /* Field: Content: Elementary */
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['id'] = 'field_teacher_grades_4_5';
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['table'] = 'field_data_field_teacher_grades_4_5';
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['field'] = 'field_teacher_grades_4_5';
+  $handler->display->display_options['fields']['field_teacher_grades_4_5']['label'] = 'Grades 4-5';
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_teacher_grades_4_5']['alter']['absolute'] = 0;
@@ -1102,10 +1103,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_per_6_8']['field_api_classes'] = 0;
-  /* Field: Content: Grades 6-8 */
+  /* Field: Content: Middle */
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['id'] = 'field_teacher_grades_6_8';
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['table'] = 'field_data_field_teacher_grades_6_8';
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['field'] = 'field_teacher_grades_6_8';
+  $handler->display->display_options['fields']['field_teacher_grades_6_8']['label'] = 'Grades 6-8';
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_teacher_grades_6_8']['alter']['absolute'] = 0;
@@ -1159,10 +1161,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_per_9_12']['field_api_classes'] = 0;
-  /* Field: Content: Grades 9-12 */
+  /* Field: Content: High */
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['id'] = 'field_teacher_grades_9_12';
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['table'] = 'field_data_field_teacher_grades_9_12';
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['field'] = 'field_teacher_grades_9_12';
+  $handler->display->display_options['fields']['field_teacher_grades_9_12']['label'] = 'Grades 9-12';
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['alter']['absolute'] = 0;
@@ -1187,10 +1190,11 @@ function b_wet_general_views_default_views() {
     'prefix_suffix' => 1,
   );
   $handler->display->display_options['fields']['field_teacher_grades_9_12']['field_api_classes'] = 0;
-  /* Field: Content: Grades PreK-3 */
+  /* Field: Content: PreK */
   $handler->display->display_options['fields']['field_teacher_prek_3']['id'] = 'field_teacher_prek_3';
   $handler->display->display_options['fields']['field_teacher_prek_3']['table'] = 'field_data_field_teacher_prek_3';
   $handler->display->display_options['fields']['field_teacher_prek_3']['field'] = 'field_teacher_prek_3';
+  $handler->display->display_options['fields']['field_teacher_prek_3']['label'] = 'Grades PreK-3';
   $handler->display->display_options['fields']['field_teacher_prek_3']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_teacher_prek_3']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_teacher_prek_3']['alter']['absolute'] = 0;
@@ -1804,10 +1808,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_resources_noaa_expert']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_resources_noaa_expert']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_resources_noaa_expert']['field_api_classes'] = 0;
-  /* Field: Content: None */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_teacher_resources_none']['id'] = 'field_teacher_resources_none';
   $handler->display->display_options['fields']['field_teacher_resources_none']['table'] = 'field_data_field_teacher_resources_none';
   $handler->display->display_options['fields']['field_teacher_resources_none']['field'] = 'field_teacher_resources_none';
+  $handler->display->display_options['fields']['field_teacher_resources_none']['label'] = 'None';
   $handler->display->display_options['fields']['field_teacher_resources_none']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none']['alter']['absolute'] = 0;
@@ -1827,11 +1832,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_resources_none']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_teacher_resources_none']['field_api_classes'] = 0;
-  /* Field: Content: None */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_resources_none']['id'] = 'field_resources_none';
   $handler->display->display_options['fields']['field_resources_none']['table'] = 'field_data_field_resources_none';
   $handler->display->display_options['fields']['field_resources_none']['field'] = 'field_resources_none';
+  $handler->display->display_options['fields']['field_resources_none']['label'] = 'None';
   $handler->display->display_options['fields']['field_resources_none']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_resources_none']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_resources_none']['alter']['absolute'] = 0;
@@ -1851,7 +1856,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_resources_none']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_resources_none']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_resources_none']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_resources_none']['field_api_classes'] = 0;
   /* Field: Content: On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a  */
   $handler->display->display_options['fields']['field_hours_taught_outdoors']['id'] = 'field_hours_taught_outdoors';
   $handler->display->display_options['fields']['field_hours_taught_outdoors']['table'] = 'field_data_field_hours_taught_outdoors';
@@ -2476,10 +2480,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_resources_marine_sanctuary']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_resources_marine_sanctuary']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_resources_marine_sanctuary']['field_api_classes'] = 0;
-  /* Field: Content: None */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['id'] = 'field_teacher_resources_none_1';
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['table'] = 'field_data_field_teacher_resources_none';
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['field'] = 'field_teacher_resources_none';
+  $handler->display->display_options['fields']['field_teacher_resources_none_1']['label'] = 'None';
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['alter']['absolute'] = 0;
@@ -2499,11 +2504,11 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_teacher_resources_none_1']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_teacher_resources_none_1']['field_api_classes'] = 0;
-  /* Field: Content: None */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_resources_none_1']['id'] = 'field_resources_none_1';
   $handler->display->display_options['fields']['field_resources_none_1']['table'] = 'field_data_field_resources_none';
   $handler->display->display_options['fields']['field_resources_none_1']['field'] = 'field_resources_none';
+  $handler->display->display_options['fields']['field_resources_none_1']['label'] = 'None';
   $handler->display->display_options['fields']['field_resources_none_1']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_resources_none_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_resources_none_1']['alter']['absolute'] = 0;
@@ -2523,7 +2528,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_resources_none_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_resources_none_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_resources_none_1']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_resources_none_1']['field_api_classes'] = 0;
   /* Field: Content: Field work */
   $handler->display->display_options['fields']['field_method_field_work']['id'] = 'field_method_field_work';
   $handler->display->display_options['fields']['field_method_field_work']['table'] = 'field_data_field_method_field_work';
