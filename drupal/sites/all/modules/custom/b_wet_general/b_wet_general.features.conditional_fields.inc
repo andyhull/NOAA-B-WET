@@ -2993,10 +2993,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -3066,10 +3066,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -3139,10 +3139,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -3212,10 +3212,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -3285,10 +3285,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -3358,10 +3358,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),

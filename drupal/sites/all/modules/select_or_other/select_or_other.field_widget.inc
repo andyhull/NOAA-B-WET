@@ -353,6 +353,9 @@ function select_or_other_field_widget_validate($element, &$form_state) {
     form_set_value($element, $value, $form_state);
     $form_state['clicked_button']['#post'][$element['#name']] = $value; // Is this something we should do?
   }
+  else {
+    form_set_value($element, array(array('value' => '')), $form_state);
+  }
 
   // Add values to available options is configured to do so.
   if (!empty($form_state['field'][$field_name][$element['#parents'][1]]['instance'])) {

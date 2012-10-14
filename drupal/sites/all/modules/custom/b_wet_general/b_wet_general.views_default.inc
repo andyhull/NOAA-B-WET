@@ -5168,11 +5168,10 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_teach_watershed']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_teacher_teach_watershed']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_teacher_teach_watershed']['field_api_classes'] = 0;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Did your organization provide other B-WET funded programs? */
   $handler->display->display_options['fields']['field_program_other']['id'] = 'field_program_other';
   $handler->display->display_options['fields']['field_program_other']['table'] = 'field_data_field_program_other';
   $handler->display->display_options['fields']['field_program_other']['field'] = 'field_program_other';
-  $handler->display->display_options['fields']['field_program_other']['label'] = 'Did your organization provide other B-WET funded programs?';
   $handler->display->display_options['fields']['field_program_other']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_program_other']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_program_other']['alter']['absolute'] = 0;
@@ -5192,6 +5191,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_program_other']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_program_other']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_program_other']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_program_other']['field_api_classes'] = 0;
   /* Field: Content: Impact */
   $handler->display->display_options['fields']['field_impact']['id'] = 'field_impact';
   $handler->display->display_options['fields']['field_impact']['table'] = 'field_data_field_impact';

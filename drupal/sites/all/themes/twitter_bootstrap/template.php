@@ -31,19 +31,6 @@ function twitter_bootstrap_theme() {
   );
 }
 
-/**
- * Preprocess variables for html.tpl.php
- *
- * @see system_elements()
- * @see html.tpl.php
- */
-function twitter_bootstrap_preprocess_html(&$variables) {
-   // Try to load the library
-  if (module_exists('twitter_bootstrap_ui')){
-    $library = libraries_load('twitter_bootstrap', 'minified');
-  }  
-}
-
 function twitter_bootstrap_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
 
@@ -150,13 +137,9 @@ function twitter_bootstrap_preprocess_page(&$variables) {
   
   // Secondary nav
   $variables['secondary_nav'] = FALSE;
-  if($variables['secondary_menu']) {
+  if(function_exists('menu_load') && $variables['secondary_menu']) {
     $secondary_menu = menu_load(variable_get('menu_secondary_links_source', 'user-menu'));
-    
-    // Build links
-    $tree = menu_tree_page_data($secondary_menu['menu_name']);
-    $variables['secondary_menu'] = twitter_bootstrap_menu_navigation_links($tree);
-    
+
     // Build list
     $variables['secondary_nav'] = theme('twitter_bootstrap_btn_dropdown', array(
       'links' => $variables['secondary_menu'],

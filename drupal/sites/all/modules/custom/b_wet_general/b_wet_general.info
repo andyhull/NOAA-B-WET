@@ -137,6 +137,7 @@ features[field][] = node-grantee_survey-field_per_esl
 features[field][] = node-grantee_survey-field_per_other
 features[field][] = node-grantee_survey-field_per_prek_3
 features[field][] = node-grantee_survey-field_process_implementation
+features[field][] = node-grantee_survey-field_program_other
 features[field][] = node-grantee_survey-field_project_existence
 features[field][] = node-grantee_survey-field_public_familiar
 features[field][] = node-grantee_survey-field_public_familiar_text

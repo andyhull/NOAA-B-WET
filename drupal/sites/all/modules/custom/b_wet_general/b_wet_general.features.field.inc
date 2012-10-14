@@ -1625,7 +1625,7 @@ function b_wet_general_field_default_fields() {
 1|No evaluation has been conducted and there are no plans to complete one
 2|No evaluation has been conducted, but there are plans to complete one
 3|An evaluation is being conducted, but it is not yet finished
-4|One or more evaluations has been completed',
+4|One or more evaluations has/have been completed',
           'available_options_php' => '',
           'markup_available_options_php' => '&lt;none&gt;',
           'other' => 'Other (please describe)',
@@ -1634,7 +1634,7 @@ function b_wet_general_field_default_fields() {
           'sort_options' => 0,
         ),
         'type' => 'select_or_other_buttons',
-        'weight' => '9',
+        'weight' => '157',
       ),
     ),
   );
@@ -6167,7 +6167,7 @@ School/school district',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’; knowledge, attitudes, skills, intentions, or behaviors)</span>',
+      'description' => '<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -6548,6 +6548,7 @@ School/school district',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
+          0 => 'Don\'t Know',
           1 => 'Less than 20%',
           2 => '21-40%',
           3 => '41-60%',
@@ -6794,6 +6795,75 @@ School/school district',
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '141',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_program_other'.
+  $fields['node-grantee_survey-field_program_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_program_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '60',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 255,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_program_other',
+      'label' => 'Did your organization provide other B-WET funded programs?',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '156',
       ),
     ),
   );
@@ -10232,7 +10302,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -13369,7 +13439,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?</span>',
+      'description' => '<span class="longText">About how many hours did a typical teacher participate in <span style="text-decoration:underline">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -15709,6 +15779,7 @@ Pacific Northwest',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
+          0 => 'Don\'t Know',
           1 => 'Less than 20%',
           2 => '21-40%',
           3 => '41-60%',
@@ -16113,9 +16184,10 @@ Pacific Northwest',
   t('(i.e., scientific study carried out somewhere other than in a classroom/laboratory, includes data collection)');
   t('(training for individuals who provide teacher professional development)');
   t('(usually on consecutive days that cumulatively consist of 40 hours of more)');
-  t('<span class="longText">About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?</span>');
+  t('<span class="longText">About how many hours did a typical teacher participate in <span style="text-decoration:underline">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>');
   t('<span class="longText">About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?</span>');
   t('<span class="longText">Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)</span>');
+  t('<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities</span>');
   t('<span class="longText">Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)</span>');
   t('<span class="longText">Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)</span>');
   t('<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
@@ -16123,7 +16195,7 @@ Pacific Northwest',
   t('<span class="longText">Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE</span>');
-  t('<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’; knowledge, attitudes, skills, intentions, or behaviors)</span>');
+  t('<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)</span>');
   t('<span class="longText">Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!</span>');
   t('<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>');
   t('<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has - or will have - a positive impact on environmental education in my area\'s formal education system?</span>');
@@ -16184,6 +16256,7 @@ Pacific Northwest',
   t('Did you operate a NOAA B-WET funded program this past grant year?');
   t('Did your organization provide B-WET-funded MWEE professional development or support for teachers?');
   t('Did your organization provide B-WET-funded MWEEs for students/youth who are between the ages of 4-18 (or grades PreK-12)?');
+  t('Did your organization provide other B-WET funded programs?');
   t('Discussed alignment of MWEEs with state, regional, or national standards');
   t('Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities');
   t('Discussed how to use NOAA data to obtain knowledge about local issues');

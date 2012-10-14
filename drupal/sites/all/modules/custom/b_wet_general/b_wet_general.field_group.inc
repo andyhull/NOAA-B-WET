@@ -54,7 +54,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'What type of evaluation has been completed?',
-    'weight' => '10',
+    'weight' => '158',
     'children' => array(
       0 => 'field_needs_assessment',
       1 => 'field_process_implementation',
@@ -217,7 +217,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
-    'weight' => '11',
+    'weight' => '159',
     'children' => array(
       0 => 'field_led_evaluation',
     ),
@@ -370,9 +370,10 @@ function b_wet_general_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_evaluation',
-      1 => 'group_evaluation',
-      2 => 'group_report_evidence',
-      3 => 'group_outcome_impact',
+      1 => 'field_program_other',
+      2 => 'group_evaluation',
+      3 => 'group_report_evidence',
+      4 => 'group_outcome_impact',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -541,7 +542,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Does the evaluation report include evidence of',
-    'weight' => '12',
+    'weight' => '160',
     'children' => array(
       0 => 'field_eval_increase_knowledge',
       1 => 'field_eval_change_attitude',
@@ -618,12 +619,14 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Which of the following steps did you include: Engage students in:',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'IF SELECTED Scientific-inquiry learning above: Which of the following steps did you include?
+Engage students in:',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_science|node|grantee_survey|form'] = $field_group;
