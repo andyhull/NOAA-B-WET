@@ -1,9 +1,12 @@
 //custom mixins and general helper functions
 
 @mixin labels() {
-	background-color: whiteSmoke;
-	border-top: 1px solid #E5E5E5;
-	color: #000;
+	color: #08C;
 	padding: 5px;
-	font-size: 14px;
+	font-size: 18px;
+	@include filter-gradient(#fff, #F2F2F2, vertical);
+  /* Fallback: */
+  background: #fff;
+	@include background-image(linear-gradient(top, #fff, #F2F2F2));
+	line-height: 30px;
 }
