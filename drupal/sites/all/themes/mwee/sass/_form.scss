@@ -3,6 +3,21 @@
 @import "compass/utilities";
 
 @mixin forms() {
+	.progressContainer {
+		width: 50%;
+		.progressText {
+			text-align: center;
+		}
+	}
+	.progress {
+		// height: 30px;
+	}
+	.progress .bar {
+		border: none;
+		margin: 0px;
+	}
+	.bar {
+	}
 	.node-form {
 		//main questions
 		label {
