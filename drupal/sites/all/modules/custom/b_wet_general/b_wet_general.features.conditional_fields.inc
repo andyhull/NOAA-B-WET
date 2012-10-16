@@ -524,6 +524,79 @@ function b_wet_general_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'grantee_survey',
+    'dependent' => 'field_per_prek_3',
+    'dependee' => 'field_i_don_t_know_the_percent',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
     'dependent' => 'field_per_4_5',
     'dependee' => 'field_mwee_students',
     'options' => array(
@@ -588,6 +661,79 @@ function b_wet_general_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '1',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
+    'dependent' => 'field_per_4_5',
+    'dependee' => 'field_i_don_t_know_the_percent',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
         ),
       ),
       'values' => array(),
@@ -670,6 +816,79 @@ function b_wet_general_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'grantee_survey',
+    'dependent' => 'field_per_6_8',
+    'dependee' => 'field_i_don_t_know_the_percent',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
     'dependent' => 'field_per_9_12',
     'dependee' => 'field_mwee_students',
     'options' => array(
@@ -734,6 +953,79 @@ function b_wet_general_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '1',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
+    'dependent' => 'field_per_9_12',
+    'dependee' => 'field_i_don_t_know_the_percent',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
         ),
       ),
       'values' => array(),
@@ -6145,6 +6437,79 @@ function b_wet_general_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'grantee_survey',
+    'dependent' => 'field_teacher_prek_3',
+    'dependee' => 'field_i_don_t_know_the_percent_t',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
     'dependent' => 'field_teacher_grades_4_5',
     'dependee' => 'field_mwee_professional',
     'options' => array(
@@ -6209,6 +6574,79 @@ function b_wet_general_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '1',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
+    'dependent' => 'field_teacher_grades_4_5',
+    'dependee' => 'field_i_don_t_know_the_percent_t',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
         ),
       ),
       'values' => array(),
@@ -6291,6 +6729,79 @@ function b_wet_general_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'grantee_survey',
+    'dependent' => 'field_teacher_grades_6_8',
+    'dependee' => 'field_i_don_t_know_the_percent_t',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
     'dependent' => 'field_teacher_grades_9_12',
     'dependee' => 'field_mwee_professional',
     'options' => array(
@@ -6355,6 +6866,79 @@ function b_wet_general_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '1',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
+    'dependent' => 'field_teacher_grades_9_12',
+    'dependee' => 'field_i_don_t_know_the_percent_t',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
         ),
       ),
       'values' => array(),
@@ -7884,10 +8468,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -7957,10 +8541,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -8030,10 +8614,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -8103,10 +8687,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -8176,10 +8760,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -8249,10 +8833,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '2',
       'value' => array(
         0 => array(
-          'value' => '1',
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -9796,7 +10380,7 @@ function b_wet_general_conditional_fields_default_fields() {
     'entity' => 'node',
     'bundle' => 'grantee_survey',
     'dependent' => 'field_needs_assessment',
-    'dependee' => 'field_evaluation',
+    'dependee' => 'field_evaluation_test',
     'options' => array(
       'state' => 'visible',
       'condition' => 'value',
@@ -9855,10 +10439,7 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => array(
-        'select' => '4',
-        'other' => '',
-      ),
+      'value_form' => '4',
       'value' => array(
         0 => array(
           'value' => '4',
@@ -9871,8 +10452,8 @@ function b_wet_general_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'grantee_survey',
-    'dependent' => 'field_process_implementation',
-    'dependee' => 'field_evaluation',
+    'dependent' => 'field_led_evaluation',
+    'dependee' => 'field_evaluation_test',
     'options' => array(
       'state' => 'visible',
       'condition' => 'value',
@@ -9931,530 +10512,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => array(
-        'select' => '4',
-        'other' => '',
-      ),
+      'value_form' => '4',
       'value' => array(
         0 => array(
           'value' => '4',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_outcome',
-    'dependee' => 'field_evaluation',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => array(
-        'select' => '4',
-        'other' => '',
-      ),
-      'value' => array(
-        0 => array(
-          'value' => '4',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_impact',
-    'dependee' => 'field_evaluation',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => array(
-        'select' => '4',
-        'other' => '',
-      ),
-      'value' => array(
-        0 => array(
-          'value' => '4',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_led_evaluation',
-    'dependee' => 'field_outcome',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'OR',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '1',
-      'value' => array(
-        0 => array(
-          'value' => '1',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_led_evaluation',
-    'dependee' => 'field_outcome',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'OR',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '2',
-      'value' => array(
-        0 => array(
-          'value' => '2',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_led_evaluation',
-    'dependee' => 'field_impact',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'OR',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '1',
-      'value' => array(
-        0 => array(
-          'value' => '1',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_led_evaluation',
-    'dependee' => 'field_impact',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'OR',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '2',
-      'value' => array(
-        0 => array(
-          'value' => '2',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'grantee_survey',
-    'dependent' => 'field_led_evaluation',
-    'dependee' => 'field_outcome',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'OR',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '1',
-      'value' => array(
-        0 => array(
-          'value' => '1',
         ),
       ),
       'values' => array(),
@@ -12207,6 +12268,79 @@ function b_wet_general_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '2',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
+    'dependent' => 'field_per_other',
+    'dependee' => 'field_i_don_t_know_the_percent',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
         ),
       ),
       'values' => array(),
@@ -12426,6 +12560,79 @@ function b_wet_general_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '1',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'grantee_survey',
+    'dependent' => 'field_teacher_other_per',
+    'dependee' => 'field_i_don_t_know_the_percent_t',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => 1,
         ),
       ),
       'values' => array(),

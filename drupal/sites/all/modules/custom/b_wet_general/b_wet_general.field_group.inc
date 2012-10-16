@@ -54,7 +54,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'What type of evaluation has been completed?',
-    'weight' => '158',
+    'weight' => '159',
     'children' => array(
       0 => 'field_needs_assessment',
       1 => 'field_process_implementation',
@@ -127,7 +127,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page1';
   $field_group->data = array(
     'label' => 'To what extent were you involved in:',
-    'weight' => '3',
+    'weight' => '6',
     'children' => array(
       0 => 'field_develop_proposal',
       1 => 'field_implementing_grant',
@@ -217,10 +217,8 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
-    'weight' => '159',
-    'children' => array(
-      0 => 'field_led_evaluation',
-    ),
+    'weight' => '161',
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
@@ -244,7 +242,7 @@ function b_wet_general_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Page 1',
+    'label' => '',
     'weight' => '1',
     'children' => array(
       0 => 'field_operate_program',
@@ -253,7 +251,7 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
-      'label' => 'Page 1',
+      'label' => '',
     ),
   );
   $export['group_page1|node|grantee_survey|form'] = $field_group;
@@ -268,7 +266,7 @@ function b_wet_general_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Page 2',
+    'label' => '',
     'weight' => '2',
     'children' => array(
       0 => 'field_zipcode',
@@ -281,7 +279,7 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => '',
     ),
   );
   $export['group_page2|node|grantee_survey|form'] = $field_group;
@@ -296,7 +294,7 @@ function b_wet_general_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Page 3',
+    'label' => '',
     'weight' => '3',
     'children' => array(
       0 => 'field_grade',
@@ -305,7 +303,7 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => '',
     ),
   );
   $export['group_page3|node|grantee_survey|form'] = $field_group;
@@ -370,10 +368,11 @@ function b_wet_general_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_evaluation',
-      1 => 'field_program_other',
-      2 => 'group_evaluation',
-      3 => 'group_report_evidence',
-      4 => 'group_outcome_impact',
+      1 => 'field_led_evaluation',
+      2 => 'field_evaluation_test',
+      3 => 'group_evaluation',
+      4 => 'group_report_evidence',
+      5 => 'group_outcome_impact',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -458,8 +457,8 @@ function b_wet_general_field_group_info() {
       1 => 'field_per_4_5',
       2 => 'field_per_6_8',
       3 => 'field_per_9_12',
-      4 => 'field_per_dont_know',
-      5 => 'field_per_other',
+      4 => 'field_per_other',
+      5 => 'field_i_don_t_know_the_percent',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -542,7 +541,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Does the evaluation report include evidence of',
-    'weight' => '160',
+    'weight' => '162',
     'children' => array(
       0 => 'field_eval_increase_knowledge',
       1 => 'field_eval_change_attitude',
@@ -829,7 +828,7 @@ Engage students in:',
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
-    'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to',
+    'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to:',
     'weight' => '32',
     'children' => array(
       0 => 'field_teacher_define_watershed',
@@ -843,12 +842,13 @@ Engage students in:',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to:',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_teacher_able|node|grantee_survey|form'] = $field_group;
@@ -1048,8 +1048,8 @@ Engage students in:',
       1 => 'field_teacher_grades_4_5',
       2 => 'field_teacher_grades_6_8',
       3 => 'field_teacher_grades_9_12',
-      4 => 'field_teacher_grades_dont_know',
-      5 => 'field_teacher_other_per',
+      4 => 'field_teacher_other_per',
+      5 => 'field_i_don_t_know_the_percent_t',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1151,12 +1151,14 @@ Engage students in:',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Which of the following steps did you include? Engaged teachers in',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'Which of the following steps did you include? 
+Engaged teachers in:',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_teacher_science|node|grantee_survey|form'] = $field_group;
@@ -1226,7 +1228,7 @@ Engage students in:',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'longText',
-        'description' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds during their MWEE professional development?',
+        'description' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds <span class="underlineText">during their MWEE professional development</span>?',
       ),
       'formatter' => 'collapsible',
     ),

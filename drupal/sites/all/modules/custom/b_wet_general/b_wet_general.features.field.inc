@@ -1565,80 +1565,6 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_evaluation'.
-  $fields['node-grantee_survey-field_evaluation'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_evaluation',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'number',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'number_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 216,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_evaluation',
-      'label' => 'Which of the following best describes the situation with regard to evaluation(s) of your organization\'s B-WET-funded programs?',
-      'required' => 0,
-      'settings' => array(
-        'max' => '',
-        'min' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|Don\'t know
-1|No evaluation has been conducted and there are no plans to complete one
-2|No evaluation has been conducted, but there are plans to complete one
-3|An evaluation is being conducted, but it is not yet finished
-4|One or more evaluations has/have been completed',
-          'available_options_php' => '',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Other (please describe)',
-          'other_title' => '',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '157',
-      ),
-    ),
-  );
-
   // Exported field: 'node-grantee_survey-field_evaluation_assistance'.
   $fields['node-grantee_survey-field_evaluation_assistance'] = array(
     'field_config' => array(
@@ -1706,6 +1632,75 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '23',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_evaluation_test'.
+  $fields['node-grantee_survey-field_evaluation_test'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_evaluation_test',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Don\'t know',
+          1 => 'No evaluation has been conducted and there are no plans to complete one',
+          2 => 'No evaluation has been conducted, but there are plans to complete one',
+          3 => 'An evaluation is being conducted, but it is not yet finished',
+          4 => 'One or more evaluations has/have been completed',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 257,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_evaluation_test',
+      'label' => 'Which of the following best describes the situation with regard to evaluation(s) of your organization\'s B-WET-funded programs?',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '158',
       ),
     ),
   );
@@ -2498,7 +2493,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE</span>',
+      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2527,6 +2522,150 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '39',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_i_don_t_know_the_percent'.
+  $fields['node-grantee_survey-field_i_don_t_know_the_percent'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_i_don_t_know_the_percent',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => 'I don\'t know',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 255,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_i_don_t_know_the_percent',
+      'label' => 'I don\'t know the percent',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '160',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_i_don_t_know_the_percent_t'.
+  $fields['node-grantee_survey-field_i_don_t_know_the_percent_t'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_i_don_t_know_the_percent_t',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => 'I don\'t know',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 256,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_i_don_t_know_the_percent_t',
+      'label' => 'I don\'t know the percent (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '166',
       ),
     ),
   );
@@ -3038,7 +3177,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has had - or will have - a positive impact on education policy in my area?</span>',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3176,7 +3315,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has - or will have - a positive impact on environmental education in my area\'s formal education system?</span>',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3314,7 +3453,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has had - or will have - a positive impact on environmental policy in my area?</span>',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3452,7 +3591,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional development or MWEEs.</span>',
+      'description' => '<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded program.</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3659,7 +3798,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4380,7 +4519,7 @@ function b_wet_general_field_default_fields() {
           'sort_options' => 0,
         ),
         'type' => 'select_or_other_buttons',
-        'weight' => '12',
+        'weight' => '160',
       ),
     ),
   );
@@ -5325,7 +5464,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span></span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -5396,7 +5535,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span></span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -5692,7 +5831,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_noaa_resources_teachers',
-      'label' => 'Were any NOAA resources were used as part of MWEEs for teachers?',
+      'label' => 'Were NOAA resources used as part of MWEEs for teachers?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5905,7 +6044,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -6327,7 +6466,7 @@ School/school district',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '34',
+        'weight' => '162',
       ),
     ),
   );
@@ -6393,7 +6532,7 @@ School/school district',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '35',
+        'weight' => '163',
       ),
     ),
   );
@@ -6459,73 +6598,7 @@ School/school district',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '36',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_per_dont_know'.
-  $fields['node-grantee_survey-field_per_dont_know'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_per_dont_know',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'number',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'number_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => array(
-        0 => array(
-          'value' => '0',
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 43,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_per_dont_know',
-      'label' => 'I don\'t know',
-      'required' => 0,
-      'settings' => array(
-        'max' => '100',
-        'min' => '0',
-        'prefix' => '',
-        'suffix' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'number',
-        'settings' => array(),
-        'type' => 'number',
-        'weight' => '38',
+        'weight' => '164',
       ),
     ),
   );
@@ -6661,7 +6734,7 @@ School/school district',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '37',
+        'weight' => '165',
       ),
     ),
   );
@@ -6727,7 +6800,7 @@ School/school district',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '33',
+        'weight' => '161',
       ),
     ),
   );
@@ -6795,75 +6868,6 @@ School/school district',
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '141',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_program_other'.
-  $fields['node-grantee_survey-field_program_other'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_program_other',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '60',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 255,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_program_other',
-      'label' => 'Did your organization provide other B-WET funded programs?',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '156',
       ),
     ),
   );
@@ -6974,7 +6978,7 @@ School/school district',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -7472,7 +7476,7 @@ School/school district',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_reduced_litter',
-      'label' => 'Reduced litter at the school ',
+      'label' => 'Reduced litter at school ',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -10924,7 +10928,7 @@ Pacific Northwest',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '74',
+        'weight' => '168',
       ),
     ),
   );
@@ -10986,7 +10990,7 @@ Pacific Northwest',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '75',
+        'weight' => '169',
       ),
     ),
   );
@@ -11048,69 +11052,7 @@ Pacific Northwest',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '76',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_grades_dont_know'.
-  $fields['node-grantee_survey-field_teacher_grades_dont_know'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_grades_dont_know',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'number',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'number_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 130,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_grades_dont_know',
-      'label' => 'I don\'t know',
-      'required' => 0,
-      'settings' => array(
-        'max' => '100',
-        'min' => '0',
-        'prefix' => '',
-        'suffix' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'number',
-        'settings' => array(),
-        'type' => 'number',
-        'weight' => '78',
+        'weight' => '170',
       ),
     ),
   );
@@ -12158,7 +12100,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '(usually on consecutive days that cumulatively consist of 40 hours of more)',
+      'description' => '(usually on consecutive days that cumulatively consist of 40 hours or more)',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -13329,7 +13271,7 @@ Pacific Northwest',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '77',
+        'weight' => '171',
       ),
     ),
   );
@@ -13439,7 +13381,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">About how many hours did a typical teacher participate in <span style="text-decoration:underline">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>',
+      'description' => '<span class="longText">About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -13728,7 +13670,7 @@ Pacific Northwest',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '73',
+        'weight' => '167',
       ),
     ),
   );
@@ -16019,7 +15961,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_were_any_noaa_resources_we',
-      'label' => 'Were any NOAA resources were used as part of MWEEs for students?',
+      'label' => 'Were NOAA resources used as part of MWEEs for students?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16122,7 +16064,7 @@ Pacific Northwest',
       'bundle' => 'grantee_survey',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => '<span class="longText">In what <span class="underlineText">5-digit</span> zip code is your organization located?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -16145,10 +16087,10 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_zipcode',
-      'label' => 'In what zip code is your organization located?',
+      'label' => 'In what 5-digit zip code is your organization located?',
       'required' => 0,
       'settings' => array(
-        'max' => '',
+        'max' => '99999',
         'min' => '',
         'prefix' => '',
         'suffix' => '',
@@ -16183,25 +16125,24 @@ Pacific Northwest',
 ');
   t('(i.e., scientific study carried out somewhere other than in a classroom/laboratory, includes data collection)');
   t('(training for individuals who provide teacher professional development)');
-  t('(usually on consecutive days that cumulatively consist of 40 hours of more)');
-  t('<span class="longText">About how many hours did a typical teacher participate in <span style="text-decoration:underline">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>');
+  t('(usually on consecutive days that cumulatively consist of 40 hours or more)');
+  t('<span class="longText">About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>');
   t('<span class="longText">About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?</span>');
   t('<span class="longText">Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)</span>');
   t('<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities</span>');
   t('<span class="longText">Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)</span>');
+  t('<span class="longText">Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span></span>');
+  t('<span class="longText">Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span></span>');
   t('<span class="longText">Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)</span>');
+  t('<span class="longText">In what <span class="underlineText">5-digit</span> zip code is your organization located?</span>');
   t('<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
   t('<span class="longText">Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds (verbal, mental, or physical)</span>');
   t('<span class="longText">Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)</span>');
-  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE</span>');
+  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE</span>');
   t('<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)</span>');
   t('<span class="longText">Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!</span>');
-  t('<span class="longText">To what extent do you (dis)agree with the following statement: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts?</span>');
-  t('<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has - or will have - a positive impact on environmental education in my area\'s formal education system?</span>');
-  t('<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has had - or will have - a positive impact on education policy in my area?</span>');
-  t('<span class="longText">To what extent do you (dis)agree with the following statement: NOAA B-WET has had - or will have - a positive impact on environmental policy in my area?</span>');
-  t('<span class="longText">To what extent do you (dis)agree with the following statement: The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional development or MWEEs.</span>');
+  t('<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded program.</span>');
   t('A college-level course');
   t('About');
   t('About ____ K-12 schools served');
@@ -16256,7 +16197,6 @@ Pacific Northwest',
   t('Did you operate a NOAA B-WET funded program this past grant year?');
   t('Did your organization provide B-WET-funded MWEE professional development or support for teachers?');
   t('Did your organization provide B-WET-funded MWEEs for students/youth who are between the ages of 4-18 (or grades PreK-12)?');
-  t('Did your organization provide other B-WET funded programs?');
   t('Discussed alignment of MWEEs with state, regional, or national standards');
   t('Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities');
   t('Discussed how to use NOAA data to obtain knowledge about local issues');
@@ -16282,7 +16222,8 @@ Pacific Northwest',
   t('Helped make connections to local community organizations and resources');
   t('High');
   t('How can this questionnaire be improved?');
-  t('I don\'t know');
+  t('I don\'t know the percent');
+  t('I don\'t know the percent (teacher)');
   t('Identify actions individuals can engage in to protect/restore water quality in watersheds');
   t('Identify connections between human welfare and water flow and quality');
   t('Identify how watersheds are connected to the ocean via streams, rivers, and human-made structures');
@@ -16293,7 +16234,7 @@ Pacific Northwest',
   t('Implementing your organization\'s most recent B-WET-funded grant ');
   t('Improved academic performance');
   t('Improved water quality (positive changes in physical watershed that can be attributed to participants\' actions) ');
-  t('In what zip code is your organization located?');
+  t('In what 5-digit zip code is your organization located?');
   t('In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)');
   t('Included more than one teacher from individual schools');
   t('Including this past grant year, for how many years has your organization received funding (not including anticipated funding) fr');
@@ -16367,7 +16308,7 @@ Pacific Northwest',
   t('Provided instructional/educational/curriculum materials');
   t('Provided teacher stipends');
   t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds.');
-  t('Reduced litter at the school ');
+  t('Reduced litter at school ');
   t('Regional environmental/natural resources management priorities');
   t('School district education standards');
   t('Schoolyard-based programs during the school day');
@@ -16383,8 +16324,8 @@ Pacific Northwest',
   t('The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional');
   t('This questionnaire was ....');
   t('Told others about ways they can protect their local watershed');
-  t('Were any NOAA resources were used as part of MWEEs for students?');
-  t('Were any NOAA resources were used as part of MWEEs for teachers?');
+  t('Were NOAA resources used as part of MWEEs for students?');
+  t('Were NOAA resources used as part of MWEEs for teachers?');
   t('Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?');
   t('What is the total amount of funding for this project, from all sources, this past grant year?');
   t('What is the total amount of funding you received this past grant year from NOAA for your B-WET project?');

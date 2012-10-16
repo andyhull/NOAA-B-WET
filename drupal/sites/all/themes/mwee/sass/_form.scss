@@ -72,7 +72,7 @@
 	//change these fields to block display
 	.form-item-field-noaa-funding-und, .form-item-field-funding-all-und, .form-item-field-organization-und-select,
 	.form-item-field-hours-taught-und, .form-item-field-hours-taught-outdoors-und, .form-item-field-length-participation-und, 
-	.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-und-select {
+	.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-test-und {
 		@include blockForms;
 	}
 	#edit-field-organization-und-other {
@@ -91,7 +91,7 @@
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
 		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
-		width: 70%;
+		width: 50%;
 		padding: 5px;
 		margin-left: 70px;
 		font-weight: bold;
@@ -122,8 +122,13 @@
 	.noMargin {
 		margin-left: 70px;
 	}
-	//special cases for these one fields
-	.form-item-field-evaluation-und-select, .form-item-field-region-und-select, .form-item-field-organization-und-select {
+	//a very special label formatter
+	label[for=edit-field-led-evaluation-und-select] {
+		@include labels();
+	}
+	//special cases for these fields
+	.form-item-field-evaluation-und-select, .form-item-field-region-und-select, 
+	.form-item-field-organization-und-select {
 		label{
 			@include labels();
 		}
@@ -150,6 +155,9 @@
 			background: #fff;
 			@include box-shadow(#fff 0px 0px);
 		}
+	}
+	.underlineText {
+		text-decoration: underline;
 	}
 }
 
