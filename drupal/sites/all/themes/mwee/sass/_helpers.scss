@@ -1,12 +1,29 @@
 //custom mixins and general helper functions
 
+@mixin blockForms() {
+		display: block;
+		float: none;
+		margin: 1px;
+}
+
 @mixin labels() {
 	color: #08C;
 	padding: 5px;
 	font-size: 18px;
-	@include filter-gradient(#fff, #F2F2F2, vertical);
+	@include filter-gradient(#f9f9f9, #F2F2F2, vertical);
+	@include border-radius(5px);
   /* Fallback: */
   background: #fff;
-	@include background-image(linear-gradient(top, #fff, #F2F2F2));
+	@include background-image(linear-gradient(top, #f9f9f9, #F2F2F2));
 	line-height: 30px;
+	@include box-shadow(1px 1px 5px #D9D9D9);
+}
+
+@mixin highlight() {
+	@include box-shadow(rgba(85, 170, 238,0.5) 0px 0px 10px 0px);
+}
+
+
+.activeHighlight {
+	@include highlight();
 }

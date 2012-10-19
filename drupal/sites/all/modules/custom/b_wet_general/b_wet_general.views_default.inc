@@ -1484,25 +1484,25 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_evaluation']['label'] = 'Which of the following best describes the situation with regard to evaluation(s) of your organization\'s B-WET-funded programs?';
   $handler->display->display_options['fields']['field_evaluation']['element_class'] = 'number groupEvaluation';
   $handler->display->display_options['fields']['field_evaluation']['element_default_classes'] = FALSE;
-  /* Field: Content: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts? */
+  /* Field: Content: As a result of NOAA B-WET, the public is more familiar with NOAA, such as NOAA science, resources, and experts. */
   $handler->display->display_options['fields']['field_public_familiar']['id'] = 'field_public_familiar';
   $handler->display->display_options['fields']['field_public_familiar']['table'] = 'field_data_field_public_familiar';
   $handler->display->display_options['fields']['field_public_familiar']['field'] = 'field_public_familiar';
   $handler->display->display_options['fields']['field_public_familiar']['element_class'] = 'number groupEvaluation';
   $handler->display->display_options['fields']['field_public_familiar']['element_default_classes'] = FALSE;
-  /* Field: Content: NOAA B-WET has - or will have - a positive impact on environmental education in my area's formal education system? */
+  /* Field: Content: NOAA B-WET has - or will have - a positive impact on environmental education in my area's formal education system. */
   $handler->display->display_options['fields']['field_impact_env_edu']['id'] = 'field_impact_env_edu';
   $handler->display->display_options['fields']['field_impact_env_edu']['table'] = 'field_data_field_impact_env_edu';
   $handler->display->display_options['fields']['field_impact_env_edu']['field'] = 'field_impact_env_edu';
   $handler->display->display_options['fields']['field_impact_env_edu']['element_class'] = 'number groupEvaluation';
   $handler->display->display_options['fields']['field_impact_env_edu']['element_default_classes'] = FALSE;
-  /* Field: Content: NOAA B-WET has had - or will have - a positive impact on education policy in my area? */
+  /* Field: Content: NOAA B-WET has had - or will have - a positive impact on education policy in my area. */
   $handler->display->display_options['fields']['field_impact_edu_policy']['id'] = 'field_impact_edu_policy';
   $handler->display->display_options['fields']['field_impact_edu_policy']['table'] = 'field_data_field_impact_edu_policy';
   $handler->display->display_options['fields']['field_impact_edu_policy']['field'] = 'field_impact_edu_policy';
   $handler->display->display_options['fields']['field_impact_edu_policy']['element_class'] = 'number groupEvaluation';
   $handler->display->display_options['fields']['field_impact_edu_policy']['element_default_classes'] = FALSE;
-  /* Field: Content: NOAA B-WET has had - or will have - a positive impact on environmental policy in my area? */
+  /* Field: Content: NOAA B-WET has had - or will have - a positive impact on environmental policy in my area. */
   $handler->display->display_options['fields']['field_impact_env_policy']['id'] = 'field_impact_env_policy';
   $handler->display->display_options['fields']['field_impact_env_policy']['table'] = 'field_data_field_impact_env_policy';
   $handler->display->display_options['fields']['field_impact_env_policy']['field'] = 'field_impact_env_policy';
@@ -1544,7 +1544,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_impact_env_edu_text']['field'] = 'field_impact_env_edu_text';
   $handler->display->display_options['fields']['field_impact_env_edu_text']['element_class'] = 'number groupEvaluation';
   $handler->display->display_options['fields']['field_impact_env_edu_text']['element_default_classes'] = FALSE;
-  /* Field: Content: The B-WET grant has improved - or will improve - the overall quality of environmental education provided by my organization? */
+  /* Field: Content: The B-WET grant has improved - or will improve - the overall quality of environmental education provided by my organization. */
   $handler->display->display_options['fields']['field_improve_env_edu']['id'] = 'field_improve_env_edu';
   $handler->display->display_options['fields']['field_improve_env_edu']['table'] = 'field_data_field_improve_env_edu';
   $handler->display->display_options['fields']['field_improve_env_edu']['field'] = 'field_improve_env_edu';

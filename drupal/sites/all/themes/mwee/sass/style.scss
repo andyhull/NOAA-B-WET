@@ -11,5 +11,12 @@
 @include granteeQuestions();	
 @include scaleColors();
 body {
-	// background-image: url(../images/subtle_dots.png);
+	background-image: url(../images/subtle_dots.png);
+	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, 'Myriad Pro', Myriad, Geneva, Arial, 'Lucida Grande', sans-serif;
+}
+.node-grantee_survey-form {
+	background: #fff;
+	padding: 5px;
+	// @include background-image(radial-gradient(#fff, #F6F6F1 1400px));
+	@include box-shadow(1px 1px 10px #ddd);
 }

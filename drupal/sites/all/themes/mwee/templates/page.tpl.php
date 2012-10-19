@@ -65,11 +65,10 @@
       <?php if ($page['highlighted']): ?>
         <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
-      <?php if ($breadcrumb): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
+        <!-- <h1 class="page-header"><?php //print $title; ?></h1> -->
       <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
@@ -99,20 +98,37 @@
 
 <script>
 (function($) {
+  $('.control-group').hover(
+    function () {
+    if(!$(this).hasClass('form-type-radio')){
+      $(this).addClass('activeHighlight');
+      }
+    }, 
+    function () {
+      $(this).removeClass('activeHighlight');
+    }
+  );
+  if($('#edit-field-operate-program-und-0').length){
+    //helper text for the award number
+    $('.form-item-title').append('<div class="titleHelp">Your NOAA B-WET award number has 14 <span style="text-decoration:underline;">letters and numbers</span> such as NA12NMF4638049. The award number will be used <strong>ONLY</strong> to 1) identify your BWET region, not your organization, and 2) allow us to link information you provide with that of data that may be provided by your project’s teachers');
+    $('#edit-field-operate-program-und-0').change(function() {
+      if('#edit-field-operate-program-und-0:checked'){
+        $('#edit-title').attr('value', 0)
+      }
+    })
+  }
   $('#edit-delete').hide();
   $('#edit-save').hide();
   $('#edit-preview').hide();
   for(i=1;i<9;i++){
     if($('#multistep-group_page'+i).length){
       var barWidth = 12.5 * i;
-      $('#multistep-group_page'+i).prepend('<div class="progressContainer"><div class="progress"><div class="bar bar-success" style="width:'+barWidth+'%;"></div></div><div class="progressText"><p>page '+i+' of 8</p></div></div>')
+      $('#multistep-group_page'+i).prepend('<div class="progressContainer"><div class="progressText"><h3>Page '+i+' of 8</h3></div><div class="progress"><div class="bar bar-success" style="width:'+barWidth+'%;"></div></div></div>')
     }
   }
   //helper text for the start of the survey
   var startText = '<div class="well"><h3>NOAA B-WET Introduction</h3><p>Please answer the following questions in reference to the most recently-completed grant year of your current NOAA B-WET grant.  You will be asked about a range of practices and outcomes that represent the diversity of <em>Meaningful Watershed Educational Experiences </em>MWEEs) offered by B-WET-funded programs, some of which may not apply directly to your project.  It is acceptable to answer “not applicable” (N/A) in those instances. </p><p>For the purposes of this questionnaire, we assume that <em>Meaningful Watershed Educational Experiences </em>(MWEEs) are investigative, project-oriented, sustained activities that include one or more outdoor experiences, consider the watershed as a system, and are an integral part of a school instructional program. MWEEs for students are projects that provide K-12 students opportunities for these activities. MWEEs for teachers provide K-12 teachers opportunities for professional development to build their confidence and capacity to implement MWEE activities with their students. MWEEs are enhanced by NOAA products, services, or personnel; support regional environmental and natural resource management priorities; and are designed to increase students\' and teachers\' understanding and stewardship of watersheds and related ocean, coastal and Great Lakes ecosystems. </p><p>We realize that not all MWEEs are designed in the same way and that your organization does not necessarily only offer one type. Because we are attempting to generalize, we often ask you to consider a “typical” MWEE offered by your organization. Please consider your most frequently offered MWEE as “typical.”  For the purposes of this survey, please respond in reference to NOAA B-WET-funded MWEEs and professional development.  </p><p>All responses will be kept anonymous, that is they will not be associated with you and your organization. THANK YOU in advance for your candor and thoughtfulness in answering the questions that follow. </p><p><em>Note: The term “organization” is used generically to mean the B-WET funds “awardee.” The awardee may be a nonprofit organization or an academic institution completing the work, or the awardee may be an institution that is serving as the leader of a partnership of organizations that are completing the work. If you are the latter type of awardee, please respond on behalf of your collective group of partners.   </em></p><p><em>Note: We apologize for redundancy in information you have previously provided to NOAA B-WET as part of your award. At this time, we are not able to link this national evaluation system database with NOAA B-WET’s other databases. </em></p><p>It will take between 30-60 minutes to complete this survey, depending on the nature of your project. <br/>Thank you. <br/>Bronwen Rice <br/>NOAA B-WET National Coordinator</p></div>'
   $('#multistep-group_page1').prepend(startText);
-  //helper text for the award number
-  $('.form-item-title').append('<div class="titleHelp">Your NOAA B-WET award number has 14 <span style="text-decoration:underline;">letters and numbers</span> such as NA12NMF4638049. The award number will be used <strong>ONLY</strong> to 1) identify your BWET region, not your organization, and 2) allow us to link information you provide with that of data that may be provided by your project’s teachers');
   //helper text for the end of the survey
   $('#multistep-group_page8').append('<div class="footerHelp well"><p><h3 style="text-align:center;">Thank you for completing this questionnaire!</h3></p><p><strong>OMB Control Number: 0648-xxxx   Expires: xx/xx/20xx </strong></p><h3>Paperwork Reduction Act Statement</h3>Public reporting burden for this collection of information is estimated to average 30-60 minutes per response, including the time for reviewing instructions, searching existing data sources, gathering and maintaining the data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other suggestions for reducing this burden to Bronwen Rice, NOAA Office of Education, Herbert C. Hoover Building, Room 6863, 14th and Constitution Avenue, NW Washington, DC 20230.</p><p>Responses are voluntary and collected and maintained as anonymous data.  Information will be treated in accordance with the Freedom of Information Act (5 USC 552). </p><p>Notwithstanding any other provision of the law, no person is required to respond to, nor shall any person be subject to a penalty for failure to comply with a collection of information subject to the requirements of the Paperwork Reduction Act, unless that collection of information displays a currently valid OMB Control Number.</p></div>');
 

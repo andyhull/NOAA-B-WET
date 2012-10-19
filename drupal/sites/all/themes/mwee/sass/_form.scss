@@ -6,11 +6,17 @@
 	.progressContainer {
 		width: 50%;
 		.progressText {
-			text-align: center;
+			text-align: left;
+			h3 {
+				font-size: 30px;
+				letter-spacing: -1px;
+				color: #555;
+			}
 		}
 	}
 	.progress {
-		// height: 30px;
+		height: 30px;
+		@include background-image(linear-gradient(top, #f9f9f9, #F2F2F2));
 	}
 	.progress .bar {
 		border: none;
@@ -23,6 +29,10 @@
 		label {
 			@include labels();
 		}
+		.controls {
+			display: inline-block;
+			width: 100%;
+		}
 	}
 	.form-wrapper {
 		clear: both;
@@ -32,9 +42,6 @@
 		padding: 5px 20px;
 		margin: 5px 10px;
 		float: left;
-		label {
-
-		}
 	}
 	//individual choices (radios and checkboxes)
 	.controls {
@@ -44,6 +51,7 @@
 			font-weight: normal;
 			font-size: 12px;
 			border: none;
+			@include box-shadow(0px 0px 0px #fff);
 		}
 	}
 	//special formatting for certain form items. these are the fields with a custom 'other' field
@@ -66,17 +74,16 @@
 				border: none;
 				padding-left: 20px;
 				margin: 1px;
+				@include box-shadow(0px 0px 0px #fff);
 			}
 		}
 	}
 	//change these fields to block display
 	.form-item-field-noaa-funding-und, .form-item-field-funding-all-und, .form-item-field-organization-und-select,
 	.form-item-field-hours-taught-und, .form-item-field-hours-taught-outdoors-und, .form-item-field-length-participation-und, 
-	.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-test-und {
+	.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-test-und,
+	.form-item-field-led-evaluation-und-select {
 		@include blockForms;
-	}
-	#edit-field-organization-und-other {
-		// display: none;
 	}
 	//hide the drupal fields at the bottom of the form
 	.vertical-tabs {
@@ -91,9 +98,9 @@
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
 		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
-		width: 50%;
+		width: 42%;
 		padding: 5px;
-		margin-left: 70px;
+		margin-left: 100px;
 		font-weight: bold;
 		color: #fff;
 	}
@@ -107,9 +114,9 @@
 	  background: #fff;
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
-		width: 40%;
+		width: 30%;
 		padding: 5px;
-		margin-left: 190px;
+		margin-left: 240px;
 		font-weight: bold;
 		color: #fff;
 		@include text-shadow(-1px 1px 5px lighten($five, 50));
@@ -133,6 +140,9 @@
 			@include labels();
 		}
 	}
+	.form-item-field-operate-program-und, .form-item-title {
+		float: left;
+	}
 	fieldset {
 		.fieldset-legend {
 			@include labels();
@@ -150,19 +160,17 @@
 			font-size: 14px;
 			border:none;
 			background: #fff;
+			@include box-shadow(0px 0px 0px #fff);
 		}
 		.controls label.control-label {
 			background: #fff;
-			@include box-shadow(#fff 0px 0px);
+			@include box-shadow(0px 0px 0px #fff);
 		}
 	}
 	.underlineText {
 		text-decoration: underline;
 	}
-}
-
-@mixin blockForms() {
-		display: block;
-		float: none;
-		margin: 1px;
+	.form-type-checkbox {
+		padding-left:30px;
+	}
 }
