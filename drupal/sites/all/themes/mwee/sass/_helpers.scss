@@ -7,16 +7,19 @@
 }
 
 @mixin labels() {
-	color: #08C;
+	// color: #08C;
+	color: #000;
 	padding: 5px;
-	font-size: 18px;
-	@include filter-gradient(#f9f9f9, #F2F2F2, vertical);
-	@include border-radius(5px);
-  /* Fallback: */
-  background: #fff;
-	@include background-image(linear-gradient(top, #f9f9f9, #F2F2F2));
+	font-size: 22px;
+	font-weight: bold;
+ //  /* Fallback: */
+ //  background: #6E7E87;
+	// @include filter-gradient(#f9f9f9, #F2F2F2, vertical);
+	// @include border-radius(5px);
+	// @include background-image(linear-gradient(top, #f9f9f9, #F2F2F2));
 	line-height: 30px;
-	@include box-shadow(1px 1px 5px #D9D9D9);
+	// @include box-shadow(1px 1px 5px #D9D9D9);
+	@include text-shadow(-1px 1px 1px #6E7E87);
 }
 
 @mixin highlight() {

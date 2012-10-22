@@ -101,7 +101,7 @@
   $('.control-group').hover(
     function () {
     if(!$(this).hasClass('form-type-radio')){
-      $(this).addClass('activeHighlight');
+      // $(this).addClass('activeHighlight');
       }
     }, 
     function () {
