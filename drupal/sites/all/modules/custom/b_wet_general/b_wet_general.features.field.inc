@@ -10,77 +10,6 @@
 function b_wet_general_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-grantee_survey-field_access_research'.
-  $fields['node-grantee_survey-field_access_research'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_access_research',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          1 => '1',
-          2 => '2',
-          3 => '3',
-          4 => '4',
-          5 => '5',
-          6 => '6',
-          7 => '7',
-        ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 23,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_access_research',
-      'label' => 'Access to synthesized research on watershed education',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '21',
-      ),
-    ),
-  );
-
   // Exported field: 'node-grantee_survey-field_after_school_programs'.
   $fields['node-grantee_survey-field_after_school_programs'] = array(
     'field_config' => array(
@@ -2034,7 +1963,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '12',
+        'weight' => '16',
       ),
     ),
   );
@@ -2293,7 +2222,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_grade_explain',
-      'label' => 'Briefly describe why you selected this grade',
+      'label' => 'Briefly describe why you selected this grade.',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -2449,7 +2378,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '13',
       ),
     ),
   );
@@ -2521,7 +2450,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '15',
+        'weight' => '14',
       ),
     ),
   );
@@ -2545,7 +2474,7 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => '',
-          1 => 'I don\'t know',
+          1 => 'Don\'t know',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -2617,7 +2546,7 @@ function b_wet_general_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => '',
-          1 => 'I don\'t know',
+          1 => 'Don\'t know',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -3068,6 +2997,75 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '68',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_if_selected_please_provide'.
+  $fields['node-grantee_survey-field_if_selected_please_provide'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_if_selected_please_provide',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 258,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_if_selected_please_provide',
+      'label' => 'If selected EXTERNAL CONSULTANT, please provide consultant/firm name:',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '162',
       ),
     ),
   );
@@ -4519,7 +4517,7 @@ function b_wet_general_field_default_fields() {
           'sort_options' => 0,
         ),
         'type' => 'select_or_other_buttons',
-        'weight' => '160',
+        'weight' => '161',
       ),
     ),
   );
@@ -4593,7 +4591,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '16',
+        'weight' => '15',
       ),
     ),
   );
@@ -5248,11 +5246,7 @@ function b_wet_general_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'grantee_survey',
-      'default_value' => array(
-        0 => array(
-          'value' => '0',
-        ),
-      ),
+      'default_value' => NULL,
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
@@ -5318,11 +5312,7 @@ function b_wet_general_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'grantee_survey',
-      'default_value' => array(
-        0 => array(
-          'value' => '0',
-        ),
-      ),
+      'default_value' => NULL,
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
@@ -7096,13 +7086,13 @@ School/school district',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          1 => 'Easy to complete',
+          1 => '1 Easy to complete',
           2 => '2',
           3 => '3',
           4 => '4',
           5 => '5',
           6 => '6',
-          7 => 'Difficult to complete',
+          7 => '7 Difficult to complete',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -7234,13 +7224,13 @@ School/school district',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          1 => 'Informative',
+          1 => '1 Informative',
           2 => '2',
           3 => '3',
           4 => '4',
           5 => '5',
           6 => '6',
-          7 => 'Not informative',
+          7 => '7 Not informative',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -7305,13 +7295,13 @@ School/school district',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          1 => 'Short',
+          1 => '1 Short',
           2 => '2',
           3 => '3',
           4 => '4',
           5 => '5',
           6 => '6',
-          7 => 'Long',
+          7 => '7 Long',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -12847,7 +12837,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '(events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic)',
+      'description' => '<span class="longText">Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -13926,7 +13916,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_recognize_processe',
-      'label' => 'Recognize that both natural processes and human activities affect water flow and water quality in watersheds.',
+      'label' => 'Recognize that both natural processes and human activities affect water flow and water quality in watersheds',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16012,7 +16002,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ',
+      'description' => '<span class="longText">Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -16114,7 +16104,6 @@ Pacific Northwest',
   t('(e.g., curriculum planning, shared teaching, demonstrations and/or other forms of in-school or in-field support)');
   t('(e.g., for school, other organizations)');
   t('(e.g., planting trees)');
-  t('(events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic)');
   t('(i.e., an instructional strategy based on the idea that learning may be facilitated by giving students the opportunity to explore an idea or question on their own. To arrive at an answer or to better understand the concept, students often collect and analyze data)');
   t('(i.e., an instructional strategy that gives students the opportunity to explore an idea or question. To arrive at an answer or to better understand the concept, students often collect and analyze data)');
   t('(i.e., an instructional strategy that integrates meaningful community service with instruction and reflection to enrich the learning experience, teach civic responsibility, and strengthen communities)');
@@ -16135,8 +16124,9 @@ Pacific Northwest',
   t('<span class="longText">Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span></span>');
   t('<span class="longText">Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)</span>');
   t('<span class="longText">In what <span class="underlineText">5-digit</span> zip code is your organization located?</span>');
-  t('<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
+  t('<span class="longText">Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
   t('<span class="longText">Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds (verbal, mental, or physical)</span>');
+  t('<span class="longText">Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)</span>');
   t('<span class="longText">Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE.</span>');
@@ -16152,7 +16142,6 @@ Pacific Northwest',
   t('About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional ');
   t('About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher');
   t('Access to local NOAA subject-matter experts');
-  t('Access to synthesized research on watershed education');
   t('After-school or weekend programs (e.g., science clubs)');
   t('Allowed teachers time to plan how they will implement MWEEs');
   t('Allowed teachers time to plan how they will integrate the use of NOAA data');
@@ -16181,7 +16170,7 @@ Pacific Northwest',
   t('Be more likely to use local community resources as part of instruction');
   t('Be more likely to use science inquiry instruction');
   t('Be more likely to use the outdoors for instruction');
-  t('Briefly describe why you selected this grade');
+  t('Briefly describe why you selected this grade.');
   t('Changes in attitudes toward watersheds (participants’ changed their beliefs, opinions, feelings, or perspectives)');
   t('Classroom-based programs during the school day, including distance learning experiences');
   t('Co-teaching in teachers\' classrooms or in field');
@@ -16231,6 +16220,7 @@ Pacific Northwest',
   t('Identify possible point and non-point sources of water pollution');
   t('Identify the functions that occur in a watershed (transport, store, and cycle water)');
   t('Identify their local watershed(s)');
+  t('If selected EXTERNAL CONSULTANT, please provide consultant/firm name:');
   t('Impact');
   t('Implementing your organization\'s most recent B-WET-funded grant ');
   t('Improved academic performance');
@@ -16308,6 +16298,7 @@ Pacific Northwest',
   t('Provided information on how to obtain grants or funding for MWEEs');
   t('Provided instructional/educational/curriculum materials');
   t('Provided teacher stipends');
+  t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds');
   t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds.');
   t('Reduced litter at school ');
   t('Regional environmental/natural resources management priorities');

@@ -102,7 +102,6 @@ function b_wet_general_field_group_info() {
       13 => 'field_learn_national_policy',
       14 => 'field_opportunities_change',
       15 => 'field_opportunities_ocean',
-      16 => 'field_access_research',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -156,7 +155,7 @@ function b_wet_general_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_page4';
   $field_group->data = array(
-    'label' => 'To what extent were your organization\'s MWEEs aligned with',
+    'label' => 'To what extent were your organization\'s MWEEs aligned with:',
     'weight' => '11',
     'children' => array(
       0 => 'field_standards_school_district',
@@ -166,12 +165,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'To what extent were your organization\'s MWEEs aligned with:',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_mwee_aligined_with|node|grantee_survey|form'] = $field_group;
@@ -199,7 +199,9 @@ function b_wet_general_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'longText',
-        'description' => 'How many students, schools, and school districts were served directly by your organization this past grant year as a result of your B-WET grant? (Please provide one number, NOT a range.)',
+        'description' => '<p>Please answer the following questions with regard to the instruction your organization provides directly to 
+students (not the instruction provided by teachers).</p>
+<p>How many students, schools, and school districts were served directly by your organization this past grant year as a result of your B-WET grant? (Please provide one number, NOT a range.)</p>',
       ),
       'formatter' => 'collapsible',
     ),
@@ -217,8 +219,11 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
-    'weight' => '161',
-    'children' => array(),
+    'weight' => '160',
+    'children' => array(
+      0 => 'field_led_evaluation',
+      1 => 'field_if_selected_please_provide',
+    ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
@@ -229,7 +234,7 @@ function b_wet_general_field_group_info() {
 outcome or impact evaluation your organization completed. If your organization completed more than one 
 outcome or impact evaluation, please answer the following questions based on the evaluation with the most 
 rigorous research (e.g., valid/reliable instruments, appropriate sampling, use of control/comparison groups, 
-content analysis of qualitative data, etc.) methods:',
+content analysis of qualitative data, etc.) methods.',
       ),
       'formatter' => 'collapsible',
     ),
@@ -387,11 +392,10 @@ content analysis of qualitative data, etc.) methods:',
     'label' => '',
     'weight' => '5',
     'children' => array(
-      0 => 'field_led_evaluation',
-      1 => 'field_evaluation_test',
-      2 => 'group_evaluation',
-      3 => 'group_outcome_impact',
-      4 => 'group_report_evidence',
+      0 => 'field_evaluation_test',
+      1 => 'group_evaluation',
+      2 => 'group_outcome_impact',
+      3 => 'group_report_evidence',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -528,7 +532,7 @@ content analysis of qualitative data, etc.) methods:',
   $field_group->parent_name = 'group_page4';
   $field_group->data = array(
     'label' => 'Which of the following did your B-WET-funded programs provide for students during this past grant year?',
-    'weight' => '13',
+    'weight' => '12',
     'children' => array(
       0 => 'field_off_site_programs',
       1 => 'field_schoolyard_programs',
@@ -560,7 +564,7 @@ content analysis of qualitative data, etc.) methods:',
   $field_group->parent_name = 'group_page6';
   $field_group->data = array(
     'label' => 'Does the evaluation report include evidence of:',
-    'weight' => '162',
+    'weight' => '161',
     'children' => array(
       0 => 'field_eval_increase_knowledge',
       1 => 'field_eval_change_attitude',

@@ -210,7 +210,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_subject_matter_experts']['field'] = 'field_subject_matter_experts';
   $handler->display->display_options['fields']['field_subject_matter_experts']['element_class'] = 'number groupOverview';
   $handler->display->display_options['fields']['field_subject_matter_experts']['element_default_classes'] = FALSE;
-  /* Field: Content: Access to synthesized research on watershed education */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_access_research']['id'] = 'field_access_research';
   $handler->display->display_options['fields']['field_access_research']['table'] = 'field_data_field_access_research';
   $handler->display->display_options['fields']['field_access_research']['field'] = 'field_access_research';
@@ -229,7 +229,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['label'] = 'Assistance with grant budgeting';
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['element_class'] = 'number groupOverview';
   $handler->display->display_options['fields']['field_grant_budgeting_assistance']['element_default_classes'] = FALSE;
-  /* Field: Content: Briefly describe why you selected this grade */
+  /* Field: Content: Briefly describe why you selected this grade. */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -1146,7 +1146,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_recognize_processes']['field'] = 'field_recognize_processes';
   $handler->display->display_options['fields']['field_recognize_processes']['element_class'] = 'number groupStudent';
   $handler->display->display_options['fields']['field_recognize_processes']['element_default_classes'] = FALSE;
-  /* Field: Content: Recognize that both natural processes and human activities affect water flow and water quality in watersheds. */
+  /* Field: Content: Recognize that both natural processes and human activities affect water flow and water quality in watersheds */
   $handler->display->display_options['fields']['field_teacher_recognize_processe']['id'] = 'field_teacher_recognize_processe';
   $handler->display->display_options['fields']['field_teacher_recognize_processe']['table'] = 'field_data_field_teacher_recognize_processe';
   $handler->display->display_options['fields']['field_teacher_recognize_processe']['field'] = 'field_teacher_recognize_processe';

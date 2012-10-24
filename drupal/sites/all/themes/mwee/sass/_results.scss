@@ -2,6 +2,19 @@
 @import "helpers";
 
 @mixin granteeQuestions() {
+  #mainResults {
+    background: #E9EBED;
+  }
+  .result {
+    clear: both;
+    box-shadow: 1px 1px 10px #333;
+    margin: 40px 0px;
+    padding: 10px;
+    background: #6E7E87;
+    @include filter-gradient(#6E7E87, #5C6970, vertical);
+    @include background-image(linear-gradient(top, #6E7E87, #5C6970));
+    @include border-radius(5px);
+  }
 	.questionTitle {
 		font-weight: bold;
     @include labels();
@@ -11,12 +24,12 @@
 		width: 400px;
 		height: 20px;
     margin: 10px;
-    @include box-shadow(1px 1px 10px #eee);
+    // @include box-shadow(1px 1px 10px #333);
 		span {
 			height: 20px;
 			float: left;
 			&:hover{
-				@include box-shadow(1px 1px 20px #666);
+				@include box-shadow(1px 1px 20px #333);
 			}
 		}
 	}
@@ -31,10 +44,11 @@
     width: 200px;
     float: left;
     position: relative;
-		top: -50px;
+		top: -75px;
 		// left: 40px;
 		text-align: center;
 		padding: 5px;
+    min-height: 40px;
 		@include border-radius(5px);
     @include box-shadow(1px 1px 10px #333);
     a {
@@ -63,7 +77,7 @@
         width: 0;
         height: 0;
         left: 27px;
-        top: 24px;
+        top: 45px;
         border: 13px solid;
         border-color: #000 transparent transparent transparent;
   }
@@ -73,7 +87,7 @@
   //for the See Details button
   .details {
     position: relative;
-    left: 350px;
+    left: 400px;
     top: -33px;
   }
   .resultDetail {
@@ -83,9 +97,29 @@
 }
 
 @mixin scaleColors() {
-	.color1 { background-color: $one;}
-	.color2 { background-color: $two;}
-	.color3 { background-color: $three;}
-	.color4 { background-color: $four;}
-	.color5 { background-color: $five;}
+	.color1 { 
+    background: $one;
+    @include filter-gradient($one, darken($one, 15), vertical);
+    @include background-image(linear-gradient(top, $one, darken($one, 15)));
+  }
+	.color2 { 
+    background: $two;
+    @include filter-gradient($two, darken($two, 15), vertical);
+    @include background-image(linear-gradient(top, $two, darken($two, 15)));
+  }
+	.color3 { 
+    background: $three;
+    @include filter-gradient($three, darken($three, 15), vertical);
+    @include background-image(linear-gradient(top, $three, darken($three, 15)));
+  }
+	.color4 { 
+    background: $four;
+    @include filter-gradient($four, darken($four, 15), vertical);
+    @include background-image(linear-gradient(top, $four, darken($four, 15)));
+  }
+	.color5 { 
+    background: $five;
+    @include filter-gradient($five, darken($five, 15), vertical);
+    @include background-image(linear-gradient(top, $five, darken($five, 15)));
+  }
 }

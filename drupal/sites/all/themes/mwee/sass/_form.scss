@@ -45,16 +45,16 @@
 		box-shadow: 1px 1px 10px #333;
 		margin: 40px 0px;
 		padding: 10px;
-		background: #6E7E87;
-		@include filter-gradient(#6E7E87, #5C6970, vertical);
-		@include background-image(linear-gradient(top, #6E7E87, #5C6970));
+		background: #84929A;
+		@include filter-gradient(#84929A, #788891, vertical);
+		@include background-image(linear-gradient(top, #84929A, #788891));
 		@include border-radius(5px);
 	}
 	.form-type-radio {
 		display: inline;
 		margin: 5px 10px;
 		.controls {
-			width: 10%;
+			// width: 10%;
 			display: inline;
 			label {
 				display: inline;
@@ -132,7 +132,7 @@
 	  background: #fff;
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
-		width: 37%;
+		width: 400px;
 		padding: 5px;
 		margin-left: 300px;
 		font-weight: bold;
@@ -147,27 +147,20 @@
 		}
 	}
 	.noMargin {
-		margin-left: 35px;
+		margin-left: 95px;
 	}
 	//a very special label formatter
-	label[for=edit-field-led-evaluation-und-select] {
-		@include labels();
-	}
-	//special cases for these fields
-	.form-item-field-evaluation-und-select, .form-item-field-region-und-select, 
-	.form-item-field-organization-und-select {
-		label{
-			@include labels();
-		}
+	.controls label.control-label{
+		
 	}
 	.form-item-title {
 		clear: both;
 		box-shadow: 1px 1px 10px #333;
 		margin: 40px 0px;
 		padding: 10px;
-		background: #6E7E87;
-		@include filter-gradient(#6E7E87, #5C6970, vertical);
-		@include background-image(linear-gradient(top, #6E7E87, #5C6970));
+		background: #84929A;
+		@include filter-gradient(#84929A, #788891, vertical);
+		@include background-image(linear-gradient(top, #84929A, #788891));
 		@include border-radius(5px);
 	}
 
@@ -183,12 +176,24 @@
 				text-decoration: none;
 			}
 		}
-		.controls label.control-label {
-			background: transparent;
-			@include box-shadow(0px 0px 0px #fff);
-			color: white;
-			font-size: 14px;
-			font-weight: normal;
+		.controls {
+			label.control-label {
+				background: transparent;
+				@include box-shadow(0px 0px 0px #fff);
+				color: white;
+				font-size: 14px;
+				font-weight: normal;
+			}
+			label[for=edit-field-led-evaluation-und-select] {
+				@include labels();
+			}
+		}
+	}
+	//special cases for these fields
+	.form-item-field-evaluation-und-select, .form-item-field-region-und-select, 
+	.form-item-field-organization-und-select, .form-item-field-led-evaluation-und-select {
+		label{
+			@include labels();
 		}
 	}
 	.underlineText {
@@ -196,5 +201,8 @@
 	}
 	.form-type-checkbox {
 		padding-left:30px;
+	}
+	.titleHelp {
+		padding: 10px;
 	}
 }

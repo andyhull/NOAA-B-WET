@@ -95,7 +95,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
       $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See details</div></div>')  
       }
       var percent1 = parseFloat((unanswered/(sum + unanswered))* 100) 
-      $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+unanswered+'" style="width:'+percent1+'%;">&nbsp;;<div class="more">Unanswered: '+unanswered+' ('+Math.round(percent1)+'% of total)</div></span>') 
+      $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+unanswered+'" style="width:'+percent1+'%;">&nbsp;<div class="more">Unanswered: '+unanswered+' ('+Math.round(percent1)+'% of total)</div></span>') 
       var percent = parseFloat((sum/(sum + unanswered))* 100)
 
       $('.bar', '#'+result).append('<span class="color5 '+result+'bar'+sum+'" style="width:'+percent+'%;">&nbsp;<div class="more">Answered: '+sum+' ('+Math.round(percent)+'% of total)</div></span>')
@@ -124,7 +124,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
           case 'number':
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
-              $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart label">1 - Not at all</span><span class="likertEnd label">To a great extent - 5</span><span id="'+result+'More" class="btn details">See details</span></div>')  
+              $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"></span><span id="'+result+'More" class="btn details">See details</span></div>')  
             }
             createNumber(resultData[result][data], result, data, sum)
             break;
@@ -161,13 +161,17 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+resultData+'</span></div>')  
     } else {
       var percent = parseFloat((resultData/sum )* 100)
-      $('#'+result).append('<div class="'+result+'More resultDetail"><span class="label">'+cleanData+'</span>&nbsp;'+resultData+' Respondent ('+Math.round(percent)+'%)</div>')
+      var respondent = 'Respondents'
+      if(resultData == 1){
+        respondent = 'Respondent'
+      }
+      $('#'+result).append('<div class="'+result+'More resultDetail"><span class="label">'+cleanData+'</span>&nbsp;'+resultData+'&nbsp;'+respondent+' ('+Math.round(percent)+'%)</div>')
       if(parseFloat(cleanData *1) > 0){
-        $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+        $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' <br/>Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
       } else {
         var labelHolder = cleanData
         cleanData =cleanData.replace(/[\$\,\-\%\ ]/g, '')
-        $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+labelHolder+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+        $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+labelHolder+' <br/>Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
       }
     }
     $('.more').hide()

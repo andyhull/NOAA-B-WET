@@ -31,7 +31,7 @@ function b_wet_general_node_info() {
       'base' => 'node_content',
       'description' => t('The main survey used by grantees'),
       'has_title' => '1',
-      'title_label' => t('Award Number'),
+      'title_label' => t('NOAA B-WET award number'),
       'help' => '',
     ),
   );
