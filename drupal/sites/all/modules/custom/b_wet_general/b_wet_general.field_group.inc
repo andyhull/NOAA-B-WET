@@ -105,12 +105,13 @@ function b_wet_general_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'In the future, how likely is it that you will make use of each of the following to help you implement your B-WET-funded programs',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'In the future, how likely is it that you will make use of each of the following to help you implement your B-WET-funded programs?',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_future_involvement|node|grantee_survey|form'] = $field_group;
@@ -199,8 +200,8 @@ function b_wet_general_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'longText',
-        'description' => '<p>Please answer the following questions with regard to the instruction your organization provides directly to 
-students (not the instruction provided by teachers).</p>
+        'description' => '<p>Please answer the following questions with regard to the instruction your organization provides <span class="underlineText">directly</span> to 
+students (not the instruction provided by teachers).</p><p>&nbsp;</p>
 <p>How many students, schools, and school districts were served directly by your organization this past grant year as a result of your B-WET grant? (Please provide one number, NOT a range.)</p>',
       ),
       'formatter' => 'collapsible',

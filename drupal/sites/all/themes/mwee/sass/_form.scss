@@ -8,7 +8,7 @@
 		.progressText {
 			text-align: left;
 			h3 {
-				font-size: 30px;
+				font-size: 28px;
 				letter-spacing: -1px;
 				color: #555;
 			}
@@ -22,8 +22,7 @@
 		border: none;
 		margin: 0px;
 	}
-	.bar {
-	}
+
 	.node-form {
 		//main questions
 		label {
@@ -113,9 +112,9 @@
 		@include background-image(linear-gradient(left, $one, $five));
 		@include border-radius(5px);
 		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
-		width: 55%;
+		width: 585px;
 		padding: 5px;
-		margin-left: 35px;
+		margin-left: 95px;
 		font-weight: bold;
 		color: #fff;
 		.likertStart {
@@ -148,10 +147,6 @@
 	}
 	.noMargin {
 		margin-left: 95px;
-	}
-	//a very special label formatter
-	.controls label.control-label{
-		
 	}
 	.form-item-title {
 		clear: both;

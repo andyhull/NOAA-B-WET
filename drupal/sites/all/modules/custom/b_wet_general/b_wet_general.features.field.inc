@@ -3589,7 +3589,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET MWEEs</span>',
+      'description' => '<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -6095,7 +6095,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_opportunities_change',
-      'label' => 'Opportunities to learn about climate iteracy principles',
+      'label' => 'Opportunities to learn about climate literacy principles',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16132,7 +16132,7 @@ Pacific Northwest',
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE.</span>');
   t('<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)</span>');
   t('<span class="longText">Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!</span>');
-  t('<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET MWEEs</span>');
+  t('<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.</span>');
   t('<span class="longText">Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?(e.g., science, math, social studies, literature, art, music)</span>');
   t('A college-level course');
   t('About');
@@ -16266,7 +16266,7 @@ Pacific Northwest',
   t('On-line professional development support');
   t('One day workshops (usually less than 8 hours)');
   t('One-on-one time with B-WET program staff (i.e., regional or national coordinators)');
-  t('Opportunities to learn about climate iteracy principles');
+  t('Opportunities to learn about climate literacy principles');
   t('Opportunities to learn about local or regional environmental issues');
   t('Opportunities to learn about local or regional policy efforts impacting environmental education');
   t('Opportunities to learn about national policy efforts impacting environmental education');

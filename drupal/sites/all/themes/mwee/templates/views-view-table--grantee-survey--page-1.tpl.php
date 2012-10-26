@@ -24,27 +24,56 @@ foreach ($rows as $key =>$field){
   //get the question field names
   foreach($field as $question => $questionKey) {
     if($question !=='title') {
-      // create the question object
-      if(!property_exists($allResults, $question)){
-          $allResults->$question = new stdClass();
-          $resultArray = $allResults->$question;
-          //add a type so we can distinguish different questions
-          $allResults->$question->type = $field_classes[$question][$key];
-        } else {
-          $resultArray = $allResults->$question;
+      $fieldTest = field_info_field($question);
+      // print_r($fieldTest['settings']['allowed_values']);
+      if (isset($fieldTest['settings']['allowed_values'])) {
+        foreach($fieldTest['settings']['allowed_values'] as $labelKey => $labelValue) {
+          // print "label key = ".$labelKey."<br/>";
+
+          // create the question object
+          if(!property_exists($allResults, $question)){
+              $allResults->$question = new stdClass();
+              $resultArray = $allResults->$question;
+              //add a type so we can distinguish different questions
+              $allResults->$question->type = $field_classes[$question][$key];
+            } 
+
+          $newKey = (string) $question.$labelKey;
+          //add in the values to the question object
+          if(!property_exists($resultArray, $newKey)){
+            $resultArray->$newKey->count = 0;
+            $resultArray->$newKey->label = $labelValue;
+          }
         }
-      $newKey = (string) $question.$questionKey;
-      // print $questionKey;
-      //add in the values to the question object
-      if(!property_exists($resultArray, $newKey)){
-        $resultArray->$newKey = 1;
       } else {
-        $resultArray->$newKey += 1;
+        // create the question object
+        // print "question key = ".$questionKey."<br/>";
+        if(!property_exists($allResults, $question)){
+            $allResults->$question = new stdClass();
+            $resultArray = $allResults->$question;
+            //add a type so we can distinguish different questions
+            $allResults->$question->type = $field_classes[$question][$key];
+          } else {
+            $resultArray = $allResults->$question;
+          }
+        $newKey = (string) $question.$questionKey;
+        //add in the values to the question object
+        if(!property_exists($resultArray, $newKey)){
+          $resultArray->$newKey->count = 0;
+          $resultArray->$newKey->label = $questionKey;
+        }
       }
-      // usort($resultArray>$newKey, "cmp");
+      $valueKey = (string) $question.$questionKey;
+      if(isset($questionKey)){
+        print "value key = ".$valueKey."<br/>";
+        
+      }
+      $resultArray->$valueKey->count += 1;
     }
   }
 }
+
+
 function cmp($a, $b)
 {
     return strcmp($a, $b);
@@ -60,25 +89,23 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
 // We define a function that takes one parameter named $.
 (function ($) { 
   for(result in resultData) {
+    //result = field_develop_proposal(Object)
     var sum = 0;
     var unanswered = 0;
     var cleanLabel;
-    var question = dataLabels[result]
+    var question = dataLabels[result];
+    //get the formatting from our css classes (aka Object->type)
     var format = Array();
+    format = resultData[result]['type'].split(" ");
     //get the total of answered and unanswered questions
     $.each(resultData[result],function(i){
-      //remove the field name from the value label
-      var re1 = new RegExp(result,"g");
-      cleanLabel = i.replace(re1, '')
-      if(cleanLabel !=='type'){
-        var answer = parseFloat(this)
-        if(cleanLabel == ''){
-          unanswered = parseFloat(this)
+      if(i !== 'type'){
+        if(!resultData[result][i]['label']){
+          unanswered = parseFloat(resultData[result][i]['count']);
         } else {
+          var answer = parseFloat(resultData[result][i]['count']);
           sum+=parseFloat(answer)
-        }
-      } else {
-        format = resultData[result]['type'].split(" ");
+        } 
       }
     });
 
@@ -120,27 +147,28 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     }
     for(data in sortObject(resultData[result])){
       if(data != 'type') {
+        console.log(resultData[result][data]['label'])
         switch (format[0]) {
           case 'number':
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
               $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"></span><span id="'+result+'More" class="btn details">See details</span></div>')  
             }
-            createNumber(resultData[result][data], result, data, sum)
+            createNumber(resultData[result][data]['count'], result, data, sum)
             break;
           case 'text':
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
               $('#' + result).append('<div id="'+result+'More" class="btn">See details</div>')  
             }
-            createText(resultData[result][data], result, data, sum)
+            createText(resultData[result][data]['count'], result, data, sum)
             break; 
           case 'structured':
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
               $('#' + result).append('<div id="'+result+'More" class="btn">See details</div>')  
             }
-            createText(resultData[result][data], result, data, sum)
+            createText(resultData[result][data]['count'], result, data, sum)
             break; 
           default:
         }
@@ -155,8 +183,9 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
 //formatting functions
   // for all numbers
   function createNumber(resultData, field, data, sum) {
-    var re = new RegExp(field,"g");
-    var cleanData = data.replace(re, '')
+    // var re = new RegExp(field,"g");
+    // var cleanData = data.replace(re, '')
+    var cleanData = data;
     if(cleanData == '') {
     $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+resultData+'</span></div>')  
     } else {
@@ -170,7 +199,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
         $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' <br/>Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
       } else {
         var labelHolder = cleanData
-        cleanData =cleanData.replace(/[\$\,\-\%\ ]/g, '')
+        // cleanData =cleanData.replace(/[\$\,\-\%\ ]/g, '')
         $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+labelHolder+' <br/>Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
       }
     }
