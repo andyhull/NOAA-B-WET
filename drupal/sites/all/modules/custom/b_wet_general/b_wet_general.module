@@ -5,3 +5,46 @@
  */
 
 include_once 'b_wet_general.features.inc';
+
+
+//from http://drupal.org/node/233905
+/**
+*  Implementation of hook_form_FORM_ID_alter
+*/
+function b_wet_general_form_field_ui_field_edit_form_alter(&$form, $form_state, $form_id) {
+  $form['instance']['label'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Custom Display label'),
+    '#description' => t('Lable to appear in form.'),
+    '#default_value' => isset($form['#instance']['display_label']),
+    '#weight' => $form['instance']['label']['#weight'] + 1,
+    '#maxlength' => '1000',
+  );
+}
+
+/**
+*  Implementation of hook_field_display_alter
+*/
+function b_wet_general_theme_registry_alter(&$theme_registry) {
+  $theme_registry['field']['preprocess functions'][] = 'b_wet_general_preprocess_field';
+}
+
+/**
+*  Preprocess function to replace the regular label with the longer label
+*/
+function b_wet_general_preprocess_field(&$variables) {
+  $field = field_info_instance($variables['element']['#entity_type'], $variables['element']['#field_name'], $variables['element']['#bundle']);
+  if (isset($field['display_label']) && strlen(trim($field['display_label'])) > 0) {
+    $variables['label'] = $field['label'];
+  }
+}
+
+function b_wet_general_form_alter(&$form, $form_state, $form_id) {
+    if($form_id == 'content_field_overview_form'){
+        $form['_add_new_field']['label']['#maxlength'] = 255;
+        $form['_add_existing_field']['label']['#maxlength'] = 255;
+    }
+    else if($form_id == 'content_field_edit_form'){
+        $form['basic']['label']['#maxlength'] = 255;
+    }
+}

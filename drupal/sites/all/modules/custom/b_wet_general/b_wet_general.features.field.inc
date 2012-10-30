@@ -906,6 +906,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_text',
@@ -934,7 +935,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_develop_proposal',
-      'label' => 'Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external gr',
+      'label' => 'Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1274,7 +1275,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_eval_increase_in_skiills',
-      'label' => 'Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds',
+      'label' => 'Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds (verbal, mental, or physical)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1451,6 +1452,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_text',
@@ -1479,7 +1481,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_evaluating_grant',
-      'label' => 'Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation ',
+      'label' => 'Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1953,7 +1955,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_focus_on_science',
-      'label' => 'Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?',
+      'label' => 'Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?(e.g., science, math, social studies, literature, art, music)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -2336,7 +2338,7 @@ function b_wet_general_field_default_fields() {
           4 => '10-16 hours',
           5 => '17-24 hours',
           6 => '25-40 hours',
-          7 => 'More than 40 hour',
+          7 => 'More than 40 hours',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -2350,7 +2352,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE.</span>',
+      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization\'s staff during a B-WET-funded MWEE.</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2368,7 +2370,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_hours_taught',
-      'label' => 'On average during the past grant year, a typical student spent ___hours taught by your organization\'s staff during a B-WET-funde',
+      'label' => 'On average during the past grant year, a typical student spent ____ hours taught by your organization\'s staff during a B-WET-funded MWEE.',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -2408,7 +2410,7 @@ function b_wet_general_field_default_fields() {
           4 => '10-16 hours',
           5 => '17-24 hours',
           6 => '25-40 hours',
-          7 => 'More than 40 hour',
+          7 => 'More than 40 hours',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -2440,7 +2442,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_hours_taught_outdoors',
-      'label' => 'On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a ',
+      'label' => 'On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -3122,7 +3124,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_impact',
-      'label' => 'Impact',
+      'label' => 'Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -3607,7 +3609,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_impact_health',
-      'label' => 'The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional',
+      'label' => 'The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5401,7 +5403,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_needs_assessment',
-      'label' => 'Needs assessment',
+      'label' => 'Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5472,7 +5474,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_network_my_region',
-      'label' => 'Facilitated networking with other B-WET grantees in my region ',
+      'label' => 'Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span>',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5543,7 +5545,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_network_other_region',
-      'label' => 'Facilitated networking with other B-WET grantees from other regions',
+      'label' => 'Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span>',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -6314,7 +6316,7 @@ School/school district',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_outcome',
-      'label' => 'Outcome',
+      'label' => 'Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -6847,7 +6849,7 @@ School/school district',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_process_implementation',
-      'label' => 'Process/implementation',
+      'label' => 'Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -10296,7 +10298,7 @@ Pacific Northwest',
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities</span>',
+      'description' => '<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities.</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -10314,7 +10316,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_discuss_integratio',
-      'label' => 'Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities',
+      'label' => 'Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities.',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -11304,7 +11306,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_hours_pro_developm',
-      'label' => 'About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher',
+      'label' => 'About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12855,7 +12857,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_multi_day_workshop',
-      'label' => 'Multi-day workshops',
+      'label' => 'Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13390,7 +13392,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_outdoor_activity',
-      'label' => 'About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional ',
+      'label' => 'About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16020,7 +16022,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_years_noaa_funding',
-      'label' => 'Including this past grant year, for how many years has your organization received funding (not including anticipated funding) fr',
+      'label' => 'Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16078,7 +16080,7 @@ Pacific Northwest',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_zipcode',
-      'label' => 'In what 5-digit zip code is your organization located?',
+      'label' => 'In what <span class="underlineText">5-digit</span> zip code is your organization located?',
       'required' => 0,
       'settings' => array(
         'max' => '99999',
@@ -16118,7 +16120,7 @@ Pacific Northwest',
   t('<span class="longText">About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>');
   t('<span class="longText">About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?</span>');
   t('<span class="longText">Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)</span>');
-  t('<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities</span>');
+  t('<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities.</span>');
   t('<span class="longText">Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)</span>');
   t('<span class="longText">Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span></span>');
   t('<span class="longText">Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span></span>');
@@ -16129,7 +16131,7 @@ Pacific Northwest',
   t('<span class="longText">Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)</span>');
   t('<span class="longText">Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.</span>');
-  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization’s staff during a B-WET-funded MWEE.</span>');
+  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization\'s staff during a B-WET-funded MWEE.</span>');
   t('<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)</span>');
   t('<span class="longText">Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!</span>');
   t('<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.</span>');
@@ -16139,8 +16141,8 @@ Pacific Northwest',
   t('About ____ K-12 schools served');
   t('About ____ school districts served');
   t('About ____ teachers served');
-  t('About how many hours did the typical teacher participate in outdoor activities as part of your organization\'s MWEE professional ');
-  t('About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher');
+  t('About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?');
+  t('About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?');
   t('Access to local NOAA subject-matter experts');
   t('After-school or weekend programs (e.g., science clubs)');
   t('Allowed teachers time to plan how they will implement MWEEs');
@@ -16182,25 +16184,25 @@ Pacific Northwest',
   t('Data collected by and accessible through NOAA');
   t('Define the term "watershed"');
   t('Developing presentations of their findings');
-  t('Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external gr');
+  t('Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)');
   t('Did the majority of participating teachers teach science?');
   t('Did you operate a NOAA B-WET funded program this past grant year?');
   t('Did your organization provide B-WET-funded MWEE professional development or support for teachers?');
   t('Did your organization provide B-WET-funded MWEEs for students/youth who are between the ages of 4-18 (or grades PreK-12)?');
   t('Discussed alignment of MWEEs with state, regional, or national standards');
-  t('Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities');
+  t('Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities.');
   t('Discussed how to use NOAA data to obtain knowledge about local issues');
   t('Elementary');
   t('Email listserv, web forum, Facebook page, or other tools for virtual interaction with other grantees');
   t('Engaged teachers in aligning MWEEs with their school or school district standards');
   t('Engaged teachers in the same activities/practices they can use with their students');
-  t('Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation ');
+  t('Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)');
   t('Events for youth with their families');
   t('Express greater caring and concern for watersheds');
   t('Facilitated interactions with NOAA scientists/staff');
   t('Facilitated interactions with natural resource professionals');
-  t('Facilitated networking with other B-WET grantees from other regions');
-  t('Facilitated networking with other B-WET grantees in my region ');
+  t('Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span>');
+  t('Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span>');
   t('Feel more connected to their local watershed');
   t('Field work');
   t('For how many years total has this B-WET project been in existence, including years not funded by NOAA B-WET?');
@@ -16221,17 +16223,17 @@ Pacific Northwest',
   t('Identify the functions that occur in a watershed (transport, store, and cycle water)');
   t('Identify their local watershed(s)');
   t('If selected EXTERNAL CONSULTANT, please provide consultant/firm name:');
-  t('Impact');
+  t('Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)');
   t('Implementing your organization\'s most recent B-WET-funded grant ');
   t('Improved academic performance');
   t('Improved water quality (positive changes in physical watershed that can be attributed to participants\' actions) ');
-  t('In what 5-digit zip code is your organization located?');
+  t('In what <span class="underlineText">5-digit</span> zip code is your organization located?');
   t('In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)');
   t('Included more than one teacher from individual schools');
-  t('Including this past grant year, for how many years has your organization received funding (not including anticipated funding) fr');
+  t('Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?');
   t('Increases in intentions to act on behalf of watersheds');
   t('Increases in knowledge about watersheds (participants learned new information)');
-  t('Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds');
+  t('Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds (verbal, mental, or physical)');
   t('Individual teacher coaching and support');
   t('Information about and access to current NOAA data sets');
   t('Information from NOAA studies, reports, or websites');
@@ -16245,7 +16247,7 @@ Pacific Northwest',
   t('Making predictions or hypotheses');
   t('Middle');
   t('Monitored water quality');
-  t('Multi-day workshops');
+  t('Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)');
   t('NOAA B-WET has - or will have - a positive impact on environmental education in my area\'s formal education system.');
   t('NOAA B-WET has had - or will have - a positive impact on education policy in my area.');
   t('NOAA B-WET has had - or will have - a positive impact on environmental policy in my area.');
@@ -16256,12 +16258,12 @@ Pacific Northwest',
   t('NOAA labs or facilities');
   t('NOAA materials and lesson plans relevant to watersheds');
   t('National education standards');
-  t('Needs assessment');
+  t('Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)');
   t('Off-site field programs during the school day');
   t('Offered continuing education credits');
   t('Offered graduate credits');
-  t('On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a ');
-  t('On average during the past grant year, a typical student spent ___hours taught by your organization\'s staff during a B-WET-funde');
+  t('On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.');
+  t('On average during the past grant year, a typical student spent ____ hours taught by your organization\'s staff during a B-WET-funded MWEE.');
   t('On average, a typical student participated in your organization\'s B-WET-funded MWEEs over the course of:');
   t('On-line professional development support');
   t('One day workshops (usually less than 8 hours)');
@@ -16273,7 +16275,7 @@ Pacific Northwest',
   t('Opportunities to learn about ocean literacy principles');
   t('Opportunities to learn about watershed science');
   t('Other');
-  t('Outcome');
+  t('Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)');
   t('Outdoor field trip');
   t('Overall, what grade would you give the support you received from your region\'s NOAA B-WET staff over the past grant year?');
   t('Participants engaging in actions that protect or restore watersheds');
@@ -16289,7 +16291,7 @@ Pacific Northwest',
   t('PreK');
   t('Presented how NOAA data can be used to support student scientific inquiry');
   t('Presented information and examples illustrating how teachers have integrated MWEEs');
-  t('Process/implementation');
+  t('Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!');
   t('Professional development provider training');
   t('Provided coaching in participating teachers\' classrooms');
   t('Provided demonstrations in teachers\' classrooms');
@@ -16313,12 +16315,12 @@ Pacific Northwest',
   t('Teach more about watersheds');
   t('Teacher institute');
   t('The B-WET grant has improved - or will improve - the overall quality of environmental education provided by my organization.');
-  t('The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded professional');
+  t('The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.');
   t('This questionnaire was ....');
   t('Told others about ways they can protect their local watershed');
   t('Were NOAA resources used as part of MWEE professional development for teachers?');
   t('Were NOAA resources used as part of MWEEs for students?');
-  t('Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?');
+  t('Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?(e.g., science, math, social studies, literature, art, music)');
   t('What is the total amount of funding for this project, from all sources, this past grant year?');
   t('What is the total amount of funding you received this past grant year from NOAA for your B-WET project?');
   t('What percent of the participating students speak English as a second language (aka English Language Learners)?');

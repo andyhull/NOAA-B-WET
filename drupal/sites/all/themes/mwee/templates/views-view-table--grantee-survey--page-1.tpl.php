@@ -18,71 +18,78 @@
  */
 ?>
 <?php
+// dsm($rows);
 $allResults = new stdClass();
 //loop through rows
 foreach ($rows as $key =>$field){
   //get the question field names
+    // print_r($field);
   foreach($field as $question => $questionKey) {
+    // print $questionKey."<br/>";
     if($question !=='title') {
-      $fieldTest = field_info_field($question);
-      // print_r($fieldTest['settings']['allowed_values']);
-      if (isset($fieldTest['settings']['allowed_values'])) {
-        foreach($fieldTest['settings']['allowed_values'] as $labelKey => $labelValue) {
-          // print "label key = ".$labelKey."<br/>";
-
-          // create the question object
-          if(!property_exists($allResults, $question)){
-              $allResults->$question = new stdClass();
-              $resultArray = $allResults->$question;
-              //add a type so we can distinguish different questions
-              $allResults->$question->type = $field_classes[$question][$key];
-            } 
-
-          $newKey = (string) $question.$labelKey;
+      if(!property_exists($allResults, $question)){
+        $allResults->$question = new stdClass();
+        $resultArray = $allResults->$question;
+        $allResults->$question->type = $field_classes[$question][$key];
+        $fieldTest = field_info_field($question);
+        // dsm($fieldTest);
+        // $fieldStuff = field_get_items('node', 'grantee_survey', $question);
+        // dsm($fieldStuff);
+        // print_r(field_info_extra_fields('node', $question, 'display'));
+        // print "questionKey = ".$questionKey;
+        if (isset($fieldTest['settings']['allowed_values'])) {
+          // print_r($fieldTest['settings']['allowed_values']);
+          foreach($fieldTest['settings']['allowed_values'] as $labelKey => $labelValue) {
+            $newKey = (string) $question.$labelKey;
+            //add in the values to the question object
+            if(!property_exists($resultArray, $newKey)){
+              $resultArray->$newKey->count = 0;
+              $resultArray->$newKey->label = $labelValue;
+              $resultArray->$newKey->labelKey = $labelKey;
+            }
+          }
+        } else {
+          // print "questionKey = ".$questionKey;
+          $newKey = (string) $question.'unanswered';
           //add in the values to the question object
           if(!property_exists($resultArray, $newKey)){
             $resultArray->$newKey->count = 0;
-            $resultArray->$newKey->label = $labelValue;
+            $resultArray->$newKey->label = 'unanswered';
+            $resultArray->$newKey->labelKey = 'unanswered';
           }
-        }
-      } else {
-        // create the question object
-        // print "question key = ".$questionKey."<br/>";
-        if(!property_exists($allResults, $question)){
-            $allResults->$question = new stdClass();
-            $resultArray = $allResults->$question;
-            //add a type so we can distinguish different questions
-            $allResults->$question->type = $field_classes[$question][$key];
-          } else {
-            $resultArray = $allResults->$question;
-          }
-        $newKey = (string) $question.$questionKey;
-        //add in the values to the question object
-        if(!property_exists($resultArray, $newKey)){
-          $resultArray->$newKey->count = 0;
-          $resultArray->$newKey->label = $questionKey;
         }
       }
       $valueKey = (string) $question.$questionKey;
-      if(isset($questionKey)){
-        print "value key = ".$valueKey."<br/>";
-        
+      if(property_exists($allResults->$question, $valueKey)){
+        // $valueKey = (string) $question.$questionKey;
+        $allResults->$question->$valueKey->count += 1;
+        // $allResults->$question->$valueKey->label = $questionKey;
+        // $allResults->$question->$valueKey->labelKey = $questionKey;
+      } else {
+        if($questionKey == '') {
+          $valueKey = (string) $question.'unanswered';
+          $label = 'unanswered';
+        } else {
+          $valueKey = (string) $question.$questionKey;
+          $label = $questionKey;
+        }
+        $allResults->$question->$valueKey->count += 1;
+        $allResults->$question->$valueKey->label = $label;
+        $allResults->$question->$valueKey->labelKey = $questionKey;
       }
-      $resultArray->$valueKey->count += 1;
     }
+    // print "questionKey = ".$questionKey;
   }
 }
-
 
 function cmp($a, $b)
 {
     return strcmp($a, $b);
 }
 
-
 $header_array = json_encode($header);
 $json_array = json_encode($allResults);
-echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_array ."; console.log(resultData);</script>";
+echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_array ."; //console.log(resultData);</script>";
 ?>
 <div id="mainResults"></div>
 <script>
@@ -94,17 +101,21 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     var unanswered = 0;
     var cleanLabel;
     var question = dataLabels[result];
+    var responseLabel;
+    var key;
     //get the formatting from our css classes (aka Object->type)
     var format = Array();
     format = resultData[result]['type'].split(" ");
     //get the total of answered and unanswered questions
     $.each(resultData[result],function(i){
       if(i !== 'type'){
-        if(!resultData[result][i]['label']){
+        if(resultData[result][i]['label'] == 'unanswered'){
           unanswered = parseFloat(resultData[result][i]['count']);
+          // console.log("unanswered main = "+unanswered);
         } else {
           var answer = parseFloat(resultData[result][i]['count']);
           sum+=parseFloat(answer)
+          // console.log("sum = "+sum);
         } 
       }
     });
@@ -122,6 +133,7 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
       $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See details</div></div>')  
       }
       var percent1 = parseFloat((unanswered/(sum + unanswered))* 100) 
+      // console.log("unanswered = "+unanswered);
       $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+unanswered+'" style="width:'+percent1+'%;">&nbsp;<div class="more">Unanswered: '+unanswered+' ('+Math.round(percent1)+'% of total)</div></span>') 
       var percent = parseFloat((sum/(sum + unanswered))* 100)
 
@@ -147,16 +159,33 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     }
     for(data in sortObject(resultData[result])){
       if(data != 'type') {
-        console.log(resultData[result][data]['label'])
+        // console.log(format[0])
         switch (format[0]) {
           case 'number':
+          if(resultData[result][data]['label'] == 'unanswered') {
+            responseLabel = '';
+            key = '';
+          } else {
+            responseLabel = resultData[result][data]['label'];
+            key = resultData[result][data]['labelKey'];
+          }
+          // console.log("responseLabel = "+responseLabel)
+          // console.log("sum = "+sum)
+          // console.log("results = "+resultData[result][data]['count'])
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
               $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"></span><span id="'+result+'More" class="btn details">See details</span></div>')  
             }
-            createNumber(resultData[result][data]['count'], result, data, sum)
+            createNumber(resultData[result][data]['count'], result, key, responseLabel, sum)
             break;
           case 'text':
+            if(resultData[result][data]['label'] == 'unanswered') {
+              responseLabel = '';
+              key = '';
+            } else {
+              responseLabel = resultData[result][data]['label'];
+              key = resultData[result][data]['labelKey'];
+            }
             if(!$('#'+result+'More').length) {
               //add the formatted label and more button
               $('#' + result).append('<div id="'+result+'More" class="btn">See details</div>')  
@@ -182,27 +211,25 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
 
 //formatting functions
   // for all numbers
-  function createNumber(resultData, field, data, sum) {
+  function createNumber(responses, field, fieldKey, data, sum) {
     // var re = new RegExp(field,"g");
-    // var cleanData = data.replace(re, '')
+    var dataKey = field;
+    data  =  data.replace("(", '')
+    data  =  data.replace(")", '')                    
     var cleanData = data;
-    if(cleanData == '') {
-    $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+resultData+'</span></div>')  
-    } else {
-      var percent = parseFloat((resultData/sum )* 100)
-      var respondent = 'Respondents'
-      if(resultData == 1){
-        respondent = 'Respondent'
-      }
-      $('#'+result).append('<div class="'+result+'More resultDetail"><span class="label">'+cleanData+'</span>&nbsp;'+resultData+'&nbsp;'+respondent+' ('+Math.round(percent)+'%)</div>')
-      if(parseFloat(cleanData *1) > 0){
-        $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' <br/>Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+    if(data == '') {
+      $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+responses+'</span></div>')  
       } else {
+        var percent = parseFloat((responses/sum )* 100)
+        var respondent = 'Respondents'
+        if(responses == 1){
+          respondent = 'Respondent'
+        }
+        $('#'+field).append('<div class="'+result+'More resultDetail"><div style="width:400px;"><span class="label color'+fieldKey+'" style="width:'+percent+'%; display:block;">'+cleanData+'</span>&nbsp;'+responses+'&nbsp;'+respondent+' ('+Math.round(percent)+'%)</div></div>')
         var labelHolder = cleanData
-        // cleanData =cleanData.replace(/[\$\,\-\%\ ]/g, '')
-        $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+labelHolder+' <br/>Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+        cleanData =cleanData.replace(/[\$\,\-\%\(\) ]/g, '')
+        $('.bar', '#'+result).append('<span class="color'+fieldKey+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+data+' <br/>Count: '+responses+' ('+Math.round(percent)+'% of total)</div></span>')
       }
-    }
     $('.more').hide()
     $('.'+result+'More').hide()
     $('.more', '.'+result+'bar'+cleanData).hide()
@@ -219,11 +246,14 @@ echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_arra
     var re = new RegExp(field,"g");
     var cleanData = data.replace(re, '')
     if(cleanData == '') {
-      $('#'+field).append('<div class="'+field+'More">Unanswered:<br/>Count: '+resultData+'</div>') 
+      $('#'+result).append('<div class="'+result+'More">Unanswered Count: '+resultData+'</div>') 
     } else {
       var percent = parseFloat((resultData/sum )* 100)
-      $('.bar', '#'+result).append('<span class="color'+cleanData+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;" rel="tooltip" data-placement="top" data-original-title="'+data+'">&nbsp;<div class="more">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div></span>')
+      $('#'+result).append('<div class="'+result+'More">Value: '+cleanData+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div>') 
     }
+    $('.more').hide()
+    $('.'+result+'More').hide()
+    $('.more', '.'+result+'bar'+cleanData).hide()
   }
   //groups !!!
   $('#mainResults').append('<div id="overview"><h2>About grantee respondents and their organizations</h2></div>')

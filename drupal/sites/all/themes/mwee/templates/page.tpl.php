@@ -206,7 +206,7 @@
     var likertArrayAgree = ['#edit-field-public-familiar-und','#edit-field-improve-env-edu-und',
     '#edit-field-impact-env-edu-und', '#edit-field-impact-edu-policy-und','#edit-field-impact-health-und','#edit-field-impact-env-policy-und']
     $.each(likertArrayAgree, function(intIndex, objValue){
-      $(objValue).prepend('<div class="likertScale">'+
+      $(objValue).prepend('<div class="likertScale padLeft">'+
         '<span class="likertStart">Strongly Disagree</span><span class="likertEnd">Strongly Agree</span></div>')
     })
     var likertArrayExtent = ['#edit-field-develop-proposal-und', '#edit-field-implementing-grant-und',

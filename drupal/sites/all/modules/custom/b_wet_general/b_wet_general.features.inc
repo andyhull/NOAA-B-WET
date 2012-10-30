@@ -37,3 +37,29 @@ function b_wet_general_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_default_profile2_type().
+ */
+function b_wet_general_default_profile2_type() {
+  $items = array();
+  $items['grantee'] = entity_import('profile2_type', '{
+    "userCategory" : false,
+    "userView" : false,
+    "type" : "grantee",
+    "label" : "Grantee",
+    "weight" : "0",
+    "data" : { "registration" : 0, "use_page" : 1 },
+    "rdf_mapping" : []
+  }');
+  $items['main'] = entity_import('profile2_type', '{
+    "userCategory" : false,
+    "userView" : false,
+    "type" : "main",
+    "label" : "Main profile",
+    "weight" : "0",
+    "data" : { "registration" : true, "use_page" : true },
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
