@@ -48,3 +48,15 @@ function b_wet_general_form_alter(&$form, $form_state, $form_id) {
         $form['basic']['label']['#maxlength'] = 255;
     }
 }
+
+function b_wet_general_generateCsv($data, $columns, $delimiter = ',', $enclosure = '"') {
+  header('Content-Type: text/csv; charset=utf-8');
+  header('Content-Disposition: attachment; filename=data.csv');
+   $handle = fopen('php://output', 'w');
+   fputcsv($handle, $columns, $delimiter, $enclosure);
+   foreach ($data as $line) {
+     fputcsv($handle, $line, $delimiter, $enclosure);
+   }
+   fclose($handle);
+   exit;
+}

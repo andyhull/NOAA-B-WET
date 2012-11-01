@@ -1533,79 +1533,79 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_public_familiar']['id'] = 'field_public_familiar';
   $handler->display->display_options['fields']['field_public_familiar']['table'] = 'field_data_field_public_familiar';
   $handler->display->display_options['fields']['field_public_familiar']['field'] = 'field_public_familiar';
-  $handler->display->display_options['fields']['field_public_familiar']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_public_familiar']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_public_familiar']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_public_familiar']['type'] = 'list_key';
   /* Field: Content: Please explain why you selected the response you did. */
   $handler->display->display_options['fields']['field_public_familiar_text']['id'] = 'field_public_familiar_text';
   $handler->display->display_options['fields']['field_public_familiar_text']['table'] = 'field_data_field_public_familiar_text';
   $handler->display->display_options['fields']['field_public_familiar_text']['field'] = 'field_public_familiar_text';
-  $handler->display->display_options['fields']['field_public_familiar_text']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_public_familiar_text']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_public_familiar_text']['element_default_classes'] = FALSE;
   /* Field: Content: NOAA B-WET has - or will have - a positive impact on environmental education in my area's formal education system. */
   $handler->display->display_options['fields']['field_impact_env_edu']['id'] = 'field_impact_env_edu';
   $handler->display->display_options['fields']['field_impact_env_edu']['table'] = 'field_data_field_impact_env_edu';
   $handler->display->display_options['fields']['field_impact_env_edu']['field'] = 'field_impact_env_edu';
-  $handler->display->display_options['fields']['field_impact_env_edu']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_env_edu']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_env_edu']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_impact_env_edu']['type'] = 'list_key';
   /* Field: Content: Please explain why you selected the response you did. */
   $handler->display->display_options['fields']['field_impact_env_edu_text']['id'] = 'field_impact_env_edu_text';
   $handler->display->display_options['fields']['field_impact_env_edu_text']['table'] = 'field_data_field_impact_env_edu_text';
   $handler->display->display_options['fields']['field_impact_env_edu_text']['field'] = 'field_impact_env_edu_text';
-  $handler->display->display_options['fields']['field_impact_env_edu_text']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_env_edu_text']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_env_edu_text']['element_default_classes'] = FALSE;
   /* Field: Content: NOAA B-WET has had - or will have - a positive impact on education policy in my area. */
   $handler->display->display_options['fields']['field_impact_edu_policy']['id'] = 'field_impact_edu_policy';
   $handler->display->display_options['fields']['field_impact_edu_policy']['table'] = 'field_data_field_impact_edu_policy';
   $handler->display->display_options['fields']['field_impact_edu_policy']['field'] = 'field_impact_edu_policy';
-  $handler->display->display_options['fields']['field_impact_edu_policy']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_edu_policy']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_edu_policy']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_impact_edu_policy']['type'] = 'list_key';
     /* Field: Content: Please explain why you selected the response you did. */
   $handler->display->display_options['fields']['field_impact_edu_policy_text']['id'] = 'field_impact_edu_policy_text';
   $handler->display->display_options['fields']['field_impact_edu_policy_text']['table'] = 'field_data_field_impact_edu_policy_text';
   $handler->display->display_options['fields']['field_impact_edu_policy_text']['field'] = 'field_impact_edu_policy_text';
-  $handler->display->display_options['fields']['field_impact_edu_policy_text']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_edu_policy_text']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_edu_policy_text']['element_default_classes'] = FALSE;
   /* Field: Content: NOAA B-WET has had - or will have - a positive impact on environmental policy in my area. */
   $handler->display->display_options['fields']['field_impact_env_policy']['id'] = 'field_impact_env_policy';
   $handler->display->display_options['fields']['field_impact_env_policy']['table'] = 'field_data_field_impact_env_policy';
   $handler->display->display_options['fields']['field_impact_env_policy']['field'] = 'field_impact_env_policy';
-  $handler->display->display_options['fields']['field_impact_env_policy']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_env_policy']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_env_policy']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_impact_env_policy']['type'] = 'list_key';
     /* Field: Content: Please explain why you selected the response you did. */
   $handler->display->display_options['fields']['field_impact_env_policy_text']['id'] = 'field_impact_env_policy_text';
   $handler->display->display_options['fields']['field_impact_env_policy_text']['table'] = 'field_data_field_impact_env_policy_text';
   $handler->display->display_options['fields']['field_impact_env_policy_text']['field'] = 'field_impact_env_policy_text';
-  $handler->display->display_options['fields']['field_impact_env_policy_text']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_env_policy_text']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_env_policy_text']['element_default_classes'] = FALSE;
   /* Field: Content: The B-WET grant has improved - or will improve - the overall quality of environmental education provided by my organization. */
   $handler->display->display_options['fields']['field_improve_env_edu']['id'] = 'field_improve_env_edu';
   $handler->display->display_options['fields']['field_improve_env_edu']['table'] = 'field_data_field_improve_env_edu';
   $handler->display->display_options['fields']['field_improve_env_edu']['field'] = 'field_improve_env_edu';
-  $handler->display->display_options['fields']['field_improve_env_edu']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_improve_env_edu']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_improve_env_edu']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_improve_env_edu']['type'] = 'list_key';
     /* Field: Content: Please explain why you selected the response you did. */
   $handler->display->display_options['fields']['field_improve_env_edu_text']['id'] = 'field_improve_env_edu_text';
   $handler->display->display_options['fields']['field_improve_env_edu_text']['table'] = 'field_data_field_improve_env_edu_text';
   $handler->display->display_options['fields']['field_improve_env_edu_text']['field'] = 'field_improve_env_edu_text';
-  $handler->display->display_options['fields']['field_improve_env_edu_text']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_improve_env_edu_text']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_improve_env_edu_text']['element_default_classes'] = FALSE;
   /* Field: Content: The health of our local watershed(s) has improved - or will improve - as a result of my organization's B-WET-funded MWEEs. */
   $handler->display->display_options['fields']['field_impact_health']['id'] = 'field_impact_health';
   $handler->display->display_options['fields']['field_impact_health']['table'] = 'field_data_field_impact_health';
   $handler->display->display_options['fields']['field_impact_health']['field'] = 'field_impact_health';
-  $handler->display->display_options['fields']['field_impact_health']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_health']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_health']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_impact_health']['type'] = 'list_key';
   /* Field: Content: Please explain why you selected the response you did. */
   $handler->display->display_options['fields']['field_impact_health_text']['id'] = 'field_impact_health_text';
   $handler->display->display_options['fields']['field_impact_health_text']['table'] = 'field_data_field_impact_health_text';
   $handler->display->display_options['fields']['field_impact_health_text']['field'] = 'field_impact_health_text';
-  $handler->display->display_options['fields']['field_impact_health_text']['element_class'] = 'number groupEvaluation';
+  $handler->display->display_options['fields']['field_impact_health_text']['element_class'] = 'number groupImpact';
   $handler->display->display_options['fields']['field_impact_health_text']['element_default_classes'] = FALSE;
   /* Field: Content: Anything else you would like to add? */
   $handler->display->display_options['fields']['field_anything_else']['id'] = 'field_anything_else';

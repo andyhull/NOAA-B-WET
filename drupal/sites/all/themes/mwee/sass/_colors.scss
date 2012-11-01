@@ -3,3 +3,6 @@ $two: darken($one, 20);
 $three: darken($one, 40);
 $five: #184563;
 $four: lighten($five, 20);
+
+$six: darken($five, 10);
+$seven: darken($five, 20);

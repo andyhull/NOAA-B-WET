@@ -122,4 +122,14 @@
     @include filter-gradient($five, darken($five, 15), vertical);
     @include background-image(linear-gradient(top, $five, darken($five, 15)));
   }
+  .color6 { 
+    background: $six;
+    @include filter-gradient($six, darken($six, 15), vertical);
+    @include background-image(linear-gradient(top, $six, darken($six, 15)));
+  }
+  .color7 { 
+    background: $seven;
+    @include filter-gradient($seven, darken($seven, 15), vertical);
+    @include background-image(linear-gradient(top, $seven, darken($seven, 15)));
+  }
 }
