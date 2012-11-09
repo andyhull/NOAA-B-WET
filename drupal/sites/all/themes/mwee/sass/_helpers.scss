@@ -19,6 +19,16 @@
 	@include box-shadow(rgba(85, 170, 238,0.5) 0px 0px 10px 0px);
 }
 
+@mixin questionBackground() {
+	clear: both;
+	box-shadow: 1px 1px 10px #333;
+	margin: 40px 0px;
+	padding: 10px;
+	background: #84929A;
+	@include filter-gradient(#84929A, #788891, vertical);
+	@include background-image(linear-gradient(top, #84929A, #788891));
+	@include border-radius(5px);
+}
 
 .activeHighlight {
 	@include highlight();

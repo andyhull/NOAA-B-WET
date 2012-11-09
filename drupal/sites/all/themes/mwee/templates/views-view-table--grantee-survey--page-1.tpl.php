@@ -17,6 +17,15 @@
  * @ingroup views_templates
  */
 ?>
+<div id="navbarExample" class="subnav subnav-fixed">
+  <ul class="nav nav-pills">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#students">Students</a></li>
+    <li><a href="#teachers">Teachers</a></li>
+    <li><a href="#evaluation">Evaluation</a></li>
+    <li><a href="#impact">Impact</a></li>
+  </ul>
+  </div>
 <?php
 // include_once('csv.php');
 $allResults = new stdClass();
@@ -79,57 +88,22 @@ function cmp($a, $b)
 {
     return strcmp($a, $b);
 }
-// file_save_data(b_wet_general_generateCsv($rows, $header), 'public://data.csv', FILE_EXISTS_RENAME);
-
-// $test = b_wet_general_generateCsv($rows, $header);
-// //file_save_data("hi", 'public://data.csv', FILE_EXISTS_RENAME);
-//  file_save_data($test, 'public://data.csv', FILE_EXISTS_RENAME);
-// // fopen('public://data.csv', 'r');
-// // print $test;
-// //create a csv file
-// function generateCsv($data, $columns, $delimiter = ',', $enclosure = '"') {
-//   header('Content-Type: text/csv; charset=utf-8');
-//   header('Content-Disposition: attachment; filename=data.csv');
-//    $handle = fopen('public://data.csv', 'w');
-//    fputcsv($handle, $columns, $delimiter, $enclosure);
-//    foreach ($data as $line) {
-//      fputcsv($handle, $line, $delimiter, $enclosure);
-//    }
-//    fclose($handle);
-//    exit;
-// }
-
-// //create a csv file
-// function generateCsv($data, $columns, $delimiter = ',', $enclosure = '"') {
-//   header('Content-Type: text/csv; charset=utf-8');
-//   header('Content-Disposition: attachment; filename=data.csv');
-//    $handle = fopen('php://output', 'w');
-//    // foreach ($columns as $column){
-//     fputcsv($handle, $columns, $delimiter, $enclosure);
-//    // }
-//    foreach ($data as $line) {
-//            fputcsv($handle, $line, $delimiter, $enclosure);
-//    }
-//    // rewind($handle);
-//    // while (!feof($handle)) {
-//    //         $contents .= fread($handle, 8192);
-//    // }
-//    fclose($handle);
-//    exit;
-//  // return $contents;
-// }
 
 $header_array = json_encode($header);
 $json_array = json_encode($allResults);
 $csvData = json_encode($rows);
-echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_array ."; console.log(resultData);</script>";
-echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; console.log(csvData);</script>";
-echo '<a id="downloadBtn" href="#" class="btn btn-large">Download CSV</a>';
+echo "<script>var dataLabels = ". $header_array.";var resultData = ". $json_array ."; //console.log(resultData);</script>";
+echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; //console.log(csvData);</script>";
+// echo '<a id="downloadBtn" href="#" class="btn btn-large">Download CSV</a>';
 ?>
 <div id="mainResults"></div>
+<div id="resultsToolbar"><div class="toolbarWrapper" data-spy="affix" data-offset-top="50"><h3>Tools</h3><a id="downloadBtn" href="#" class="btn btn-large">Download Data</a></div></div>
 <script>
 // We define a function that takes one parameter named $.
 (function ($) {
+  if($('.view-filters').length>0){
+    $('.toolbarWrapper').append($('.view-filters'));
+  }
 //An object for wrapping individual questions in a group 
   var groupQuestion = new Object();
   groupQuestion = {
@@ -429,7 +403,7 @@ echo '<a id="downloadBtn" href="#" class="btn btn-large">Download CSV</a>';
         }
         $('#'+field).append('<div class="'+result+'More resultDetail"><div style="width:400px;"><span class="label color'+fieldKey+'" style="width:'+percent+'%; display:block;">'+cleanData+'</span>&nbsp;'+responses+'&nbsp;'+respondent+' ('+Math.round(percent)+'%)</div></div>')
         var labelHolder = cleanData
-        cleanData =cleanData.replace(/[\$\,\-\%\(\) ]/g, '')
+        cleanData =cleanData.replace(/[\W]/g, '')
         $('.bar', '#'+result).append('<span class="color'+fieldKey+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;">&nbsp;<div class="more">Value: '+data+' <br/>Count: '+responses+' ('+Math.round(percent)+'% of total)</div></span>')
       }
     $('.more').hide()
@@ -449,6 +423,7 @@ echo '<a id="downloadBtn" href="#" class="btn btn-large">Download CSV</a>';
     data  =  data.replace(")", '')                    
     var re = new RegExp(field,"g");
     var cleanData = data.replace(re, '')
+    cleanData =cleanData.replace(/[\W]/g, '')
     var dataKey = field;
     if(cleanData == '') {
       $('#'+result).append('<div class="'+result+'More">Unanswered Count: '+resultData+'</div>') 
@@ -487,7 +462,8 @@ echo '<a id="downloadBtn" href="#" class="btn btn-large">Download CSV</a>';
     $.each(groupQuestion[i]['fields'], function(field){
       $('#'+groupQuestion[i]['fields'][field]).addClass(groupQuestion[i]['id'])
     });
-    $('.'+groupQuestion[i]['id']).wrapAll('<div id="'+groupQuestion[i]['id']+'" class="result"><span class="questionTitle">'+groupQuestion[i]['question']+'</span></div>');
+    $('.'+groupQuestion[i]['id']).wrapAll('<div id="'+groupQuestion[i]['id']+'" class="result"></div>');
+    $('#'+groupQuestion[i]['id']).prepend('<span class="questionTitle">'+groupQuestion[i]['question']+'</span>');
   });
 
 //sorting function http://stackoverflow.com/questions/1359761/sorting-a-javascript-object
@@ -509,15 +485,40 @@ echo '<a id="downloadBtn" href="#" class="btn btn-large">Download CSV</a>';
     return sorted;
 }
 
-$('#downloadBtn').click(function(){
-  $.ajax({
-  type: "POST",
-  url: "http://mwee.local/sites/all/themes/mwee/templates/csv.php",
-  data: { data: csvData, header: csvHeader }
-  }).done(function( msg ) {
-  alert( "Data Saved: " + msg );
-  });
+$('#downloadBtn').click(function(){ 
+  if(window.location.search){
+    var searchParam = window.location.search;
+  } else {
+    var searchParam = '';
+  }
+  window.location = "/resultdownload"+searchParam;
 })
+$('body').attr({ 
+  'data-spy':"scroll",
+  'data-target':"#navbarExample"
+});
+
+$('#navbarExample').scrollspy() 
+// fix sub nav on scroll
+var $win = $(window)
+  , $nav = $('.subnav')
+  , navTop = $('.subnav').length && $('.subnav').offset().top - 40
+  , isFixed = 0
+
+processScroll()
+
+$win.on('scroll', processScroll)
+
+function processScroll() {
+  var i, scrollTop = $win.scrollTop();
+  if (scrollTop >= navTop && !isFixed) {
+    isFixed = 1
+    $nav.addClass('subnav-fixed')
+  } else if (scrollTop <= navTop && isFixed) {
+    isFixed = 0
+    $nav.removeClass('subnav-fixed')
+  }
+}
 // Here we immediately call the function with jQuery as the parameter.
 }(jQuery));
 

@@ -148,6 +148,26 @@
 			float: right;
 		}
 	}
+	.likertScaleExtraSmall {
+		@include filter-gradient($one, $five, horizontal);
+	  /* Fallback: */
+	  background: #fff;
+		@include background-image(linear-gradient(left, $one, $five));
+		@include border-radius(5px);
+		width: 300px;
+		padding: 3px;
+		// margin-left: 300px;
+		font-weight: bold;
+		color: #fff;
+		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
+		.likertStart {
+			color: #333;
+		}
+		.likertEnd {
+			text-align: right;
+			float: right;
+		}
+	}
 	.noMargin {
 		margin-left: 95px;
 	}
@@ -202,5 +222,44 @@
 	}
 	.titleHelp {
 		padding: 10px;
+	}
+	.tableFormat {
+		display: inline;
+		.form-type-radio {
+			float: left;
+			margin: -13px;
+			// background: #84929A;
+			// @include filter-gradient(#84929A, #788891, vertical);
+			// @include background-image(linear-gradient(top, #84929A, #788891));
+		}
+		.questionEnd {
+			margin-right: 40px;
+		}
+	}
+	.questionTable {
+		padding-left: 25px;
+	}
+	.tableHeader {
+		width: 360px;
+		display: inline-block;
+		min-height: 30px;
+		font-weight: bold;
+		padding: 0px 5px;
+	}
+	.tableHeader-fixed {
+    border-color: #D5D5D5;
+    border-radius: 0 0 0 0;
+    border-width: 0 0 1px;
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 60px;
+    top: 108px;
+    z-index: 1020;
+    background: #84929A;
+		@include filter-gradient(#84929A, #788891, vertical);
+		@include background-image(linear-gradient(top, #84929A, #788891));
+	}
+	.scaleLabel {
+		padding: 20px 10px;
 	}
 }

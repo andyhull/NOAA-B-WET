@@ -15,7 +15,7 @@ function b_wet_general_form_field_ui_field_edit_form_alter(&$form, $form_state, 
   $form['instance']['label'] = array(
     '#type' => 'textfield',
     '#title' => t('Custom Display label'),
-    '#description' => t('Lable to appear in form.'),
+    '#description' => t('Label to appear in form.'),
     '#default_value' => isset($form['#instance']['display_label']),
     '#weight' => $form['instance']['label']['#weight'] + 1,
     '#maxlength' => '1000',
@@ -50,6 +50,7 @@ function b_wet_general_form_alter(&$form, $form_state, $form_id) {
 }
 
 function b_wet_general_generateCsv($data, $columns, $delimiter = ',', $enclosure = '"') {
+  ob_start();
   header('Content-Type: text/csv; charset=utf-8');
   header('Content-Disposition: attachment; filename=data.csv');
    $handle = fopen('php://output', 'w');
@@ -58,5 +59,21 @@ function b_wet_general_generateCsv($data, $columns, $delimiter = ',', $enclosure
      fputcsv($handle, $line, $delimiter, $enclosure);
    }
    fclose($handle);
+   ob_end_flush(); //now the headers are sent
    exit;
+}
+
+function b_wet_general_preprocess_user_profile(&$variables) {
+
+  $account = $variables['elements']['#account'];
+  //Add the user ID into the user profile as a variable
+  $variables['user_id'] = $account->uid;
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($variables['elements']) as $key) {
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+  }
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
+
 }

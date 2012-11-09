@@ -222,8 +222,9 @@ students (not the instruction provided by teachers).</p><p>&nbsp;</p>
     'label' => 'Please answer the following questions with regard to the outcome or impact evaluation your organization completed. If your organ',
     'weight' => '160',
     'children' => array(
-      0 => 'field_led_evaluation',
-      1 => 'field_if_selected_please_provide',
+      0 => 'field_if_selected_please_provide',
+      1 => 'field_led_evaluation_new',
+      2 => 'field_led_evaluation_other',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -284,8 +285,10 @@ content analysis of qualitative data, etc.) methods.',
       2 => 'field_funding_all',
       3 => 'field_years_noaa_funding',
       4 => 'field_project_existence',
-      5 => 'field_region',
-      6 => 'field_organization',
+      5 => 'field_in_which_region_s_were_you',
+      6 => 'field_region_other',
+      7 => 'field_organization_no_select',
+      8 => 'field_organization_other',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -602,12 +605,15 @@ content analysis of qualitative data, etc.) methods.',
     'weight' => '18',
     'children' => array(
       0 => 'field_information_for_noaa',
-      1 => 'field_resources_noaa_data',
-      2 => 'field_resources_noaa_expert',
-      3 => 'field_resources_education_progra',
-      4 => 'field_resources_facilities',
-      5 => 'field_resources_marine_sanctuary',
-      6 => 'field_resources_estuarine_resear',
+      1 => 'field_resources_noaa_expert',
+      2 => 'field_resources_marine_sanctuary',
+      3 => 'field_resources_estuarine_resear',
+      4 => 'field_resources_noaa_data_new',
+      5 => 'field_resource_noaa_data_other',
+      6 => 'field_noaa_programs',
+      7 => 'field_noaa_programs_other',
+      8 => 'field_noaa_labs_or_facilities',
+      9 => 'field_noaa_faciliities_other',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -854,7 +860,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to:',
-    'weight' => '32',
+    'weight' => '33',
     'children' => array(
       0 => 'field_teacher_define_watershed',
       1 => 'field_teacher_identify_local_wat',
@@ -919,7 +925,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which characteristics describe your organization\'s typical MWEE professional development this past grant year?',
-    'weight' => '30',
+    'weight' => '31',
     'children' => array(
       0 => 'field_teacher_local_connections',
       1 => 'field_teacher_noaa_interaction',
@@ -954,7 +960,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded MWEE professional development that teachers will:',
-    'weight' => '33',
+    'weight' => '34',
     'children' => array(
       0 => 'field_teacher_teach_watershed',
       1 => 'field_teacher_implement_mwee',
@@ -1037,7 +1043,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What education methods were used during your MWEE professional development?',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_teacher_method_outdoor',
       1 => 'field_teacher_method_field_work',
@@ -1134,15 +1140,18 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which NOAA resources were incorporated into your organization\'s typical B-WET-funded MWEE professional development?',
-    'weight' => '25',
+    'weight' => '26',
     'children' => array(
-      0 => 'field_teacher_resources_noaa_dat',
-      1 => 'field_teacher_esources_noaa_expe',
-      2 => 'field_teacher_information_for_no',
-      3 => 'field_teacher_resources_edu_prog',
-      4 => 'field_teacher_resources_faciliti',
-      5 => 'field_teacher_resources_marine_s',
-      6 => 'field_teacher_resources_estuarin',
+      0 => 'field_teacher_esources_noaa_expe',
+      1 => 'field_teacher_information_for_no',
+      2 => 'field_teacher_resources_marine_s',
+      3 => 'field_teacher_resources_estuarin',
+      4 => 'field_teacher_data_collected',
+      5 => 'field_teacher_data_other',
+      6 => 'field_teacher_edu_program',
+      7 => 'field_teacher_edu_other',
+      8 => 'field_teacher_labs_facilities',
+      9 => 'field_teacher_lab_other',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1167,7 +1176,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which of the following steps did you include? Engaged teachers in',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_teacher_science_questions',
       1 => 'field_teacher_science_hypotheses',
@@ -1201,7 +1210,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What types of support did your organization typically provide to teachers participating in MWEE professional development this pa',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'field_teacher_conduct_fieldwork',
       1 => 'field_teacher_habitats',
@@ -1237,7 +1246,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds durin',
-    'weight' => '31',
+    'weight' => '32',
     'children' => array(
       0 => 'field_teacher_created_habitat',
       1 => 'field_teacher_installed_rain_bar',
@@ -1273,7 +1282,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'As part of your B-WET professional development workshops or institutes this past grant year, did your organization typically inc',
-    'weight' => '28',
+    'weight' => '29',
     'children' => array(
       0 => 'field_teacher_ex_integration',
       1 => 'field_teacher_discuss_integratio',

@@ -4,6 +4,20 @@
 @mixin granteeQuestions() {
   #mainResults {
     background: #E9EBED;
+    width: 940px;
+    float: left;
+    padding: 10px;
+  }
+  #resultsToolbar {
+    width: 200px;
+    float: right;
+  }
+
+  .views-exposed-form {
+    background: #E9EBED;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
   }
   .result {
     clear: both;

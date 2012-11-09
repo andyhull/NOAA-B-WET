@@ -2035,7 +2035,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -3067,7 +3067,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '162',
+        'weight' => '164',
       ),
     ),
   );
@@ -3898,6 +3898,77 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_in_which_region_s_were_you'.
+  $fields['node-grantee_survey-field_in_which_region_s_were_you'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_in_which_region_s_were_you',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'California',
+          1 => 'Chesapeake Bay',
+          2 => 'Great Lakes',
+          3 => 'Gulf of Mexico',
+          4 => 'Hawaii',
+          5 => 'Other',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 259,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_in_which_region_s_were_you',
+      'label' => 'In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '5',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_information_for_noaa'.
   $fields['node-grantee_survey-field_information_for_noaa'] = array(
     'field_config' => array(
@@ -4452,39 +4523,50 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_led_evaluation'.
-  $fields['node-grantee_survey-field_led_evaluation'] = array(
+  // Exported field: 'node-grantee_survey-field_led_evaluation_new'.
+  $fields['node-grantee_survey-field_led_evaluation_new'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_led_evaluation',
+      'field_name' => 'field_led_evaluation_new',
       'foreign keys' => array(),
-      'indexes' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
       'locked' => '0',
-      'module' => 'number',
-      'settings' => array(),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Don\'t know',
+          1 => 'Internal staff member (someone who is an employee of your organization)',
+          2 => 'External consultant (someone who is not an employee of your organization)',
+          3 => 'Other',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
-      'type' => 'number_integer',
+      'type' => 'list_integer',
     ),
     'field_instance' => array(
       'bundle' => 'grantee_survey',
       'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 221,
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 275,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -4494,32 +4576,88 @@ function b_wet_general_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_led_evaluation',
+      'field_name' => 'field_led_evaluation_new',
       'label' => 'Which of the following best describes who led the evaluation?',
       'required' => 0,
       'settings' => array(
-        'max' => '',
-        'min' => '',
-        'prefix' => '',
-        'suffix' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|Don\'t know
-1|Internal staff member (someone who is an employee of your organization)
-2|External consultant (someone who is not an employee of your organization)',
-          'available_options_php' => '',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Other (please describe)',
-          'other_title' => '',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '162',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_led_evaluation_other'.
+  $fields['node-grantee_survey-field_led_evaluation_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_led_evaluation_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
         ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '161',
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 276,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_led_evaluation_other',
+      'label' => 'If selected OTHER describe who led the evaluation.',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '163',
       ),
     ),
   );
@@ -5631,6 +5769,76 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_noaa_faciliities_other'.
+  $fields['node-grantee_survey-field_noaa_faciliities_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_faciliities_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 268,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_faciliities_other',
+      'label' => 'If Yes name the lab or facility:',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '50',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_noaa_funding'.
   $fields['node-grantee_survey-field_noaa_funding'] = array(
     'field_config' => array(
@@ -5696,7 +5904,75 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_noaa_labs_or_facilities'.
+  $fields['node-grantee_survey-field_noaa_labs_or_facilities'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_labs_or_facilities',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 267,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_labs_or_facilities',
+      'label' => 'NOAA labs or facilities',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '49',
       ),
     ),
   );
@@ -5768,6 +6044,144 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '20',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_noaa_programs'.
+  $fields['node-grantee_survey-field_noaa_programs'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_programs',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 265,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_programs',
+      'label' => 'NOAA curricula and education programs',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '47',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_noaa_programs_other'.
+  $fields['node-grantee_survey-field_noaa_programs_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_programs_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 266,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_programs_other',
+      'label' => 'If Yes name the curricula or programs:',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '48',
       ),
     ),
   );
@@ -6183,14 +6597,87 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_organization'.
-  $fields['node-grantee_survey-field_organization'] = array(
+  // Exported field: 'node-grantee_survey-field_organization_no_select'.
+  $fields['node-grantee_survey-field_organization_no_select'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_organization',
+      'field_name' => 'field_organization_no_select',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Academic institution (community college, college, university)',
+          1 => 'Business/Corporation',
+          2 => 'Local government',
+          3 => 'State education agency',
+          4 => 'State natural resource agency',
+          5 => 'Non-profit organization',
+          6 => 'School/school district',
+          7 => 'Other',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 261,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_organization_no_select',
+      'label' => 'For what type of organization do you work? (choose one)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '11',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_organization_other'.
+  $fields['node-grantee_survey-field_organization_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_organization_other',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -6208,6 +6695,7 @@ function b_wet_general_field_default_fields() {
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -6223,7 +6711,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 35,
+          'weight' => 262,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -6233,8 +6721,8 @@ function b_wet_general_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_organization',
-      'label' => 'For what type of organization do you work? (choose one)',
+      'field_name' => 'field_organization_other',
+      'label' => 'If selected OTHER please list the type of organization you work for.',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -6242,24 +6730,12 @@ function b_wet_general_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'select_or_other',
+        'module' => 'text',
         'settings' => array(
-          'available_options' => 'Academic institution (community college, college, university)
-Business/Corporation
-Local government
-State education agency
-State natural resource agency
-Non-profit organization
-School/school district',
-          'available_options_php' => '',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Other (please describe)',
-          'other_title' => '',
-          'other_unknown_defaults' => 'other',
-          'sort_options' => 0,
+          'size' => '60',
         ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '10',
+        'type' => 'text_textfield',
+        'weight' => '12',
       ),
     ),
   );
@@ -6927,7 +7403,7 @@ School/school district',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -7483,95 +7959,14 @@ School/school district',
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_region'.
-  $fields['node-grantee_survey-field_region'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_region',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 34,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_region',
-      'label' => 'In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => 'California
-Chesapeake Bay
-Great Lakes
-Gulf of Mexico
-Hawaii
-New England
-Pacific Northwest',
-          'available_options_php' => '',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Other (please describe)',
-          'other_title' => '',
-          'other_unknown_defaults' => 'other',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '5',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_resources_education_progra'.
-  $fields['node-grantee_survey-field_resources_education_progra'] = array(
+  // Exported field: 'node-grantee_survey-field_region_other'.
+  $fields['node-grantee_survey-field_region_other'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_resources_education_progra',
+      'field_name' => 'field_region_other',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -7589,6 +7984,7 @@ Pacific Northwest',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -7604,7 +8000,7 @@ Pacific Northwest',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 64,
+          'weight' => 260,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -7614,8 +8010,8 @@ Pacific Northwest',
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_resources_education_progra',
-      'label' => 'NOAA curricula and education programs',
+      'field_name' => 'field_region_other',
+      'label' => 'If selected OTHER please list what region(s) were your organization\'s MWEEs offered this past grant year.',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -7623,21 +8019,82 @@ Pacific Northwest',
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'select_or_other',
+        'module' => 'text',
         'settings' => array(
-          'available_options' => '0|No',
-          'available_options_php' => 'return array(
-  0 =>\'Not Sure\',
-  1 =>\'No\'
-);',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Yes',
-          'other_title' => 'If Yes name the curricula or programs:',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
+          'size' => '60',
         ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '46',
+        'type' => 'text_textfield',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_resource_noaa_data_other'.
+  $fields['node-grantee_survey-field_resource_noaa_data_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_resource_noaa_data_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 264,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_resource_noaa_data_other',
+      'label' => 'If Yes name the NOAA data source:',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '45',
       ),
     ),
   );
@@ -7707,85 +8164,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '49',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_resources_facilities'.
-  $fields['node-grantee_survey-field_resources_facilities'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_resources_facilities',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 65,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_resources_facilities',
-      'label' => 'NOAA labs or facilities',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|No',
-          'available_options_php' => 'return array(
-  0 =>\'Not Sure\',
-  1 =>\'No\'
-);',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Yes',
-          'other_title' => 'If Yes name the lab or facility:',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '47',
+        'weight' => '52',
       ),
     ),
   );
@@ -7855,52 +8234,54 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '48',
+        'weight' => '51',
       ),
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_resources_noaa_data'.
-  $fields['node-grantee_survey-field_resources_noaa_data'] = array(
+  // Exported field: 'node-grantee_survey-field_resources_noaa_data_new'.
+  $fields['node-grantee_survey-field_resources_noaa_data_new'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_resources_noaa_data',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
+      'field_name' => 'field_resources_noaa_data_new',
+      'foreign keys' => array(),
       'indexes' => array(
-        'format' => array(
-          0 => 'format',
+        'value' => array(
+          0 => 'value',
         ),
       ),
       'locked' => '0',
-      'module' => 'text',
+      'module' => 'list',
       'settings' => array(
-        'max_length' => '255',
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
-      'type' => 'text',
+      'type' => 'list_integer',
     ),
     'field_instance' => array(
       'bundle' => 'grantee_survey',
       'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
+          'module' => 'list',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 62,
+          'type' => 'list_default',
+          'weight' => 263,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -7910,29 +8291,17 @@ Pacific Northwest',
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_resources_noaa_data',
+      'field_name' => 'field_resources_noaa_data_new',
       'label' => 'Data collected by and accessible through NOAA',
       'required' => 0,
       'settings' => array(
-        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|No',
-          'available_options_php' => 'return array(
-  0 =>\'Not Sure\',
-  1 =>\'No\'
-);',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Yes',
-          'other_title' => 'If Yes name the NOAA data source:',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
         'weight' => '44',
       ),
     ),
@@ -8003,7 +8372,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '45',
+        'weight' => '46',
       ),
     ),
   );
@@ -10066,6 +10435,144 @@ Pacific Northwest',
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_teacher_data_collected'.
+  $fields['node-grantee_survey-field_teacher_data_collected'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_data_collected',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 269,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_data_collected',
+      'label' => 'Data collected by and accessible through NOAA',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '18',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_teacher_data_other'.
+  $fields['node-grantee_survey-field_teacher_data_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_data_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 270,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_data_other',
+      'label' => 'If Yes name the NOAA data source:',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '19',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_teacher_define_watershed'.
   $fields['node-grantee_survey-field_teacher_define_watershed'] = array(
     'field_config' => array(
@@ -10397,6 +10904,144 @@ Pacific Northwest',
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_teacher_edu_other'.
+  $fields['node-grantee_survey-field_teacher_edu_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_edu_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 272,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_edu_other',
+      'label' => 'If Yes name the curricula or programs',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '22',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_teacher_edu_program'.
+  $fields['node-grantee_survey-field_teacher_edu_program'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_edu_program',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 271,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_edu_program',
+      'label' => 'NOAA curricula and education programs',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '21',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_teacher_equipment'.
   $fields['node-grantee_survey-field_teacher_equipment'] = array(
     'field_config' => array(
@@ -10528,7 +11173,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -12187,6 +12832,144 @@ Pacific Northwest',
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '107',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_teacher_lab_other'.
+  $fields['node-grantee_survey-field_teacher_lab_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_lab_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 274,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_lab_other',
+      'label' => 'If Yes name the lab or facility',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '24',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_teacher_labs_facilities'.
+  $fields['node-grantee_survey-field_teacher_labs_facilities'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_labs_facilities',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 273,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_labs_facilities',
+      'label' => 'NOAA labs or facilities',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '23',
       ),
     ),
   );
@@ -14003,84 +14786,6 @@ Pacific Northwest',
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_teacher_resources_edu_prog'.
-  $fields['node-grantee_survey-field_teacher_resources_edu_prog'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_resources_edu_prog',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 143,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_resources_edu_prog',
-      'label' => 'NOAA curricula and education programs',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|No',
-          'available_options_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\'
-);',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Yes',
-          'other_title' => 'If Yes name the curricula or programs',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '20',
-      ),
-    ),
-  );
-
   // Exported field: 'node-grantee_survey-field_teacher_resources_estuarin'.
   $fields['node-grantee_survey-field_teacher_resources_estuarin'] = array(
     'field_config' => array(
@@ -14146,85 +14851,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '23',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_resources_faciliti'.
-  $fields['node-grantee_survey-field_teacher_resources_faciliti'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_resources_faciliti',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 144,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_resources_faciliti',
-      'label' => 'NOAA labs or facilities',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|No',
-          'available_options_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\'
-);',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Yes',
-          'other_title' => 'If Yes name the lab or facility',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '21',
+        'weight' => '26',
       ),
     ),
   );
@@ -14294,85 +14921,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '22',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_resources_noaa_dat'.
-  $fields['node-grantee_survey-field_teacher_resources_noaa_dat'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_resources_noaa_dat',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 140,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_resources_noaa_dat',
-      'label' => 'Data collected by and accessible through NOAA',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'select_or_other',
-        'settings' => array(
-          'available_options' => '0|No',
-          'available_options_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\'
-);',
-          'markup_available_options_php' => '&lt;none&gt;',
-          'other' => 'Yes',
-          'other_title' => 'If Yes name the NOAA data source',
-          'other_unknown_defaults' => 'ignore',
-          'sort_options' => 0,
-        ),
-        'type' => 'select_or_other_buttons',
-        'weight' => '18',
+        'weight' => '25',
       ),
     ),
   );
@@ -16032,7 +16581,7 @@ Pacific Northwest',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -16095,6 +16644,70 @@ Pacific Northwest',
         'settings' => array(),
         'type' => 'number',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'profile2-grantee-field_noaa_b_wet_award_number'.
+  $fields['profile2-grantee-field_noaa_b_wet_award_number'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_b_wet_award_number',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => 1,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Your NOAA B-WET award number has 14 letters and numbers such as NA12NMF4638049. The award number will be used ONLY to 1) identify your BWET region, not your organization, and 2) allow us to link information you provide with that of data that may be provided by your project’s teachers.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'profile2',
+      'field_name' => 'field_noaa_b_wet_award_number',
+      'label' => 'NOAA B-WET award number',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '1',
       ),
     ),
   );
@@ -16222,7 +16835,15 @@ Pacific Northwest',
   t('Identify possible point and non-point sources of water pollution');
   t('Identify the functions that occur in a watershed (transport, store, and cycle water)');
   t('Identify their local watershed(s)');
+  t('If Yes name the NOAA data source:');
+  t('If Yes name the curricula or programs');
+  t('If Yes name the curricula or programs:');
+  t('If Yes name the lab or facility');
+  t('If Yes name the lab or facility:');
   t('If selected EXTERNAL CONSULTANT, please provide consultant/firm name:');
+  t('If selected OTHER describe who led the evaluation.');
+  t('If selected OTHER please list the type of organization you work for.');
+  t('If selected OTHER please list what region(s) were your organization\'s MWEEs offered this past grant year.');
   t('Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)');
   t('Implementing your organization\'s most recent B-WET-funded grant ');
   t('Improved academic performance');
@@ -16248,6 +16869,7 @@ Pacific Northwest',
   t('Middle');
   t('Monitored water quality');
   t('Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)');
+  t('NOAA B-WET award number');
   t('NOAA B-WET has - or will have - a positive impact on environmental education in my area\'s formal education system.');
   t('NOAA B-WET has had - or will have - a positive impact on education policy in my area.');
   t('NOAA B-WET has had - or will have - a positive impact on environmental policy in my area.');
@@ -16327,6 +16949,7 @@ Pacific Northwest',
   t('What percent of the participating students\' schools are Title 1?');
   t('Which of the following best describes the situation with regard to evaluation(s) of your organization\'s B-WET-funded programs?');
   t('Which of the following best describes who led the evaluation?');
+  t('Your NOAA B-WET award number has 14 letters and numbers such as NA12NMF4638049. The award number will be used ONLY to 1) identify your BWET region, not your organization, and 2) allow us to link information you provide with that of data that may be provided by your project’s teachers.');
 
   return $fields;
 }

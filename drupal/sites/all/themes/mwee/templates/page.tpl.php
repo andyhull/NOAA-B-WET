@@ -98,7 +98,6 @@
 
 <script>
 (function($) {
-
   $('#edit-delete').hide();
   $('#edit-delete').remove();
   $('#edit-save').hide();
@@ -241,5 +240,53 @@
   $("form").submit(function() {
     $('#pageLoad').show();
   })
+   $(".progressContainer ~ h1").hide();
+
+   $('#node_teacher_survey_form_group_before_after_future>.fieldset-wrapper').prepend('<div class="questionTable"><span class="tableHeader">BEFORE the MWEE professional development, how confident were you in your ability to:</span><span class="tableHeader">AFTER the MWEE professional development, how confident were you in your ability to:</span><span class="tableHeader">In the FUTURE, I intend to ...</span></div>');
+var likertArrayConfident = ['#edit-field-teach-my-students', '#edit-field-incorporate-mwees', '#edit-field-implement-mwees','#edit-field-use-noaa-resources','#edit-field-guide-students','#edit-field-research-env','#edit-field-scientific-inquiry']
+    $.each(likertArrayConfident, function(intIndex, objValue){
+      // $(objValue).prepend('<div class="likertScale">'+
+      //   '<span class="likertStart">Not at all confident</span><span class="likertEnd">Extremely confident</span></div>')
+
+   var after = $(objValue+'-after > .control-group');
+   $(objValue+'-after').hide();
+   $(after).children('label').hide();
+   $(objValue+'-after-und>.form-type-radio').last().addClass('questionEnd');
+   $(after).addClass('tableFormat');
+   var future = $(objValue+'-future > .control-group');
+   $(future).children('label').hide();
+   $(objValue+'-future').hide();
+   $(future).addClass('tableFormat');
+   $(objValue+'-future-und>.form-type-radio').last().addClass('questionEnd');
+   var before = $(objValue+'-before>.control-group');
+   $(before).addClass('tableFormat');
+   $(before).append(after);
+   $(before).append(future);
+   $(objValue+'-before').css('min-height', '80px');
+   $(objValue+'-before-und').css('margin', '10px 0px');
+   $(objValue+'-before-und>.form-type-radio').last().addClass('questionEnd');
+   $(objValue+'-before').append('<div class="scaleLabel"><span class="tableHeader"><div class="likertScaleExtraSmall"><span class="likertStart">Not at all confident</span><span class="likertEnd">Extremely confident</span></div></span><span class="tableHeader"><div class="likertScaleExtraSmall"><span class="likertStart">Not at all confident</span><span class="likertEnd">Extremely confident</span></div></span><span class="tableHeader"><div class="likertScaleExtraSmall"><span class="likertStart">Strongly disagree</span><span class="likertEnd">Strongly agree</span></div></span></div>')
+    })
+
+   // fix sub nav on scroll
+var $win = $(window)
+  , $nav = $('.questionTable')
+  , navTop = $('.questionTable').offset().top -2000
+  , isFixed = 0
+
+processScroll()
+
+$win.on('scroll', processScroll)
+
+function processScroll() {
+  var i, scrollTop = $win.scrollTop();
+  if (scrollTop >= navTop && !isFixed) {
+    isFixed = 1
+    $nav.addClass('tableHeader-fixed')
+  } else if (scrollTop <= navTop && isFixed) {
+    isFixed = 0
+    $nav.removeClass('tableHeader-fixed')
+  }
+}
 })(jQuery);
 </script>
