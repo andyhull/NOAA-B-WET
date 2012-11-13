@@ -20,3 +20,10 @@
 .likertScaleSmall .likertStart {
   float: left;
 }
+
+/* line 19, ../sass/ie.scss */
+#pageLoad {
+  background: #666;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+}

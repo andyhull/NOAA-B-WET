@@ -9,14 +9,15 @@
   <?php print $scripts; ?>
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
+    <link href="/sites/all/themes/mwee/stylesheets/ie.css" rel="stylesheet" type="text/css" />
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <!--[if IE]>
-    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/sites/all/themes/mwee/stylesheets/ie.css" rel="stylesheet" type="text/css" />
    <![endif]-->
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <!-- <div id="pageLoad"></div> -->
+  <div id="pageLoad"></div>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>

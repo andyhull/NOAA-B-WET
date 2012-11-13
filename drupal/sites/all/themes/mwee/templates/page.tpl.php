@@ -97,6 +97,25 @@
 </div>
 
 <script>
+var opts = {
+  lines: 13, // The number of lines to draw
+  length: 7, // The length of each line
+  width: 4, // The line thickness
+  radius: 10, // The radius of the inner circle
+  corners: 1, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  color: '#000', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
+var target = document.getElementById('pageLoad');
+var spinner = new Spinner(opts).spin(target);
 (function($) {
   $('#edit-delete').hide();
   $('#edit-delete').remove();
@@ -133,6 +152,13 @@
   //helper text for the end of the survey
   $('#multistep-group_page8').append('<div class="footerHelp well"><p><h3 style="text-align:center;">Thank you for completing this questionnaire!</h3></p><p><strong>OMB Control Number: 0648-xxxx   Expires: xx/xx/20xx </strong></p><h3>Paperwork Reduction Act Statement</h3>Public reporting burden for this collection of information is estimated to average 30-60 minutes per response, including the time for reviewing instructions, searching existing data sources, gathering and maintaining the data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other suggestions for reducing this burden to Bronwen Rice, NOAA Office of Education, Herbert C. Hoover Building, Room 6863, 14th and Constitution Avenue, NW Washington, DC 20230.</p><p>Responses are voluntary and collected and maintained as anonymous data.  Information will be treated in accordance with the Freedom of Information Act (5 USC 552). </p><p>Notwithstanding any other provision of the law, no person is required to respond to, nor shall any person be subject to a penalty for failure to comply with, a collection of information subject to the requirements of the Paperwork Reduction Act, unless that collection of information displays a currently valid OMB Control Number.</p></div>');
 
+  //helper text for the start of the survey
+  var teacherStartText = '<div class="well"><h3>Introduction</h3><p>Please answer the following questions in reference to your most recently-completed <em>Meaningful Watershed Educational Experience</em> (MWEE) professional development (PD) provided by [name of organization]. You will be asked about a range of practices and outcomes that represent the diversity of MWEE PD funded by the National Oceanic and Atmospheric Administration’s Bay Watershed Education and Training program (NOAA B-WET), some of which may not apply directly to your experience. It is acceptable to answer “not applicable” (N/A) in those instances</p><p>Your responses will be entered anonymously and will not be associated with you as an individual. THANK YOU in advance for your candor and thoughtfulness in answering the questions. Your responses will be aggregated with other teachers’ responses, and will be used by NOAA B-WET and B-WET-funded organizations to improve future professional development programs.</p>It will take about 20-30 minutes to complete this survey, depending on the nature of your professional development experience. Please complete the survey by [deadline].<br/>Thank you. Thank you [name and organization of MWEE PD provider]<br/>and<br/>Bronwen Rice <br/>NOAA B-WET National Coordinator</p></div>'
+  
+  $('.node-teacher_survey-form').prepend(teacherStartText);
+  $('.node-teacher_survey-form').find('.form-item-title').append('<div class="titleHelp">To allow us to compare your past, current, and future responses, please create a unique 8-digit ID number using the 2 digits of your birth month, the 2 digits of your birth day, and the last 4 digits of your most often used phone number. For example, if you were born on March 9 and your home phone is 410.719.1234, your ID number would be 03091234.</div>');
+
+  $('.node-teacher_survey-form').find('.field-name-field-question-improved').after('<div class="footerHelp well"><p><h3 style="text-align:center;">Thank you for completing this questionnaire!</h3></p><p><strong>OMB Control Number: 0648-xxxx   Expires: xx/xx/20xx </strong></p><h3>Paperwork Reduction Act Statement</h3>Public reporting burden for this collection of information is estimated to average 30 minutes per response, including the time for reviewing instructions, searching existing data sources, gathering and maintaining the data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other suggestions for reducing this burden to Bronwen Rice, NOAA Office of Education, Herbert C. Hoover Building, Room 6863, 14th and Constitution Avenue, NW Washington, DC 20230.</p><p>Responses are voluntary and collected and maintained as anonymous data. Information will be treated in accordance with the Freedom of Information Act (5 USC 552). </p><p>Notwithstanding any other provision of the law, no person is required to respond to, nor shall any person be subject to a penalty for failure to comply with, a collection of information subject to the requirements of the Paperwork Reduction Act, unless that collection of information displays a currently valid OMB Control Number.</p></div>');
 
   //here we replace the truncated cck label text with text from the help text field. 
   //help text must contain a "longText" class to be used for replacement
@@ -236,14 +262,16 @@
     })
     setTimeout(function(){
       $('#pageLoad').hide();
+      spinner.stop(target);
     }, 500)
   $("form").submit(function() {
     $('#pageLoad').show();
+    spinner.spin(target);
   })
    $(".progressContainer ~ h1").hide();
 
    $('#node_teacher_survey_form_group_before_after_future>.fieldset-wrapper').prepend('<div class="questionTable"><span class="tableHeader">BEFORE the MWEE professional development, how confident were you in your ability to:</span><span class="tableHeader">AFTER the MWEE professional development, how confident were you in your ability to:</span><span class="tableHeader">In the FUTURE, I intend to ...</span></div>');
-var likertArrayConfident = ['#edit-field-teach-my-students', '#edit-field-incorporate-mwees', '#edit-field-implement-mwees','#edit-field-use-noaa-resources','#edit-field-guide-students','#edit-field-research-env','#edit-field-scientific-inquiry']
+var likertArrayConfident = ['#edit-field-teach-my-students', '#edit-field-incorporate-mwees', '#edit-field-implement-mwees','#edit-field-use-noaa-resources','#edit-field-guide-students','#edit-field-research-env','#edit-field-scientific-inquiry','#edit-field-use-the-outdoors','#edit-field-act-to-protect']
     $.each(likertArrayConfident, function(intIndex, objValue){
       // $(objValue).prepend('<div class="likertScale">'+
       //   '<span class="likertStart">Not at all confident</span><span class="likertEnd">Extremely confident</span></div>')
@@ -271,8 +299,9 @@ var likertArrayConfident = ['#edit-field-teach-my-students', '#edit-field-incorp
    // fix sub nav on scroll
 var $win = $(window)
   , $nav = $('.questionTable')
-  , navTop = $('.questionTable').offset().top -2000
+  , navTop = $('.questionTable').offset().top -9300
   , isFixed = 0
+  , scrollStop = $('.field-name-field-what-component-s-of-the-mw').offset().top -9700
 
 processScroll()
 
@@ -285,6 +314,8 @@ function processScroll() {
     $nav.addClass('tableHeader-fixed')
   } else if (scrollTop <= navTop && isFixed) {
     isFixed = 0
+    $nav.removeClass('tableHeader-fixed')
+  } else if (scrollTop>= scrollStop && isFixed) {
     $nav.removeClass('tableHeader-fixed')
   }
 }

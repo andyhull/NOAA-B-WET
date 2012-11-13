@@ -2424,7 +2424,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.</span>',
+      'description' => '<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE.</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2442,7 +2442,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_hours_taught_outdoors',
-      'label' => 'On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.',
+      'label' => 'On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE.',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -3921,7 +3921,9 @@ function b_wet_general_field_default_fields() {
           2 => 'Great Lakes',
           3 => 'Gulf of Mexico',
           4 => 'Hawaii',
-          5 => 'Other',
+          5 => 'New England',
+          6 => 'Pacific Northwest',
+          7 => 'Other',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -5594,7 +5596,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span></span>',
+      'description' => '<span class="longText">Facilitated networking with other B-WET grantees in my region</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -5612,7 +5614,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_network_my_region',
-      'label' => 'Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span>',
+      'label' => 'Facilitated networking with other B-WET grantees in my region',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5665,7 +5667,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span></span>',
+      'description' => '<span class="longText">Facilitated networking with other B-WET grantees from other regions</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -5683,7 +5685,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_network_other_region',
-      'label' => 'Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span>',
+      'label' => 'Facilitated networking with other B-WET grantees from other regions',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -8920,6 +8922,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -9930,6 +9933,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -9958,7 +9962,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_clean_up',
-      'label' => 'Participated in or helped coordinate a clean-up of a local stream, or beach',
+      'label' => 'Participated in or helped coordinate a clean-up of a local stream, or beach (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -10392,6 +10396,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -10420,7 +10425,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_created_habitat',
-      'label' => 'Created a schoolyard or backyard habitat',
+      'label' => 'Created a schoolyard or backyard habitat (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -10488,7 +10493,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_data_collected',
-      'label' => 'Data collected by and accessible through NOAA',
+      'label' => 'Data collected by and accessible through NOAA (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -10597,6 +10602,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -10625,7 +10631,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_define_watershed',
-      'label' => 'Define the term "watershed"',
+      'label' => 'Define the term "watershed" (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -11027,7 +11033,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_edu_program',
-      'label' => 'NOAA curricula and education programs',
+      'label' => 'NOAA curricula and education programs (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -11126,8 +11132,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -11135,6 +11141,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -11163,7 +11170,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_esources_noaa_expe',
-      'label' => 'NOAA expert (e.g., scientist, educator, Sea Grant staff member, policy expert)',
+      'label' => 'NOAA expert (e.g., scientist, educator, Sea Grant staff member, policy expert) (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -11399,6 +11406,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -11427,7 +11435,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_gave_presentations',
-      'label' => 'Gave presentation(s) about the local watershed (e.g., for school, other organizations)',
+      'label' => 'Gave presentation(s) about the local watershed (e.g., for school, other organizations) (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -11520,7 +11528,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -11551,7 +11561,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_grades_4_5',
-      'label' => 'Elementary',
+      'label' => 'Elementary (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -11582,7 +11592,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -11613,7 +11625,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_grades_6_8',
-      'label' => 'Middle',
+      'label' => 'Middle (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -11644,7 +11656,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -11675,7 +11689,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_grades_9_12',
-      'label' => 'High',
+      'label' => 'High (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -11923,6 +11937,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -11990,6 +12005,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12018,7 +12034,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_id_watershed_funct',
-      'label' => 'Identify the functions that occur in a watershed (transport, store, and cycle water)',
+      'label' => 'Identify the functions that occur in a watershed (transport, store, and cycle water) (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12057,6 +12073,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12085,7 +12102,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_identify_actions',
-      'label' => 'Identify actions individuals can engage in to protect/restore water quality in watersheds',
+      'label' => 'Identify actions individuals can engage in to protect/restore water quality in watersheds (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12124,6 +12141,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12152,7 +12170,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_identify_human_con',
-      'label' => 'Identify connections between human welfare and water flow and quality',
+      'label' => 'Identify connections between human welfare and water flow and quality (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12191,6 +12209,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12219,7 +12238,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_identify_local_wat',
-      'label' => 'Identify their local watershed(s)',
+      'label' => 'Identify their local watershed(s) (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12258,6 +12277,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12286,7 +12306,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_identify_pollution',
-      'label' => 'Identify possible point and non-point sources of water pollution',
+      'label' => 'Identify possible point and non-point sources of water pollution (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12325,6 +12345,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12353,7 +12374,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_identify_watershed',
-      'label' => 'Identify how watersheds are connected to the ocean via streams, rivers, and human-made structures',
+      'label' => 'Identify how watersheds are connected to the ocean via streams, rivers, and human-made structures (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12458,6 +12479,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12486,7 +12508,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_implement_mwee',
-      'label' => 'Be more likely to implement MWEEs',
+      'label' => 'Be more likely to implement MWEEs (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12525,6 +12547,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -12553,7 +12576,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_implement_mwee_aft',
-      'label' => 'Be more likely to implement MWEEs after they are no longer supported by our organization',
+      'label' => 'Be more likely to implement MWEEs after they are no longer supported by our organization (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12586,8 +12609,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -12595,6 +12618,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12623,7 +12647,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_information_for_no',
-      'label' => 'Information from NOAA studies, reports, or websites',
+      'label' => 'Information from NOAA studies, reports, or websites (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12661,6 +12685,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -12689,7 +12714,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_installed_rain_bar',
-      'label' => 'Installed a rain barrel at school or at home',
+      'label' => 'Installed a rain barrel at school or at home (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12959,7 +12984,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_labs_facilities',
-      'label' => 'NOAA labs or facilities',
+      'label' => 'NOAA labs or facilities (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -12997,6 +13022,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13025,7 +13051,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_limited_chemicals',
-      'label' => 'Limited or avoided the use of household chemicals including fertilizers, herbicides and pesticides',
+      'label' => 'Limited or avoided the use of household chemicals including fertilizers, herbicides and pesticides (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13191,8 +13217,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -13200,6 +13226,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13228,7 +13255,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_method_field_work',
-      'label' => 'Field work',
+      'label' => 'Field work (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13261,8 +13288,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -13270,6 +13297,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13298,7 +13326,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_method_issue_inves',
-      'label' => 'Issue investigation',
+      'label' => 'Issue investigation (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13331,8 +13359,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -13340,6 +13368,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13368,7 +13397,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_method_outdoor',
-      'label' => 'Outdoor field trip',
+      'label' => 'Outdoor field trip (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13401,8 +13430,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -13410,6 +13439,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13438,7 +13468,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_method_place_based',
-      'label' => 'Place-based education',
+      'label' => 'Place-based education (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13471,8 +13501,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -13480,6 +13510,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13508,7 +13539,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_method_scientific_',
-      'label' => 'Scientific-inquiry-based learning',
+      'label' => 'Scientific-inquiry-based learning (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13546,6 +13577,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -13574,7 +13606,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_monitored_water_qu',
-      'label' => 'Monitored water quality',
+      'label' => 'Monitored water quality (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -13748,6 +13780,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -13776,7 +13809,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_national_standards',
-      'label' => 'National education standards',
+      'label' => 'National education standards (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -14001,7 +14034,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -14032,7 +14067,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_other_per',
-      'label' => 'Other',
+      'label' => 'Other (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -14147,6 +14182,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -14157,7 +14193,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>',
+      'description' => '<span class="longText">About how many hours did a typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -14175,7 +14211,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_outdoor_activity',
-      'label' => 'About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?',
+      'label' => 'About how many hours did a typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -14280,6 +14316,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -14308,7 +14345,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_participated_event',
-      'label' => 'Participated in or organized event(s) to raise awareness about the importance of watersheds',
+      'label' => 'Participated in or organized event(s) to raise awareness about the importance of watersheds (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -14401,7 +14438,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -14432,7 +14471,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_prek_3',
-      'label' => 'PreK',
+      'label' => 'PreK (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '100',
@@ -14673,6 +14712,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -14701,7 +14741,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_recognize_processe',
-      'label' => 'Recognize that both natural processes and human activities affect water flow and water quality in watersheds',
+      'label' => 'Recognize that both natural processes and human activities affect water flow and water quality in watersheds (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -14743,6 +14783,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -14771,7 +14812,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_regional_prioritie',
-      'label' => 'Regional environmental/natural resources management priorities',
+      'label' => 'Regional environmental/natural resources management priorities (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -14804,8 +14845,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -14813,6 +14854,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -14841,7 +14883,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_resources_estuarin',
-      'label' => 'NOAA National Estuarine Research Reserve',
+      'label' => 'NOAA National Estuarine Research Reserve (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -14874,8 +14916,8 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => NULL,
+          1 => NULL,
         ),
         'allowed_values_function' => 'cck_allowed_values_php',
         'allowed_values_php' => 'return array (
@@ -14883,6 +14925,7 @@ function b_wet_general_field_default_fields() {
 	1 => \'No\',
 	2 => \'Yes\'
 );',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -14911,7 +14954,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_resources_marine_s',
-      'label' => 'NOAA National Marine Sanctuary',
+      'label' => 'NOAA National Marine Sanctuary (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -15015,6 +15058,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -15043,7 +15087,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_restoration_activi',
-      'label' => 'Participated in a restoration activity (e.g., planting trees)',
+      'label' => 'Participated in a restoration activity (e.g., planting trees) (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -15085,6 +15129,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -15113,7 +15158,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_school_district',
-      'label' => 'School district education standards',
+      'label' => 'School district education standards (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -15618,6 +15663,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -15646,7 +15692,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_state_standards',
-      'label' => 'State education standards',
+      'label' => 'State education standards (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -15817,6 +15863,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -15845,7 +15892,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_teach_watershed',
-      'label' => 'Teach more about watersheds',
+      'label' => 'Teach more about watersheds (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -15883,6 +15930,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -15911,7 +15959,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_told_others',
-      'label' => 'Told others about ways they can protect their local watershed',
+      'label' => 'Told others about ways they can protect their local watershed (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16016,6 +16064,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_integer',
@@ -16044,7 +16093,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teacher_use_resources',
-      'label' => 'Be more likely to use NOAA resources to enhance their students\' MWEE experiences',
+      'label' => 'Be more likely to use NOAA resources to enhance their students\' MWEE experiences (teacher)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16071,7 +16120,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -16102,7 +16153,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teachers_k_12_served',
-      'label' => 'About ____ K-12 schools served',
+      'label' => 'About ____ K-12 schools served (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '',
@@ -16133,7 +16184,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -16164,7 +16217,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teachers_school_districts_',
-      'label' => 'About ____ school districts served',
+      'label' => 'About ____ school districts served (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '',
@@ -16195,7 +16248,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -16226,7 +16281,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teachers_served',
-      'label' => 'About ____ teachers served',
+      'label' => 'About ____ teachers served  (teacher)',
       'required' => 0,
       'settings' => array(
         'max' => '',
@@ -16553,7 +16608,7 @@ function b_wet_general_field_default_fields() {
       'default_value_function' => '',
       'default_value_php' => '',
       'deleted' => '0',
-      'description' => '<span class="longText">Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ',
+      'description' => '<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -16571,7 +16626,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_years_noaa_funding',
-      'label' => 'Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?',
+      'label' => 'Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -16606,7 +16661,7 @@ function b_wet_general_field_default_fields() {
       'bundle' => 'grantee_survey',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '<span class="longText">In what <span class="underlineText">5-digit</span> zip code is your organization located?</span>',
+      'description' => '<span class="longText">In what 5-digit zip code is your organization located?</span>',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -16629,7 +16684,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_zipcode',
-      'label' => 'In what <span class="underlineText">5-digit</span> zip code is your organization located?',
+      'label' => 'In what 5-digit zip code is your organization located?',
       'required' => 0,
       'settings' => array(
         'max' => '99999',
@@ -16730,20 +16785,20 @@ function b_wet_general_field_default_fields() {
   t('(i.e., scientific study carried out somewhere other than in a classroom/laboratory, includes data collection)');
   t('(training for individuals who provide teacher professional development)');
   t('(usually on consecutive days that cumulatively consist of 40 hours or more)');
-  t('<span class="longText">About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?</span>');
+  t('<span class="longText">About how many hours did a typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?</span>');
   t('<span class="longText">About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?</span>');
   t('<span class="longText">Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)</span>');
   t('<span class="longText">Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities.</span>');
   t('<span class="longText">Evaluating your organization\'s most recent B-WET-funded grant (on your own or through collaborating with an external evaluation consultant)</span>');
-  t('<span class="longText">Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span></span>');
-  t('<span class="longText">Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span></span>');
+  t('<span class="longText">Facilitated networking with other B-WET grantees from other regions</span>');
+  t('<span class="longText">Facilitated networking with other B-WET grantees in my region</span>');
   t('<span class="longText">Impact -- (seeks to assess the broader, longer-term changes that occurred as a result of a project such as in improved environmental quality)</span>');
-  t('<span class="longText">In what <span class="underlineText">5-digit</span> zip code is your organization located?</span>');
-  t('<span class="longText">Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
+  t('<span class="longText">In what 5-digit zip code is your organization located?</span>');
+  t('<span class="longText">Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?</span> ');
   t('<span class="longText">Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds (verbal, mental, or physical)</span>');
   t('<span class="longText">Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)</span>');
   t('<span class="longText">Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)</span>');
-  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.</span>');
+  t('<span class="longText">On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE.</span>');
   t('<span class="longText">On average during the past grant year, a typical student spent ____ hours taught by your organization\'s staff during a B-WET-funded MWEE.</span>');
   t('<span class="longText">Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)</span>');
   t('<span class="longText">Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!</span>');
@@ -16751,10 +16806,10 @@ function b_wet_general_field_default_fields() {
   t('<span class="longText">Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?(e.g., science, math, social studies, literature, art, music)</span>');
   t('A college-level course');
   t('About');
-  t('About ____ K-12 schools served');
-  t('About ____ school districts served');
-  t('About ____ teachers served');
-  t('About how many hours did a typical teacher participate in <span class="underlineText">outdoor</span> activities as part of your organization\'s MWEE professional development this past grant year?');
+  t('About ____ K-12 schools served (teacher)');
+  t('About ____ school districts served (teacher)');
+  t('About ____ teachers served  (teacher)');
+  t('About how many hours did a typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?');
   t('About how many hours of MWEE professional development and/or support did your organization typically provide for any one teacher this past grant year?');
   t('Access to local NOAA subject-matter experts');
   t('After-school or weekend programs (e.g., science clubs)');
@@ -16778,9 +16833,9 @@ function b_wet_general_field_default_fields() {
   t('Be more likely to act to protect and/or restore watersheds');
   t('Be more likely to express an interest in pursuing science careers');
   t('Be more likely to guide students through taking action to protect or restore watersheds');
-  t('Be more likely to implement MWEEs');
-  t('Be more likely to implement MWEEs after they are no longer supported by our organization');
-  t('Be more likely to use NOAA resources to enhance their students\' MWEE experiences');
+  t('Be more likely to implement MWEEs (teacher)');
+  t('Be more likely to implement MWEEs after they are no longer supported by our organization (teacher)');
+  t('Be more likely to use NOAA resources to enhance their students\' MWEE experiences (teacher)');
   t('Be more likely to use interdisciplinary approaches to instruction');
   t('Be more likely to use local community resources as part of instruction');
   t('Be more likely to use science inquiry instruction');
@@ -16794,8 +16849,11 @@ function b_wet_general_field_default_fields() {
   t('Communicated with teachers through personal phone calls or email');
   t('Conserved water at school to protect the local watershed');
   t('Created a schoolyard or backyard habitat');
+  t('Created a schoolyard or backyard habitat (teacher)');
   t('Data collected by and accessible through NOAA');
+  t('Data collected by and accessible through NOAA (teacher)');
   t('Define the term "watershed"');
+  t('Define the term "watershed" (teacher)');
   t('Developing presentations of their findings');
   t('Developing your organization\'s most recent funded B-WET grant proposal (on your own or through collaborating with an external grant writer)');
   t('Did the majority of participating teachers teach science?');
@@ -16806,6 +16864,7 @@ function b_wet_general_field_default_fields() {
   t('Discussed how teachers may be able to integrate MWEEs into their own curriculum or classroom activities.');
   t('Discussed how to use NOAA data to obtain knowledge about local issues');
   t('Elementary');
+  t('Elementary (teacher)');
   t('Email listserv, web forum, Facebook page, or other tools for virtual interaction with other grantees');
   t('Engaged teachers in aligning MWEEs with their school or school district standards');
   t('Engaged teachers in the same activities/practices they can use with their students');
@@ -16814,27 +16873,35 @@ function b_wet_general_field_default_fields() {
   t('Express greater caring and concern for watersheds');
   t('Facilitated interactions with NOAA scientists/staff');
   t('Facilitated interactions with natural resource professionals');
-  t('Facilitated networking with other B-WET grantees from <span class="underlineText">other regions</span>');
-  t('Facilitated networking with other B-WET grantees in <span class="underlineText">my region</span>');
+  t('Facilitated networking with other B-WET grantees from other regions');
+  t('Facilitated networking with other B-WET grantees in my region');
   t('Feel more connected to their local watershed');
   t('Field work');
+  t('Field work (teacher)');
   t('For how many years total has this B-WET project been in existence, including years not funded by NOAA B-WET?');
   t('For what type of organization do you work? (choose one)');
   t('Formulating scientific questions they can answer using data');
   t('Gave presentation(s) about the local watershed');
-  t('Gave presentation(s) about the local watershed (e.g., for school, other organizations)');
+  t('Gave presentation(s) about the local watershed (e.g., for school, other organizations) (teacher)');
   t('Helped clean up or take care of a local stream or beach');
   t('Helped make connections to local community organizations and resources');
   t('High');
+  t('High (teacher)');
   t('How can this questionnaire be improved?');
   t('I don\'t know the percent');
   t('I don\'t know the percent (teacher)');
   t('Identify actions individuals can engage in to protect/restore water quality in watersheds');
+  t('Identify actions individuals can engage in to protect/restore water quality in watersheds (teacher)');
   t('Identify connections between human welfare and water flow and quality');
+  t('Identify connections between human welfare and water flow and quality (teacher)');
   t('Identify how watersheds are connected to the ocean via streams, rivers, and human-made structures');
+  t('Identify how watersheds are connected to the ocean via streams, rivers, and human-made structures (teacher)');
   t('Identify possible point and non-point sources of water pollution');
+  t('Identify possible point and non-point sources of water pollution (teacher)');
   t('Identify the functions that occur in a watershed (transport, store, and cycle water)');
+  t('Identify the functions that occur in a watershed (transport, store, and cycle water) (teacher)');
   t('Identify their local watershed(s)');
+  t('Identify their local watershed(s) (teacher)');
   t('If Yes name the NOAA data source:');
   t('If Yes name the curricula or programs');
   t('If Yes name the curricula or programs:');
@@ -16848,43 +16915,53 @@ function b_wet_general_field_default_fields() {
   t('Implementing your organization\'s most recent B-WET-funded grant ');
   t('Improved academic performance');
   t('Improved water quality (positive changes in physical watershed that can be attributed to participants\' actions) ');
-  t('In what <span class="underlineText">5-digit</span> zip code is your organization located?');
+  t('In what 5-digit zip code is your organization located?');
   t('In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)');
   t('Included more than one teacher from individual schools');
-  t('Including this past grant year, for how many years has your organization <span class="underlineText">received</span> funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?');
+  t('Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?');
   t('Increases in intentions to act on behalf of watersheds');
   t('Increases in knowledge about watersheds (participants learned new information)');
   t('Increases in the skills needed to engage in behaviors to protect and/or restore ocean, coastal and/or Great Lakes watersheds (verbal, mental, or physical)');
   t('Individual teacher coaching and support');
   t('Information about and access to current NOAA data sets');
   t('Information from NOAA studies, reports, or websites');
+  t('Information from NOAA studies, reports, or websites (teacher)');
   t('Installed a rain barrel at school');
-  t('Installed a rain barrel at school or at home');
+  t('Installed a rain barrel at school or at home (teacher)');
   t('Issue investigation');
+  t('Issue investigation (teacher)');
   t('Know more about climate change');
   t('Know more about the ocean');
-  t('Limited or avoided the use of household chemicals including fertilizers, herbicides and pesticides');
+  t('Limited or avoided the use of household chemicals including fertilizers, herbicides and pesticides (teacher)');
   t('Making conclusions and adjusting predictions/hypotheses');
   t('Making predictions or hypotheses');
   t('Middle');
+  t('Middle (teacher)');
   t('Monitored water quality');
+  t('Monitored water quality (teacher)');
   t('Multi-day workshops (events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)');
   t('NOAA B-WET award number');
   t('NOAA B-WET has - or will have - a positive impact on environmental education in my area\'s formal education system.');
   t('NOAA B-WET has had - or will have - a positive impact on education policy in my area.');
   t('NOAA B-WET has had - or will have - a positive impact on environmental policy in my area.');
   t('NOAA National Estuarine Research Reserve');
+  t('NOAA National Estuarine Research Reserve (teacher)');
   t('NOAA National Marine Sanctuary');
+  t('NOAA National Marine Sanctuary (teacher)');
   t('NOAA curricula and education programs');
+  t('NOAA curricula and education programs (teacher)');
   t('NOAA expert (e.g., scientist, educator, Sea Grant staff member, policy expert)');
+  t('NOAA expert (e.g., scientist, educator, Sea Grant staff member, policy expert) (teacher)');
   t('NOAA labs or facilities');
+  t('NOAA labs or facilities (teacher)');
   t('NOAA materials and lesson plans relevant to watersheds');
   t('National education standards');
+  t('National education standards (teacher)');
   t('Needs assessment --(determines the need for a project by considering aspects such as available resources, extent of the problem and need to address it, participant interest and knowledge, etc. This is also known as front-end evaluation.)');
   t('Off-site field programs during the school day');
   t('Offered continuing education credits');
   t('Offered graduate credits');
-  t('On average during the past grant year, a typical student spent ____ hours <span class="underlineText">outdoors</span> taught by your organization’s staff during a B-WET-funded MWEE.');
+  t('On average during the past grant year, a typical student spent ____ hours outdoors taught by your organization’s staff during a B-WET-funded MWEE.');
   t('On average during the past grant year, a typical student spent ____ hours taught by your organization\'s staff during a B-WET-funded MWEE.');
   t('On average, a typical student participated in your organization\'s B-WET-funded MWEEs over the course of:');
   t('On-line professional development support');
@@ -16897,20 +16974,24 @@ function b_wet_general_field_default_fields() {
   t('Opportunities to learn about ocean literacy principles');
   t('Opportunities to learn about watershed science');
   t('Other');
+  t('Other (teacher)');
   t('Outcome -- (shows the programs’ direct effects on target outcomes and provides direction for program improvement. For example, outcome evaluation may show that a program was (or was not) successful in changing participants’ knowledge, attitudes, skills, intentions, or behaviors)');
   t('Outdoor field trip');
+  t('Outdoor field trip (teacher)');
   t('Overall, what grade would you give the support you received from your region\'s NOAA B-WET staff over the past grant year?');
   t('Participants engaging in actions that protect or restore watersheds');
   t('Participated in a restoration activity');
-  t('Participated in a restoration activity (e.g., planting trees)');
+  t('Participated in a restoration activity (e.g., planting trees) (teacher)');
   t('Participated in an event to raise awareness about the importance of watersheds');
-  t('Participated in or helped coordinate a clean-up of a local stream, or beach');
-  t('Participated in or organized event(s) to raise awareness about the importance of watersheds');
+  t('Participated in or helped coordinate a clean-up of a local stream, or beach (teacher)');
+  t('Participated in or organized event(s) to raise awareness about the importance of watersheds (teacher)');
   t('Perform better academically in science');
   t('Perform better on state standardized tests');
   t('Place-based education');
+  t('Place-based education (teacher)');
   t('Please explain why you selected the response you did.');
   t('PreK');
+  t('PreK (teacher)');
   t('Presented how NOAA data can be used to support student scientific inquiry');
   t('Presented information and examples illustrating how teachers have integrated MWEEs');
   t('Process/implementation -- (examines the implementation of a project, focusing on the effort invested in the project and its direct outputs. For example, an implementation evaluation might measure how the project is being delivered, who participated, and whether they were satisfied with it). Note that this type of evaluation is NOT the same as a program report!');
@@ -16922,24 +17003,29 @@ function b_wet_general_field_default_fields() {
   t('Provided information on how to obtain grants or funding for MWEEs');
   t('Provided instructional/educational/curriculum materials');
   t('Provided teacher stipends');
-  t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds');
+  t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds (teacher)');
   t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds.');
   t('Reduced litter at school ');
   t('Regional environmental/natural resources management priorities');
+  t('Regional environmental/natural resources management priorities (teacher)');
   t('School district education standards');
+  t('School district education standards (teacher)');
   t('Schoolyard-based programs during the school day');
   t('Scientific-inquiry-based learning');
+  t('Scientific-inquiry-based learning (teacher)');
   t('Service learning');
   t('Shared examples of how other teachers have used NOAA data with their students');
   t('State education standards');
+  t('State education standards (teacher)');
   t('Suggested "best" or "preferred" practices for MWEEs');
   t('Summer programs');
-  t('Teach more about watersheds');
+  t('Teach more about watersheds (teacher)');
   t('Teacher institute');
   t('The B-WET grant has improved - or will improve - the overall quality of environmental education provided by my organization.');
   t('The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.');
   t('This questionnaire was ....');
   t('Told others about ways they can protect their local watershed');
+  t('Told others about ways they can protect their local watershed (teacher)');
   t('Were NOAA resources used as part of MWEE professional development for teachers?');
   t('Were NOAA resources used as part of MWEEs for students?');
   t('Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?(e.g., science, math, social studies, literature, art, music)');

@@ -15,3 +15,9 @@
 			float: left;
 		}
 	}
+
+	#pageLoad {
+		background: #666;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+	}

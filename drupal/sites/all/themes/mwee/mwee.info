@@ -13,8 +13,10 @@ regions[sidebar_second] = 'Secondary'
 regions[footer]         = 'Footer'
 
 stylesheets[all][] = stylesheets/style.css
+stylesheets[all][] = stylesheets/ie.css
 
 scripts[] = js/mwee.js
+scripts[] = js/spin.js
 
 settings[toggle_name] = 0
 settings[toggle_search] = 1

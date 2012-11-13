@@ -96,7 +96,10 @@
 	.form-item-field-noaa-funding-und, .form-item-field-funding-all-und, .form-item-field-organization-und-select,
 	.form-item-field-hours-taught-und, .form-item-field-hours-taught-outdoors-und, .form-item-field-length-participation-und, 
 	.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-test-und,
-	.form-item-field-led-evaluation-und-select {
+	.form-item-field-led-evaluation-und-select, .form-item-field-what-subject-s-do-you-prim-und, 
+	.form-item-field-which-of-these-categories--und, .form-item-field-what-was-your-primary-reas-und, 
+	.form-item-field-in-what-setting-do-you-tea-und, .form-item-field-organization-no-select-und,
+	.form-item-field-led-evaluation-new-und {
 		@include blockForms;
 	}
 	//hide the drupal fields at the bottom of the form
@@ -159,6 +162,7 @@
 		// margin-left: 300px;
 		font-weight: bold;
 		color: #fff;
+		font-size: 13px;
 		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
 		.likertStart {
 			color: #333;
@@ -245,19 +249,25 @@
 		min-height: 30px;
 		font-weight: bold;
 		padding: 0px 5px;
+		font-size: 16px;
+		color: #000;
 	}
 	.tableHeader-fixed {
     border-color: #D5D5D5;
     border-radius: 0 0 0 0;
     border-width: 0 0 1px;
-    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 20px rgba(0, 0, 0, 0.7);
     position: fixed;
-    right: 60px;
+    right: 0px;
+    left: 0px;
     top: 108px;
     z-index: 1020;
     background: #84929A;
 		@include filter-gradient(#84929A, #788891, vertical);
 		@include background-image(linear-gradient(top, #84929A, #788891));
+		width: 100%;
+		padding-left: 60px;
+		padding-top: 10px;
 	}
 	.scaleLabel {
 		padding: 20px 10px;

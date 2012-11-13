@@ -145,7 +145,7 @@ echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; /
     'group_provide_for_students':{
       'id':'group_provide_for_students',
       'question':'Which of the following did your B-WET-funded programs provide for students during this past grant year?',
-      'fields': ['field_off_site_programs','field_schoolyard_programs','field_classroom_programs','field_after_school_programs','field_summer_programs','field_events']
+      'fields': ['field_off_site_programs','field_schoolyard_programs','field_classroom_programs','field_after_school_programs_1','field_summer_programs','field_events']
     },
     'group_report_evidence':{
       'id':'group_report_evidence',
@@ -155,7 +155,7 @@ echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; /
     'group_resources_group':{
       'id':'group_resources_group',
       'question':'Which NOAA resources were used as part of MWEEs for students, if any?',
-      'fields': ['field_information_for_noaa','field_resources_noaa_data','field_resources_noaa_expert','field_resources_education_progra','field_resources_facilities','field_resources_marine_sanctuary','field_resources_estuarine_resear']
+      'fields': ['field_information_for_noaa','field_resources_noaa_data_new','field_noaa_programs','field_resources_noaa_expert','field_noaa_labs_or_facilities','field_resources_education_progra','field_resources_facilities','field_resources_marine_sanctuary','field_resources_estuarine_resear']
     },
     'group_science':{
       'id':'group_science',
@@ -390,8 +390,10 @@ echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; /
   // for all numbers
   function createNumber(responses, field, fieldKey, data, sum) {
     var dataKey = field;
-    data  =  data.replace("(", '')
-    data  =  data.replace(")", '')                    
+    if(data) {
+      data  =  data.replace("(", '')
+      data  =  data.replace(")", '')                    
+    }
     var cleanData = data;
     if(data == '') {
       $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+responses+'</span></div>')  
@@ -403,7 +405,9 @@ echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; /
         }
         $('#'+field).append('<div class="'+result+'More resultDetail"><div style="width:400px;"><span class="label color'+fieldKey+'" style="width:'+percent+'%; display:block;">'+cleanData+'</span>&nbsp;'+responses+'&nbsp;'+respondent+' ('+Math.round(percent)+'%)</div></div>')
         var labelHolder = cleanData
-        cleanData =cleanData.replace(/[\W]/g, '')
+        if(cleanData) {
+          cleanData =cleanData.replace(/[\W]/g, '');
+        }
         $('.bar', '#'+result).append('<span class="color'+fieldKey+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;">&nbsp;<div class="more">Value: '+data+' <br/>Count: '+responses+' ('+Math.round(percent)+'% of total)</div></span>')
       }
     $('.more').hide()
@@ -441,6 +445,7 @@ echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; /
   $('#mainResults').append('<div id="teachers"><h2>About teacher professional development participants</h2></div>')
   $('#mainResults').append('<div id="evaluation"><h2>Grantees MWEE evaluation practices &amp; findings</h2></div>')
   $('#mainResults').append('<div id="impact"><h2>MWEE impact</h2></div>');
+  $('#mainResults').append('<div id="survey"><h2>MWEE survey evaluation</h2></div>');
 
   $.each($('.groupStudent'), function(){
     $('#students').append($(this))
@@ -456,6 +461,9 @@ echo "<script>var csvData = ". $csvData.";var csvHeader = ". $header_array ."; /
   })
   $.each($('.groupImpact'), function(){
     $('#impact').append($(this))
+  })
+  $.each($('.groupSurvey'), function(){
+    $('#survey').append($(this))
   })
 //group questions together
   $.each(groupQuestion,function(i){
