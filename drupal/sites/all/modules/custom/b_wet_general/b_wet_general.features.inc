@@ -34,6 +34,14 @@ function b_wet_general_node_info() {
       'title_label' => t('NOAA B-WET award number'),
       'help' => '',
     ),
+    'teacher_survey' => array(
+      'name' => t('Teacher Survey'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Teacher unique ID'),
+      'help' => '',
+    ),
   );
   return $items;
 }

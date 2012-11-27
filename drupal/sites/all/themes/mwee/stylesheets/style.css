@@ -761,23 +761,28 @@ body {
   left: 0;
   position: fixed;
   right: 0;
-  top: 108px;
+  top: 40px;
   z-index: 1020;
 }
 
 /* line 96, ../sass/style.scss */
+.withToolbar {
+  top: 73px;
+}
+
+/* line 99, ../sass/style.scss */
 .subnav-fixed .nav {
   margin: 0 auto;
   padding: 0 1px;
   width: 938px;
 }
 
-/* line 101, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 .subnav .nav > li:first-child > a, .subnav .nav > li:first-child > a:hover {
   border-radius: 0 0 0 0;
 }
 
-/* line 105, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 .centered {
   position: fixed;
   top: 50%;

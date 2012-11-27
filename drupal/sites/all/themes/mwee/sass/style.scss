@@ -90,8 +90,11 @@ body {
     left: 0;
     position: fixed;
     right: 0;
-    top: 108px;
+    top: 40px;
     z-index: 1020;
+}
+.withToolbar {
+    top: 73px;
 }
 .subnav-fixed .nav {
     margin: 0 auto;

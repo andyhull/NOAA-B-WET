@@ -17,7 +17,7 @@
  * @ingroup views_templates
  */
 ?>
-<div id="navbarExample" class="subnav subnav-fixed">
+<!-- <div id="navbarExample" class="subnav subnav-fixed">
   <ul class="nav nav-pills">
     <li><a href="#overview">Overview</a></li>
     <li><a href="#students">Students</a></li>
@@ -25,7 +25,7 @@
     <li><a href="#evaluation">Evaluation</a></li>
     <li><a href="#impact">Impact</a></li>
   </ul>
-  </div>
+  </div> -->
 <?php
 $allResults = new stdClass();
 //loop through rows
@@ -39,8 +39,31 @@ foreach ($rows as $key =>$field){
         $allResults->$question->type = $field_classes[$question][$key];
         $fieldTest = field_info_field($question);
         if (isset($fieldTest['settings']['allowed_values'])) {
-          $labelEnd = end($fieldTest['settings']['allowed_values']);
           $labelStart = reset($fieldTest['settings']['allowed_values']);
+          $labelEnd = end($fieldTest['settings']['allowed_values']);
+          switch ($labelEnd) {
+            case 5:
+              $labelEnd .= " - To a great extent";
+              $labelStart .= " - Not at all";
+              break;
+            case 7:
+              if(strstr($allResults->$question->type, 'groupImpact')){
+                $labelEnd .= " - Strongly Agree";
+                $labelStart .= " - Strongly Disagree";
+               } elseif(strstr($allResults->$question->type, 'groupSurvey')){
+                $labelStart = $labelStart;
+                $labelEnd = $labelEnd;
+               } else {
+                $labelEnd .= " - Extremely likely";
+                $labelStart .= " - Extremely unlikely";
+               }
+                break;
+            default:
+               $labelStart = $labelStart;
+               $labelEnd = $labelEnd;
+               break;
+          }
+
           foreach($fieldTest['settings']['allowed_values'] as $labelKey => $labelValue) {
             $newKey = (string) $question.$labelKey;
             //add in the values to the question object
@@ -94,10 +117,8 @@ foreach ($header as $headerTitle => $headerValue) {
   if($headerTitle !== 'title') {
     $responseCount =0;
     $unansweredCount = 0;
-    $output .= '<div id="'.$headerTitle.'"><div class="questionTitle">'.$headerValue.'</div>';
-    // print_r($allResults->$headerTitle);
+    $output .= '<div id="'.$headerTitle.'" class="result"><div class="questionTitle">'.$headerValue.'</div>';
     foreach ($allResults->$headerTitle as $question => $questionValue) {
-      // print_r($allResults->$headerTitle->$question);
       if($question !== 'type') {
         //get the sum for answered and unanswered questions
         if($allResults->$headerTitle->$question->label == 'unanswered') {
@@ -108,8 +129,8 @@ foreach ($header as $headerTitle => $headerValue) {
             $labelStart = $allResults->$headerTitle->$question->labelStart;
             $labelEnd = $allResults->$headerTitle->$question->labelEnd;
           }else {
-            $labelStart = '';
-            $labelEnd = '';
+            $labelStart = 'Unanswered';
+            $labelEnd = 'Answered';
           }
         }
       }
@@ -118,10 +139,22 @@ foreach ($header as $headerTitle => $headerValue) {
     //format the answers based on the css classes
     if(strstr($allResults->$headerTitle->type, 'text') || strstr($allResults->$headerTitle->type, 'structured')){
       $percentUnanswered = ($unansweredCount/($responseCount + $unansweredCount)*100);
-      $output .= '<span class="color1 '.$headerTitle.'bar'.$unansweredCount.'" style="width:'.$percentUnanswered.'%;">&nbsp;<div class="more">Unanswered: '.$unansweredCount.' ('.$percentUnanswered.'% of total)</div></span>';
+      $output .= '<span class="color1 barDetail" style="width:'.$percentUnanswered.'%;">&nbsp;<div class="more">Unanswered: '.$unansweredCount.' ('.round($percentUnanswered).'% of total)</div></span>';
       $percentAnswered = ($responseCount/($responseCount + $unansweredCount)*100);
-      $output .= '<span class="color5 '.$headerTitle.'bar'.$responseCount.'" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Unanswered: '.$responseCount.' ('.$percentAnswered.'% of total)</div></span>';
-     // $output .= '</div><div class="barLabel resultDetail"><span class="likertStart"></span><span class="likertEnd"></div><div id="'.$headerValue.'More" class="btn">See details</div></div>';
+      $output .= '<span class="color5 barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Answered: '.$responseCount.' ('.round($percentAnswered).'% of total)</div></span>';
+      foreach ($allResults->$headerTitle as $question => $questionValue) {
+        if($question !== 'type') {
+          if($allResults->$headerTitle->$question->label !== 'unanswered') {
+            if($responseCount > 0){
+              $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
+            }
+            $detailOutput .= '<div><span class="label" display:block;">'.$allResults->$headerTitle->$question->label.'</span></div>';
+          } else {
+            $sum = $responseCount + $unansweredCount;
+            $detailOutput .= '<strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span>';
+          }
+        }
+      }
     } else {
       foreach ($allResults->$headerTitle as $question => $questionValue) {
         if($question !== 'type') {
@@ -129,8 +162,8 @@ foreach ($header as $headerTitle => $headerValue) {
             if($responseCount > 0){
               $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
             }
-            $output .= '<span class="color'.$allResults->$headerTitle->$question->labelKey.' barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Value: '.$allResults->$headerTitle->$question->label.' <br/>Count: '.$allResults->$headerTitle->$question->count.' ('.$percentAnswered.'% of total)</div></span>';
-            $detailOutput .= '<div style="width:400px;"><span class="label color'.$allResults->$headerTitle->$question->labelKey.'" style="width:'.$percentAnswered.'%; display:block;">'.$allResults->$headerTitle->$question->label.'</span>&nbsp;'.$allResults->$headerTitle->$question->count.'&nbsp;Respondents ('.$percentAnswered.'%)</div>';
+            $output .= '<span class="color'.$allResults->$headerTitle->$question->labelKey.' barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Value: '.$allResults->$headerTitle->$question->label.' <br/>Count: '.$allResults->$headerTitle->$question->count.' ('.round($percentAnswered).'% of total)</div></span>';
+            $detailOutput .= '<div style="width:400px;"><span class="label color'.$allResults->$headerTitle->$question->labelKey.'" style="width:'.$percentAnswered.'%; display:block;">'.$allResults->$headerTitle->$question->label.'</span>&nbsp;'.$allResults->$headerTitle->$question->count.'&nbsp;Respondents ('.round($percentAnswered).'%)</div>';
           } else {
             $sum = $responseCount + $unansweredCount;
             $detailOutput .= '<strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span>';
@@ -144,7 +177,6 @@ foreach ($header as $headerTitle => $headerValue) {
   } //end if !== title
 }
 $header_array = json_encode($header);
-$csvData = json_encode($rows);
 echo "<script>var dataLabels = ". $header_array.";</script>";
 ?>
 <div id="mainResults"><?php print $output;?></div>
@@ -155,6 +187,10 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
   if($('.view-filters').length>0){
     $('.toolbarWrapper').append($('.view-filters'));
   }
+  $('.nav-tabs').click(function(){
+    $('#pageLoad').show();
+    spinner.spin(target);
+  })
 //An object for wrapping individual questions in a group 
   var groupQuestion = new Object();
   groupQuestion = {
@@ -324,213 +360,6 @@ for(question in dataLabels){
       $('.'+resultToggle).toggle()
     })
 }
-  for(result in resultData) {
-    var sum = 0;
-    var unanswered = 0;
-    var cleanLabel;
-    var question = dataLabels[result];
-    var responseLabel;
-    var key;
-    var labelEnd;
-    var labelStart;
-    //get the formatting from our css classes (aka Object->type)
-    var format = Array();
-    format = resultData[result]['type'].split(" ");
-    //get the total of answered and unanswered questions
-    $.each(resultData[result],function(i){
-      if(i !== 'type'){
-        if(resultData[result][i]['label'] == 'unanswered'){
-          unanswered = parseFloat(resultData[result][i]['count']);
-        } else {
-          var answer = parseFloat(resultData[result][i]['count']);
-          sum+=parseFloat(answer)
-        } 
-      }
-    });
-
-    if(format[1]) {
-      $('#mainResults').append('<div id="'+result+'" class="'+format[1]+' result"><div class="questionTitle">'+question+'</div>')
-    } else {
-      $('#mainResults').append('<div id="'+result+'"><div class="questionTitle">'+question+'</div>')
-    }
-    
-    //if this is a plain text object create a scale of answered vs. unanswered    
-    if(format[0] == "text") {
-      // if(!$('#'+result+'More').length) {
-      // //add the formatted label and more button
-      // $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart"></span><span class="likertEnd"></div><div id="'+result+'More" class="btn">See details</div></div>')  
-      // }
-      // var percent1 = parseFloat((unanswered/(sum + unanswered))* 100) 
-      // $('.bar', '#'+result).append('<span class="color1 '+result+'bar'+unanswered+'" style="width:'+percent1+'%;">&nbsp;<div class="more">Unanswered: '+unanswered+' ('+Math.round(percent1)+'% of total)</div></span>') 
-      // var percent = parseFloat((sum/(sum + unanswered))* 100)
-
-      // $('.bar', '#'+result).append('<span class="color5 '+result+'bar'+sum+'" style="width:'+percent+'%;">&nbsp;<div class="more">Answered: '+sum+' ('+Math.round(percent)+'% of total)</div></span>')
-      // //controls the hover labels
-      $('.'+result+'More').hide()
-      $('.more', '.'+result+'bar'+sum).hide()
-      $('.'+result+'bar'+sum).mouseover(function() {
-        $('.more', this).show();
-      })
-      $('.'+result+'bar'+sum).mouseout(function() {
-        $('.more', this).hide();
-      })
-
-      $('.more', '.'+result+'bar'+unanswered).hide()
-      $('.'+result+'bar'+unanswered).mouseover(function() {
-        $('.more', this).show();
-      })
-      $('.'+result+'bar'+unanswered).mouseout(function() {
-        $('.more', this).hide();
-      })
-    
-    }
-    for(data in sortObject(resultData[result])){
-      // this is for extracting the scale labels
-      if(typeof resultData[result][data]['labelEnd']!='undefined'){
-        switch (resultData[result][data]['labelEnd']) {
-          case '5':
-            labelEnd = "5 - To a great extent";
-            labelStart = "1 - Not at all";
-          break;
-          case '7':
-            labelEnd = "7 - Extremely likely";
-            labelStart = "1 - Extremely unlikely";
-          break;
-          default:
-            labelEnd = resultData[result][data]['labelEnd'];
-            labelStart = resultData[result][data]['labelStart'];
-        }
-        if(resultData[result][data]['labelEnd'] == '7' && $.inArray('groupImpact', resultData[result]['type'])) {
-          labelEnd = "7 - Strongly Agree";
-          labelStart = "1 - Strongly Disagree";
-        }
-      }
-      if(data !== 'type') {
-        switch (format[0]) {
-          case 'number':
-          if(resultData[result][data]['label'] == 'unanswered') {
-            responseLabel = '';
-            key = '';
-          } else {
-            responseLabel = resultData[result][data]['label'];
-            key = resultData[result][data]['labelKey'];
-          }
-            if(!$('#'+result+'More').length) {
-              //add the formatted label and more button
-              $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'+labelStart+'</span><span class="likertEnd label label-inverse">'+labelEnd+'</span><span id="'+result+'More" class="btn details">See details</span></div>'); 
-            }
-            createNumber(resultData[result][data]['count'], result, key, responseLabel, sum)
-            break;
-          case 'text':
-            if(resultData[result][data]['label'] == 'unanswered') {
-              responseLabel = '';
-              key = '';
-            } else {
-              responseLabel = resultData[result][data]['label'];
-              key = resultData[result][data]['labelKey'];
-            }
-            if(!$('#'+result+'More').length) {
-              //add the formatted label and more button
-              $('#' + result).append('<div class="bar"></div><span id="'+result+'More" class="btn details">See details</span>'); 
-            }
-            createText(resultData[result][data]['count'], result, data, sum)
-            break; 
-          case 'structured':
-            if(!$('#'+result+'More').length) {
-              //add the formatted label and more button
-              $('#' + result).append('<div class="bar"></div><div class="barLabel resultDetail"><span class="likertStart label">'+labelStart+'</span><span class="likertEnd label">'+labelEnd+'</span><span id="'+result+'More" class="btn details">See details</span></div>'); 
-            }
-            createText(resultData[result][data]['count'], result, data, sum)
-            break; 
-          default:
-        }
-      }
-    }
-    $('#'+result+'More').click(function(){
-      var resultToggle = $(this).attr('id')
-      $('.'+resultToggle).toggle()
-    })
-  }
-
-//formatting functions
-  // for all numbers
-  function createNumber(responses, field, fieldKey, data, sum) {
-    var dataKey = field;
-    if(data) {
-      data  =  data.replace("(", '')
-      data  =  data.replace(")", '')                    
-    }
-    var cleanData = data;
-    if(data == '') {
-      $('#'+field).append('<div class="'+field+'More resultDetail"><strong>Total responses: </strong><span class="label label-info">'+sum+'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'+responses+'</span></div>')  
-      } else {
-        var percent = parseFloat((responses/sum )* 100)
-        var respondent = 'Respondents'
-        if(responses == 1){
-          respondent = 'Respondent'
-        }
-        $('#'+field).append('<div class="'+result+'More resultDetail"><div style="width:400px;"><span class="label color'+fieldKey+'" style="width:'+percent+'%; display:block;">'+cleanData+'</span>&nbsp;'+responses+'&nbsp;'+respondent+' ('+Math.round(percent)+'%)</div></div>')
-        var labelHolder = cleanData
-        if(cleanData) {
-          cleanData =cleanData.replace(/[\W]/g, '');
-        }
-        $('.bar', '#'+result).append('<span class="color'+fieldKey+' '+result+'bar'+cleanData+'" style="width:'+percent+'%;">&nbsp;<div class="more">Value: '+data+' <br/>Count: '+responses+' ('+Math.round(percent)+'% of total)</div></span>')
-      }
-    $('.more').hide()
-    $('.'+result+'More').hide()
-    $('.more', '.'+result+'bar'+cleanData).hide()
-    $('.'+result+'bar'+cleanData).mouseover(function() {
-      $('.more', this).show();
-    })
-    $('.'+result+'bar'+cleanData).mouseout(function() {
-      $('.more', this).hide();
-    })
-  }
-
-  //for all strings
-  function createText(resultData, field, data, sum) {
-    data  =  data.replace("(", '')
-    data  =  data.replace(")", '')                    
-    var re = new RegExp(field,"g");
-    var cleanData = data.replace(re, '')
-    cleanData =cleanData.replace(/[\W]/g, '')
-    var dataKey = field;
-    if(cleanData == '') {
-      $('#'+result).append('<div class="'+result+'More">Unanswered Count: '+resultData+'</div>') 
-    } else {
-      var percent = parseFloat((resultData/sum )* 100)
-      $('#'+result).append('<div class="'+result+'More">Response: '+data.replace(re, '')+' Count: '+resultData+' ('+Math.round(percent)+'% of total)</div>') 
-    }
-    $('.more').hide()
-    $('.'+result+'More').hide()
-    $('.more', '.'+result+'bar'+cleanData).hide()
-  }
-  //groups !!!
-  $('#mainResults').append('<div id="overview"><h2>About grantee respondents and their organizations</h2></div>')
-  $('#mainResults').append("<div id='students'><h2>Grantees' student MWEE participants</h2></div>")
-  $('#mainResults').append('<div id="teachers"><h2>About teacher professional development participants</h2></div>')
-  $('#mainResults').append('<div id="evaluation"><h2>Grantees MWEE evaluation practices &amp; findings</h2></div>')
-  $('#mainResults').append('<div id="impact"><h2>MWEE impact</h2></div>');
-  $('#mainResults').append('<div id="survey"><h2>MWEE survey evaluation</h2></div>');
-
-  $.each($('.groupStudent'), function(){
-    $('#students').append($(this))
-  })
-  $.each($('.groupTeacher'), function(){
-    $('#teachers').append($(this))
-  })
-  $.each($('.groupOverview'), function(){
-    $('#overview').append($(this))
-  })
-  $.each($('.groupEvaluation'), function(){
-    $('#evaluation').append($(this))
-  })
-  $.each($('.groupImpact'), function(){
-    $('#impact').append($(this))
-  })
-  $.each($('.groupSurvey'), function(){
-    $('#survey').append($(this))
-  })
 //group questions together
   $.each(groupQuestion,function(i){
     $.each(groupQuestion[i]['fields'], function(field){
@@ -540,24 +369,9 @@ for(question in dataLabels){
     $('#'+groupQuestion[i]['id']).prepend('<span class="questionTitle">'+groupQuestion[i]['question']+'</span>');
   });
 
-//sorting function http://stackoverflow.com/questions/1359761/sorting-a-javascript-object
-  function sortObject(o) {
-    var sorted = {},
-    key, a = [];
-
-    for (key in o) {
-        if (o.hasOwnProperty(key)) {
-                a.push(key);
-        }
-    }
-
-    a.sort();
-
-    for (key = 0; key < a.length; key++) {
-        sorted[a[key]] = o[a[key]];
-    }
-    return sorted;
-}
+  $.each('.likertEnd', function(){
+    console.log(this);
+  })
 
 $('#downloadBtn').click(function(){ 
   if(window.location.search){
@@ -567,60 +381,6 @@ $('#downloadBtn').click(function(){
   }
   window.location = "/resultdownload"+searchParam;
 })
-$('body').attr({ 
-  'data-spy':"scroll",
-  'data-target':"#navbarExample",
-  'offset':400
-});
-
-$('#navbarExample').scrollspy() 
-// fix sub nav on scroll
-var $win = $(window)
-  , $nav = $('.subnav')
-  , navTop = $('.subnav').length && $('.subnav').offset().top
-  , isFixed = 0
-
-processScroll()
-
-$win.on('scroll', processScroll)
-
-function processScroll() {
-  var i, scrollTop = $win.scrollTop();
-  if (scrollTop >= navTop && !isFixed) {
-    isFixed = 1
-    $nav.addClass('subnav-fixed')
-    if($('.toolbar').length>0){
-      $('.subnav-fixed').addClass('withToolbar')
-    }
-  } else if (scrollTop <= navTop && isFixed) {
-    isFixed = 0
-    $nav.removeClass('subnav-fixed')
-  }
-}
-
-$('.subnav ul li a').click(function(){
-  
-    var el = $(this).attr('href');
-    var elWrapped = $(el);
-    
-    scrollToDiv(elWrapped,150);
-    
-    return false;
-  
-  });
-  
-  function scrollToDiv(element,navheight){
-  
-    
-  
-    var offset = element.offset();
-    var offsetTop = offset.top;
-    var totalScroll = offsetTop-navheight;
-    
-    $('body,html').animate({
-        scrollTop: totalScroll
-    }, 200)
-  }
 // Here we immediately call the function with jQuery as the parameter.
 }(jQuery));
 

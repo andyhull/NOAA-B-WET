@@ -291,10 +291,10 @@ states.State = function(state) {
   // Normalize the state name.
   while (true) {
     // Iteratively remove exclamation marks and invert the value.
-    while (this.name.charAt(0) == '!') {
-      this.name = this.name.substring(1);
-      this.invert = !this.invert;
-    }
+    // while (this.name.charAt(0) == '!') {
+    //   this.name = this.name.substring(1);
+    //   this.invert = !this.invert;
+    // }
 
     // Replace the state with its normalized name.
     if (this.name in states.State.aliases) {

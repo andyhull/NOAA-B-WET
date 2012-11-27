@@ -13,6 +13,125 @@ function b_wet_general_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_as_a_result|node|teacher_survey|form';
+  $field_group->group_name = 'group_as_a_result';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'As a result of participating in the MWEE professional development, I am better able to:',
+    'weight' => '30',
+    'children' => array(
+      0 => 'field_teacher_define_watershed',
+      1 => 'field_teacher_identify_local_wat',
+      2 => 'field_teacher_identify_watershed',
+      3 => 'field_teacher_id_watershed_funct',
+      4 => 'field_teacher_recognize_processe',
+      5 => 'field_teacher_identify_human_con',
+      6 => 'field_teacher_identify_pollution',
+      7 => 'field_teacher_identify_actions',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_as_a_result|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_before_after_future|node|teacher_survey|form';
+  $field_group->group_name = 'group_before_after_future';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'For each statement, select one response for BEFORE, one response for AFTER, and one response for FUTURE',
+    'weight' => '35',
+    'children' => array(
+      0 => 'field_teach_my_students_before',
+      1 => 'field_teach_my_students_after',
+      2 => 'field_teach_my_students_future',
+      3 => 'field_incorporate_mwees_before',
+      4 => 'field_incorporate_mwees_after',
+      5 => 'field_incorporate_mwees_future',
+      6 => 'field_implement_mwees_before',
+      7 => 'field_implement_mwees_after',
+      8 => 'field_implement_mwees_future',
+      9 => 'field_use_noaa_resources_before',
+      10 => 'field_use_noaa_resources_after',
+      11 => 'field_use_noaa_resources_future',
+      12 => 'field_guide_students_before',
+      13 => 'field_guide_students_after',
+      14 => 'field_guide_students_future',
+      15 => 'field_research_env_before',
+      16 => 'field_research_env_after',
+      17 => 'field_research_env_future',
+      18 => 'field_scientific_inquiry_before',
+      19 => 'field_scientific_inquiry_after',
+      20 => 'field_scientific_inquiry_future',
+      21 => 'field_use_the_outdoors_before',
+      22 => 'field_use_the_outdoors_after',
+      23 => 'field_use_the_outdoors_future',
+      24 => 'field_act_to_protect_before',
+      25 => 'field_act_to_protect_after',
+      26 => 'field_act_to_protect_future',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_before_after_future|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_edu_method|node|teacher_survey|form';
+  $field_group->group_name = 'group_edu_method';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'What education methods were used during your MWEE professional development? (select No or Yes  for each method)',
+    'weight' => '21',
+    'children' => array(
+      0 => 'field_method_outdoor',
+      1 => 'field_method_field_work',
+      2 => 'field_method_place_based',
+      3 => 'field_method_issue_investigation',
+      4 => 'field_method_service_learning',
+      5 => 'field_teacher_method_scientific_',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_edu_method|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_education_methods|node|grantee_survey|form';
   $field_group->group_name = 'group_education_methods';
   $field_group->entity_type = 'node';
@@ -176,6 +295,42 @@ function b_wet_general_field_group_info() {
     ),
   );
   $export['group_mwee_aligined_with|node|grantee_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_noaa_resources|node|teacher_survey|form';
+  $field_group->group_name = 'group_noaa_resources';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'If yes, Which NOAA resources were used as part of your MWEE professional development?',
+    'weight' => '20',
+    'children' => array(
+      0 => 'field_teacher_esources_noaa_expe',
+      1 => 'field_teacher_resources_marine_s',
+      2 => 'field_teacher_resources_estuarin',
+      3 => 'field_teacher_data_collected',
+      4 => 'field_teacher_data_other',
+      5 => 'field_teacher_edu_program',
+      6 => 'field_teacher_edu_other',
+      7 => 'field_teacher_labs_facilities',
+      8 => 'field_teacher_lab_other',
+      9 => 'field_information_from_noaa_rese',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_noaa_resources|node|teacher_survey|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -503,6 +658,159 @@ content analysis of qualitative data, etc.) methods.',
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_practice_rank|node|teacher_survey|form';
+  $field_group->group_name = 'group_practice_rank';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_practices';
+  $field_group->data = array(
+    'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
+    'weight' => '87',
+    'children' => array(
+      0 => 'field_connections_1',
+      1 => 'field_interactions_1',
+      2 => 'field_interactions_pro_1',
+      3 => 'field_stipend_1',
+      4 => 'field_i_was_offered_continuing_1',
+      5 => 'field_i_was_offered_graduate_1',
+      6 => 'field_i_was_provided_equipm_1',
+      7 => 'field__was_provided_instruc_1',
+      8 => 'field_i_was_provided_inform_1',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_practice_rank|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_practices|node|teacher_survey|form';
+  $field_group->group_name = 'group_practices';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'Which additional practices did your MWEE professional development and/or the support you received  include? (a) Please indicate ',
+    'weight' => '26',
+    'children' => array(
+      0 => 'field_connections_were_made_to_l',
+      1 => 'field_interactions_were_facilita',
+      2 => 'field_interactions_pro',
+      3 => 'field_stipend',
+      4 => 'field_i_was_offered_continuing_e',
+      5 => 'field_i_was_offered_graduate_cre',
+      6 => 'field_i_was_provided_with_equipm',
+      7 => 'field__was_provided_with_instruc',
+      8 => 'field_i_was_provided_with_inform',
+      9 => 'group_practice_rank',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Which additional practices did your MWEE professional development and/or the support you received  include? (a) Please indicate ',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'Which additional practices did your MWEE professional development and/or the support you received include? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_practices|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pro_development_practices|node|teacher_survey|form';
+  $field_group->group_name = 'group_pro_development_practices';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'Did the workshops, institutes, or classes you participated in include the following professional  development practices? Ple',
+    'weight' => '24',
+    'children' => array(
+      0 => 'field_sharing_of_information_and',
+      1 => 'field_discussion_of_how_teachers',
+      2 => 'field_discussion_of_alignment_of',
+      3 => 'field_provision_of_examples_of_h',
+      4 => 'field_engaging_you_and_other_par',
+      5 => 'field_participating_along_with_o',
+      6 => 'field_allowing_you_and_other_par',
+      7 => 'field_engaging_practices',
+      8 => 'field_presentation_of_how_noaa_d',
+      9 => 'field_discussion_of_how_noaa_dat',
+      10 => 'field_examples_of_how_other_teac',
+      11 => 'field_allow_you_and_other_partic',
+      12 => 'group_pro_development_rank',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Did the workshops, institutes, or classes you participated in include the following professional  development practices? Ple',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'Did the workshops, institutes, or classes you participated in include the following professional 
+development practices? (a) Please indicate yes or no for each statement. (b) Then indicate which practices were most valuable in helping you implement MWEEs.',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_pro_development_practices|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pro_development_rank|node|teacher_survey|form';
+  $field_group->group_name = 'group_pro_development_rank';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_pro_development_practices';
+  $field_group->data = array(
+    'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
+    'weight' => '125',
+    'children' => array(
+      0 => 'field_sharing_of_information_1',
+      1 => 'field_discussion_teachers_1',
+      2 => 'field_discussion_of_alignment_1',
+      3 => 'field_provision_of_examples_1',
+      4 => 'field_engaging_you_and_other_1',
+      5 => 'field_participating_along_1',
+      6 => 'field_allowing_you_and_other_1',
+      7 => 'field_engaging_practices_1',
+      8 => 'field_presentation_of_how_noaa_1',
+      9 => 'field_discussion_of_how_noaa_1',
+      10 => 'field_examples_of_how_other_1',
+      11 => 'field_allow_you_and_other_1',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_pro_development_rank|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_programs|node|grantee_survey|form';
   $field_group->group_name = 'group_programs';
   $field_group->entity_type = 'node';
@@ -524,6 +832,42 @@ content analysis of qualitative data, etc.) methods.',
     ),
   );
   $export['group_programs|node|grantee_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_protect_activities|node|teacher_survey|form';
+  $field_group->group_name = 'group_protect_activities';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'During your MWEE professional development, did you participate in any of these activities that  protect and/or restore ocean, co',
+    'weight' => '27',
+    'children' => array(
+      0 => 'field_created_habitat',
+      1 => 'field_installed_rain_barrel',
+      2 => 'field_gave_presentations',
+      3 => 'field_participated_event',
+      4 => 'field_clean_up',
+      5 => 'field_told_others',
+      6 => 'field_monitored_water_quality',
+      7 => 'field_participated_in_a_restorat',
+      8 => 'field_limited_or_avoided_the_use',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'During your MWEE professional development, did you participate in any of these activities that  protect and/or restore ocean, co',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'During your MWEE professional development, did you participate in any of these activities that protect and/or restore ocean, coastal, and/or Great Lakes watersheds?',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_protect_activities|node|teacher_survey|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -630,6 +974,40 @@ content analysis of qualitative data, etc.) methods.',
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_science_yes|node|teacher_survey|form';
+  $field_group->group_name = 'group_science_yes';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'If responded Yes to “Scientific-inquiry-based learning”  As part of your MWEE professional development, were you involved in...',
+    'weight' => '22',
+    'children' => array(
+      0 => 'field_science_questions',
+      1 => 'field_science__hypotheses',
+      2 => 'field_science_data',
+      3 => 'field_science_analyzing',
+      4 => 'field_science_conclusions',
+      5 => 'field_science_presentations',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'If responded Yes to “Scientific-inquiry-based learning”  As part of your MWEE professional development, were you involved in...',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'If responded Yes to “Scientific-inquiry-based learning”
+As part of your MWEE professional development, were you involved in...',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_science_yes|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_science|node|grantee_survey|form';
   $field_group->group_name = 'group_science';
   $field_group->entity_type = 'node';
@@ -660,6 +1038,39 @@ Engage students in:',
     ),
   );
   $export['group_science|node|grantee_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_student_ethnicity|node|teacher_survey|form';
+  $field_group->group_name = 'group_student_ethnicity';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'About what percent of your students are (percent should equal 100): ',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_hispanic_or_latino',
+      1 => 'field_american_indian_or_alaska_',
+      2 => 'field_asian',
+      3 => 'field_black_or_african_american',
+      4 => 'field_native_hawaiian_or_other_p',
+      5 => 'field_white',
+      6 => 'field_other',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_student_ethnicity|node|teacher_survey|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -852,6 +1263,79 @@ Engage students in:',
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_support_implement|node|teacher_survey|form';
+  $field_group->group_name = 'group_support_implement';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_support';
+  $field_group->data = array(
+    'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
+    'weight' => '84',
+    'children' => array(
+      0 => 'field_assistance_with_conduct_1',
+      1 => 'field_assistance_with_est_1',
+      2 => 'field_assistance_projects_1',
+      3 => 'field_co_teaching_in_classroom_1',
+      4 => 'field_coaching_in_my_classroom_1',
+      5 => 'field_demonstrations__class_1',
+      6 => 'field_assistance_use_of_1',
+      7 => 'field_communicating_with_1',
+      8 => 'field_communication_provide_1',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_support_implement|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_support|node|teacher_survey|form';
+  $field_group->group_name = 'group_support';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'What types of support did you receive from your MWEE professional development provider? (a)  Please indicate yes or no for each ',
+    'weight' => '25',
+    'children' => array(
+      0 => 'field_assistance_with_conducting',
+      1 => 'field_assistance_with_establishi',
+      2 => 'field_assistance_with_projects',
+      3 => 'field_co_teaching_in_my_classroo',
+      4 => 'field_coaching_in_my_classroom',
+      5 => 'field_demonstrations_in_my_class',
+      6 => 'field_assistance_with_the_use_of',
+      7 => 'field_communicating_with_provide',
+      8 => 'field_communication_with_provide',
+      9 => 'group_support_implement',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'What types of support did you receive from your MWEE professional development provider? (a)  Please indicate yes or no for each ',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'longText',
+        'description' => 'What types of support did you receive from your MWEE professional development provider? (a) Please indicate yes or no for each statement. (b) Then indicate which practices were most valuable in helping you implement MWEEs.',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_support|node|teacher_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_teacher_able|node|grantee_survey|form';
   $field_group->group_name = 'group_teacher_able';
   $field_group->entity_type = 'node';
@@ -860,16 +1344,16 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to:',
-    'weight' => '33',
+    'weight' => '32',
     'children' => array(
-      0 => 'field_teacher_define_watershed',
-      1 => 'field_teacher_identify_local_wat',
-      2 => 'field_teacher_identify_watershed',
-      3 => 'field_teacher_id_watershed_funct',
-      4 => 'field_teacher_recognize_processe',
-      5 => 'field_teacher_identify_human_con',
-      6 => 'field_teacher_identify_pollution',
-      7 => 'field_teacher_identify_actions',
+      0 => 'field_teacher_term_watershed_',
+      1 => 'field_identify_their_local_water',
+      2 => 'field_identify_how_watersheds_ar',
+      3 => 'field_identify_the_functions_tha',
+      4 => 'field_recognize_that_both_natura',
+      5 => 'field_identify_connections_betwe',
+      6 => 'field_identify_possible_point_an',
+      7 => 'field_identify_actions_individua',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -925,7 +1409,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which characteristics describe your organization\'s typical MWEE professional development this past grant year?',
-    'weight' => '31',
+    'weight' => '30',
     'children' => array(
       0 => 'field_teacher_local_connections',
       1 => 'field_teacher_noaa_interaction',
@@ -960,7 +1444,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded MWEE professional development that teachers will:',
-    'weight' => '34',
+    'weight' => '33',
     'children' => array(
       0 => 'field_teacher_teach_watershed',
       1 => 'field_teacher_implement_mwee',
@@ -1043,7 +1527,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What education methods were used during your MWEE professional development?',
-    'weight' => '27',
+    'weight' => '26',
     'children' => array(
       0 => 'field_teacher_method_outdoor',
       1 => 'field_teacher_method_field_work',
@@ -1062,6 +1546,72 @@ Engage students in:',
     ),
   );
   $export['group_teacher_edu_methods|node|grantee_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_teacher_main|node|teacher_survey|form';
+  $field_group->group_name = 'group_teacher_main';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Please answer all of the following questions based on the last MWEE (watershed education)  professional development you particip',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_zipcode',
+      1 => 'field_grade',
+      2 => 'field_grade_explain',
+      3 => 'field_per_esl',
+      4 => 'field_teacher_hours_pro_developm',
+      5 => 'field_teacher_outdoor_activity',
+      6 => 'field_question_complete',
+      7 => 'field_question_informative',
+      8 => 'field_question_length',
+      9 => 'field_question_improved',
+      10 => 'field_noaa_resources_teachers',
+      11 => 'field_in_which_region_s_were_you',
+      12 => 'field_in_which_grade_level_s_do_',
+      13 => 'field_what_subject_s_do_you_prim',
+      14 => 'field_which_of_these_categories_',
+      15 => 'field_do_you_identify_yourself_a',
+      16 => 'field_is_the_school_where_you_te',
+      17 => 'field_did_you_conduct_mwees_with',
+      18 => 'field_what_was_your_primary_reas',
+      19 => 'field_did_you_participate_in_an_',
+      20 => 'field_did_your_b_wet_professiona',
+      21 => 'field_what_noaa_does',
+      22 => 'field_noaa_science_data',
+      23 => 'field_noaa_edu_resources',
+      24 => 'field_what_component_s_of_the_mw',
+      25 => 'field_how_could_the_mwee_profess',
+      26 => 'field_any_other_comments_about_t',
+      27 => 'path',
+      28 => 'group_as_a_result',
+      29 => 'group_before_after_future',
+      30 => 'group_edu_method',
+      31 => 'group_noaa_resources',
+      32 => 'group_practices',
+      33 => 'group_pro_development_practices',
+      34 => 'group_protect_activities',
+      35 => 'group_science_yes',
+      36 => 'group_student_ethnicity',
+      37 => 'group_support',
+      38 => 'group_which_type_pro_develop',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Please answer all of the following questions based on the last MWEE (watershed education)  professional development you particip',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => 'Please answer all of the following questions based on the last MWEE (watershed education) professional development you participated in.',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_teacher_main|node|teacher_survey|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1140,7 +1690,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which NOAA resources were incorporated into your organization\'s typical B-WET-funded MWEE professional development?',
-    'weight' => '26',
+    'weight' => '25',
     'children' => array(
       0 => 'field_teacher_esources_noaa_expe',
       1 => 'field_teacher_information_for_no',
@@ -1176,7 +1726,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which of the following steps did you include? Engaged teachers in',
-    'weight' => '28',
+    'weight' => '27',
     'children' => array(
       0 => 'field_teacher_science_questions',
       1 => 'field_teacher_science_hypotheses',
@@ -1210,7 +1760,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What types of support did your organization typically provide to teachers participating in MWEE professional development this pa',
-    'weight' => '30',
+    'weight' => '29',
     'children' => array(
       0 => 'field_teacher_conduct_fieldwork',
       1 => 'field_teacher_habitats',
@@ -1246,7 +1796,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds durin',
-    'weight' => '32',
+    'weight' => '31',
     'children' => array(
       0 => 'field_teacher_created_habitat',
       1 => 'field_teacher_installed_rain_bar',
@@ -1282,7 +1832,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'As part of your B-WET professional development workshops or institutes this past grant year, did your organization typically inc',
-    'weight' => '29',
+    'weight' => '28',
     'children' => array(
       0 => 'field_teacher_ex_integration',
       1 => 'field_teacher_discuss_integratio',
@@ -1339,6 +1889,39 @@ Engaged teachers in:',
     ),
   );
   $export['group_teachers_number_supported|node|grantee_survey|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_which_type_pro_develop|node|teacher_survey|form';
+  $field_group->group_name = 'group_which_type_pro_develop';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'teacher_survey';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_teacher_main';
+  $field_group->data = array(
+    'label' => 'Which type(s) of MWEE professional development did you participate in or receive: (please select yes  or no for each type)',
+    'weight' => '16',
+    'children' => array(
+      0 => 'field_teacher_one_day_workshops',
+      1 => 'field_teacher_institute',
+      2 => 'field_teacher_multi_day_workshop',
+      3 => 'field_teacher_college_level_cour',
+      4 => 'field_teacher_training',
+      5 => 'field_teacher_coaching',
+      6 => 'field_teacher_online_development',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_which_type_pro_develop|node|teacher_survey|form'] = $field_group;
 
   return $export;
 }
