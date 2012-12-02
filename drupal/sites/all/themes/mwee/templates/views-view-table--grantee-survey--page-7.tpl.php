@@ -17,164 +17,174 @@
  * @ingroup views_templates
  */
 ?>
-<!-- <div id="navbarExample" class="subnav subnav-fixed">
-  <ul class="nav nav-pills">
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#students">Students</a></li>
-    <li><a href="#teachers">Teachers</a></li>
-    <li><a href="#evaluation">Evaluation</a></li>
-    <li><a href="#impact">Impact</a></li>
-  </ul>
-  </div> -->
 <?php
 $allResults = new stdClass();
 //loop through rows
 foreach ($rows as $key =>$field){
   //get the question field names
   foreach($field as $question => $questionKey) {
-    if($question !=='title') {
-      if(!property_exists($allResults, $question)){
-        $allResults->$question = new stdClass();
-        $resultArray = $allResults->$question;
-        $allResults->$question->type = $field_classes[$question][$key];
-        $fieldTest = field_info_field($question);
-        if (isset($fieldTest['settings']['allowed_values'])) {
-          $labelStart = reset($fieldTest['settings']['allowed_values']);
-          $labelEnd = end($fieldTest['settings']['allowed_values']);
-          switch ($labelEnd) {
-            case 5:
-              $labelEnd .= " - To a great extent";
-              $labelStart .= " - Not at all";
+    if(!property_exists($allResults, $question)){
+      $allResults->$question = new stdClass();
+      $resultArray = $allResults->$question;
+      $allResults->$question->type = $field_classes[$question][$key];
+      $fieldTest = field_info_field($question);
+      // dpm($fieldTest);
+      if (isset($fieldTest['settings']['allowed_values'])) {
+        $labelStart = reset($fieldTest['settings']['allowed_values']);
+        //remove don't know values from the scale labels
+        if($labelStart == "Don't Know") {
+          $labelStart = $fieldTest['settings']['allowed_values'][1];
+        }
+        $labelEnd = end($fieldTest['settings']['allowed_values']);
+        switch ($labelEnd) {
+          case 5:
+            $labelEnd .= " - To a great extent";
+            $labelStart .= " - Not at all";
+            break;
+          case 7:
+            if(strstr($allResults->$question->type, 'groupImpact')){
+              $labelEnd .= " - Strongly Agree";
+              $labelStart .= " - Strongly Disagree";
+             } elseif(strstr($allResults->$question->type, 'groupSurvey')){
+              $labelStart = $labelStart;
+              $labelEnd = $labelEnd;
+             } else {
+              $labelEnd .= " - Extremely likely";
+              $labelStart .= " - Extremely unlikely";
+             }
               break;
-            case 7:
-              if(strstr($allResults->$question->type, 'groupImpact')){
-                $labelEnd .= " - Strongly Agree";
-                $labelStart .= " - Strongly Disagree";
-               } elseif(strstr($allResults->$question->type, 'groupSurvey')){
-                $labelStart = $labelStart;
-                $labelEnd = $labelEnd;
-               } else {
-                $labelEnd .= " - Extremely likely";
-                $labelStart .= " - Extremely unlikely";
-               }
-                break;
-            default:
-               $labelStart = $labelStart;
-               $labelEnd = $labelEnd;
-               break;
-          }
-
-          foreach($fieldTest['settings']['allowed_values'] as $labelKey => $labelValue) {
-            $newKey = (string) $question.$labelKey;
-            //add in the values to the question object
-            if(!property_exists($resultArray, $newKey)){
-              $resultArray->$newKey->count = 0;
-              $resultArray->$newKey->label = $labelValue;
-              $resultArray->$newKey->labelKey = $labelKey;
-              $resultArray->$newKey->labelEnd = $labelEnd;
-              $resultArray->$newKey->labelStart = $labelStart;
-            }
-          }
-        } else {
-          $newKey = (string) $question.'unanswered';
+          default:
+             $labelStart = $labelStart;
+             $labelEnd = $labelEnd;
+             break;
+        }
+        $allResults->$question->labelEnd = $labelEnd;
+        $allResults->$question->labelStart = $labelStart;
+        foreach($fieldTest['settings']['allowed_values'] as $labelKey => $labelValue) {
+          $newKey = (string) $question.$labelKey;
           //add in the values to the question object
           if(!property_exists($resultArray, $newKey)){
             $resultArray->$newKey->count = 0;
-            $resultArray->$newKey->label = 'unanswered';
-            $resultArray->$newKey->labelKey = 'unanswered';
+            $resultArray->$newKey->label = $labelValue;
+            $resultArray->$newKey->labelKey = $labelKey;
           }
         }
-      }
-      $valueKey = (string) $question.$questionKey;
-      if(property_exists($allResults->$question, $valueKey)){
-        $allResults->$question->$valueKey->count += 1;
       } else {
-        if($questionKey == '') {
-          $valueKey = (string) $question.'unanswered';
-          $label = 'unanswered';
-        } else {
-          //make a sensible key especially for long text answers
-          $shortKey = substr($questionKey, 0, 8);
-          $valueKey = (string) $question.$shortKey;
-          $label = $questionKey;
+        $newKey = (string) $question.'unanswered';
+        //add in the values to the question object
+        if(!property_exists($resultArray, $newKey)){
+          $resultArray->$newKey->count = 0;
+          $resultArray->$newKey->label = 'unanswered';
+          $resultArray->$newKey->labelKey = 'unanswered';
         }
-        $allResults->$question->$valueKey->count += 1;
-        $allResults->$question->$valueKey->label = $label;
-        $allResults->$question->$valueKey->labelKey = $questionKey;
       }
+    }
+    $valueKey = (string) $question.$questionKey;
+    if(property_exists($allResults->$question, $valueKey)){
+      $allResults->$question->$valueKey->count += 1;
+    } else {
+      if($questionKey == '') {
+        $valueKey = (string) $question.'unanswered';
+        $label = 'unanswered';
+      } else {
+        //make a sensible key especially for long text answers
+        $shortKey = substr($questionKey, 0, 8);
+        $valueKey = (string) $question.$shortKey;
+        $label = $questionKey;
+      }
+      $allResults->$question->$valueKey->count += 1;
+      $allResults->$question->$valueKey->label = $label;
+      $allResults->$question->$valueKey->labelKey = $questionKey;
     }
   }
 }
-// print_r($allResults);
 function cmp($a, $b)
 {
     return strcmp($a, $b);
 }
-
-$output ='';
+$output ='<div class="surveyTotal"><h5>This survey has been submitted <span class="badge badge-info"> '.count($rows).'</span> times</h5></div>';
 foreach ($header as $headerTitle => $headerValue) {
   $detailOutput = '';
-  if($headerTitle !== 'title') {
-    $responseCount =0;
-    $unansweredCount = 0;
-    $output .= '<div id="'.$headerTitle.'" class="result"><div class="questionTitle">'.$headerValue.'</div>';
+  $responseCount =0;
+  $unansweredCount = 0;
+  $dontknowCount = 0;
+  $output .= '<div id="'.$headerTitle.'" class="result"><div class="questionTitle">'.$headerValue.'</div>';
+  foreach ($allResults->$headerTitle as $question => $questionValue) {
+    if($question !== 'type' && $question !== 'labelStart' && $question !== 'labelEnd') {
+      //get the sum for answered and unanswered questions
+      if($allResults->$headerTitle->$question->label == 'unanswered') {
+        $unansweredCount += $allResults->$headerTitle->$question->count;
+      }elseif ($allResults->$headerTitle->$question->label == "Don't Know") {
+        $dontknowCount += $allResults->$headerTitle->$question->count;
+      } else {
+        $responseCount += $allResults->$headerTitle->$question->count;
+        if(property_exists($allResults->$headerTitle, 'labelStart')){
+          $labelStart = $allResults->$headerTitle->labelStart;
+          $labelEnd = $allResults->$headerTitle->labelEnd;
+        }else {
+          $labelStart = 'Unanswered';
+          $labelEnd = 'Answered';
+        }
+      }
+    }
+  }
+  $output .= '<div class="bar">';
+  //format the answers based on the css classes
+  if(strstr($allResults->$headerTitle->type, 'text') || strstr($allResults->$headerTitle->type, 'structured')){
+    $percentUnanswered = ($unansweredCount/($responseCount + $unansweredCount)*100);
+    $output .= '<span class="color1 barDetail" style="width:'.$percentUnanswered.'%;">&nbsp;<div class="more">Unanswered: '.$unansweredCount.' ('.round($percentUnanswered).'% of total)</div></span>';
+    $percentAnswered = ($responseCount/($responseCount + $unansweredCount)*100);
+    $output .= '<span class="color5 barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Answered: '.$responseCount.' ('.round($percentAnswered).'% of total)</div></span>';
     foreach ($allResults->$headerTitle as $question => $questionValue) {
-      if($question !== 'type') {
-        //get the sum for answered and unanswered questions
-        if($allResults->$headerTitle->$question->label == 'unanswered') {
-          $unansweredCount += $allResults->$headerTitle->$question->count;
+      if($question !== 'type' && $question !== 'labelStart' && $question !== 'labelEnd') {
+        if($allResults->$headerTitle->$question->label !== 'unanswered') {
+          if($responseCount > 0){
+            $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
+          }
+          $detailOutput .= '<div><span class="label" display:block;>'.$allResults->$headerTitle->$question->label.'</span></div>';
         } else {
-          $responseCount += $allResults->$headerTitle->$question->count;
-          if(property_exists($allResults->$headerTitle->$question, 'labelStart')){
-            $labelStart = $allResults->$headerTitle->$question->labelStart;
-            $labelEnd = $allResults->$headerTitle->$question->labelEnd;
-          }else {
-            $labelStart = 'Unanswered';
-            $labelEnd = 'Answered';
-          }
+          $sum = $responseCount;
+          $detailOutput .= '<span class="label label-inverse totalLabel"><strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span></span>';
         }
       }
     }
-    $output .= '<div class="bar">';
-    //format the answers based on the css classes
-    if(strstr($allResults->$headerTitle->type, 'text') || strstr($allResults->$headerTitle->type, 'structured')){
-      $percentUnanswered = ($unansweredCount/($responseCount + $unansweredCount)*100);
-      $output .= '<span class="color1 barDetail" style="width:'.$percentUnanswered.'%;">&nbsp;<div class="more">Unanswered: '.$unansweredCount.' ('.round($percentUnanswered).'% of total)</div></span>';
-      $percentAnswered = ($responseCount/($responseCount + $unansweredCount)*100);
-      $output .= '<span class="color5 barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Answered: '.$responseCount.' ('.round($percentAnswered).'% of total)</div></span>';
-      foreach ($allResults->$headerTitle as $question => $questionValue) {
-        if($question !== 'type') {
-          if($allResults->$headerTitle->$question->label !== 'unanswered') {
-            if($responseCount > 0){
-              $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
-            }
-            $detailOutput .= '<div><span class="label" display:block;">'.$allResults->$headerTitle->$question->label.'</span></div>';
-          } else {
-            $sum = $responseCount + $unansweredCount;
-            $detailOutput .= '<strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span>';
+  } else {
+    foreach ($allResults->$headerTitle as $question => $questionValue) {
+      if($question !== 'type' && $question !== 'labelStart' && $question !== 'labelEnd') {
+        $questionLabel = $allResults->$headerTitle->$question->label;
+        if($questionLabel !== 'unanswered' && $questionLabel !== "Don't Know") {
+          if($responseCount > 0){
+            $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
           }
-        }
-      }
-    } else {
-      foreach ($allResults->$headerTitle as $question => $questionValue) {
-        if($question !== 'type') {
-          if($allResults->$headerTitle->$question->label !== 'unanswered') {
-            if($responseCount > 0){
-              $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
-            }
-            $output .= '<span class="color'.$allResults->$headerTitle->$question->labelKey.' barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Value: '.$allResults->$headerTitle->$question->label.' <br/>Count: '.$allResults->$headerTitle->$question->count.' ('.round($percentAnswered).'% of total)</div></span>';
-            $detailOutput .= '<div style="width:400px;"><span class="label color'.$allResults->$headerTitle->$question->labelKey.'" style="width:'.$percentAnswered.'%; display:block;">'.$allResults->$headerTitle->$question->label.'</span>&nbsp;'.$allResults->$headerTitle->$question->count.'&nbsp;Respondents ('.round($percentAnswered).'%)</div>';
+          //format the yes/no color values
+          if($questionLabel == 'Yes') {
+            $color = 'color5';
           } else {
-            $sum = $responseCount + $unansweredCount;
-            $detailOutput .= '<strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span>';
+            $color = 'color'.$allResults->$headerTitle->$question->labelKey;
           }
+          //handle plurals 
+          if($allResults->$headerTitle->$question->count == 1) {
+            $respondant = 'Respondent';
+          } else {
+            $respondant = 'Respondents';
+          }
+          $output .= '<span class="'.$color.' barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Value: '.$allResults->$headerTitle->$question->label.' <br/>Count: '.$allResults->$headerTitle->$question->count.' ('.round($percentAnswered).'% of total)</div></span>';
+          $detailOutput .= '<div class="detailLabel"><span class="label '.$color.'" style="width:'.$percentAnswered.'%; display:block;">'.$questionLabel.'</span>&nbsp;'.$allResults->$headerTitle->$question->count.'&nbsp;'.$respondant.' ('.round($percentAnswered).'%)</div>';
+          // calculate the number of don't know responses
+        } elseif ($questionLabel == "Don't Know") {
+          $sum = $dontknowCount;
+          $detailOutput .= '<div>Don\'t Know: <span class="label">'.$sum.'</span></div>';
+        } elseif ($questionLabel == 'unanswered') {
+          $sum = $responseCount;
+          $detailOutput .= '<span class="label label-inverse totalLabel"><strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span></span>';
+
         }
       }
     }
-    $output .= '</div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'.$labelStart.'</span><span class="likertEnd label label-inverse">'.$labelEnd.'</span><span id="'.$headerTitle.'More" class="btn details">See details</span></div>';
-    $output .= '<div class="'.$headerTitle.'More resultDetail longDetail">'.$detailOutput.'</div>';
-    $output .= "</div>";
-  } //end if !== title
+  }
+  $output .= '</div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'.$labelStart.'</span><span class="likertEnd label label-inverse">'.$labelEnd.'</span><span id="'.$headerTitle.'More" class="btn details">See details</span></div>';
+  $output .= '<div class="'.$headerTitle.'More resultDetail longDetail"><h5 class="detailHeader">Question details</h5>'.$detailOutput.'</div>';
+  $output .= "</div>";
 }
 $header_array = json_encode($header);
 echo "<script>var dataLabels = ". $header_array.";</script>";
@@ -232,7 +242,7 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
     'group_provide_for_students':{
       'id':'group_provide_for_students',
       'question':'Which of the following did your B-WET-funded programs provide for students during this past grant year?',
-      'fields': ['field_off_site_programs','field_schoolyard_programs','field_classroom_programs','field_after_school_programs_1','field_summer_programs','field_events']
+      'fields': ['field_off_site_programs','field_schoolyard_programs','field_classroom_programs','field_after_school_program','field_summer_programs','field_events']
     },
     'group_report_evidence':{
       'id':'group_report_evidence',
@@ -302,7 +312,7 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
     'group_teacher_edu_methods':{
       'id':'group_teacher_edu_methods',
       'question':'What education methods were used during your MWEE professional development?',
-      'fields': ['field_teacher_method_outdoor','field_teacher_method_field_work','field_teacher_method_place_based','field_teacher_method_scientific_','field_teacher_method_issue_inves']
+      'fields': ['field_outdoor_trip_teacher_1','field_field_work_teacher_1','field_place_based_teacher_1','field_scientific_inquiry_based_1','field_teacher_investigation_1']
     },
     'group_teacher_per_taught':{
       'id':'group_teacher_per_taught',
@@ -317,7 +327,7 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
     'group_teacher_resources_group':{
       'id':'group_teacher_resources_group',
       'question':'Which NOAA resources were incorporated into your organization\'s typical B-WET-funded MWEE professional development?',
-      'fields': ['field_teacher_information_for_no','field_teacher_data_collected','field_teacher_esources_noaa_expe','field_teacher_edu_program','field_teacher_labs_facilities','field_teacher_resources_marine_s','field_teacher_resources_estuarin']
+      'fields': ['field_information_from_noaa_1','field_teacher_data_collected','field_noaa_expert_1','field_teacher_edu_program','field_teacher_labs_facilities','field_noaa_national_marine_1','field_noaa_national_estuarine_1']
     },
     'group_teacher_science':{
       'id':'group_teacher_science',
@@ -354,13 +364,13 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
   $('.barDetail').mouseout(function() {
     $('.more', this).hide();
   })
-for(question in dataLabels){
-  $('#'+question+'More').click(function(){
-      var resultToggle = $(this).attr('id')
-      $('.'+resultToggle).toggle()
-    })
-}
-//group questions together
+  for(question in dataLabels){
+    $('#'+question+'More').click(function(){
+        var resultToggle = $(this).attr('id')
+        $('.'+resultToggle).toggle()
+      })
+  }
+  //group questions together
   $.each(groupQuestion,function(i){
     $.each(groupQuestion[i]['fields'], function(field){
       $('#'+groupQuestion[i]['fields'][field]).addClass(groupQuestion[i]['id'])
@@ -369,18 +379,14 @@ for(question in dataLabels){
     $('#'+groupQuestion[i]['id']).prepend('<span class="questionTitle">'+groupQuestion[i]['question']+'</span>');
   });
 
-  $.each('.likertEnd', function(){
-    console.log(this);
+  $('#downloadBtn').click(function(){ 
+    if(window.location.search){
+      var searchParam = window.location.search;
+    } else {
+      var searchParam = '';
+    }
+    window.location = "/resultdownload"+searchParam;
   })
-
-$('#downloadBtn').click(function(){ 
-  if(window.location.search){
-    var searchParam = window.location.search;
-  } else {
-    var searchParam = '';
-  }
-  window.location = "/resultdownload"+searchParam;
-})
 // Here we immediately call the function with jQuery as the parameter.
 }(jQuery));
 

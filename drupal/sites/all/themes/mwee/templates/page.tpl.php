@@ -61,7 +61,8 @@
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>  
 	  
-	  <section class="<?php print _twitter_bootstrap_content_span($columns); ?>">  
+	  <!-- <section class="<?php //print _twitter_bootstrap_content_span($columns); ?>">  --> 
+    <section> 
       <?php if ($page['highlighted']): ?>
         <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -295,29 +296,37 @@ var likertArrayConfident = ['#edit-field-teach-my-students', '#edit-field-incorp
    $(objValue+'-before-und>.form-type-radio').last().addClass('questionEnd');
    $(objValue+'-before').append('<div class="scaleLabel"><span class="tableHeader"><div class="likertScaleExtraSmall"><span class="likertStart">Not at all confident</span><span class="likertEnd">Extremely confident</span></div></span><span class="tableHeader"><div class="likertScaleExtraSmall"><span class="likertStart">Not at all confident</span><span class="likertEnd">Extremely confident</span></div></span><span class="tableHeader"><div class="likertScaleExtraSmall"><span class="likertStart">Strongly disagree</span><span class="likertEnd">Strongly agree</span></div></span></div>')
     })
-
+var hiddenEls = $("body").find(":hidden").not("script");
    // fix sub nav on scroll
 var $win = $(window)
   , $nav = $('.questionTable')
-  , navTop = $('.questionTable').offset().top -9300
+  , navTop = $('.questionTable').offset().top
   , isFixed = 0
-  , scrollStop = $('.field-name-field-what-component-s-of-the-mw').offset().top -9700
-
+  , scrollStop = $('.field-name-field-what-component-s-of-the-mw').offset().top
 processScroll()
-
 $win.on('scroll', processScroll)
 
-function processScroll() {
-  var i, scrollTop = $win.scrollTop();
-  if (scrollTop >= navTop && !isFixed) {
-    isFixed = 1
-    $nav.addClass('tableHeader-fixed')
-  } else if (scrollTop <= navTop && isFixed) {
-    isFixed = 0
-    $nav.removeClass('tableHeader-fixed')
-  } else if (scrollTop>= scrollStop && isFixed) {
-    $nav.removeClass('tableHeader-fixed')
+$(':radio').click(function(){
+  if($('.questionTable').is(':visible')){
+    navTop = $('.questionTable').offset().top
+    scrollStop = $('.field-name-field-what-component-s-of-the-mw').offset().top
   }
+})
+
+function processScroll() {
+    var i, scrollTop = $win.scrollTop();
+    if (scrollTop >= navTop && !isFixed && scrollTop <= scrollStop) {
+      console.log(navTop);
+      isFixed = 1
+      $nav.addClass('tableHeader-fixed')
+    } else if (scrollTop <= navTop && isFixed) {
+      console.log(navTop);
+      isFixed = 0
+      $nav.removeClass('tableHeader-fixed')
+    } else if (scrollTop>= scrollStop && isFixed) {
+      // isFixed = 0
+      $nav.removeClass('tableHeader-fixed')
+    }
 }
 })(jQuery);
 </script>

@@ -77,3 +77,25 @@ function b_wet_general_preprocess_user_profile(&$variables) {
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
 
 }
+
+/**
+  * Generic preprocess that is still working on D7
+  */
+function b_wet_general_preprocess_views_view_fields(&$vars) {
+  if (isset($vars['view']->name)) {
+    $function = 'b_wet_general_preprocess_views_view__'.$vars['view']->name; 
+    if (function_exists($function)) {
+     $function($vars);
+    }
+  }
+}
+
+/**
+  * Then the specific preprocess for the grantee survey
+  */
+function b_wet_general_preprocess_views_view__grantee_survey(&$vars) {
+  // my specific preprocess code
+  // $results = $vars->result;
+  // print_r($results);
+
+}

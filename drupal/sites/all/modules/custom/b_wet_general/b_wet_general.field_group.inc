@@ -701,7 +701,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
-    'label' => 'Which additional practices did your MWEE professional development and/or the support you received  include? (a) Please indicate ',
+    'label' => 'Which additional practices did your MWEE professional development and/or the support you received include? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
     'weight' => '26',
     'children' => array(
       0 => 'field_connections_were_made_to_l',
@@ -720,8 +720,8 @@ content analysis of qualitative data, etc.) methods.',
       'label' => 'Which additional practices did your MWEE professional development and/or the support you received  include? (a) Please indicate ',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'longText',
-        'description' => 'Which additional practices did your MWEE professional development and/or the support you received include? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs',
+        'classes' => '',
+        'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
@@ -738,7 +738,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
-    'label' => 'Did the workshops, institutes, or classes you participated in include the following professional  development practices? Ple',
+    'label' => 'Did the workshops, institutes, or classes you participated in include the following professional development practices? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
     'weight' => '24',
     'children' => array(
       0 => 'field_sharing_of_information_and',
@@ -760,9 +760,8 @@ content analysis of qualitative data, etc.) methods.',
       'label' => 'Did the workshops, institutes, or classes you participated in include the following professional  development practices? Ple',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'longText',
-        'description' => 'Did the workshops, institutes, or classes you participated in include the following professional 
-development practices? (a) Please indicate yes or no for each statement. (b) Then indicate which practices were most valuable in helping you implement MWEEs.',
+        'classes' => '',
+        'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
@@ -885,9 +884,9 @@ development practices? (a) Please indicate yes or no for each statement. (b) The
       0 => 'field_off_site_programs',
       1 => 'field_schoolyard_programs',
       2 => 'field_classroom_programs',
-      3 => 'field_after_school_programs',
-      4 => 'field_summer_programs',
-      5 => 'field_events',
+      3 => 'field_summer_programs',
+      4 => 'field_events',
+      5 => 'field_after_school_program',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1306,7 +1305,7 @@ Engage students in:',
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
-    'label' => 'What types of support did you receive from your MWEE professional development provider? (a)  Please indicate yes or no for each ',
+    'label' => 'What types of support did you receive from your MWEE professional development provider? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
     'weight' => '25',
     'children' => array(
       0 => 'field_assistance_with_conducting',
@@ -1325,8 +1324,8 @@ Engage students in:',
       'label' => 'What types of support did you receive from your MWEE professional development provider? (a)  Please indicate yes or no for each ',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'longText',
-        'description' => 'What types of support did you receive from your MWEE professional development provider? (a) Please indicate yes or no for each statement. (b) Then indicate which practices were most valuable in helping you implement MWEEs.',
+        'classes' => '',
+        'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
@@ -1344,7 +1343,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to:',
-    'weight' => '32',
+    'weight' => '33',
     'children' => array(
       0 => 'field_teacher_term_watershed_',
       1 => 'field_identify_their_local_water',
@@ -1409,7 +1408,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which characteristics describe your organization\'s typical MWEE professional development this past grant year?',
-    'weight' => '30',
+    'weight' => '31',
     'children' => array(
       0 => 'field_teacher_local_connections',
       1 => 'field_teacher_noaa_interaction',
@@ -1444,7 +1443,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'It is a goal of my organization’s B-WET-funded MWEE professional development that teachers will:',
-    'weight' => '33',
+    'weight' => '34',
     'children' => array(
       0 => 'field_teacher_teach_watershed',
       1 => 'field_teacher_implement_mwee',
@@ -1529,11 +1528,12 @@ Engage students in:',
     'label' => 'What education methods were used during your MWEE professional development?',
     'weight' => '26',
     'children' => array(
-      0 => 'field_teacher_method_outdoor',
-      1 => 'field_teacher_method_field_work',
-      2 => 'field_teacher_method_place_based',
-      3 => 'field_teacher_method_scientific_',
-      4 => 'field_teacher_method_issue_inves',
+      0 => 'field_teacher_method_issue_inves',
+      1 => 'field_outdoor_trip_teacher_1',
+      2 => 'field_field_work_teacher_1',
+      3 => 'field_place_based_teacher_1',
+      4 => 'field_scientific_inquiry_based_1',
+      5 => 'field_teacher_investigation_1',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1557,7 +1557,7 @@ Engage students in:',
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Please answer all of the following questions based on the last MWEE (watershed education)  professional development you particip',
+    'label' => 'Please answer all of the following questions based on the last MWEE (watershed education) professional development you participated in.',
     'weight' => '4',
     'children' => array(
       0 => 'field_zipcode',
@@ -1606,7 +1606,7 @@ Engage students in:',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',
-        'description' => 'Please answer all of the following questions based on the last MWEE (watershed education) professional development you participated in.',
+        'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
@@ -1692,16 +1692,16 @@ Engage students in:',
     'label' => 'Which NOAA resources were incorporated into your organization\'s typical B-WET-funded MWEE professional development?',
     'weight' => '25',
     'children' => array(
-      0 => 'field_teacher_esources_noaa_expe',
-      1 => 'field_teacher_information_for_no',
-      2 => 'field_teacher_resources_marine_s',
-      3 => 'field_teacher_resources_estuarin',
-      4 => 'field_teacher_data_collected',
-      5 => 'field_teacher_data_other',
-      6 => 'field_teacher_edu_program',
-      7 => 'field_teacher_edu_other',
-      8 => 'field_teacher_labs_facilities',
-      9 => 'field_teacher_lab_other',
+      0 => 'field_teacher_data_collected',
+      1 => 'field_teacher_data_other',
+      2 => 'field_teacher_edu_program',
+      3 => 'field_teacher_edu_other',
+      4 => 'field_teacher_labs_facilities',
+      5 => 'field_teacher_lab_other',
+      6 => 'field_information_from_noaa_1',
+      7 => 'field_noaa_expert_1',
+      8 => 'field_noaa_national_marine_1',
+      9 => 'field_noaa_national_estuarine_1',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1726,7 +1726,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Which of the following steps did you include? Engaged teachers in',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_teacher_science_questions',
       1 => 'field_teacher_science_hypotheses',
@@ -1760,7 +1760,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'What types of support did your organization typically provide to teachers participating in MWEE professional development this pa',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'field_teacher_conduct_fieldwork',
       1 => 'field_teacher_habitats',
@@ -1796,7 +1796,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'Did teachers participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds durin',
-    'weight' => '31',
+    'weight' => '32',
     'children' => array(
       0 => 'field_teacher_created_habitat',
       1 => 'field_teacher_installed_rain_bar',
@@ -1832,7 +1832,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_development';
   $field_group->data = array(
     'label' => 'As part of your B-WET professional development workshops or institutes this past grant year, did your organization typically inc',
-    'weight' => '28',
+    'weight' => '29',
     'children' => array(
       0 => 'field_teacher_ex_integration',
       1 => 'field_teacher_discuss_integratio',

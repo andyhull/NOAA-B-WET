@@ -382,21 +382,21 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
 /* line 232, ../sass/_form.scss */
 .tableFormat .form-type-radio {
   float: left;
-  margin: -13px;
+  margin: -14px;
 }
-/* line 239, ../sass/_form.scss */
+/* line 236, ../sass/_form.scss */
 .tableFormat .questionEnd {
   margin-right: 40px;
 }
 
-/* line 243, ../sass/_form.scss */
+/* line 240, ../sass/_form.scss */
 .questionTable {
-  padding-left: 25px;
+  padding-left: 15px;
 }
 
-/* line 246, ../sass/_form.scss */
+/* line 243, ../sass/_form.scss */
 .tableHeader {
-  width: 360px;
+  width: 350px;
   display: inline-block;
   min-height: 30px;
   font-weight: bold;
@@ -405,7 +405,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   color: #000;
 }
 
-/* line 255, ../sass/_form.scss */
+/* line 252, ../sass/_form.scss */
 .tableHeader-fixed {
   border-color: #D5D5D5;
   border-radius: 0 0 0 0;
@@ -429,7 +429,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   padding-top: 10px;
 }
 
-/* line 272, ../sass/_form.scss */
+/* line 269, ../sass/_form.scss */
 .scaleLabel {
   padding: 20px 10px;
 }
@@ -490,36 +490,37 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
 
 /* line 36, ../sass/_results.scss */
 .bar {
-  background: #eee;
   width: 400px;
   height: 20px;
   margin: 10px;
+  -webkit-box-shadow: 1px 1px 10px #40494f;
+  -moz-box-shadow: 1px 1px 10px #40494f;
+  box-shadow: 1px 1px 10px #40494f;
 }
-/* line 42, ../sass/_results.scss */
+/* line 41, ../sass/_results.scss */
 .bar span {
   height: 20px;
   float: left;
 }
-/* line 45, ../sass/_results.scss */
+/* line 44, ../sass/_results.scss */
 .bar span:hover {
   -webkit-box-shadow: 1px 1px 20px #333333;
   -moz-box-shadow: 1px 1px 20px #333333;
   box-shadow: 1px 1px 20px #333333;
 }
 
-/* line 50, ../sass/_results.scss */
+/* line 49, ../sass/_results.scss */
 .barLabel {
   width: 400px;
   margin: 10px;
 }
 
-/* line 54, ../sass/_results.scss */
+/* line 53, ../sass/_results.scss */
 .more {
   cursor: pointer;
   background: #000;
   color: #fff;
-  width: 200px;
-  float: left;
+  width: 300px;
   position: relative;
   top: -75px;
   text-align: center;
@@ -534,54 +535,89 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   -moz-box-shadow: 1px 1px 10px #333333;
   box-shadow: 1px 1px 10px #333333;
 }
-/* line 68, ../sass/_results.scss */
+/* line 65, ../sass/_results.scss */
 .more a {
   padding: 5px;
   display: block;
 }
-/* line 71, ../sass/_results.scss */
+/* line 68, ../sass/_results.scss */
 .more a:hover {
   text-decoration: underline;
 }
 
-/* line 77, ../sass/_results.scss */
-.more:before {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 28px;
-  top: 18px;
-  border: 11px solid;
-  border-color: transparent transparent transparent  transparent;
-}
-
-/* line 88, ../sass/_results.scss */
+/* line 85, ../sass/_results.scss */
 .more:after {
   content: ' ';
   position: absolute;
   width: 0;
   height: 0;
-  left: 27px;
+  left: 10px;
   top: 45px;
   border: 13px solid;
   border-color: #000 transparent transparent transparent;
 }
 
-/* line 102, ../sass/_results.scss */
+/* line 96, ../sass/_results.scss */
 .details {
   position: relative;
   left: 400px;
   top: -33px;
 }
 
-/* line 107, ../sass/_results.scss */
+/* line 101, ../sass/_results.scss */
 .resultDetail {
   margin: 0px 10px;
   padding: 5px;
 }
 
-/* line 114, ../sass/_results.scss */
+/* line 105, ../sass/_results.scss */
+.detailLabel {
+  width: 400px;
+  padding: 5px;
+  margin: 0px 5px;
+}
+
+/* line 110, ../sass/_results.scss */
+.longDetail {
+  background: transparent;
+}
+
+/* line 113, ../sass/_results.scss */
+.detailHeader {
+  min-height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #8F9CA3;
+  border: 1px solid #84929A;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 122, ../sass/_results.scss */
+.totalLabel {
+  padding: 5px;
+}
+
+/* line 128, ../sass/_results.scss */
+.color0 {
+  color: #000;
+  background: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFE9EBED');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e9ebed));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e9ebed);
+  background-image: -moz-linear-gradient(top, #ffffff, #e9ebed);
+  background-image: -o-linear-gradient(top, #ffffff, #e9ebed);
+  background-image: linear-gradient(top, #ffffff, #e9ebed);
+}
+
+/* line 134, ../sass/_results.scss */
 .color1 {
   background: #e9ebed;
   *zoom: 1;
@@ -593,7 +629,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   background-image: linear-gradient(top, #e9ebed, #bfc5cb);
 }
 
-/* line 119, ../sass/_results.scss */
+/* line 139, ../sass/_results.scss */
 .color2 {
   background: #b1b8bf;
   *zoom: 1;
@@ -605,7 +641,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   background-image: linear-gradient(top, #b1b8bf, #87929d);
 }
 
-/* line 124, ../sass/_results.scss */
+/* line 144, ../sass/_results.scss */
 .color3 {
   background: #798591;
   *zoom: 1;
@@ -617,7 +653,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   background-image: linear-gradient(top, #798591, #555f68);
 }
 
-/* line 129, ../sass/_results.scss */
+/* line 149, ../sass/_results.scss */
 .color4 {
   background: #2c7eb5;
   *zoom: 1;
@@ -629,7 +665,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   background-image: linear-gradient(top, #2c7eb5, #1d5378);
 }
 
-/* line 134, ../sass/_results.scss */
+/* line 154, ../sass/_results.scss */
 .color5 {
   background: #184563;
   *zoom: 1;
@@ -641,7 +677,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   background-image: linear-gradient(top, #184563, #091a25);
 }
 
-/* line 139, ../sass/_results.scss */
+/* line 159, ../sass/_results.scss */
 .color6 {
   background: #0e283a;
   *zoom: 1;
@@ -653,7 +689,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   background-image: linear-gradient(top, #0e283a, #000000);
 }
 
-/* line 144, ../sass/_results.scss */
+/* line 164, ../sass/_results.scss */
 .color7 {
   background: #040c11;
   *zoom: 1;
@@ -671,6 +707,11 @@ body {
 }
 
 /* line 17, ../sass/style.scss */
+.container {
+  width: 1170px;
+}
+
+/* line 20, ../sass/style.scss */
 .node-grantee_survey-form {
   background: #E9EBED;
   padding: 5px;
@@ -682,7 +723,7 @@ body {
   box-shadow: 1px 1px 10px #dddddd;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 #pageLoad {
   position: fixed;
   top: 0;
@@ -693,8 +734,7 @@ body {
   height: 100%;
 }
 
-/* Fix Toolbar for .navbar-fixed-top */
-/* line 43, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .subnav {
   background-color: #EEEEEE;
   background-image: -moz-linear-gradient(center top, whitesmoke 0%, #eeeeee 100%);
@@ -705,12 +745,12 @@ body {
   width: 100%;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .subnav .nav {
   margin-bottom: 0;
 }
 
-/* line 55, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .subnav .nav > li > a {
   border-left: 1px solid #F5F5F5;
   border-radius: 0 0 0 0;
@@ -720,7 +760,7 @@ body {
   padding-top: 11px;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 .subnav .nav > .active > a, .subnav .nav > .active > a:hover {
   background-color: #E9E9E9;
   border-left: 0 none;
@@ -730,29 +770,29 @@ body {
   padding-left: 13px;
 }
 
-/* line 71, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .subnav .nav > .active > a .caret, .subnav .nav > .active > a:hover .caret {
   border-top-color: #777777;
 }
 
-/* line 74, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .subnav .nav > li:first-child > a, .subnav .nav > li:first-child > a:hover {
   border-left: 0 none;
   border-radius: 4px 0 0 4px;
   padding-left: 12px;
 }
 
-/* line 79, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 .subnav .nav > li:last-child > a {
   border-right: 0 none;
 }
 
-/* line 82, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 .subnav .dropdown-menu {
   border-radius: 0 0 4px 4px;
 }
 
-/* line 85, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .subnav-fixed {
   border-color: #D5D5D5;
   border-radius: 0 0 0 0;
@@ -765,24 +805,24 @@ body {
   z-index: 1020;
 }
 
-/* line 96, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 .withToolbar {
   top: 73px;
 }
 
-/* line 99, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 .subnav-fixed .nav {
   margin: 0 auto;
   padding: 0 1px;
   width: 938px;
 }
 
-/* line 104, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 .subnav .nav > li:first-child > a, .subnav .nav > li:first-child > a:hover {
   border-radius: 0 0 0 0;
 }
 
-/* line 108, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 .centered {
   position: fixed;
   top: 50%;

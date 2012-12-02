@@ -231,20 +231,17 @@
 		display: inline;
 		.form-type-radio {
 			float: left;
-			margin: -13px;
-			// background: #84929A;
-			// @include filter-gradient(#84929A, #788891, vertical);
-			// @include background-image(linear-gradient(top, #84929A, #788891));
+			margin: -14px;
 		}
 		.questionEnd {
 			margin-right: 40px;
 		}
 	}
 	.questionTable {
-		padding-left: 25px;
+		padding-left: 15px;
 	}
 	.tableHeader {
-		width: 360px;
+		width: 350px;
 		display: inline-block;
 		min-height: 30px;
 		font-weight: bold;

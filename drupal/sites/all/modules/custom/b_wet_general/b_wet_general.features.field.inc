@@ -10,14 +10,14 @@
 function b_wet_general_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-grantee_survey-field_after_school_programs'.
-  $fields['node-grantee_survey-field_after_school_programs'] = array(
+  // Exported field: 'node-grantee_survey-field_after_school_program'.
+  $fields['node-grantee_survey-field_after_school_program'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_after_school_programs',
+      'field_name' => 'field_after_school_program',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -33,6 +33,7 @@ function b_wet_general_field_default_fields() {
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -50,7 +51,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 53,
+          'weight' => 287,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -60,7 +61,7 @@ function b_wet_general_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_after_school_programs',
+      'field_name' => 'field_after_school_program',
       'label' => 'After-school or weekend programs (e.g., science clubs)',
       'required' => 0,
       'settings' => array(
@@ -1900,6 +1901,74 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '146',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_field_work_teacher_1'.
+  $fields['node-grantee_survey-field_field_work_teacher_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_field_work_teacher_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 293,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_field_work_teacher_1',
+      'label' => 'Field work (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '87',
       ),
     ),
   );
@@ -4454,6 +4523,74 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_information_from_noaa_1'.
+  $fields['node-grantee_survey-field_information_from_noaa_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_information_from_noaa_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 288,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_information_from_noaa_1',
+      'label' => 'Information from NOAA studies, reports, or websites (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '18',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_installed_rain_barrel'.
   $fields['node-grantee_survey-field_installed_rain_barrel'] = array(
     'field_config' => array(
@@ -6190,6 +6327,74 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_noaa_expert_1'.
+  $fields['node-grantee_survey-field_noaa_expert_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_expert_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 289,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_expert_1',
+      'label' => 'NOAA expert (e.g., scientist, educator, Sea Grant staff member, policy expert) (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '21',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_noaa_faciliities_other'.
   $fields['node-grantee_survey-field_noaa_faciliities_other'] = array(
     'field_config' => array(
@@ -6465,6 +6670,142 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '20',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_noaa_national_estuarine_1'.
+  $fields['node-grantee_survey-field_noaa_national_estuarine_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_national_estuarine_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 291,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_national_estuarine_1',
+      'label' => 'NOAA National Estuarine Research Reserve (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '28',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_noaa_national_marine_1'.
+  $fields['node-grantee_survey-field_noaa_national_marine_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_noaa_national_marine_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 290,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_noaa_national_marine_1',
+      'label' => 'NOAA National Marine Sanctuary (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '26',
       ),
     ),
   );
@@ -7228,6 +7569,74 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_outdoor_trip_teacher_1'.
+  $fields['node-grantee_survey-field_outdoor_trip_teacher_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_outdoor_trip_teacher_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 292,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_outdoor_trip_teacher_1',
+      'label' => 'Outdoor field trip (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '86',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_participated_event'.
   $fields['node-grantee_survey-field_participated_event'] = array(
     'field_config' => array(
@@ -7692,6 +8101,74 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'number',
         'weight' => '161',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_place_based_teacher_1'.
+  $fields['node-grantee_survey-field_place_based_teacher_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_place_based_teacher_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 294,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_place_based_teacher_1',
+      'label' => 'Place-based education (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '88',
       ),
     ),
   );
@@ -8946,7 +9423,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -8977,13 +9456,13 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_school_districts_served',
-      'label' => 'About',
+      'label' => 'About ____ school districts served',
       'required' => 0,
       'settings' => array(
         'max' => '',
         'min' => '',
         'prefix' => '',
-        'suffix' => 'school districts served ',
+        'suffix' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -9008,7 +9487,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -9039,13 +9520,13 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_schools_served',
-      'label' => 'About',
+      'label' => 'About ____ K-12 schools served',
       'required' => 0,
       'settings' => array(
         'max' => '',
         'min' => '',
         'prefix' => '',
-        'suffix' => 'K-12 schools served',
+        'suffix' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -9142,11 +9623,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -9209,11 +9694,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -9276,11 +9765,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -9343,11 +9836,16 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -9409,11 +9907,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -9476,11 +9978,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -9521,6 +10027,74 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '15',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-grantee_survey-field_scientific_inquiry_based_1'.
+  $fields['node-grantee_survey-field_scientific_inquiry_based_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_scientific_inquiry_based_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 295,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_scientific_inquiry_based_1',
+      'label' => 'Scientific-inquiry-based learning (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '89',
       ),
     ),
   );
@@ -9817,7 +10391,9 @@ function b_wet_general_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'number_integer',
     ),
@@ -9848,13 +10424,13 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_students_served',
-      'label' => 'About',
+      'label' => 'About ____ students served',
       'required' => 0,
       'settings' => array(
         'max' => '',
         'min' => '',
         'prefix' => '',
-        'suffix' => 'students served',
+        'suffix' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -10996,7 +11572,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -11066,7 +11642,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -11400,7 +11976,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '22',
+        'weight' => '23',
       ),
     ),
   );
@@ -11468,7 +12044,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '21',
+        'weight' => '22',
       ),
     ),
   );
@@ -11535,77 +12111,6 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '123',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_esources_noaa_expe'.
-  $fields['node-grantee_survey-field_teacher_esources_noaa_expe'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_esources_noaa_expe',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 141,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_esources_noaa_expe',
-      'label' => 'NOAA expert (e.g., scientist, educator, Sea Grant staff member, policy expert) (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '20',
       ),
     ),
   );
@@ -12607,77 +13112,6 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-grantee_survey-field_teacher_information_for_no'.
-  $fields['node-grantee_survey-field_teacher_information_for_no'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_information_for_no',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 142,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_information_for_no',
-      'label' => 'Information from NOAA studies, reports, or websites (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '17',
-      ),
-    ),
-  );
-
   // Exported field: 'node-grantee_survey-field_teacher_installed_rain_bar'.
   $fields['node-grantee_survey-field_teacher_installed_rain_bar'] = array(
     'field_config' => array(
@@ -12877,6 +13311,74 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-grantee_survey-field_teacher_investigation_1'.
+  $fields['node-grantee_survey-field_teacher_investigation_1'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teacher_investigation_1',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Not Sure',
+          1 => 'No',
+          2 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'grantee_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 296,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_teacher_investigation_1',
+      'label' => 'Issue investigation (teacher)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '91',
+      ),
+    ),
+  );
+
   // Exported field: 'node-grantee_survey-field_teacher_lab_other'.
   $fields['node-grantee_survey-field_teacher_lab_other'] = array(
     'field_config' => array(
@@ -12942,7 +13444,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '24',
+        'weight' => '25',
       ),
     ),
   );
@@ -13010,7 +13512,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '23',
+        'weight' => '24',
       ),
     ),
   );
@@ -13211,361 +13713,6 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '135',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_method_field_work'.
-  $fields['node-grantee_survey-field_teacher_method_field_work'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_method_field_work',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '(i.e., scientific study carried out somewhere other than in a classroom/laboratory, includes data collection)',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 148,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_method_field_work',
-      'label' => 'Field work (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '86',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_method_issue_inves'.
-  $fields['node-grantee_survey-field_teacher_method_issue_inves'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_method_issue_inves',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '(i.e., an interdisciplinary instructional strategy that engages learners in investigating complex, real-world environmental issues and problem-solving as the context for teaching and learning)',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 151,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_method_issue_inves',
-      'label' => 'Issue investigation (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '89',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_method_outdoor'.
-  $fields['node-grantee_survey-field_teacher_method_outdoor'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_method_outdoor',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '(i.e., excursion to learn about natural history and ecology in the outdoors, may or may not include data collection)',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 147,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_method_outdoor',
-      'label' => 'Outdoor field trip (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '85',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_method_place_based'.
-  $fields['node-grantee_survey-field_teacher_method_place_based'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_method_place_based',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '(i.e., an interdisciplinary instructional strategy that uses the local environment and community as the context for teaching and learning)',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 149,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_method_place_based',
-      'label' => 'Place-based education (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '87',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_method_scientific_'.
-  $fields['node-grantee_survey-field_teacher_method_scientific_'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_method_scientific_',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '(i.e., an instructional strategy based on the idea that learning may be facilitated by giving students the opportunity to explore an idea or question on their own. To arrive at an answer or to better understand the concept, students often collect and analyze data)',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 150,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_method_scientific_',
-      'label' => 'Scientific-inquiry-based learning (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '88',
       ),
     ),
   );
@@ -14773,148 +14920,6 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '85',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_resources_estuarin'.
-  $fields['node-grantee_survey-field_teacher_resources_estuarin'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_resources_estuarin',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 146,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_resources_estuarin',
-      'label' => 'NOAA National Estuarine Research Reserve (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '26',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-grantee_survey-field_teacher_resources_marine_s'.
-  $fields['node-grantee_survey-field_teacher_resources_marine_s'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_teacher_resources_marine_s',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => NULL,
-          1 => NULL,
-        ),
-        'allowed_values_function' => 'cck_allowed_values_php',
-        'allowed_values_php' => 'return array (
-	0 => \'Not Sure\',
-	1 => \'No\',
-	2 => \'Yes\'
-);',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'grantee_survey',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'default_value_php' => '',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 145,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_teacher_resources_marine_s',
-      'label' => 'NOAA National Marine Sanctuary (teacher)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '25',
       ),
     ),
   );
@@ -24560,11 +24565,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -24627,11 +24636,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -24694,11 +24707,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -24761,11 +24778,16 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'list_boolean',
@@ -24827,11 +24849,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -24894,11 +24920,15 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => '',
+          1 => '',
         ),
-        'allowed_values_function' => '',
-        'allowed_values_php' => '',
+        'allowed_values_function' => 'cck_allowed_values_php',
+        'allowed_values_php' => 'return array(
+  0 => "Don\'t recall",
+  1 => "No",
+  2 => "Yes"
+);',
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -24928,7 +24958,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_science_questions',
-      'label' => 'Formulating scientific questions they can answer using data',
+      'label' => 'Formulating scientific questions',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -28585,12 +28615,10 @@ function b_wet_general_field_default_fields() {
   t('(e.g., for school, other organizations)');
   t('(e.g., planting trees)');
   t('(events that last at least 6 hours, but are less than 40 hours, e.g., a three-day workshop on a specific topic or a series of five Saturday sessions)');
-  t('(i.e., an instructional strategy based on the idea that learning may be facilitated by giving students the opportunity to explore an idea or question on their own. To arrive at an answer or to better understand the concept, students often collect and analyze data)');
   t('(i.e., an instructional strategy that gives students the opportunity to explore an idea or question. To arrive at an answer or to better understand the concept, students often collect and analyze data)');
   t('(i.e., an instructional strategy that integrates meaningful community service with instruction and reflection to enrich the learning experience, teach civic responsibility, and strengthen communities)');
   t('(i.e., an interdisciplinary instructional strategy that engages learners in investigating complex, real-world environmental issues and problem-solving as the context for teaching and learning)');
   t('(i.e., an interdisciplinary instructional strategy that uses the local environment and community as the context for teaching and learning)');
-  t('(i.e., excursion to learn about natural history and ecology in the outdoors, may or may not include data collection)');
   t('(i.e., excursion to learn about natural history and ecology in the outdoors, may or may not include data collection)
 ');
   t('(i.e., excursion to learn about natural history and ecology in the outdoors, may or may not include data collection)
@@ -28617,9 +28645,11 @@ function b_wet_general_field_default_fields() {
   t('<span class="longText">The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.</span>');
   t('<span class="longText">Were your organization’s typical B-WET-funded MWEEs focused only on science concepts, or on concepts from multiple disciplines?(e.g., science, math, social studies, literature, art, music)</span>');
   t('A college-level course');
-  t('About');
+  t('About ____ K-12 schools served');
   t('About ____ K-12 schools served (teacher)');
+  t('About ____ school districts served');
   t('About ____ school districts served (teacher)');
+  t('About ____ students served');
   t('About ____ teachers served  (teacher)');
   t('About how many hours did a typical teacher participate in outdoor activities as part of your organization\'s MWEE professional development this past grant year?');
   t('About how many hours of MWEE professional development and/or support did you receive over the past 12 months?');
@@ -28745,6 +28775,7 @@ function b_wet_general_field_default_fields() {
   t('Field work (teacher)');
   t('For how many years total has this B-WET project been in existence, including years not funded by NOAA B-WET?');
   t('For what type of organization do you work? (choose one)');
+  t('Formulating scientific questions');
   t('Formulating scientific questions they can answer using data');
   t('Gave presentation(s) about the local watershed');
   t('Gave presentation(s) about the local watershed (e.g., for school, other organizations) (teacher)');
