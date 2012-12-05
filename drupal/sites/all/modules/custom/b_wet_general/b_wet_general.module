@@ -99,3 +99,33 @@ function b_wet_general_preprocess_views_view__grantee_survey(&$vars) {
   // print_r($results);
 
 }
+
+/* FILE : b_wet_general.module */
+ function b_wet_general_menu() { 
+   $items = array(); 
+   $items['dashboard/grantee'] = array( 
+    'page callback' => 'b_wet_general_grantee_dashboard',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'access callback' => 'b_wet_general_grantee_page_access',
+    'file' => 'includes/grantee-dashboard.inc',
+   ); 
+   $items['dashboard/manager'] = array( 
+    'page callback' => 'b_wet_general_landing',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'access callback' => 'b_wet_general_grantee_page_access',
+    'file' => 'includes/manager-dashboard.inc',
+   );  
+   return $items; 
+ }
+
+function b_wet_general_grantee_page_access() {
+  if(user_access('create grantee_survey content')) {
+    return true;
+  } elseif (user_access('create grantee_survey content')){
+    return true;
+  } else {
+    return false;
+  }
+}

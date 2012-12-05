@@ -21,7 +21,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'As a result of participating in the MWEE professional development, I am better able to:',
-    'weight' => '30',
+    'weight' => '31',
     'children' => array(
       0 => 'field_teacher_define_watershed',
       1 => 'field_teacher_identify_local_wat',
@@ -55,7 +55,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'For each statement, select one response for BEFORE, one response for AFTER, and one response for FUTURE',
-    'weight' => '35',
+    'weight' => '36',
     'children' => array(
       0 => 'field_teach_my_students_before',
       1 => 'field_teach_my_students_after',
@@ -702,7 +702,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'Which additional practices did your MWEE professional development and/or the support you received include? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_connections_were_made_to_l',
       1 => 'field_interactions_were_facilita',
@@ -843,7 +843,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'During your MWEE professional development, did you participate in any of these activities that  protect and/or restore ocean, co',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_created_habitat',
       1 => 'field_installed_rain_barrel',
@@ -996,7 +996,7 @@ content analysis of qualitative data, etc.) methods.',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'longText',
-        'description' => 'If responded Yes to “Scientific-inquiry-based learning”
+        'description' => 'If responded Yes to “Scientific-inquiry-based learning”<br/>
 As part of your MWEE professional development, were you involved in...',
       ),
       'formatter' => 'collapsible',
@@ -1049,7 +1049,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'About what percent of your students are (percent should equal 100): ',
-    'weight' => '13',
+    'weight' => '12',
     'children' => array(
       0 => 'field_hispanic_or_latino',
       1 => 'field_american_indian_or_alaska_',
@@ -1267,10 +1267,10 @@ Engage students in:',
   $field_group->entity_type = 'node';
   $field_group->bundle = 'teacher_survey';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_support';
+  $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
-    'weight' => '84',
+    'weight' => '26',
     'children' => array(
       0 => 'field_assistance_with_conduct_1',
       1 => 'field_assistance_with_est_1',
@@ -1317,7 +1317,6 @@ Engage students in:',
       6 => 'field_assistance_with_the_use_of',
       7 => 'field_communicating_with_provide',
       8 => 'field_communication_with_provide',
-      9 => 'group_support_implement',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1587,18 +1586,21 @@ Engage students in:',
       24 => 'field_what_component_s_of_the_mw',
       25 => 'field_how_could_the_mwee_profess',
       26 => 'field_any_other_comments_about_t',
-      27 => 'path',
-      28 => 'group_as_a_result',
-      29 => 'group_before_after_future',
-      30 => 'group_edu_method',
-      31 => 'group_noaa_resources',
-      32 => 'group_practices',
-      33 => 'group_pro_development_practices',
-      34 => 'group_protect_activities',
-      35 => 'group_science_yes',
-      36 => 'group_student_ethnicity',
-      37 => 'group_support',
-      38 => 'group_which_type_pro_develop',
+      27 => 'field_if_other_please_describe',
+      28 => 'title',
+      29 => 'path',
+      30 => 'group_as_a_result',
+      31 => 'group_before_after_future',
+      32 => 'group_edu_method',
+      33 => 'group_noaa_resources',
+      34 => 'group_practices',
+      35 => 'group_pro_development_practices',
+      36 => 'group_protect_activities',
+      37 => 'group_science_yes',
+      38 => 'group_student_ethnicity',
+      39 => 'group_support_implement',
+      40 => 'group_support',
+      41 => 'group_which_type_pro_develop',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

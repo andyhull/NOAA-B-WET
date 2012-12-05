@@ -45,6 +45,7 @@
 		margin: 40px 0px;
 		padding: 10px;
 		background: #84929A;
+		float:none;
 		@include filter-gradient(#84929A, #788891, vertical);
 		@include background-image(linear-gradient(top, #84929A, #788891));
 		@include border-radius(5px);

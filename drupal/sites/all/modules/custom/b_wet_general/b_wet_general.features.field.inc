@@ -16769,7 +16769,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 171,
+          'weight' => '157',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -16839,7 +16839,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 170,
+          'weight' => '156',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -16911,7 +16911,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 128,
+          'weight' => '114',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -16983,7 +16983,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 127,
+          'weight' => '113',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17055,7 +17055,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 129,
+          'weight' => '115',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17126,7 +17126,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 102,
+          'weight' => '88',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17196,7 +17196,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 101,
+          'weight' => '87',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17267,7 +17267,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 92,
+          'weight' => '78',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17337,7 +17337,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 91,
+          'weight' => '77',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17397,7 +17397,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 178,
+          'weight' => '164',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17467,7 +17467,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 137,
+          'weight' => '123',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17491,7 +17491,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '38',
+        'weight' => '39',
       ),
     ),
   );
@@ -17537,7 +17537,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 68,
+          'weight' => '55',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17597,7 +17597,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 179,
+          'weight' => '165',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17668,7 +17668,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 143,
+          'weight' => '129',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17738,7 +17738,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 151,
+          'weight' => '137',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17812,7 +17812,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 139,
+          'weight' => '125',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17882,7 +17882,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 138,
+          'weight' => '124',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -17949,7 +17949,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 141,
+          'weight' => '127',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18019,7 +18019,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 140,
+          'weight' => '126',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18086,7 +18086,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 142,
+          'weight' => '128',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18153,7 +18153,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 150,
+          'weight' => '136',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18213,7 +18213,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 180,
+          'weight' => '166',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18284,7 +18284,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 21,
+          'weight' => '19',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18355,7 +18355,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 145,
+          'weight' => '131',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18425,7 +18425,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 144,
+          'weight' => '130',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18492,7 +18492,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 146,
+          'weight' => '132',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18559,7 +18559,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 147,
+          'weight' => '133',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18629,7 +18629,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 153,
+          'weight' => '139',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18699,7 +18699,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 152,
+          'weight' => '138',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18766,7 +18766,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 155,
+          'weight' => '141',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18836,7 +18836,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 154,
+          'weight' => '140',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18903,7 +18903,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 157,
+          'weight' => '143',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -18973,7 +18973,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 156,
+          'weight' => '142',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19039,7 +19039,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 17,
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19106,7 +19106,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 149,
+          'weight' => '135',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19176,7 +19176,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 148,
+          'weight' => '134',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19243,7 +19243,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 76,
+          'weight' => '63',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19264,7 +19264,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '13',
       ),
     ),
   );
@@ -19310,7 +19310,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 130,
+          'weight' => '116',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19378,7 +19378,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 70,
+          'weight' => '57',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19445,7 +19445,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 131,
+          'weight' => '117',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19466,7 +19466,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '31',
+        'weight' => '32',
       ),
     ),
   );
@@ -19516,7 +19516,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 84,
+          'weight' => '70',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19586,7 +19586,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 83,
+          'weight' => '69',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19653,7 +19653,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 98,
+          'weight' => '84',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19723,7 +19723,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 97,
+          'weight' => '83',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19790,7 +19790,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 80,
+          'weight' => '66',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19857,7 +19857,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 82,
+          'weight' => '68',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19933,7 +19933,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 74,
+          'weight' => '61',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -19954,7 +19954,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '9',
       ),
     ),
   );
@@ -20000,7 +20000,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 93,
+          'weight' => '79',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20071,7 +20071,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 94,
+          'weight' => '80',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20145,7 +20145,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 88,
+          'weight' => '74',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20215,7 +20215,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 87,
+          'weight' => '73',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20286,7 +20286,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 100,
+          'weight' => '86',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20356,7 +20356,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 99,
+          'weight' => '85',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20422,7 +20422,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 19,
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20492,7 +20492,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 2,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20513,7 +20513,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '28',
+        'weight' => '29',
       ),
     ),
   );
@@ -20558,7 +20558,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 3,
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20582,7 +20582,76 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '29',
+        'weight' => '30',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-teacher_survey-field_grantee_id'.
+  $fields['node-teacher_survey-field_grantee_id'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_grantee_id',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'teacher_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '172',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_grantee_id',
+      'label' => 'Grantee ID',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '163',
       ),
     ),
   );
@@ -20633,7 +20702,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 116,
+          'weight' => '102',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20705,7 +20774,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 115,
+          'weight' => '101',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20777,7 +20846,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 117,
+          'weight' => '103',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20837,7 +20906,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 177,
+          'weight' => '163',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20907,7 +20976,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 136,
+          'weight' => '122',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20931,7 +21000,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '37',
+        'weight' => '38',
       ),
     ),
   );
@@ -20977,7 +21046,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 165,
+          'weight' => '151',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21047,7 +21116,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 164,
+          'weight' => '150',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21114,7 +21183,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 167,
+          'weight' => '153',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21184,7 +21253,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 166,
+          'weight' => '152',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21251,7 +21320,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 169,
+          'weight' => '155',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21321,7 +21390,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 173,
+          'weight' => '159',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21391,7 +21460,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 168,
+          'weight' => '154',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21458,7 +21527,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 172,
+          'weight' => '158',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21480,6 +21549,76 @@ function b_wet_general_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '86',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-teacher_survey-field_if_other_please_describe'.
+  $fields['node-teacher_survey-field_if_other_please_describe'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_if_other_please_describe',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'teacher_survey',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '170',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_if_other_please_describe',
+      'label' => 'If Other, please describe',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '15',
       ),
     ),
   );
@@ -21530,7 +21669,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 110,
+          'weight' => '96',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21602,7 +21741,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 109,
+          'weight' => '95',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21674,7 +21813,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 111,
+          'weight' => '97',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21744,7 +21883,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 69,
+          'weight' => '56',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21815,7 +21954,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 71,
+          'weight' => '58',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21836,7 +21975,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -21888,7 +22027,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 55,
+          'weight' => '48',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -21909,7 +22048,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -21960,7 +22099,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 107,
+          'weight' => '93',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22032,7 +22171,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 106,
+          'weight' => '92',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22104,7 +22243,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 108,
+          'weight' => '94',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22172,7 +22311,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 174,
+          'weight' => '160',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22239,7 +22378,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 18,
+          'weight' => '16',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22306,7 +22445,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 159,
+          'weight' => '145',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22376,7 +22515,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 160,
+          'weight' => '146',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22443,7 +22582,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 161,
+          'weight' => '147',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22513,7 +22652,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 158,
+          'weight' => '144',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22580,7 +22719,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 75,
+          'weight' => '62',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22601,7 +22740,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -22647,7 +22786,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 176,
+          'weight' => '162',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22718,7 +22857,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 6,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22789,7 +22928,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 9,
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22861,7 +23000,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 5,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -22932,7 +23071,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 7,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23003,7 +23142,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 10,
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23069,7 +23208,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 23,
+          'weight' => '21',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23129,7 +23268,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 181,
+          'weight' => '167',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23200,7 +23339,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 134,
+          'weight' => '120',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23221,7 +23360,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '34',
+        'weight' => '35',
       ),
     ),
   );
@@ -23266,7 +23405,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 54,
+          'weight' => '47',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23333,7 +23472,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 133,
+          'weight' => '119',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23354,7 +23493,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '33',
+        'weight' => '34',
       ),
     ),
   );
@@ -23393,7 +23532,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 183,
+          'weight' => '169',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23464,7 +23603,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 20,
+          'weight' => '18',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23531,7 +23670,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 175,
+          'weight' => '161',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23602,7 +23741,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 90,
+          'weight' => '76',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23672,7 +23811,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 89,
+          'weight' => '75',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23743,7 +23882,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 4,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23764,7 +23903,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -23814,7 +23953,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 96,
+          'weight' => '82',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23884,7 +24023,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 95,
+          'weight' => '81',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -23955,7 +24094,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 86,
+          'weight' => '72',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24025,7 +24164,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 85,
+          'weight' => '71',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24096,7 +24235,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 50,
+          'weight' => '43',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24117,7 +24256,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '39',
+        'weight' => '40',
       ),
     ),
   );
@@ -24160,7 +24299,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 53,
+          'weight' => '46',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24184,7 +24323,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '42',
+        'weight' => '43',
       ),
     ),
   );
@@ -24234,7 +24373,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 51,
+          'weight' => '44',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24255,7 +24394,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '40',
+        'weight' => '41',
       ),
     ),
   );
@@ -24305,7 +24444,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 52,
+          'weight' => '45',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24326,7 +24465,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '41',
+        'weight' => '42',
       ),
     ),
   );
@@ -24377,7 +24516,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 119,
+          'weight' => '105',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24449,7 +24588,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 118,
+          'weight' => '104',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24521,7 +24660,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 120,
+          'weight' => '106',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24592,7 +24731,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 12,
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24663,7 +24802,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 14,
+          'weight' => '12',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24734,7 +24873,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 15,
+          'weight' => '13',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24805,7 +24944,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 13,
+          'weight' => '11',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24876,7 +25015,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 16,
+          'weight' => '14',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -24947,7 +25086,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 11,
+          'weight' => '9',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25019,7 +25158,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 122,
+          'weight' => '108',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25091,7 +25230,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 121,
+          'weight' => '107',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25163,7 +25302,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 123,
+          'weight' => '109',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25234,7 +25373,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 81,
+          'weight' => '67',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25304,7 +25443,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 78,
+          'weight' => '65',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25371,7 +25510,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 162,
+          'weight' => '148',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25438,7 +25577,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 163,
+          'weight' => '149',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25513,7 +25652,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 104,
+          'weight' => '90',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25585,7 +25724,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 103,
+          'weight' => '89',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25657,7 +25796,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 105,
+          'weight' => '91',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25723,7 +25862,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 29,
+          'weight' => '27',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25789,7 +25928,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 27,
+          'weight' => '25',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25857,7 +25996,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 62,
+          'weight' => '49',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25924,7 +26063,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 63,
+          'weight' => '50',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -25999,7 +26138,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 41,
+          'weight' => '35',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26066,7 +26205,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 65,
+          'weight' => '52',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26137,7 +26276,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 64,
+          'weight' => '51',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26208,7 +26347,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 33,
+          'weight' => '31',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26281,7 +26420,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 31,
+          'weight' => '29',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26353,7 +26492,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 44,
+          'weight' => '38',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26425,7 +26564,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 48,
+          'weight' => '42',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26497,7 +26636,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 46,
+          'weight' => '40',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26569,7 +26708,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 42,
+          'weight' => '36',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26641,7 +26780,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 47,
+          'weight' => '41',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26713,7 +26852,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 43,
+          'weight' => '37',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26779,7 +26918,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 25,
+          'weight' => '23',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26846,7 +26985,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 67,
+          'weight' => '54',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26917,7 +27056,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 66,
+          'weight' => '53',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -26988,7 +27127,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 39,
+          'weight' => '34',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27055,7 +27194,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 26,
+          'weight' => '24',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27122,7 +27261,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 24,
+          'weight' => '22',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27188,7 +27327,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 30,
+          'weight' => '28',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27262,7 +27401,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 32,
+          'weight' => '30',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27334,7 +27473,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 45,
+          'weight' => '39',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27405,7 +27544,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 35,
+          'weight' => '33',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27476,7 +27615,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 34,
+          'weight' => '32',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27542,7 +27681,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 28,
+          'weight' => '26',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27608,7 +27747,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 22,
+          'weight' => '20',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27680,7 +27819,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 113,
+          'weight' => '99',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27752,7 +27891,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 112,
+          'weight' => '98',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27824,7 +27963,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 114,
+          'weight' => '100',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27896,7 +28035,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 125,
+          'weight' => '111',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -27968,7 +28107,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 124,
+          'weight' => '110',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28040,7 +28179,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 126,
+          'weight' => '112',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28106,7 +28245,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 135,
+          'weight' => '121',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28130,7 +28269,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '36',
+        'weight' => '37',
       ),
     ),
   );
@@ -28176,7 +28315,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 132,
+          'weight' => '118',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28197,7 +28336,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '32',
+        'weight' => '33',
       ),
     ),
   );
@@ -28249,7 +28388,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 72,
+          'weight' => '59',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28270,7 +28409,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -28320,7 +28459,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 77,
+          'weight' => '64',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28341,7 +28480,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '15',
+        'weight' => '14',
       ),
     ),
   );
@@ -28389,7 +28528,7 @@ function b_wet_general_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 73,
+          'weight' => '60',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28410,7 +28549,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -28449,7 +28588,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 182,
+          'weight' => '168',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28513,7 +28652,7 @@ function b_wet_general_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 1,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -28538,7 +28677,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -28779,6 +28918,7 @@ function b_wet_general_field_default_fields() {
   t('Formulating scientific questions they can answer using data');
   t('Gave presentation(s) about the local watershed');
   t('Gave presentation(s) about the local watershed (e.g., for school, other organizations) (teacher)');
+  t('Grantee ID');
   t('Guide students through taking action to protect or restore watersheds');
   t('Helped clean up or take care of a local stream or beach');
   t('Helped make connections to local community organizations and resources');
@@ -28818,6 +28958,7 @@ function b_wet_general_field_default_fields() {
   t('Identify the functions that occur in a watershed (transport, store, and cycle water) (teacher)');
   t('Identify their local watershed(s)');
   t('Identify their local watershed(s) (teacher)');
+  t('If Other, please describe');
   t('If Yes name the NOAA data source:');
   t('If Yes name the curricula or programs');
   t('If Yes name the curricula or programs:');

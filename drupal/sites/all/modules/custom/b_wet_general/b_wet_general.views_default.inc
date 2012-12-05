@@ -5685,6 +5685,55 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_impact_health_text']['field'] = 'field_impact_health_text';
   $handler->display->display_options['fields']['field_impact_health_text']['element_class'] = 'text groupImpact';
   $handler->display->display_options['fields']['field_impact_health_text']['element_default_classes'] = FALSE;
+  $handler->display->display_options['path'] = 'results/impact';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Impact';
+  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: Grantee Results Feedback */
+  $handler = $view->new_display('page', 'Grantee Results Feedback', 'page_8');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_develop_proposal' => 'field_develop_proposal',
+    'php' => 'php',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_develop_proposal' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Impact section</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Anything else you would like to add? */
   $handler->display->display_options['fields']['field_anything_else']['id'] = 'field_anything_else';
   $handler->display->display_options['fields']['field_anything_else']['table'] = 'field_data_field_anything_else';
@@ -5718,10 +5767,10 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number groupSurvey';
   $handler->display->display_options['fields']['field_question_length']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_question_length']['type'] = 'list_key';
-  $handler->display->display_options['path'] = 'results/impact';
+  $handler->display->display_options['path'] = 'results/feedback';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Impact';
-  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['title'] = 'Feedback';
+  $handler->display->display_options['menu']['weight'] = '5';
   $handler->display->display_options['menu']['context'] = 0;
   $export['grantee_survey'] = $view;
 
@@ -6009,12 +6058,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_teacher_institute']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_teacher_institute']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teacher_institute']['type'] = 'list_key';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_teacher_method_outdoor']['id'] = 'field_teacher_method_outdoor';
-  $handler->display->display_options['fields']['field_teacher_method_outdoor']['table'] = 'field_data_field_teacher_method_outdoor';
-  $handler->display->display_options['fields']['field_teacher_method_outdoor']['field'] = 'field_teacher_method_outdoor';
-  $handler->display->display_options['fields']['field_teacher_method_outdoor']['element_class'] = 'number';
-  $handler->display->display_options['fields']['field_teacher_method_outdoor']['element_default_classes'] = FALSE;
   /* Field: Content: Field work */
   $handler->display->display_options['fields']['field_method_field_work']['id'] = 'field_method_field_work';
   $handler->display->display_options['fields']['field_method_field_work']['table'] = 'field_data_field_method_field_work';
@@ -6666,6 +6709,21 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_question_informative']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_question_informative']['type'] = 'list_key';
+  /* Field: Content: Grantee ID */
+  $handler->display->display_options['fields']['field_grantee_id']['id'] = 'field_grantee_id';
+  $handler->display->display_options['fields']['field_grantee_id']['table'] = 'field_data_field_grantee_id';
+  $handler->display->display_options['fields']['field_grantee_id']['field'] = 'field_grantee_id';
+  $handler->display->display_options['fields']['field_grantee_id']['click_sort_column'] = 'target_id';
+  $handler->display->display_options['fields']['field_grantee_id']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_grantee_id']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_grantee_id']['group_column'] = 'target_id';
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_grantee_id_2']['id'] = 'field_grantee_id_2';
+  $handler->display->display_options['fields']['field_grantee_id_2']['table'] = 'field_data_field_grantee_id_2';
+  $handler->display->display_options['fields']['field_grantee_id_2']['field'] = 'field_grantee_id_2';
+  $handler->display->display_options['fields']['field_grantee_id_2']['label'] = 'Grantee ID 2';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -6685,11 +6743,3164 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'teacher_survey' => 'teacher_survey',
   );
+  /* Filter criterion: Broken/missing handler */
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['id'] = 'field_grantee_id_2_value';
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['table'] = 'field_data_field_grantee_id_2';
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['field'] = 'field_grantee_id_2_value';
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['operator_id'] = 'field_grantee_id_2_value_op';
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['label'] = 'Grantee ID 2 (field_grantee_id_2)';
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['operator'] = 'field_grantee_id_2_value_op';
+  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['identifier'] = 'field_grantee_id_2_value';
 
   /* Display: Teacher survey results */
   $handler = $view->new_display('page', 'Teacher survey results', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'teacher-survey';
+
+  /* Display: Teacher survey overview */
+  $handler = $view->new_display('page', 'Teacher survey overview', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Are you currently a PreK-12 teacher or educator?  */
+  $handler->display->display_options['fields']['field_are_you_currently_a_prek_1']['id'] = 'field_are_you_currently_a_prek_1';
+  $handler->display->display_options['fields']['field_are_you_currently_a_prek_1']['table'] = 'field_data_field_are_you_currently_a_prek_1';
+  $handler->display->display_options['fields']['field_are_you_currently_a_prek_1']['field'] = 'field_are_you_currently_a_prek_1';
+  $handler->display->display_options['fields']['field_are_you_currently_a_prek_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_are_you_currently_a_prek_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_are_you_currently_a_prek_1']['type'] = 'list_key';
+  /* Field: Content: In what setting do you teach? */
+  $handler->display->display_options['fields']['field_in_what_setting_do_you_tea']['id'] = 'field_in_what_setting_do_you_tea';
+  $handler->display->display_options['fields']['field_in_what_setting_do_you_tea']['table'] = 'field_data_field_in_what_setting_do_you_tea';
+  $handler->display->display_options['fields']['field_in_what_setting_do_you_tea']['field'] = 'field_in_what_setting_do_you_tea';
+  $handler->display->display_options['fields']['field_in_what_setting_do_you_tea']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_in_what_setting_do_you_tea']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_in_what_setting_do_you_tea']['type'] = 'list_key';
+  /* Field: Content: Did you recently complete a professional development opportunity focused on watersheds or water  quality issues (also known as a Meaningful Watershed Education Experience {MWEE} professional  development)? */
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['id'] = 'field_did_you_recently_complete_';
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['table'] = 'field_data_field_did_you_recently_complete_';
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['field'] = 'field_did_you_recently_complete_';
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['label'] = 'Did you recently complete a professional';
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_you_recently_complete_']['type'] = 'list_key';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: In what 5-DIGIT zip code is your organization located? */
+  $handler->display->display_options['fields']['field_zipcode']['id'] = 'field_zipcode';
+  $handler->display->display_options['fields']['field_zipcode']['table'] = 'field_data_field_zipcode';
+  $handler->display->display_options['fields']['field_zipcode']['field'] = 'field_zipcode';
+  $handler->display->display_options['fields']['field_zipcode']['label'] = 'In what <span class="underlineText">5-digit</span> zip code is your organization located?';
+  $handler->display->display_options['fields']['field_zipcode']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_zipcode']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_zipcode']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: In which region(s) were your organization's MWEEs offered this past grant year? (check all that apply) */
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_in_which_region_s_were_you']['delta_offset'] = '0';
+  /* Field: Content: In which grade level(s) do you primarily teach? (select all that apply) */
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['id'] = 'field_in_which_grade_level_s_do_';
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['table'] = 'field_data_field_in_which_grade_level_s_do_';
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['field'] = 'field_in_which_grade_level_s_do_';
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_in_which_grade_level_s_do_']['delta_offset'] = '0';
+  /* Field: Content: What subject(s) do you primarily teach? (select one) */
+  $handler->display->display_options['fields']['field_what_subject_s_do_you_prim']['id'] = 'field_what_subject_s_do_you_prim';
+  $handler->display->display_options['fields']['field_what_subject_s_do_you_prim']['table'] = 'field_data_field_what_subject_s_do_you_prim';
+  $handler->display->display_options['fields']['field_what_subject_s_do_you_prim']['field'] = 'field_what_subject_s_do_you_prim';
+  $handler->display->display_options['fields']['field_what_subject_s_do_you_prim']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_what_subject_s_do_you_prim']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_what_subject_s_do_you_prim']['type'] = 'list_key';
+  /* Field: Content: Which of these categories best describes your school’s community (during the school year)? */
+  $handler->display->display_options['fields']['field_which_of_these_categories_']['id'] = 'field_which_of_these_categories_';
+  $handler->display->display_options['fields']['field_which_of_these_categories_']['table'] = 'field_data_field_which_of_these_categories_';
+  $handler->display->display_options['fields']['field_which_of_these_categories_']['field'] = 'field_which_of_these_categories_';
+  $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
+  /* Field: Content: Do you identify yourself as (check all that apply): */
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['delta_offset'] = '0';
+  /* Field: Content: Is the school where you teach a Title 1 school? */
+  $handler->display->display_options['fields']['field_is_the_school_where_you_te']['id'] = 'field_is_the_school_where_you_te';
+  $handler->display->display_options['fields']['field_is_the_school_where_you_te']['table'] = 'field_data_field_is_the_school_where_you_te';
+  $handler->display->display_options['fields']['field_is_the_school_where_you_te']['field'] = 'field_is_the_school_where_you_te';
+  $handler->display->display_options['fields']['field_is_the_school_where_you_te']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_is_the_school_where_you_te']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_is_the_school_where_you_te']['type'] = 'list_key';
+  /* Field: Content: What percent of your students speak English as a second language (aka English Language Learners)? */
+  $handler->display->display_options['fields']['field_per_esl']['id'] = 'field_per_esl';
+  $handler->display->display_options['fields']['field_per_esl']['table'] = 'field_data_field_per_esl';
+  $handler->display->display_options['fields']['field_per_esl']['field'] = 'field_per_esl';
+  $handler->display->display_options['fields']['field_per_esl']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_per_esl']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_per_esl']['type'] = 'list_key';
+  /* Field: Content: American Indian or Alaska Native */
+  $handler->display->display_options['fields']['field_american_indian_or_alaska_']['id'] = 'field_american_indian_or_alaska_';
+  $handler->display->display_options['fields']['field_american_indian_or_alaska_']['table'] = 'field_data_field_american_indian_or_alaska_';
+  $handler->display->display_options['fields']['field_american_indian_or_alaska_']['field'] = 'field_american_indian_or_alaska_';
+  $handler->display->display_options['fields']['field_american_indian_or_alaska_']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_american_indian_or_alaska_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_american_indian_or_alaska_']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Asian */
+  $handler->display->display_options['fields']['field_asian']['id'] = 'field_asian';
+  $handler->display->display_options['fields']['field_asian']['table'] = 'field_data_field_asian';
+  $handler->display->display_options['fields']['field_asian']['field'] = 'field_asian';
+  $handler->display->display_options['fields']['field_asian']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_asian']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_asian']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Black or African American */
+  $handler->display->display_options['fields']['field_black_or_african_american']['id'] = 'field_black_or_african_american';
+  $handler->display->display_options['fields']['field_black_or_african_american']['table'] = 'field_data_field_black_or_african_american';
+  $handler->display->display_options['fields']['field_black_or_african_american']['field'] = 'field_black_or_african_american';
+  $handler->display->display_options['fields']['field_black_or_african_american']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_black_or_african_american']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Hispanic or Latino */
+  $handler->display->display_options['fields']['field_hispanic_or_latino']['id'] = 'field_hispanic_or_latino';
+  $handler->display->display_options['fields']['field_hispanic_or_latino']['table'] = 'field_data_field_hispanic_or_latino';
+  $handler->display->display_options['fields']['field_hispanic_or_latino']['field'] = 'field_hispanic_or_latino';
+  $handler->display->display_options['fields']['field_hispanic_or_latino']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_hispanic_or_latino']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Native Hawaiian or Other Pacific Islander */
+  $handler->display->display_options['fields']['field_native_hawaiian_or_other_p']['id'] = 'field_native_hawaiian_or_other_p';
+  $handler->display->display_options['fields']['field_native_hawaiian_or_other_p']['table'] = 'field_data_field_native_hawaiian_or_other_p';
+  $handler->display->display_options['fields']['field_native_hawaiian_or_other_p']['field'] = 'field_native_hawaiian_or_other_p';
+  $handler->display->display_options['fields']['field_native_hawaiian_or_other_p']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_native_hawaiian_or_other_p']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Other */
+  $handler->display->display_options['fields']['field_other']['id'] = 'field_other';
+  $handler->display->display_options['fields']['field_other']['table'] = 'field_data_field_other';
+  $handler->display->display_options['fields']['field_other']['field'] = 'field_other';
+  $handler->display->display_options['fields']['field_other']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_other']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: White */
+  $handler->display->display_options['fields']['field_white']['id'] = 'field_white';
+  $handler->display->display_options['fields']['field_white']['table'] = 'field_data_field_white';
+  $handler->display->display_options['fields']['field_white']['field'] = 'field_white';
+  $handler->display->display_options['fields']['field_white']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_white']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Did you conduct MWEEs with your students before participating in the MWEE professional development? */
+  $handler->display->display_options['fields']['field_did_you_conduct_mwees_with']['id'] = 'field_did_you_conduct_mwees_with';
+  $handler->display->display_options['fields']['field_did_you_conduct_mwees_with']['table'] = 'field_data_field_did_you_conduct_mwees_with';
+  $handler->display->display_options['fields']['field_did_you_conduct_mwees_with']['field'] = 'field_did_you_conduct_mwees_with';
+  $handler->display->display_options['fields']['field_did_you_conduct_mwees_with']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_you_conduct_mwees_with']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_you_conduct_mwees_with']['type'] = 'list_key';
+  /* Field: Content: What was your PRIMARY reason for participating in the MWEE professional development? (check one) */
+  $handler->display->display_options['fields']['field_what_was_your_primary_reas']['id'] = 'field_what_was_your_primary_reas';
+  $handler->display->display_options['fields']['field_what_was_your_primary_reas']['table'] = 'field_data_field_what_was_your_primary_reas';
+  $handler->display->display_options['fields']['field_what_was_your_primary_reas']['field'] = 'field_what_was_your_primary_reas';
+  $handler->display->display_options['fields']['field_what_was_your_primary_reas']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_what_was_your_primary_reas']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_what_was_your_primary_reas']['type'] = 'list_key';
+  $handler->display->display_options['path'] = 'teacher-survey/overview';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'Overview';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'normal';
+  $handler->display->display_options['tab_options']['title'] = 'Overview';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Teacher survey about development */
+  $handler = $view->new_display('page', 'Teacher survey about development', 'page_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: About how many hours of MWEE professional development and/or support did you receive over the past 12 months? */
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['id'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['table'] = 'field_data_field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['field'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['label'] = 'About how many hours of MWEE PD and/or support did your organization typically provide for any one teacher this past grant year?';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['type'] = 'list_key';
+  /* Field: Content: About how many hours of those MWEE professional development hours did you spend outdoors? */
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['id'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['table'] = 'field_data_field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['field'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['type'] = 'list_key';
+  /* Field: Content: Were NOAA resources used as part of MWEE professional development for teachers? */
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['id'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['table'] = 'field_data_field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['field'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['type'] = 'list_key';
+  /* Field: Content: Did you participate in an education/training workshop, institute, or class as part of your professional development? */
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['id'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['table'] = 'field_data_field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['field'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['type'] = 'list_key';
+  /* Field: Content: A college-level course */
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['id'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['table'] = 'field_data_field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['field'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['type'] = 'list_key';
+  /* Field: Content: Individual teacher coaching and support */
+  $handler->display->display_options['fields']['field_teacher_coaching']['id'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['table'] = 'field_data_field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['field'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_coaching']['type'] = 'list_key';
+  /* Field: Content: Multi-day workshops */
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['id'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['table'] = 'field_data_field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['field'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['label'] = 'Multi-day workshops (events that last at least 6 hours, but are ';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['type'] = 'list_key';
+  /* Field: Content: On-line professional development support */
+  $handler->display->display_options['fields']['field_teacher_online_development']['id'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['table'] = 'field_data_field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['field'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_online_development']['type'] = 'list_key';
+  /* Field: Content: One day workshops */
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['id'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['table'] = 'field_data_field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['field'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['type'] = 'list_key';
+  /* Field: Content: Professional development provider training */
+  $handler->display->display_options['fields']['field_teacher_training']['id'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['table'] = 'field_data_field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['field'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_training']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_training']['type'] = 'list_key';
+  /* Field: Content: Teacher institute */
+  $handler->display->display_options['fields']['field_teacher_institute']['id'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['table'] = 'field_data_field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['field'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_institute']['type'] = 'list_key';
+  /* Field: Content: Field work */
+  $handler->display->display_options['fields']['field_method_field_work']['id'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['table'] = 'field_data_field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['field'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_field_work']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_field_work']['type'] = 'list_key';
+  /* Field: Content: Issue investigation */
+  $handler->display->display_options['fields']['field_method_issue_investigation']['id'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['table'] = 'field_data_field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['field'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_issue_investigation']['type'] = 'list_key';
+  /* Field: Content: Place-based education */
+  $handler->display->display_options['fields']['field_method_place_based']['id'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['table'] = 'field_data_field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['field'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_place_based']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_place_based']['type'] = 'list_key';
+  /* Field: Content: Scientific-inquiry-based learning */
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['id'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['table'] = 'field_data_field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['field'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['type'] = 'list_key';
+  /* Field: Content: Service learning */
+  $handler->display->display_options['fields']['field_method_service_learning']['id'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['table'] = 'field_data_field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['field'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
+  /* Field: Content: Briefly describe why you selected this grade. */
+  $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_grade_explain']['element_default_classes'] = FALSE;
+  /* Field: Content: Overall, what grade would you give your MWEE professional development experience? */
+  $handler->display->display_options['fields']['field_grade']['id'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['table'] = 'field_data_field_grade';
+  $handler->display->display_options['fields']['field_grade']['field'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_grade']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_grade']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of what NOAA does? */
+  $handler->display->display_options['fields']['field_what_noaa_does']['id'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['table'] = 'field_data_field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['field'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_what_noaa_does']['type'] = 'list_key';
+  /* Field: Content: Did your B-WET professional development provider indicate that it was funded (in part) with funding  from the National Oceanic and Atmospheric Administration (NOAA)? */
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['id'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['table'] = 'field_data_field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['field'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['label'] = 'Did your B-WET professional development provider indicate ';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work */
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['id'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['table'] = 'field_data_field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['field'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing restoration projects */
+  $handler->display->display_options['fields']['field_assistance_with_projects']['id'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['table'] = 'field_data_field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['field'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing restoration projects 1 */
+  $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing schoolyard habitats */
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['id'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['table'] = 'field_data_field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['field'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with the use of equipment or technologies */
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['id'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['table'] = 'field_data_field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['field'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
+  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Co-teaching in my classrooms or in field */
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['id'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['table'] = 'field_data_field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['field'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
+  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Coaching in my classroom */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['id'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['table'] = 'field_data_field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['field'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
+  /* Field: Content: Coaching in my classroom 1 */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communicating with provider through personal phone calls or email */
+  $handler->display->display_options['fields']['field_communicating_with_provide']['id'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['table'] = 'field_data_field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['field'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
+  $handler->display->display_options['fields']['field_communication_with_provide']['id'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['table'] = 'field_data_field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['field'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Demonstrations in my classroom */
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['id'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['table'] = 'field_data_field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['field'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
+  /* Field: Content: Demonstrations in my classroom 1 */
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Connections were made to local community organizations and resources */
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['id'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['table'] = 'field_data_field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['field'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
+  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered continuing education credits */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['id'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['table'] = 'field_data_field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['field'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
+  /* Field: Content: I was offered continuing education credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered graduate credits */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['id'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['table'] = 'field_data_field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['field'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
+  /* Field: Content: I was offered graduate credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with a stipend */
+  $handler->display->display_options['fields']['field_stipend']['id'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['table'] = 'field_data_field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['field'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
+  /* Field: Content: I was provided with a stipend 1 */
+  $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with equipment */
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['id'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['table'] = 'field_data_field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['field'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
+  /* Field: Content: I was provided with equipment 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['id'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['table'] = 'field_data_field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['field'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['id'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['table'] = 'field_data_field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['field'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
+  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
+  $handler->display->display_options['fields']['field_interactions_pro']['id'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['table'] = 'field_data_field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['field'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['id'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['table'] = 'field_data_field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['field'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of scientific data accessible through NOAA? */
+  $handler->display->display_options['fields']['field_noaa_science_data']['id'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['table'] = 'field_data_field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['field'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_science_data']['type'] = 'list_key';
+  /* Field: Content: Created a schoolyard or backyard habitat */
+  $handler->display->display_options['fields']['field_created_habitat']['id'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['table'] = 'field_data_field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['field'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_created_habitat']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_created_habitat']['type'] = 'list_key';
+  /* Field: Content: Gave presentation(s) about the local watershed */
+  $handler->display->display_options['fields']['field_gave_presentations']['id'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['table'] = 'field_data_field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['field'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_gave_presentations']['type'] = 'list_key';
+  /* Field: Content: Participated in or helped coordinate a clean-up of a local stream or beach */
+  $handler->display->display_options['fields']['field_clean_up']['id'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['table'] = 'field_data_field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['field'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_clean_up']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_clean_up']['type'] = 'list_key';
+  /* Field: Content: Installed a rain barrel at school or at home */
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['id'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['table'] = 'field_data_field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['field'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['type'] = 'list_key';
+  /* Field: Content: Monitored water quality */
+  $handler->display->display_options['fields']['field_monitored_water_quality']['id'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['table'] = 'field_data_field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['field'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_monitored_water_quality']['type'] = 'list_key';
+  /* Field: Content: Participated in or organized event(s) to raise awareness about the importance of watersheds */
+  $handler->display->display_options['fields']['field_participated_event']['id'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['table'] = 'field_data_field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['field'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_participated_event']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_participated_event']['type'] = 'list_key';
+  /* Field: Content: Told others about ways they can protect their local watershed */
+  $handler->display->display_options['fields']['field_told_others']['id'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['table'] = 'field_data_field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['field'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_told_others']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_told_others']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of educational resources available through NOAA?  */
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['id'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['table'] = 'field_data_field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['field'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['label'] = 'Did participating in the B-WET professional development increase your knowledge of educational resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['type'] = 'list_key';
+  /* Field: Content: Identify their local watershed(s) */
+  $handler->display->display_options['fields']['field_identify_local_watershed']['id'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['table'] = 'field_data_field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['field'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_identify_local_watershed']['type'] = 'list_key';
+  /* Field: Content: Define the term "watershed" */
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['id'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['table'] = 'field_data_field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['field'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify actions individuals can engage in to  protect/restore water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['id'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['table'] = 'field_data_field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['field'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['type'] = 'list_key';
+  /* Field: Content: Identify connections between human welfare and water  flow and quality */
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['id'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['table'] = 'field_data_field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['field'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['type'] = 'list_key';
+  /* Field: Content: Identify how watersheds are connected to the ocean via  streams, rivers, and human-made structures */
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['id'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['table'] = 'field_data_field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['field'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify possible point and non-point sources of water pollution */
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['id'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['table'] = 'field_data_field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['field'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['type'] = 'list_key';
+  /* Field: Content: Identify the functions that occur in a watershed (transport,  store, and cycle water) */
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['id'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['table'] = 'field_data_field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['field'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['type'] = 'list_key';
+  /* Field: Content: Recognize that both natural processes and human  activities affect water flow and water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['id'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['table'] = 'field_data_field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['field'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['type'] = 'list_key';
+  /* Field: Content: What component(s) of the MWEE professional development best prepared you to teach your students about local watersheds? */
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['id'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['table'] = 'field_data_field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['field'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_default_classes'] = FALSE;
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_future']['id'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['table'] = 'field_data_field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['field'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_future']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_before']['id'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['table'] = 'field_data_field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['field'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_before']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_after']['id'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['table'] = 'field_data_field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['field'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_future']['id'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['table'] = 'field_data_field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['field'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_after']['id'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['table'] = 'field_data_field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['field'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_before']['id'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['table'] = 'field_data_field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['field'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['id'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['table'] = 'field_data_field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['field'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['id'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['table'] = 'field_data_field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['field'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['id'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['table'] = 'field_data_field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['field'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_future']['id'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['table'] = 'field_data_field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['field'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_after']['id'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['table'] = 'field_data_field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['field'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_after']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_before']['id'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['table'] = 'field_data_field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['field'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_before']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['id'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['table'] = 'field_data_field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['field'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['id'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['table'] = 'field_data_field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['field'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['id'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['table'] = 'field_data_field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['field'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_before']['id'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['table'] = 'field_data_field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['field'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_after']['id'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['table'] = 'field_data_field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['field'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_after']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_future']['id'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['table'] = 'field_data_field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['field'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_future']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_before']['id'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['table'] = 'field_data_field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['field'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_before']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_after']['id'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['table'] = 'field_data_field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['field'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_after']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_future']['id'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['table'] = 'field_data_field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['field'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_future']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['id'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['table'] = 'field_data_field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['field'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['id'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['table'] = 'field_data_field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['field'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['id'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['table'] = 'field_data_field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['field'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['id'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['table'] = 'field_data_field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['field'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['id'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['table'] = 'field_data_field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['field'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['id'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['table'] = 'field_data_field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['field'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['type'] = 'list_key';
+  /* Field: Content: Any other comments about the MWEE professional development? */
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['id'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['table'] = 'field_data_field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['field'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_default_classes'] = FALSE;
+  /* Field: Content: How could the MWEE professional development be improved to better prepare teachers to teach about the watershed? */
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['id'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['table'] = 'field_data_field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['field'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_default_classes'] = FALSE;
+  /* Field: Content: How can this questionnaire be improved? */
+  $handler->display->display_options['fields']['field_question_improved']['id'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['table'] = 'field_data_field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['field'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_question_improved']['element_default_classes'] = FALSE;
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_length']['id'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['table'] = 'field_data_field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['field'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_length']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_length']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_complete']['id'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['table'] = 'field_data_field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['field'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_complete']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_complete']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_informative']['id'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['table'] = 'field_data_field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['field'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_informative']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_informative']['type'] = 'list_key';
+  $handler->display->display_options['path'] = 'teacher-survey/about';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'About development';
+  $handler->display->display_options['menu']['weight'] = '1';
+  $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: Teacher survey development support */
+  $handler = $view->new_display('page', 'Teacher survey development support', 'page_3');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: About how many hours of MWEE professional development and/or support did you receive over the past 12 months? */
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['id'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['table'] = 'field_data_field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['field'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['label'] = 'About how many hours of MWEE PD and/or support did your organization typically provide for any one teacher this past grant year?';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['type'] = 'list_key';
+  /* Field: Content: About how many hours of those MWEE professional development hours did you spend outdoors? */
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['id'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['table'] = 'field_data_field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['field'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['type'] = 'list_key';
+  /* Field: Content: Were NOAA resources used as part of MWEE professional development for teachers? */
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['id'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['table'] = 'field_data_field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['field'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['type'] = 'list_key';
+  /* Field: Content: Did you participate in an education/training workshop, institute, or class as part of your professional development? */
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['id'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['table'] = 'field_data_field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['field'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['type'] = 'list_key';
+  /* Field: Content: A college-level course */
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['id'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['table'] = 'field_data_field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['field'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['type'] = 'list_key';
+  /* Field: Content: Individual teacher coaching and support */
+  $handler->display->display_options['fields']['field_teacher_coaching']['id'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['table'] = 'field_data_field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['field'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_coaching']['type'] = 'list_key';
+  /* Field: Content: Multi-day workshops */
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['id'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['table'] = 'field_data_field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['field'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['label'] = 'Multi-day workshops (events that last at least 6 hours, but are ';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['type'] = 'list_key';
+  /* Field: Content: On-line professional development support */
+  $handler->display->display_options['fields']['field_teacher_online_development']['id'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['table'] = 'field_data_field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['field'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_online_development']['type'] = 'list_key';
+  /* Field: Content: One day workshops */
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['id'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['table'] = 'field_data_field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['field'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['type'] = 'list_key';
+  /* Field: Content: Professional development provider training */
+  $handler->display->display_options['fields']['field_teacher_training']['id'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['table'] = 'field_data_field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['field'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_training']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_training']['type'] = 'list_key';
+  /* Field: Content: Teacher institute */
+  $handler->display->display_options['fields']['field_teacher_institute']['id'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['table'] = 'field_data_field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['field'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_institute']['type'] = 'list_key';
+  /* Field: Content: Field work */
+  $handler->display->display_options['fields']['field_method_field_work']['id'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['table'] = 'field_data_field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['field'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_field_work']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_field_work']['type'] = 'list_key';
+  /* Field: Content: Issue investigation */
+  $handler->display->display_options['fields']['field_method_issue_investigation']['id'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['table'] = 'field_data_field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['field'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_issue_investigation']['type'] = 'list_key';
+  /* Field: Content: Place-based education */
+  $handler->display->display_options['fields']['field_method_place_based']['id'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['table'] = 'field_data_field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['field'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_place_based']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_place_based']['type'] = 'list_key';
+  /* Field: Content: Scientific-inquiry-based learning */
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['id'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['table'] = 'field_data_field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['field'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['type'] = 'list_key';
+  /* Field: Content: Service learning */
+  $handler->display->display_options['fields']['field_method_service_learning']['id'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['table'] = 'field_data_field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['field'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
+  /* Field: Content: Briefly describe why you selected this grade. */
+  $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_grade_explain']['element_default_classes'] = FALSE;
+  /* Field: Content: Overall, what grade would you give your MWEE professional development experience? */
+  $handler->display->display_options['fields']['field_grade']['id'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['table'] = 'field_data_field_grade';
+  $handler->display->display_options['fields']['field_grade']['field'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_grade']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_grade']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of what NOAA does? */
+  $handler->display->display_options['fields']['field_what_noaa_does']['id'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['table'] = 'field_data_field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['field'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_what_noaa_does']['type'] = 'list_key';
+  /* Field: Content: Did your B-WET professional development provider indicate that it was funded (in part) with funding  from the National Oceanic and Atmospheric Administration (NOAA)? */
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['id'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['table'] = 'field_data_field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['field'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['label'] = 'Did your B-WET professional development provider indicate ';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work */
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['id'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['table'] = 'field_data_field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['field'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing restoration projects */
+  $handler->display->display_options['fields']['field_assistance_with_projects']['id'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['table'] = 'field_data_field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['field'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing restoration projects 1 */
+  $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing schoolyard habitats */
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['id'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['table'] = 'field_data_field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['field'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with the use of equipment or technologies */
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['id'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['table'] = 'field_data_field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['field'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
+  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Co-teaching in my classrooms or in field */
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['id'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['table'] = 'field_data_field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['field'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
+  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Coaching in my classroom */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['id'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['table'] = 'field_data_field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['field'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
+  /* Field: Content: Coaching in my classroom 1 */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communicating with provider through personal phone calls or email */
+  $handler->display->display_options['fields']['field_communicating_with_provide']['id'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['table'] = 'field_data_field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['field'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
+  $handler->display->display_options['fields']['field_communication_with_provide']['id'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['table'] = 'field_data_field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['field'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Demonstrations in my classroom */
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['id'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['table'] = 'field_data_field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['field'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
+  /* Field: Content: Demonstrations in my classroom 1 */
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Connections were made to local community organizations and resources */
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['id'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['table'] = 'field_data_field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['field'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
+  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered continuing education credits */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['id'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['table'] = 'field_data_field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['field'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
+  /* Field: Content: I was offered continuing education credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered graduate credits */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['id'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['table'] = 'field_data_field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['field'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
+  /* Field: Content: I was offered graduate credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with a stipend */
+  $handler->display->display_options['fields']['field_stipend']['id'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['table'] = 'field_data_field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['field'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
+  /* Field: Content: I was provided with a stipend 1 */
+  $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with equipment */
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['id'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['table'] = 'field_data_field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['field'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
+  /* Field: Content: I was provided with equipment 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['id'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['table'] = 'field_data_field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['field'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['id'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['table'] = 'field_data_field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['field'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
+  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
+  $handler->display->display_options['fields']['field_interactions_pro']['id'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['table'] = 'field_data_field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['field'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['id'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['table'] = 'field_data_field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['field'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of scientific data accessible through NOAA? */
+  $handler->display->display_options['fields']['field_noaa_science_data']['id'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['table'] = 'field_data_field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['field'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_science_data']['type'] = 'list_key';
+  /* Field: Content: Created a schoolyard or backyard habitat */
+  $handler->display->display_options['fields']['field_created_habitat']['id'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['table'] = 'field_data_field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['field'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_created_habitat']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_created_habitat']['type'] = 'list_key';
+  /* Field: Content: Gave presentation(s) about the local watershed */
+  $handler->display->display_options['fields']['field_gave_presentations']['id'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['table'] = 'field_data_field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['field'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_gave_presentations']['type'] = 'list_key';
+  /* Field: Content: Participated in or helped coordinate a clean-up of a local stream or beach */
+  $handler->display->display_options['fields']['field_clean_up']['id'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['table'] = 'field_data_field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['field'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_clean_up']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_clean_up']['type'] = 'list_key';
+  /* Field: Content: Installed a rain barrel at school or at home */
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['id'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['table'] = 'field_data_field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['field'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['type'] = 'list_key';
+  /* Field: Content: Monitored water quality */
+  $handler->display->display_options['fields']['field_monitored_water_quality']['id'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['table'] = 'field_data_field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['field'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_monitored_water_quality']['type'] = 'list_key';
+  /* Field: Content: Participated in or organized event(s) to raise awareness about the importance of watersheds */
+  $handler->display->display_options['fields']['field_participated_event']['id'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['table'] = 'field_data_field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['field'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_participated_event']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_participated_event']['type'] = 'list_key';
+  /* Field: Content: Told others about ways they can protect their local watershed */
+  $handler->display->display_options['fields']['field_told_others']['id'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['table'] = 'field_data_field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['field'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_told_others']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_told_others']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of educational resources available through NOAA?  */
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['id'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['table'] = 'field_data_field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['field'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['label'] = 'Did participating in the B-WET professional development increase your knowledge of educational resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['type'] = 'list_key';
+  /* Field: Content: Identify their local watershed(s) */
+  $handler->display->display_options['fields']['field_identify_local_watershed']['id'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['table'] = 'field_data_field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['field'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_identify_local_watershed']['type'] = 'list_key';
+  /* Field: Content: Define the term "watershed" */
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['id'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['table'] = 'field_data_field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['field'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify actions individuals can engage in to  protect/restore water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['id'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['table'] = 'field_data_field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['field'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['type'] = 'list_key';
+  /* Field: Content: Identify connections between human welfare and water  flow and quality */
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['id'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['table'] = 'field_data_field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['field'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['type'] = 'list_key';
+  /* Field: Content: Identify how watersheds are connected to the ocean via  streams, rivers, and human-made structures */
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['id'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['table'] = 'field_data_field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['field'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify possible point and non-point sources of water pollution */
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['id'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['table'] = 'field_data_field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['field'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['type'] = 'list_key';
+  /* Field: Content: Identify the functions that occur in a watershed (transport,  store, and cycle water) */
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['id'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['table'] = 'field_data_field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['field'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['type'] = 'list_key';
+  /* Field: Content: Recognize that both natural processes and human  activities affect water flow and water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['id'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['table'] = 'field_data_field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['field'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['type'] = 'list_key';
+  /* Field: Content: What component(s) of the MWEE professional development best prepared you to teach your students about local watersheds? */
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['id'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['table'] = 'field_data_field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['field'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_default_classes'] = FALSE;
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_future']['id'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['table'] = 'field_data_field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['field'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_future']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_before']['id'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['table'] = 'field_data_field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['field'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_before']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_after']['id'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['table'] = 'field_data_field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['field'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_future']['id'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['table'] = 'field_data_field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['field'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_after']['id'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['table'] = 'field_data_field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['field'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_before']['id'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['table'] = 'field_data_field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['field'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['id'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['table'] = 'field_data_field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['field'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['id'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['table'] = 'field_data_field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['field'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['id'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['table'] = 'field_data_field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['field'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_future']['id'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['table'] = 'field_data_field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['field'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_after']['id'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['table'] = 'field_data_field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['field'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_after']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_before']['id'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['table'] = 'field_data_field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['field'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_before']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['id'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['table'] = 'field_data_field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['field'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['id'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['table'] = 'field_data_field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['field'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['id'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['table'] = 'field_data_field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['field'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_before']['id'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['table'] = 'field_data_field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['field'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_after']['id'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['table'] = 'field_data_field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['field'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_after']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_future']['id'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['table'] = 'field_data_field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['field'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_future']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_before']['id'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['table'] = 'field_data_field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['field'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_before']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_after']['id'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['table'] = 'field_data_field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['field'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_after']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_future']['id'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['table'] = 'field_data_field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['field'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_future']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['id'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['table'] = 'field_data_field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['field'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['id'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['table'] = 'field_data_field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['field'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['id'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['table'] = 'field_data_field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['field'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['id'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['table'] = 'field_data_field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['field'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['id'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['table'] = 'field_data_field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['field'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['id'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['table'] = 'field_data_field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['field'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['type'] = 'list_key';
+  /* Field: Content: Any other comments about the MWEE professional development? */
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['id'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['table'] = 'field_data_field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['field'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_default_classes'] = FALSE;
+  /* Field: Content: How could the MWEE professional development be improved to better prepare teachers to teach about the watershed? */
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['id'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['table'] = 'field_data_field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['field'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_default_classes'] = FALSE;
+  /* Field: Content: How can this questionnaire be improved? */
+  $handler->display->display_options['fields']['field_question_improved']['id'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['table'] = 'field_data_field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['field'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_question_improved']['element_default_classes'] = FALSE;
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_length']['id'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['table'] = 'field_data_field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['field'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_length']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_length']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_complete']['id'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['table'] = 'field_data_field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['field'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_complete']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_complete']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_informative']['id'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['table'] = 'field_data_field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['field'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_informative']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_informative']['type'] = 'list_key';
+  $handler->display->display_options['path'] = 'teacher-survey/support';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Development support';
+  $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: Teacher survey results */
+  $handler = $view->new_display('page', 'Teacher survey results', 'page_4');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: About how many hours of MWEE professional development and/or support did you receive over the past 12 months? */
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['id'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['table'] = 'field_data_field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['field'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['label'] = 'About how many hours of MWEE PD and/or support did your organization typically provide for any one teacher this past grant year?';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['type'] = 'list_key';
+  /* Field: Content: About how many hours of those MWEE professional development hours did you spend outdoors? */
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['id'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['table'] = 'field_data_field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['field'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['type'] = 'list_key';
+  /* Field: Content: Were NOAA resources used as part of MWEE professional development for teachers? */
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['id'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['table'] = 'field_data_field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['field'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['type'] = 'list_key';
+  /* Field: Content: Did you participate in an education/training workshop, institute, or class as part of your professional development? */
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['id'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['table'] = 'field_data_field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['field'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['type'] = 'list_key';
+  /* Field: Content: A college-level course */
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['id'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['table'] = 'field_data_field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['field'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['type'] = 'list_key';
+  /* Field: Content: Individual teacher coaching and support */
+  $handler->display->display_options['fields']['field_teacher_coaching']['id'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['table'] = 'field_data_field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['field'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_coaching']['type'] = 'list_key';
+  /* Field: Content: Multi-day workshops */
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['id'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['table'] = 'field_data_field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['field'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['label'] = 'Multi-day workshops (events that last at least 6 hours, but are ';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['type'] = 'list_key';
+  /* Field: Content: On-line professional development support */
+  $handler->display->display_options['fields']['field_teacher_online_development']['id'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['table'] = 'field_data_field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['field'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_online_development']['type'] = 'list_key';
+  /* Field: Content: One day workshops */
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['id'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['table'] = 'field_data_field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['field'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['type'] = 'list_key';
+  /* Field: Content: Professional development provider training */
+  $handler->display->display_options['fields']['field_teacher_training']['id'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['table'] = 'field_data_field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['field'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_training']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_training']['type'] = 'list_key';
+  /* Field: Content: Teacher institute */
+  $handler->display->display_options['fields']['field_teacher_institute']['id'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['table'] = 'field_data_field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['field'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_institute']['type'] = 'list_key';
+  /* Field: Content: Field work */
+  $handler->display->display_options['fields']['field_method_field_work']['id'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['table'] = 'field_data_field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['field'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_field_work']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_field_work']['type'] = 'list_key';
+  /* Field: Content: Issue investigation */
+  $handler->display->display_options['fields']['field_method_issue_investigation']['id'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['table'] = 'field_data_field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['field'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_issue_investigation']['type'] = 'list_key';
+  /* Field: Content: Place-based education */
+  $handler->display->display_options['fields']['field_method_place_based']['id'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['table'] = 'field_data_field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['field'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_place_based']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_place_based']['type'] = 'list_key';
+  /* Field: Content: Scientific-inquiry-based learning */
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['id'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['table'] = 'field_data_field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['field'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['type'] = 'list_key';
+  /* Field: Content: Service learning */
+  $handler->display->display_options['fields']['field_method_service_learning']['id'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['table'] = 'field_data_field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['field'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
+  /* Field: Content: Briefly describe why you selected this grade. */
+  $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_grade_explain']['element_default_classes'] = FALSE;
+  /* Field: Content: Overall, what grade would you give your MWEE professional development experience? */
+  $handler->display->display_options['fields']['field_grade']['id'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['table'] = 'field_data_field_grade';
+  $handler->display->display_options['fields']['field_grade']['field'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_grade']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_grade']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of what NOAA does? */
+  $handler->display->display_options['fields']['field_what_noaa_does']['id'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['table'] = 'field_data_field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['field'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_what_noaa_does']['type'] = 'list_key';
+  /* Field: Content: Did your B-WET professional development provider indicate that it was funded (in part) with funding  from the National Oceanic and Atmospheric Administration (NOAA)? */
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['id'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['table'] = 'field_data_field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['field'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['label'] = 'Did your B-WET professional development provider indicate ';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work */
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['id'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['table'] = 'field_data_field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['field'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing restoration projects */
+  $handler->display->display_options['fields']['field_assistance_with_projects']['id'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['table'] = 'field_data_field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['field'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing restoration projects 1 */
+  $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing schoolyard habitats */
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['id'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['table'] = 'field_data_field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['field'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with the use of equipment or technologies */
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['id'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['table'] = 'field_data_field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['field'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
+  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Co-teaching in my classrooms or in field */
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['id'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['table'] = 'field_data_field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['field'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
+  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Coaching in my classroom */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['id'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['table'] = 'field_data_field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['field'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
+  /* Field: Content: Coaching in my classroom 1 */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communicating with provider through personal phone calls or email */
+  $handler->display->display_options['fields']['field_communicating_with_provide']['id'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['table'] = 'field_data_field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['field'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
+  $handler->display->display_options['fields']['field_communication_with_provide']['id'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['table'] = 'field_data_field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['field'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Demonstrations in my classroom */
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['id'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['table'] = 'field_data_field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['field'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
+  /* Field: Content: Demonstrations in my classroom 1 */
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Connections were made to local community organizations and resources */
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['id'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['table'] = 'field_data_field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['field'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
+  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered continuing education credits */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['id'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['table'] = 'field_data_field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['field'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
+  /* Field: Content: I was offered continuing education credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered graduate credits */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['id'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['table'] = 'field_data_field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['field'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
+  /* Field: Content: I was offered graduate credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with a stipend */
+  $handler->display->display_options['fields']['field_stipend']['id'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['table'] = 'field_data_field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['field'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
+  /* Field: Content: I was provided with a stipend 1 */
+  $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with equipment */
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['id'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['table'] = 'field_data_field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['field'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
+  /* Field: Content: I was provided with equipment 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['id'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['table'] = 'field_data_field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['field'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['id'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['table'] = 'field_data_field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['field'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
+  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
+  $handler->display->display_options['fields']['field_interactions_pro']['id'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['table'] = 'field_data_field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['field'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['id'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['table'] = 'field_data_field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['field'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of scientific data accessible through NOAA? */
+  $handler->display->display_options['fields']['field_noaa_science_data']['id'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['table'] = 'field_data_field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['field'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_science_data']['type'] = 'list_key';
+  /* Field: Content: Created a schoolyard or backyard habitat */
+  $handler->display->display_options['fields']['field_created_habitat']['id'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['table'] = 'field_data_field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['field'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_created_habitat']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_created_habitat']['type'] = 'list_key';
+  /* Field: Content: Gave presentation(s) about the local watershed */
+  $handler->display->display_options['fields']['field_gave_presentations']['id'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['table'] = 'field_data_field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['field'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_gave_presentations']['type'] = 'list_key';
+  /* Field: Content: Participated in or helped coordinate a clean-up of a local stream or beach */
+  $handler->display->display_options['fields']['field_clean_up']['id'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['table'] = 'field_data_field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['field'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_clean_up']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_clean_up']['type'] = 'list_key';
+  /* Field: Content: Installed a rain barrel at school or at home */
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['id'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['table'] = 'field_data_field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['field'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['type'] = 'list_key';
+  /* Field: Content: Monitored water quality */
+  $handler->display->display_options['fields']['field_monitored_water_quality']['id'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['table'] = 'field_data_field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['field'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_monitored_water_quality']['type'] = 'list_key';
+  /* Field: Content: Participated in or organized event(s) to raise awareness about the importance of watersheds */
+  $handler->display->display_options['fields']['field_participated_event']['id'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['table'] = 'field_data_field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['field'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_participated_event']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_participated_event']['type'] = 'list_key';
+  /* Field: Content: Told others about ways they can protect their local watershed */
+  $handler->display->display_options['fields']['field_told_others']['id'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['table'] = 'field_data_field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['field'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_told_others']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_told_others']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of educational resources available through NOAA?  */
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['id'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['table'] = 'field_data_field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['field'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['label'] = 'Did participating in the B-WET professional development increase your knowledge of educational resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['type'] = 'list_key';
+  /* Field: Content: Identify their local watershed(s) */
+  $handler->display->display_options['fields']['field_identify_local_watershed']['id'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['table'] = 'field_data_field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['field'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_identify_local_watershed']['type'] = 'list_key';
+  /* Field: Content: Define the term "watershed" */
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['id'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['table'] = 'field_data_field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['field'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify actions individuals can engage in to  protect/restore water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['id'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['table'] = 'field_data_field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['field'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['type'] = 'list_key';
+  /* Field: Content: Identify connections between human welfare and water  flow and quality */
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['id'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['table'] = 'field_data_field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['field'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['type'] = 'list_key';
+  /* Field: Content: Identify how watersheds are connected to the ocean via  streams, rivers, and human-made structures */
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['id'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['table'] = 'field_data_field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['field'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify possible point and non-point sources of water pollution */
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['id'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['table'] = 'field_data_field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['field'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['type'] = 'list_key';
+  /* Field: Content: Identify the functions that occur in a watershed (transport,  store, and cycle water) */
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['id'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['table'] = 'field_data_field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['field'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['type'] = 'list_key';
+  /* Field: Content: Recognize that both natural processes and human  activities affect water flow and water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['id'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['table'] = 'field_data_field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['field'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['type'] = 'list_key';
+  /* Field: Content: What component(s) of the MWEE professional development best prepared you to teach your students about local watersheds? */
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['id'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['table'] = 'field_data_field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['field'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_default_classes'] = FALSE;
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_future']['id'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['table'] = 'field_data_field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['field'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_future']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_before']['id'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['table'] = 'field_data_field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['field'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_before']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_after']['id'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['table'] = 'field_data_field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['field'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_future']['id'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['table'] = 'field_data_field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['field'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_after']['id'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['table'] = 'field_data_field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['field'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_before']['id'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['table'] = 'field_data_field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['field'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['id'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['table'] = 'field_data_field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['field'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['id'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['table'] = 'field_data_field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['field'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['id'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['table'] = 'field_data_field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['field'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_future']['id'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['table'] = 'field_data_field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['field'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_after']['id'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['table'] = 'field_data_field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['field'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_after']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_before']['id'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['table'] = 'field_data_field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['field'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_before']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['id'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['table'] = 'field_data_field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['field'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['id'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['table'] = 'field_data_field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['field'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['id'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['table'] = 'field_data_field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['field'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_before']['id'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['table'] = 'field_data_field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['field'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_after']['id'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['table'] = 'field_data_field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['field'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_after']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_future']['id'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['table'] = 'field_data_field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['field'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_future']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_before']['id'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['table'] = 'field_data_field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['field'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_before']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_after']['id'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['table'] = 'field_data_field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['field'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_after']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_future']['id'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['table'] = 'field_data_field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['field'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_future']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['id'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['table'] = 'field_data_field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['field'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['id'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['table'] = 'field_data_field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['field'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['id'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['table'] = 'field_data_field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['field'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['id'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['table'] = 'field_data_field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['field'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['id'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['table'] = 'field_data_field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['field'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['id'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['table'] = 'field_data_field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['field'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['type'] = 'list_key';
+  /* Field: Content: Any other comments about the MWEE professional development? */
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['id'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['table'] = 'field_data_field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['field'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_default_classes'] = FALSE;
+  /* Field: Content: How could the MWEE professional development be improved to better prepare teachers to teach about the watershed? */
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['id'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['table'] = 'field_data_field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['field'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_default_classes'] = FALSE;
+  /* Field: Content: How can this questionnaire be improved? */
+  $handler->display->display_options['fields']['field_question_improved']['id'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['table'] = 'field_data_field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['field'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_question_improved']['element_default_classes'] = FALSE;
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_length']['id'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['table'] = 'field_data_field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['field'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_length']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_length']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_complete']['id'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['table'] = 'field_data_field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['field'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_complete']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_complete']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_informative']['id'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['table'] = 'field_data_field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['field'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_informative']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_informative']['type'] = 'list_key';
+  $handler->display->display_options['path'] = 'teacher-survey/results';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Development results';
+  $handler->display->display_options['menu']['weight'] = '3';
+  $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: Teacher survey feedback */
+  $handler = $view->new_display('page', 'Teacher survey feedback', 'page_5');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: About how many hours of MWEE professional development and/or support did you receive over the past 12 months? */
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['id'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['table'] = 'field_data_field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['field'] = 'field_teacher_hours_pro_developm';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['label'] = 'About how many hours of MWEE PD and/or support did your organization typically provide for any one teacher this past grant year?';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_hours_pro_developm']['type'] = 'list_key';
+  /* Field: Content: About how many hours of those MWEE professional development hours did you spend outdoors? */
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['id'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['table'] = 'field_data_field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['field'] = 'field_teacher_outdoor_activity';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_outdoor_activity']['type'] = 'list_key';
+  /* Field: Content: Were NOAA resources used as part of MWEE professional development for teachers? */
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['id'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['table'] = 'field_data_field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['field'] = 'field_noaa_resources_teachers';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_resources_teachers']['type'] = 'list_key';
+  /* Field: Content: Did you participate in an education/training workshop, institute, or class as part of your professional development? */
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['id'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['table'] = 'field_data_field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['field'] = 'field_did_you_participate_in_an_';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_you_participate_in_an_']['type'] = 'list_key';
+  /* Field: Content: A college-level course */
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['id'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['table'] = 'field_data_field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['field'] = 'field_teacher_college_level_cour';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_college_level_cour']['type'] = 'list_key';
+  /* Field: Content: Individual teacher coaching and support */
+  $handler->display->display_options['fields']['field_teacher_coaching']['id'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['table'] = 'field_data_field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['field'] = 'field_teacher_coaching';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_coaching']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_coaching']['type'] = 'list_key';
+  /* Field: Content: Multi-day workshops */
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['id'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['table'] = 'field_data_field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['field'] = 'field_teacher_multi_day_workshop';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['label'] = 'Multi-day workshops (events that last at least 6 hours, but are ';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_multi_day_workshop']['type'] = 'list_key';
+  /* Field: Content: On-line professional development support */
+  $handler->display->display_options['fields']['field_teacher_online_development']['id'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['table'] = 'field_data_field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['field'] = 'field_teacher_online_development';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_online_development']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_online_development']['type'] = 'list_key';
+  /* Field: Content: One day workshops */
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['id'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['table'] = 'field_data_field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['field'] = 'field_teacher_one_day_workshops';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_one_day_workshops']['type'] = 'list_key';
+  /* Field: Content: Professional development provider training */
+  $handler->display->display_options['fields']['field_teacher_training']['id'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['table'] = 'field_data_field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['field'] = 'field_teacher_training';
+  $handler->display->display_options['fields']['field_teacher_training']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_training']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_training']['type'] = 'list_key';
+  /* Field: Content: Teacher institute */
+  $handler->display->display_options['fields']['field_teacher_institute']['id'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['table'] = 'field_data_field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['field'] = 'field_teacher_institute';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_institute']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_institute']['type'] = 'list_key';
+  /* Field: Content: Field work */
+  $handler->display->display_options['fields']['field_method_field_work']['id'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['table'] = 'field_data_field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['field'] = 'field_method_field_work';
+  $handler->display->display_options['fields']['field_method_field_work']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_field_work']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_field_work']['type'] = 'list_key';
+  /* Field: Content: Issue investigation */
+  $handler->display->display_options['fields']['field_method_issue_investigation']['id'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['table'] = 'field_data_field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['field'] = 'field_method_issue_investigation';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_issue_investigation']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_issue_investigation']['type'] = 'list_key';
+  /* Field: Content: Place-based education */
+  $handler->display->display_options['fields']['field_method_place_based']['id'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['table'] = 'field_data_field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['field'] = 'field_method_place_based';
+  $handler->display->display_options['fields']['field_method_place_based']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_place_based']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_place_based']['type'] = 'list_key';
+  /* Field: Content: Scientific-inquiry-based learning */
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['id'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['table'] = 'field_data_field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['field'] = 'field_teacher_method_scientific_';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_method_scientific_']['type'] = 'list_key';
+  /* Field: Content: Service learning */
+  $handler->display->display_options['fields']['field_method_service_learning']['id'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['table'] = 'field_data_field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['field'] = 'field_method_service_learning';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
+  /* Field: Content: Briefly describe why you selected this grade. */
+  $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
+  $handler->display->display_options['fields']['field_grade_explain']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_grade_explain']['element_default_classes'] = FALSE;
+  /* Field: Content: Overall, what grade would you give your MWEE professional development experience? */
+  $handler->display->display_options['fields']['field_grade']['id'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['table'] = 'field_data_field_grade';
+  $handler->display->display_options['fields']['field_grade']['field'] = 'field_grade';
+  $handler->display->display_options['fields']['field_grade']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_grade']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_grade']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of what NOAA does? */
+  $handler->display->display_options['fields']['field_what_noaa_does']['id'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['table'] = 'field_data_field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['field'] = 'field_what_noaa_does';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_what_noaa_does']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_what_noaa_does']['type'] = 'list_key';
+  /* Field: Content: Did your B-WET professional development provider indicate that it was funded (in part) with funding  from the National Oceanic and Atmospheric Administration (NOAA)? */
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['id'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['table'] = 'field_data_field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['field'] = 'field_did_your_b_wet_professiona';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['label'] = 'Did your B-WET professional development provider indicate ';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_did_your_b_wet_professiona']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work */
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['id'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['table'] = 'field_data_field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['field'] = 'field_assistance_with_conducting';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
+  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_conduct_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing restoration projects */
+  $handler->display->display_options['fields']['field_assistance_with_projects']['id'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['table'] = 'field_data_field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['field'] = 'field_assistance_with_projects';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing restoration projects 1 */
+  $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_projects_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with establishing schoolyard habitats */
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['id'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['table'] = 'field_data_field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['field'] = 'field_assistance_with_establishi';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
+  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_est_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Assistance with the use of equipment or technologies */
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['id'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['table'] = 'field_data_field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['field'] = 'field_assistance_with_the_use_of';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
+  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_assistance_use_of_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Co-teaching in my classrooms or in field */
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['id'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['table'] = 'field_data_field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['field'] = 'field_co_teaching_in_my_classroo';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
+  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Coaching in my classroom */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['id'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['table'] = 'field_data_field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['field'] = 'field_coaching_in_my_classroom';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
+  /* Field: Content: Coaching in my classroom 1 */
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communicating with provider through personal phone calls or email */
+  $handler->display->display_options['fields']['field_communicating_with_provide']['id'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['table'] = 'field_data_field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['field'] = 'field_communicating_with_provide';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communicating_with_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
+  $handler->display->display_options['fields']['field_communication_with_provide']['id'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['table'] = 'field_data_field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['field'] = 'field_communication_with_provide';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_communication_provide_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Demonstrations in my classroom */
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['id'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['table'] = 'field_data_field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['field'] = 'field_demonstrations_in_my_class';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
+  /* Field: Content: Demonstrations in my classroom 1 */
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_demonstrations__class_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Connections were made to local community organizations and resources */
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['id'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['table'] = 'field_data_field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['field'] = 'field_connections_were_made_to_l';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
+  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
+  $handler->display->display_options['fields']['field_connections_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_connections_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered continuing education credits */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['id'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['table'] = 'field_data_field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['field'] = 'field_i_was_offered_continuing_e';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
+  /* Field: Content: I was offered continuing education credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was offered graduate credits */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['id'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['table'] = 'field_data_field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['field'] = 'field_i_was_offered_graduate_cre';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
+  /* Field: Content: I was offered graduate credits 1 */
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with a stipend */
+  $handler->display->display_options['fields']['field_stipend']['id'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['table'] = 'field_data_field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['field'] = 'field_stipend';
+  $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
+  /* Field: Content: I was provided with a stipend 1 */
+  $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
+  $handler->display->display_options['fields']['field_stipend_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_stipend_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with equipment */
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['id'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['table'] = 'field_data_field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['field'] = 'field_i_was_provided_with_equipm';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
+  /* Field: Content: I was provided with equipment 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['id'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['table'] = 'field_data_field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['field'] = 'field_i_was_provided_with_inform';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_i_was_provided_inform_1']['element_default_classes'] = FALSE;
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['id'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['table'] = 'field_data_field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['field'] = 'field__was_provided_with_instruc';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
+  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field__was_provided_instruc_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
+  $handler->display->display_options['fields']['field_interactions_pro']['id'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['table'] = 'field_data_field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['field'] = 'field_interactions_pro';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_pro_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['id'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['table'] = 'field_data_field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['field'] = 'field_interactions_were_facilita';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
+  $handler->display->display_options['fields']['field_interactions_1']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_interactions_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of scientific data accessible through NOAA? */
+  $handler->display->display_options['fields']['field_noaa_science_data']['id'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['table'] = 'field_data_field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['field'] = 'field_noaa_science_data';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_science_data']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_science_data']['type'] = 'list_key';
+  /* Field: Content: Created a schoolyard or backyard habitat */
+  $handler->display->display_options['fields']['field_created_habitat']['id'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['table'] = 'field_data_field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['field'] = 'field_created_habitat';
+  $handler->display->display_options['fields']['field_created_habitat']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_created_habitat']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_created_habitat']['type'] = 'list_key';
+  /* Field: Content: Gave presentation(s) about the local watershed */
+  $handler->display->display_options['fields']['field_gave_presentations']['id'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['table'] = 'field_data_field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['field'] = 'field_gave_presentations';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_gave_presentations']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_gave_presentations']['type'] = 'list_key';
+  /* Field: Content: Participated in or helped coordinate a clean-up of a local stream or beach */
+  $handler->display->display_options['fields']['field_clean_up']['id'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['table'] = 'field_data_field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['field'] = 'field_clean_up';
+  $handler->display->display_options['fields']['field_clean_up']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_clean_up']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_clean_up']['type'] = 'list_key';
+  /* Field: Content: Installed a rain barrel at school or at home */
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['id'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['table'] = 'field_data_field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['field'] = 'field_installed_rain_barrel';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_installed_rain_barrel']['type'] = 'list_key';
+  /* Field: Content: Monitored water quality */
+  $handler->display->display_options['fields']['field_monitored_water_quality']['id'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['table'] = 'field_data_field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['field'] = 'field_monitored_water_quality';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_monitored_water_quality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_monitored_water_quality']['type'] = 'list_key';
+  /* Field: Content: Participated in or organized event(s) to raise awareness about the importance of watersheds */
+  $handler->display->display_options['fields']['field_participated_event']['id'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['table'] = 'field_data_field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['field'] = 'field_participated_event';
+  $handler->display->display_options['fields']['field_participated_event']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_participated_event']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_participated_event']['type'] = 'list_key';
+  /* Field: Content: Told others about ways they can protect their local watershed */
+  $handler->display->display_options['fields']['field_told_others']['id'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['table'] = 'field_data_field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['field'] = 'field_told_others';
+  $handler->display->display_options['fields']['field_told_others']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_told_others']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_told_others']['type'] = 'list_key';
+  /* Field: Content: Did participating in the B-WET professional development increase your knowledge of educational resources available through NOAA?  */
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['id'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['table'] = 'field_data_field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['field'] = 'field_noaa_edu_resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['label'] = 'Did participating in the B-WET professional development increase your knowledge of educational resources';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_noaa_edu_resources']['type'] = 'list_key';
+  /* Field: Content: Identify their local watershed(s) */
+  $handler->display->display_options['fields']['field_identify_local_watershed']['id'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['table'] = 'field_data_field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['field'] = 'field_identify_local_watershed';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_identify_local_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_identify_local_watershed']['type'] = 'list_key';
+  /* Field: Content: Define the term "watershed" */
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['id'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['table'] = 'field_data_field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['field'] = 'field_teacher_define_watershed';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_define_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify actions individuals can engage in to  protect/restore water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['id'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['table'] = 'field_data_field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['field'] = 'field_teacher_identify_actions';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_actions']['type'] = 'list_key';
+  /* Field: Content: Identify connections between human welfare and water  flow and quality */
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['id'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['table'] = 'field_data_field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['field'] = 'field_teacher_identify_human_con';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_human_con']['type'] = 'list_key';
+  /* Field: Content: Identify how watersheds are connected to the ocean via  streams, rivers, and human-made structures */
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['id'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['table'] = 'field_data_field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['field'] = 'field_teacher_identify_watershed';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_watershed']['type'] = 'list_key';
+  /* Field: Content: Identify possible point and non-point sources of water pollution */
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['id'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['table'] = 'field_data_field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['field'] = 'field_teacher_identify_pollution';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_identify_pollution']['type'] = 'list_key';
+  /* Field: Content: Identify the functions that occur in a watershed (transport,  store, and cycle water) */
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['id'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['table'] = 'field_data_field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['field'] = 'field_teacher_id_watershed_funct';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_id_watershed_funct']['type'] = 'list_key';
+  /* Field: Content: Recognize that both natural processes and human  activities affect water flow and water quality in watersheds */
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['id'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['table'] = 'field_data_field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['field'] = 'field_teacher_recognize_processe';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teacher_recognize_processe']['type'] = 'list_key';
+  /* Field: Content: What component(s) of the MWEE professional development best prepared you to teach your students about local watersheds? */
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['id'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['table'] = 'field_data_field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['field'] = 'field_what_component_s_of_the_mw';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_what_component_s_of_the_mw']['element_default_classes'] = FALSE;
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_future']['id'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['table'] = 'field_data_field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['field'] = 'field_guide_students_future';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_future']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_before']['id'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['table'] = 'field_data_field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['field'] = 'field_guide_students_before';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_before']['type'] = 'list_key';
+  /* Field: Content: Guide students through taking action to protect or restore watersheds */
+  $handler->display->display_options['fields']['field_guide_students_after']['id'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['table'] = 'field_data_field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['field'] = 'field_guide_students_after';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_guide_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_guide_students_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_future']['id'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['table'] = 'field_data_field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['field'] = 'field_implement_mwees_future';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_after']['id'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['table'] = 'field_data_field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['field'] = 'field_implement_mwees_after';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Implement MWEEs without support from a professional development provider */
+  $handler->display->display_options['fields']['field_implement_mwees_before']['id'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['table'] = 'field_data_field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['field'] = 'field_implement_mwees_before';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_implement_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_implement_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['id'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['table'] = 'field_data_field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['field'] = 'field_incorporate_mwees_before';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_before']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['id'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['table'] = 'field_data_field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['field'] = 'field_incorporate_mwees_after';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_after']['type'] = 'list_key';
+  /* Field: Content: Incorporate MWEEs into my curriculum */
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['id'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['table'] = 'field_data_field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['field'] = 'field_incorporate_mwees_future';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_incorporate_mwees_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_future']['id'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['table'] = 'field_data_field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['field'] = 'field_teach_my_students_future';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_future']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_after']['id'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['table'] = 'field_data_field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['field'] = 'field_teach_my_students_after';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_after']['type'] = 'list_key';
+  /* Field: Content: Teach my students about local watersheds */
+  $handler->display->display_options['fields']['field_teach_my_students_before']['id'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['table'] = 'field_data_field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['field'] = 'field_teach_my_students_before';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_teach_my_students_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_teach_my_students_before']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['id'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['table'] = 'field_data_field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['field'] = 'field_use_noaa_resources_future';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_future']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['id'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['table'] = 'field_data_field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['field'] = 'field_use_noaa_resources_after';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_after']['type'] = 'list_key';
+  /* Field: Content: Use NOAA resources to enhance my students' MWEE experiences */
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['id'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['table'] = 'field_data_field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['field'] = 'field_use_noaa_resources_before';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_noaa_resources_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_before']['id'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['table'] = 'field_data_field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['field'] = 'field_act_to_protect_before';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_before']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_after']['id'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['table'] = 'field_data_field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['field'] = 'field_act_to_protect_after';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_after']['type'] = 'list_key';
+  /* Field: Content: Act to protect and/or restore ocean, coastal, or Great Lakes watersheds */
+  $handler->display->display_options['fields']['field_act_to_protect_future']['id'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['table'] = 'field_data_field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['field'] = 'field_act_to_protect_future';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_act_to_protect_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_act_to_protect_future']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_before']['id'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['table'] = 'field_data_field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['field'] = 'field_research_env_before';
+  $handler->display->display_options['fields']['field_research_env_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_before']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_after']['id'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['table'] = 'field_data_field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['field'] = 'field_research_env_after';
+  $handler->display->display_options['fields']['field_research_env_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_after']['type'] = 'list_key';
+  /* Field: Content: Research environmental issues affecting watersheds with students */
+  $handler->display->display_options['fields']['field_research_env_future']['id'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['table'] = 'field_data_field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['field'] = 'field_research_env_future';
+  $handler->display->display_options['fields']['field_research_env_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_research_env_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_research_env_future']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['id'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['table'] = 'field_data_field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['field'] = 'field_scientific_inquiry_after';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_after']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['id'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['table'] = 'field_data_field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['field'] = 'field_scientific_inquiry_before';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_before']['type'] = 'list_key';
+  /* Field: Content: Use scientific inquiry instruction */
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['id'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['table'] = 'field_data_field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['field'] = 'field_scientific_inquiry_future';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scientific_inquiry_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['id'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['table'] = 'field_data_field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['field'] = 'field_use_the_outdoors_after';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_after']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['id'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['table'] = 'field_data_field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['field'] = 'field_use_the_outdoors_future';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_future']['type'] = 'list_key';
+  /* Field: Content: Use the outdoors for instruction */
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['id'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['table'] = 'field_data_field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['field'] = 'field_use_the_outdoors_before';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_use_the_outdoors_before']['type'] = 'list_key';
+  /* Field: Content: Any other comments about the MWEE professional development? */
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['id'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['table'] = 'field_data_field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['field'] = 'field_any_other_comments_about_t';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_any_other_comments_about_t']['element_default_classes'] = FALSE;
+  /* Field: Content: How could the MWEE professional development be improved to better prepare teachers to teach about the watershed? */
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['id'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['table'] = 'field_data_field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['field'] = 'field_how_could_the_mwee_profess';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_how_could_the_mwee_profess']['element_default_classes'] = FALSE;
+  /* Field: Content: How can this questionnaire be improved? */
+  $handler->display->display_options['fields']['field_question_improved']['id'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['table'] = 'field_data_field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['field'] = 'field_question_improved';
+  $handler->display->display_options['fields']['field_question_improved']['element_class'] = 'text';
+  $handler->display->display_options['fields']['field_question_improved']['element_default_classes'] = FALSE;
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_length']['id'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['table'] = 'field_data_field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['field'] = 'field_question_length';
+  $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_length']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_length']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_complete']['id'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['table'] = 'field_data_field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['field'] = 'field_question_complete';
+  $handler->display->display_options['fields']['field_question_complete']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_complete']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_complete']['type'] = 'list_key';
+  /* Field: Content: This questionnaire was .... */
+  $handler->display->display_options['fields']['field_question_informative']['id'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['table'] = 'field_data_field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['field'] = 'field_question_informative';
+  $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_informative']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_question_informative']['type'] = 'list_key';
+  $handler->display->display_options['path'] = 'teacher-survey/feedback';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Development feedback';
+  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['teacher_survey'] = $view;
 
   return $export;
