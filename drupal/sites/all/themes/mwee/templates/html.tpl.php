@@ -9,10 +9,9 @@
   <?php print $scripts; ?>
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
-    <link href="/sites/all/themes/mwee/stylesheets/ie.css" rel="stylesheet" type="text/css" />
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <!--[if IE]>
+  <!--[if gte IE 5]>
     <link href="/sites/all/themes/mwee/stylesheets/ie.css" rel="stylesheet" type="text/css" />
    <![endif]-->
 </head>

@@ -32,7 +32,7 @@
 	  var teacherStartText = '<div class="well"><h3>Introduction</h3><p>Please answer the following questions in reference to your most recently-completed <em>Meaningful Watershed Educational Experience</em> (MWEE) professional development (PD) provided by [name of organization]. You will be asked about a range of practices and outcomes that represent the diversity of MWEE PD funded by the National Oceanic and Atmospheric Administration’s Bay Watershed Education and Training program (NOAA B-WET), some of which may not apply directly to your experience. It is acceptable to answer “not applicable” (N/A) in those instances</p><p>Your responses will be entered anonymously and will not be associated with you as an individual. THANK YOU in advance for your candor and thoughtfulness in answering the questions. Your responses will be aggregated with other teachers’ responses, and will be used by NOAA B-WET and B-WET-funded organizations to improve future professional development programs.</p>It will take about 20-30 minutes to complete this survey, depending on the nature of your professional development experience. Please complete the survey by [deadline].<br/>Thank you [name and organization of MWEE PD provider]<br/>and<br/>Bronwen Rice <br/>NOAA B-WET National Coordinator</p></div>'
 	  
 	  $('.node-teacher_survey-form').prepend(teacherStartText);
-	  $('.node-teacher_survey-form').find('.form-item-title').append('<div class="titleHelp">To allow us to compare your past, current, and future responses, please create a unique 8-digit ID number using the 2 digits of your birth month, the 2 digits of your birth day, and the last 4 digits of your most often used phone number. For example, if you were born on March 9 and your home phone is 410.719.1234, your ID number would be 03091234.</div>');
+	  $('.node-teacher_survey-form').find('.form-item-title').append('<div class="titleHelp"><h5>To allow us to compare your past, current, and future responses, please create a unique 8-digit ID number using the 2 digits of your birth month, the 2 digits of your birth day, and the last 4 digits of your most often used phone number. For example, if you were born on March 9 and your home phone is 410.719.1234, your ID number would be 03091234.</h5></div>');
 
 	  $('.node-teacher_survey-form').find('.field-name-field-question-improved').after('<div class="footerHelp well"><p><h3 style="text-align:center;">Thank you for completing this questionnaire!</h3></p><p><strong>OMB Control Number: 0648-xxxx   Expires: xx/xx/20xx </strong></p><h3>Paperwork Reduction Act Statement</h3>Public reporting burden for this collection of information is estimated to average 30 minutes per response, including the time for reviewing instructions, searching existing data sources, gathering and maintaining the data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other suggestions for reducing this burden to Bronwen Rice, NOAA Office of Education, Herbert C. Hoover Building, Room 6863, 14th and Constitution Avenue, NW Washington, DC 20230.</p><p>Responses are voluntary and collected and maintained as anonymous data. Information will be treated in accordance with the Freedom of Information Act (5 USC 552). </p><p>Notwithstanding any other provision of the law, no person is required to respond to, nor shall any person be subject to a penalty for failure to comply with, a collection of information subject to the requirements of the Paperwork Reduction Act, unless that collection of information displays a currently valid OMB Control Number.</p></div>');
 
@@ -81,7 +81,11 @@
 	    '#edit-field-teacher-act-to-protect-und-none', '#edit-field-public-familiar-und-none',
 	    '#edit-field-improve-env-edu-und-none', '#edit-field-impact-env-edu-und-none',
 	    '#edit-field-impact-edu-policy-und-none', '#edit-field-impact-env-policy-und-none',
-	    '#edit-field-impact-health-und-none', '#edit-field-is-the-school-where-you-te-und-none'];
+	    '#edit-field-impact-health-und-none', '#edit-field-is-the-school-where-you-te-und-none',
+	    '#edit-field-teacher-define-watershed-und-none','#edit-field-teacher-identify-local-wat-und-none',
+	    '#edit-field-teacher-identify-watershed-und-none','#edit-field-teacher-id-watershed-funct-und-none',
+	    '#edit-field-teacher-recognize-processe-und-none','#edit-field-teacher-identify-human-con-und-none',
+	    '#edit-field-teacher-identify-pollution-und-none','#edit-field-teacher-identify-actions-und-none'];
 	    $.each(addNA, function(intIndex, objValue){
 	      if($(objValue).length) {
 	        $(objValue).parent().show();
@@ -203,17 +207,17 @@
 		//survey redirects based on the first three questions
 		$('#edit-field-are-you-currently-a-prek-1-und').click(function(){
 			if($(':checked', $(this)).val() == 0) {
-				window.location.replace("/content/thank-you");
+				window.location.assign("/content/thank-you");
 			}
 		});
 		$('#edit-field-in-what-setting-do-you-tea-und').click(function(){
 			if($(':checked', $(this)).val() == 2 || $(':checked', $(this)).val() == 3 || $(':checked', $(this)).val() == 4) {
-				window.location.replace("/content/thank-you");
+				window.location.assign("/content/thank-you");
 			}
 		});
 		$('#edit-field-did-you-recently-complete-und').click(function(){
 			if($(':checked', $(this)).val() == 0 || $(':checked', $(this)).val() == 1) {
-				window.location.replace("/content/thank-you");
+				window.location.assign("/content/thank-you");
 			}
 		});
 

@@ -1,5 +1,5 @@
 <?php
-function b_wet_general_grantee_dashboard() { 
+function b_wet_general_manager_dashboard() { 
 	$teacherResults ='';
 	global $user;
   global $base_url;
@@ -11,20 +11,16 @@ function b_wet_general_grantee_dashboard() {
 	}
   $surveyLink = $base_url.'/node/add/teacher-survey?edit[field_grantee_id]='.$teacherResults;
 	//add a first name here instead of the username
-	$output = t('<div id="mainResults"><h2>Hi, '.$mainUser->name.' welcome to your dashboard</h2>
+	$output = t('<div id="mainResults"><h2>Hi, '.$mainUser->name.' welcome to the Manger dashboard</h2>
 <div class="well dashContainer">
-  <i style="float:right" class="icon-pencil"></i>
-	<h4>Fill out your NOAA B-WET survey</h4>
-	<a class="btn btn-primary" href="/node/add/grantee-survey">Start the survey</a></div>
-<div class="well dashContainer">
-  <i style="float:right" class="icon-envelope"></i>
-  <h4>Create an email with a link to your teacher survey</h4>
-	<a href="#teacherModal" role="button" class="btn btn-primary" data-toggle="modal">Send teacher surveys</a>
+  <i style="float:right" class="icon-tasks"></i>
+  <h4>View the results of the teacher surveys</h4>
+  <a class="btn btn-primary" href="/teacher-results">View teacher survey results</a>
 </div>
 <div class="well dashContainer">
   <i style="float:right" class="icon-tasks"></i>
-	<h4>View the results of your teacher surveys</h4>
-	<a class="btn btn-primary" href="'.$teacherResults.'">View teacher survey results</a>
+	<h4>View the results of the grantee surveys</h4>
+	<a class="btn btn-primary" href="/results">View grantee survey results</a>
 </div></div><!--end hero-->
 
 <!-- Modal -->

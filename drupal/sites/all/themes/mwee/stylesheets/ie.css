@@ -27,3 +27,13 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
 }
+
+/* line 27, ../sass/ie.scss */
+.node-form .controls {
+  padding: 0px 15px;
+}
+
+/* line 32, ../sass/ie.scss */
+.questionTable.tableHeader-fixed .tableHeader {
+  width: 300px;
+}

@@ -27,10 +27,11 @@
 
 /* line 1, ../sass/_dashboard.scss */
 .dashContainer {
-  width: 250px;
+  width: 270px;
   float: left;
   margin: 10px;
   padding: 10px;
+  min-height: 100px;
 }
 
 /* line 6, ../sass/_form.scss */
@@ -406,7 +407,17 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   color: #000;
 }
 
-/* line 253, ../sass/_form.scss */
+/* line 254, ../sass/_form.scss */
+body.not-logged-in .tableHeader-fixed {
+  top: 45px;
+}
+
+/* line 259, ../sass/_form.scss */
+body.logged-in .tableHeader-fixed {
+  top: 108px;
+}
+
+/* line 263, ../sass/_form.scss */
 .tableHeader-fixed {
   border-color: #D5D5D5;
   border-radius: 0 0 0 0;
@@ -415,7 +426,6 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   position: fixed;
   right: 0px;
   left: 0px;
-  top: 108px;
   z-index: 1020;
   background: #84929A;
   *zoom: 1;
@@ -430,7 +440,7 @@ fieldset .controls label[for=edit-field-led-evaluation-und-select] {
   padding-top: 10px;
 }
 
-/* line 270, ../sass/_form.scss */
+/* line 280, ../sass/_form.scss */
 .scaleLabel {
   padding: 20px 10px;
 }

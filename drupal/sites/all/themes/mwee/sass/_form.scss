@@ -250,6 +250,16 @@
 		font-size: 16px;
 		color: #000;
 	}
+	body.not-logged-in {
+		.tableHeader-fixed {
+			top: 45px;
+		}
+	}
+	body.logged-in {
+		.tableHeader-fixed {
+			top: 108px;
+		}
+	}
 	.tableHeader-fixed {
     border-color: #D5D5D5;
     border-radius: 0 0 0 0;
@@ -258,7 +268,7 @@
     position: fixed;
     right: 0px;
     left: 0px;
-    top: 108px;
+    // top: 108px;
     z-index: 1020;
     background: #84929A;
 		@include filter-gradient(#84929A, #788891, vertical);

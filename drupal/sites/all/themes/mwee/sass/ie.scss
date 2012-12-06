@@ -21,3 +21,15 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
 	}
+
+.node-form {
+	//main questions
+	.controls {
+		padding: 0px 15px;
+	}
+}
+.questionTable.tableHeader-fixed {
+	.tableHeader {
+		width: 300px;
+	}
+}

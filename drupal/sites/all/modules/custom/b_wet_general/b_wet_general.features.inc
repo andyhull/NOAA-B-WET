@@ -55,9 +55,9 @@ function b_wet_general_default_profile2_type() {
     "userCategory" : false,
     "userView" : false,
     "type" : "grantee",
-    "label" : "Grantee",
+    "label" : "Grantee Information",
     "weight" : "0",
-    "data" : { "registration" : 0, "use_page" : 1 },
+    "data" : { "registration" : 1, "use_page" : 1 },
     "rdf_mapping" : []
   }');
   $items['main'] = entity_import('profile2_type', '{

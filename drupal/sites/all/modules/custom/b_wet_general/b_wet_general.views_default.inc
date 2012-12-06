@@ -220,7 +220,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_grade']['element_class'] = 'text groupOverview';
   $handler->display->display_options['fields']['field_grade']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_grade']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -1745,7 +1745,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_evaluation_assistance']['element_class'] = 'number groupOverview';
   $handler->display->display_options['fields']['field_evaluation_assistance']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_evaluation_assistance']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -3223,7 +3223,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_grade']['element_class'] = 'number groupOverview';
   $handler->display->display_options['fields']['field_grade']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_grade']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -5776,10 +5776,10 @@ function b_wet_general_views_default_views() {
 
   $view = new view();
   $view->name = 'teacher_survey';
-  $view->description = '';
+  $view->description = 'This view is for grantees to view their collection of teacher surveys. It is filtered by grantee id number.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'teacher_survey';
+  $view->human_name = 'Teacher Survey Results for Grantees';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -5788,7 +5788,11 @@ function b_wet_general_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'teacher_survey';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    4 => '4',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -6093,7 +6097,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -6128,7 +6132,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
-  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  /* Field: Content: Assistance with conducting field trips or field work */
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
@@ -6141,7 +6145,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing restoration projects 1 */
+  /* Field: Content: Assistance with establishing restoration projects */
   $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
@@ -6154,7 +6158,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  /* Field: Content: Assistance with establishing schoolyard habitats */
   $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
@@ -6167,7 +6171,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
-  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  /* Field: Content: Assistance with the use of equipment or technologies */
   $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
@@ -6180,7 +6184,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
-  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  /* Field: Content: Co-teaching in my classrooms or in field */
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
@@ -6193,7 +6197,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
-  /* Field: Content: Coaching in my classroom 1 */
+  /* Field: Content: Coaching in my classroom */
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
@@ -6206,7 +6210,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  /* Field: Content: Communicating with provider through personal phone calls or email */
   $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
@@ -6219,7 +6223,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
   $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
@@ -6232,7 +6236,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
-  /* Field: Content: Demonstrations in my classroom 1 */
+  /* Field: Content: Demonstrations in my classroom */
   $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
@@ -6245,7 +6249,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
-  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  /* Field: Content: Connections were made to local community organizations and resources */
   $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
@@ -6258,7 +6262,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
-  /* Field: Content: I was offered continuing education credits 1 */
+  /* Field: Content: I was offered continuing education credits */
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
@@ -6271,7 +6275,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
-  /* Field: Content: I was offered graduate credits 1 */
+  /* Field: Content: I was offered graduate credits */
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
@@ -6284,7 +6288,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
-  /* Field: Content: I was provided with a stipend 1 */
+  /* Field: Content: I was provided with a stipend */
   $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
@@ -6297,7 +6301,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
-  /* Field: Content: I was provided with equipment 1 */
+  /* Field: Content: I was provided with equipment */
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
@@ -6310,7 +6314,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
-  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
@@ -6323,7 +6327,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
-  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
@@ -6336,7 +6340,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
   $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
@@ -6349,7 +6353,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
   $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
@@ -6719,16 +6723,20 @@ function b_wet_general_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_grantee_id']['group_column'] = 'target_id';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_grantee_id_2']['id'] = 'field_grantee_id_2';
-  $handler->display->display_options['fields']['field_grantee_id_2']['table'] = 'field_data_field_grantee_id_2';
-  $handler->display->display_options['fields']['field_grantee_id_2']['field'] = 'field_grantee_id_2';
-  $handler->display->display_options['fields']['field_grantee_id_2']['label'] = 'Grantee ID 2';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Grantee ID (field_grantee_id) */
+  $handler->display->display_options['arguments']['field_grantee_id_value']['id'] = 'field_grantee_id_value';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['table'] = 'field_data_field_grantee_id';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['field'] = 'field_grantee_id_value';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_grantee_id_value']['limit'] = '0';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -6743,15 +6751,6 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'teacher_survey' => 'teacher_survey',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['id'] = 'field_grantee_id_2_value';
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['table'] = 'field_data_field_grantee_id_2';
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['field'] = 'field_grantee_id_2_value';
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['operator_id'] = 'field_grantee_id_2_value_op';
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['label'] = 'Grantee ID 2 (field_grantee_id_2)';
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['operator'] = 'field_grantee_id_2_value_op';
-  $handler->display->display_options['filters']['field_grantee_id_2_value']['expose']['identifier'] = 'field_grantee_id_2_value';
 
   /* Display: Teacher survey results */
   $handler = $view->new_display('page', 'Teacher survey results', 'page');
@@ -7060,7 +7059,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -7095,7 +7094,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
-  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  /* Field: Content: Assistance with conducting field trips or field work */
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
@@ -7108,7 +7107,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing restoration projects 1 */
+  /* Field: Content: Assistance with establishing restoration projects */
   $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
@@ -7121,7 +7120,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  /* Field: Content: Assistance with establishing schoolyard habitats */
   $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
@@ -7134,7 +7133,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
-  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  /* Field: Content: Assistance with the use of equipment or technologies */
   $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
@@ -7147,7 +7146,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
-  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  /* Field: Content: Co-teaching in my classrooms or in field */
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
@@ -7160,7 +7159,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
-  /* Field: Content: Coaching in my classroom 1 */
+  /* Field: Content: Coaching in my classroom */
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
@@ -7173,7 +7172,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  /* Field: Content: Communicating with provider through personal phone calls or email */
   $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
@@ -7186,7 +7185,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
   $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
@@ -7199,7 +7198,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
-  /* Field: Content: Demonstrations in my classroom 1 */
+  /* Field: Content: Demonstrations in my classroom */
   $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
@@ -7212,7 +7211,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
-  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  /* Field: Content: Connections were made to local community organizations and resources */
   $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
@@ -7225,7 +7224,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
-  /* Field: Content: I was offered continuing education credits 1 */
+  /* Field: Content: I was offered continuing education credits */
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
@@ -7238,7 +7237,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
-  /* Field: Content: I was offered graduate credits 1 */
+  /* Field: Content: I was offered graduate credits */
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
@@ -7251,7 +7250,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
-  /* Field: Content: I was provided with a stipend 1 */
+  /* Field: Content: I was provided with a stipend */
   $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
@@ -7264,7 +7263,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
-  /* Field: Content: I was provided with equipment 1 */
+  /* Field: Content: I was provided with equipment */
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
@@ -7277,7 +7276,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
-  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
@@ -7290,7 +7289,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
-  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
@@ -7303,7 +7302,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
   $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
@@ -7316,7 +7315,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
   $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
@@ -7800,7 +7799,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -7835,7 +7834,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
-  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  /* Field: Content: Assistance with conducting field trips or field work */
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
@@ -7848,7 +7847,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing restoration projects 1 */
+  /* Field: Content: Assistance with establishing restoration projects */
   $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
@@ -7861,7 +7860,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  /* Field: Content: Assistance with establishing schoolyard habitats */
   $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
@@ -7874,7 +7873,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
-  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  /* Field: Content: Assistance with the use of equipment or technologies */
   $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
@@ -7887,7 +7886,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
-  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  /* Field: Content: Co-teaching in my classrooms or in field */
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
@@ -7900,7 +7899,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
-  /* Field: Content: Coaching in my classroom 1 */
+  /* Field: Content: Coaching in my classroom */
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
@@ -7913,7 +7912,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  /* Field: Content: Communicating with provider through personal phone calls or email */
   $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
@@ -7926,7 +7925,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
   $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
@@ -7939,7 +7938,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
-  /* Field: Content: Demonstrations in my classroom 1 */
+  /* Field: Content: Demonstrations in my classroom */
   $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
@@ -7952,7 +7951,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
-  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  /* Field: Content: Connections were made to local community organizations and resources */
   $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
@@ -7965,7 +7964,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
-  /* Field: Content: I was offered continuing education credits 1 */
+  /* Field: Content: I was offered continuing education credits */
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
@@ -7978,7 +7977,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
-  /* Field: Content: I was offered graduate credits 1 */
+  /* Field: Content: I was offered graduate credits */
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
@@ -7991,7 +7990,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
-  /* Field: Content: I was provided with a stipend 1 */
+  /* Field: Content: I was provided with a stipend */
   $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
@@ -8004,7 +8003,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
-  /* Field: Content: I was provided with equipment 1 */
+  /* Field: Content: I was provided with equipment */
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
@@ -8017,7 +8016,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
-  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
@@ -8030,7 +8029,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
-  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
@@ -8043,7 +8042,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
   $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
@@ -8056,7 +8055,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
   $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
@@ -8540,7 +8539,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -8575,7 +8574,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
-  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  /* Field: Content: Assistance with conducting field trips or field work */
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
@@ -8588,7 +8587,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing restoration projects 1 */
+  /* Field: Content: Assistance with establishing restoration projects */
   $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
@@ -8601,7 +8600,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  /* Field: Content: Assistance with establishing schoolyard habitats */
   $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
@@ -8614,7 +8613,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
-  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  /* Field: Content: Assistance with the use of equipment or technologies */
   $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
@@ -8627,7 +8626,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
-  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  /* Field: Content: Co-teaching in my classrooms or in field */
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
@@ -8640,7 +8639,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
-  /* Field: Content: Coaching in my classroom 1 */
+  /* Field: Content: Coaching in my classroom */
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
@@ -8653,7 +8652,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  /* Field: Content: Communicating with provider through personal phone calls or email */
   $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
@@ -8666,7 +8665,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
   $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
@@ -8679,7 +8678,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
-  /* Field: Content: Demonstrations in my classroom 1 */
+  /* Field: Content: Demonstrations in my classroom */
   $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
@@ -8692,7 +8691,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
-  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  /* Field: Content: Connections were made to local community organizations and resources */
   $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
@@ -8705,7 +8704,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
-  /* Field: Content: I was offered continuing education credits 1 */
+  /* Field: Content: I was offered continuing education credits */
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
@@ -8718,7 +8717,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
-  /* Field: Content: I was offered graduate credits 1 */
+  /* Field: Content: I was offered graduate credits */
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
@@ -8731,7 +8730,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
-  /* Field: Content: I was provided with a stipend 1 */
+  /* Field: Content: I was provided with a stipend */
   $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
@@ -8744,7 +8743,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
-  /* Field: Content: I was provided with equipment 1 */
+  /* Field: Content: I was provided with equipment */
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
@@ -8757,7 +8756,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
-  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
@@ -8770,7 +8769,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
-  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
@@ -8783,7 +8782,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
   $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
@@ -8796,7 +8795,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
   $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
@@ -9280,7 +9279,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_method_service_learning']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_method_service_learning']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_method_service_learning']['type'] = 'list_key';
-  /* Field: Content: Briefly describe why you selected this grade. */
+  /* Field: Content: Briefly describe why you selected this grade: */
   $handler->display->display_options['fields']['field_grade_explain']['id'] = 'field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['table'] = 'field_data_field_grade_explain';
   $handler->display->display_options['fields']['field_grade_explain']['field'] = 'field_grade_explain';
@@ -9315,7 +9314,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_conducting']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_conducting']['type'] = 'list_key';
-  /* Field: Content: Assistance with conducting field trips or field work 1 */
+  /* Field: Content: Assistance with conducting field trips or field work */
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['id'] = 'field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['table'] = 'field_data_field_assistance_with_conduct_1';
   $handler->display->display_options['fields']['field_assistance_with_conduct_1']['field'] = 'field_assistance_with_conduct_1';
@@ -9328,7 +9327,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_projects']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_projects']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing restoration projects 1 */
+  /* Field: Content: Assistance with establishing restoration projects */
   $handler->display->display_options['fields']['field_assistance_projects_1']['id'] = 'field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['table'] = 'field_data_field_assistance_projects_1';
   $handler->display->display_options['fields']['field_assistance_projects_1']['field'] = 'field_assistance_projects_1';
@@ -9341,7 +9340,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_establishi']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_establishi']['type'] = 'list_key';
-  /* Field: Content: Assistance with establishing schoolyard habitats 1 */
+  /* Field: Content: Assistance with establishing schoolyard habitats */
   $handler->display->display_options['fields']['field_assistance_with_est_1']['id'] = 'field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['table'] = 'field_data_field_assistance_with_est_1';
   $handler->display->display_options['fields']['field_assistance_with_est_1']['field'] = 'field_assistance_with_est_1';
@@ -9354,7 +9353,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_assistance_with_the_use_of']['type'] = 'list_key';
-  /* Field: Content: Assistance with the use of equipment or technologies 1 */
+  /* Field: Content: Assistance with the use of equipment or technologies */
   $handler->display->display_options['fields']['field_assistance_use_of_1']['id'] = 'field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['table'] = 'field_data_field_assistance_use_of_1';
   $handler->display->display_options['fields']['field_assistance_use_of_1']['field'] = 'field_assistance_use_of_1';
@@ -9367,7 +9366,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_co_teaching_in_my_classroo']['type'] = 'list_key';
-  /* Field: Content: Co-teaching in my classrooms or in field 1 */
+  /* Field: Content: Co-teaching in my classrooms or in field */
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['id'] = 'field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['table'] = 'field_data_field_co_teaching_in_classroom_1';
   $handler->display->display_options['fields']['field_co_teaching_in_classroom_1']['field'] = 'field_co_teaching_in_classroom_1';
@@ -9380,7 +9379,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_coaching_in_my_classroom']['type'] = 'list_key';
-  /* Field: Content: Coaching in my classroom 1 */
+  /* Field: Content: Coaching in my classroom */
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['id'] = 'field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['table'] = 'field_data_field_coaching_in_my_classroom_1';
   $handler->display->display_options['fields']['field_coaching_in_my_classroom_1']['field'] = 'field_coaching_in_my_classroom_1';
@@ -9393,7 +9392,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communicating_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communicating_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communicating with provider through personal phone calls or email 1 */
+  /* Field: Content: Communicating with provider through personal phone calls or email */
   $handler->display->display_options['fields']['field_communicating_with_1']['id'] = 'field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['table'] = 'field_data_field_communicating_with_1';
   $handler->display->display_options['fields']['field_communicating_with_1']['field'] = 'field_communicating_with_1';
@@ -9406,7 +9405,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_communication_with_provide']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_communication_with_provide']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_communication_with_provide']['type'] = 'list_key';
-  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) 1 */
+  /* Field: Content: Communication with provider through newsletters or web-site  (e.g., an online community) */
   $handler->display->display_options['fields']['field_communication_provide_1']['id'] = 'field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['table'] = 'field_data_field_communication_provide_1';
   $handler->display->display_options['fields']['field_communication_provide_1']['field'] = 'field_communication_provide_1';
@@ -9419,7 +9418,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_demonstrations_in_my_class']['type'] = 'list_key';
-  /* Field: Content: Demonstrations in my classroom 1 */
+  /* Field: Content: Demonstrations in my classroom */
   $handler->display->display_options['fields']['field_demonstrations__class_1']['id'] = 'field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['table'] = 'field_data_field_demonstrations__class_1';
   $handler->display->display_options['fields']['field_demonstrations__class_1']['field'] = 'field_demonstrations__class_1';
@@ -9432,7 +9431,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_connections_were_made_to_l']['type'] = 'list_key';
-  /* Field: Content: Connections were made to local community organizations and resources 1 */
+  /* Field: Content: Connections were made to local community organizations and resources */
   $handler->display->display_options['fields']['field_connections_1']['id'] = 'field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['table'] = 'field_data_field_connections_1';
   $handler->display->display_options['fields']['field_connections_1']['field'] = 'field_connections_1';
@@ -9445,7 +9444,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_continuing_e']['type'] = 'list_key';
-  /* Field: Content: I was offered continuing education credits 1 */
+  /* Field: Content: I was offered continuing education credits */
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['id'] = 'field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['table'] = 'field_data_field_i_was_offered_continuing_1';
   $handler->display->display_options['fields']['field_i_was_offered_continuing_1']['field'] = 'field_i_was_offered_continuing_1';
@@ -9458,7 +9457,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_offered_graduate_cre']['type'] = 'list_key';
-  /* Field: Content: I was offered graduate credits 1 */
+  /* Field: Content: I was offered graduate credits */
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['id'] = 'field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['table'] = 'field_data_field_i_was_offered_graduate_1';
   $handler->display->display_options['fields']['field_i_was_offered_graduate_1']['field'] = 'field_i_was_offered_graduate_1';
@@ -9471,7 +9470,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_stipend']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_stipend']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_stipend']['type'] = 'list_key';
-  /* Field: Content: I was provided with a stipend 1 */
+  /* Field: Content: I was provided with a stipend */
   $handler->display->display_options['fields']['field_stipend_1']['id'] = 'field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['table'] = 'field_data_field_stipend_1';
   $handler->display->display_options['fields']['field_stipend_1']['field'] = 'field_stipend_1';
@@ -9484,7 +9483,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_equipm']['type'] = 'list_key';
-  /* Field: Content: I was provided with equipment 1 */
+  /* Field: Content: I was provided with equipment */
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['id'] = 'field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['table'] = 'field_data_field_i_was_provided_equipm_1';
   $handler->display->display_options['fields']['field_i_was_provided_equipm_1']['field'] = 'field_i_was_provided_equipm_1';
@@ -9497,7 +9496,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_i_was_provided_with_inform']['type'] = 'list_key';
-  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs 1 */
+  /* Field: Content: I was provided with information on how to obtain grants or  funding for MWEEs */
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['id'] = 'field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['table'] = 'field_data_field_i_was_provided_inform_1';
   $handler->display->display_options['fields']['field_i_was_provided_inform_1']['field'] = 'field_i_was_provided_inform_1';
@@ -9510,7 +9509,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_class'] = 'number';
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field__was_provided_with_instruc']['type'] = 'list_key';
-  /* Field: Content: I was provided with instructional/educational/curriculum materials 1 */
+  /* Field: Content: I was provided with instructional/educational/curriculum materials */
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['id'] = 'field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['table'] = 'field_data_field__was_provided_instruc_1';
   $handler->display->display_options['fields']['field__was_provided_instruc_1']['field'] = 'field__was_provided_instruc_1';
@@ -9523,7 +9522,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_pro']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_pro']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_pro']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with natural resource  professionals 1 */
+  /* Field: Content: Interactions were facilitated with natural resource  professionals */
   $handler->display->display_options['fields']['field_interactions_pro_1']['id'] = 'field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['table'] = 'field_data_field_interactions_pro_1';
   $handler->display->display_options['fields']['field_interactions_pro_1']['field'] = 'field_interactions_pro_1';
@@ -9536,7 +9535,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_interactions_were_facilita']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_interactions_were_facilita']['type'] = 'list_key';
-  /* Field: Content: Interactions were facilitated with NOAA scientists/staff 1 */
+  /* Field: Content: Interactions were facilitated with NOAA scientists/staff */
   $handler->display->display_options['fields']['field_interactions_1']['id'] = 'field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['table'] = 'field_data_field_interactions_1';
   $handler->display->display_options['fields']['field_interactions_1']['field'] = 'field_interactions_1';
