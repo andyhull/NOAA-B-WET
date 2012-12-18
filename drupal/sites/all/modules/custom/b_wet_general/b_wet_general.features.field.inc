@@ -17483,7 +17483,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '39',
+        'weight' => '40',
       ),
     ),
   );
@@ -19248,7 +19248,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -19315,7 +19315,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '23',
+        'weight' => '24',
       ),
     ),
   );
@@ -19450,7 +19450,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '32',
+        'weight' => '33',
       ),
     ),
   );
@@ -19934,7 +19934,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -20481,7 +20481,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '29',
+        'weight' => '30',
       ),
     ),
   );
@@ -20550,7 +20550,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '30',
+        'weight' => '31',
       ),
     ),
   );
@@ -20593,9 +20593,10 @@ function b_wet_general_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '172',
+          'type' => 'text_default',
+          'weight' => '171',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -20619,7 +20620,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '163',
+        'weight' => '3',
       ),
     ),
   );
@@ -20968,7 +20969,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '38',
+        'weight' => '39',
       ),
     ),
   );
@@ -21586,7 +21587,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -21943,7 +21944,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -22006,7 +22007,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_in_which_region_s_were_you',
-      'label' => 'In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)',
+      'label' => 'In which region(s) did you teach this past year? (check all that apply)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -22016,7 +22017,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -22708,7 +22709,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -23328,7 +23329,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '35',
+        'weight' => '36',
       ),
     ),
   );
@@ -23394,7 +23395,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -23461,7 +23462,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '34',
+        'weight' => '35',
       ),
     ),
   );
@@ -23716,7 +23717,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_participating_along_1',
-      'label' => 'Participating along with other teachers from my school, at the same time 1 ',
+      'label' => 'Participating along with other teachers from my school, at the same time',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -23867,7 +23868,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -24212,7 +24213,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '40',
+        'weight' => '41',
       ),
     ),
   );
@@ -24279,7 +24280,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '43',
+        'weight' => '44',
       ),
     ),
   );
@@ -24350,7 +24351,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '41',
+        'weight' => '42',
       ),
     ),
   );
@@ -24421,7 +24422,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '42',
+        'weight' => '43',
       ),
     ),
   );
@@ -26393,7 +26394,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -27374,7 +27375,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -28221,7 +28222,7 @@ function b_wet_general_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '37',
+        'weight' => '38',
       ),
     ),
   );
@@ -28288,7 +28289,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '33',
+        'weight' => '34',
       ),
     ),
   );
@@ -28361,7 +28362,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -28432,7 +28433,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '15',
       ),
     ),
   );
@@ -28501,7 +28502,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -28629,7 +28630,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -29097,6 +29098,7 @@ function b_wet_general_field_default_fields() {
   t('In what 5-digit zip code is your organization located?');
   t('In what setting do you teach?');
   t('In which grade level(s) do you primarily teach? (select all that apply)');
+  t('In which region(s) did you teach this past year? (check all that apply)');
   t('In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)');
   t('Included more than one teacher from individual schools');
   t('Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?');
@@ -29182,8 +29184,8 @@ function b_wet_general_field_default_fields() {
   t('Participated in or helped coordinate a clean-up of a local stream, or beach (teacher)');
   t('Participated in or organized event(s) to raise awareness about the importance of watersheds');
   t('Participated in or organized event(s) to raise awareness about the importance of watersheds (teacher)');
+  t('Participating along with other teachers from my school, at the same time');
   t('Participating along with other teachers from my school, at the same time ');
-  t('Participating along with other teachers from my school, at the same time 1 ');
   t('Perform better academically in science');
   t('Perform better on state standardized tests');
   t('Place-based education');

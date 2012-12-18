@@ -12,6 +12,16 @@
     width: 200px;
     float: right;
   }
+  .detailLabel {
+    .label {
+      padding: 2px 0px;
+    }
+  }
+  //format long text answers in the details box
+  .textDetail {
+    width: 800px;
+    overflow: auto;
+  }
 
   .views-exposed-form {
     background: #E9EBED;
@@ -34,7 +44,7 @@
     @include labels();
 	}
 	.bar {
-		width: 400px;
+		width: 500px;
 		height: 20px;
     margin: 10px;
     @include box-shadow(1px 1px 10px #40494F);
@@ -47,7 +57,7 @@
 		}
 	}
 	.barLabel {
-		width: 400px;
+		width: 500px;
     margin: 10px;
 	}
 	.more {
@@ -95,8 +105,9 @@
   //for the See Details button
   .details {
     position: relative;
-    left: 400px;
-    top: -33px;
+    left: -200px;
+    top: -60px;
+    float: right;
   }
   .resultDetail {
     margin: 0px 10px;

@@ -280,4 +280,17 @@
 	.scaleLabel {
 		padding: 20px 10px;
 	}
+
+	.form-item-name, .form-item-pass, .form-item-mail {
+		label {
+			display: none;
+		}
+	}
+	.form-item-field-hispanic-or-latino-und-0-value {
+		float: none;
+	}
+	//for the front page
+	.loginHelpers {
+		margin: 20px;
+	}
 }

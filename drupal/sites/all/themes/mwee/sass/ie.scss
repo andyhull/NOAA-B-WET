@@ -33,3 +33,9 @@
 		width: 300px;
 	}
 }
+
+.form-item-name, .form-item-pass, .form-item-mail {
+		label {
+			display: block;
+		}
+	}

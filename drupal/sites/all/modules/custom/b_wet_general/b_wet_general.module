@@ -40,13 +40,50 @@ function b_wet_general_preprocess_field(&$variables) {
 }
 
 function b_wet_general_form_alter(&$form, $form_state, $form_id) {
-    if($form_id == 'content_field_overview_form'){
-        $form['_add_new_field']['label']['#maxlength'] = 255;
-        $form['_add_existing_field']['label']['#maxlength'] = 255;
-    }
-    else if($form_id == 'content_field_edit_form'){
-        $form['basic']['label']['#maxlength'] = 255;
-    }
+  if($form_id == 'content_field_overview_form'){
+      $form['_add_new_field']['label']['#maxlength'] = 255;
+      $form['_add_existing_field']['label']['#maxlength'] = 255;
+  }
+  else if($form_id == 'content_field_edit_form'){
+      $form['basic']['label']['#maxlength'] = 255;
+  }
+
+  switch($form_id) {  
+    case 'user_register_form':
+      $form['account']['name']['#attributes']['placeholder'] = t( 'Username' );
+      $form['account']['mail']['#attributes']['placeholder'] = t( 'E-mail address *' );
+      $form['profile_main[field_first_name][und][0][value]']['#title'] = t('Test');
+      $form['customtext'] = array(
+        '#markup' => '<h4>Create a new account to get started.</h4>',
+        '#weight' => -10, // Adjust so that you can place it whereever 
+      );
+    break;
+    case 'user_login':
+    // HTML5 placeholder attribute for the user login form
+      $form['name']['#attributes']['placeholder'] = t( 'Username' );
+      $form['pass']['#attributes']['placeholder'] = t( 'Password' );
+      $form['customtext'] = array(
+        '#markup' => '<h4>If you have an account go ahead and log in.</h4>',
+        '#weight' => -1, // Adjust so that you can place it whereever 
+      );
+    break;
+    case 'user_login_block':
+    // HTML5 placeholder attribute for the user login form
+      $form['name']['#attributes']['placeholder'] = t( 'Username' );
+      $form['name']['#size'] = 40;
+      $form['pass']['#size'] = 40;
+      $form['pass']['#attributes']['placeholder'] = t( 'Password' );
+      $form['customtext'] = array(
+        '#markup' => '<h4>If you have an account, go ahead and log in.</h4>',
+        '#weight' => -1, // Adjust so that you can place it whereever 
+      );
+      $form['links'] = array (
+        '#markup' => '<div class="span4 loginHelpers"><span style="float:left;"><h6>Need an account?</h6><a class="btn btn-small" href="/user/register" title="Create a new user account.">Create new account</a></span><span style="float:right;"><h6>Forgot your password?</h6><a class="btn btn-small" href="/user/password" title="Request new password via e-mail.">Request new password</a></span></div>',
+        '#weight' => 10000,
+        );
+      $form['actions']['submit']['#attributes']['class'][] = "btn btn-primary pull-right";
+    break;
+  }
 }
 
 function b_wet_general_generateCsv($data, $columns, $delimiter = ',', $enclosure = '"') {

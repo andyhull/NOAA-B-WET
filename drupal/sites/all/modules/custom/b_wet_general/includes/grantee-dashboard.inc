@@ -5,11 +5,13 @@ function b_wet_general_grantee_dashboard() {
   global $base_url;
   $mainUser= user_load($user->uid);
   $longProfile = profile2_load_by_user($mainUser);
+  $grantee_id='';
   //get the grantee award number for our teacher results link
 	if(isset($longProfile['grantee']->field_noaa_b_wet_award_number['und'][0]['value'])){
-		$teacherResults = '/teacher-survey?field_grantee_id_2_value='.$longProfile['grantee']->field_noaa_b_wet_award_number['und'][0]['value'];
-	}
-  $surveyLink = $base_url.'/node/add/teacher-survey?edit[field_grantee_id]='.$teacherResults;
+    $grantee_id = $longProfile['grantee']->field_noaa_b_wet_award_number['und'][0]['value'];
+  	$teacherResults = '/teacher/'.$grantee_id;
+  }
+  $surveyLink = $base_url.'/node/add/teacher-survey?edit[field_grantee_id][und][0][value]='.$grantee_id;
 	//add a first name here instead of the username
 	$output = t('<div id="mainResults"><h2>Hi, '.$mainUser->name.' welcome to your dashboard</h2>
 <div class="well dashContainer">

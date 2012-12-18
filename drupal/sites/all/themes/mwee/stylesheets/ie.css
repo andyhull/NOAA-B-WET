@@ -37,3 +37,8 @@
 .questionTable.tableHeader-fixed .tableHeader {
   width: 300px;
 }
+
+/* line 38, ../sass/ie.scss */
+.form-item-name label, .form-item-pass label, .form-item-mail label {
+  display: block;
+}

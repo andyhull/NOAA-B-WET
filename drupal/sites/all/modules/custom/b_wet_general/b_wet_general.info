@@ -528,3 +528,4 @@ features[user_role][] = grantee
 features[user_role][] = teacher
 features[views_view][] = grantee_survey
 features[views_view][] = teacher_survey
+features[views_view][] = teacher_survey_results_for_noaa_managers

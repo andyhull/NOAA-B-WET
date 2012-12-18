@@ -138,7 +138,7 @@ foreach ($header as $headerTitle => $headerValue) {
         }
       }
     }
-    $output .= '</div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'.$labelStart.'</span><span class="likertEnd label label-inverse">'.$labelEnd.'</span><span id="'.$headerTitle.'More" class="btn details">See details</span></div>';
+    $output .= '</div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'.$labelStart.'</span><span class="likertEnd label label-inverse">'.$labelEnd.'</span></div><span id="'.$headerTitle.'More" class="btn details">See details</span>';
     $output .= '<div class="'.$headerTitle.'More resultDetail longDetail">'.$detailOutput.'</div>';
     $output .= "</div>";
   } //end if !== title

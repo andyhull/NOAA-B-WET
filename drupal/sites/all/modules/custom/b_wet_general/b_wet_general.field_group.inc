@@ -21,7 +21,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'As a result of participating in the MWEE professional development, I am better able to:',
-    'weight' => '31',
+    'weight' => '32',
     'children' => array(
       0 => 'field_teacher_define_watershed',
       1 => 'field_teacher_identify_local_wat',
@@ -55,7 +55,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'For each statement, select one response for BEFORE, one response for AFTER, and one response for FUTURE',
-    'weight' => '36',
+    'weight' => '37',
     'children' => array(
       0 => 'field_teach_my_students_before',
       1 => 'field_teach_my_students_after',
@@ -108,7 +108,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'What education methods were used during your MWEE professional development? (select No or Yes  for each method)',
-    'weight' => '21',
+    'weight' => '22',
     'children' => array(
       0 => 'field_method_outdoor',
       1 => 'field_method_field_work',
@@ -307,7 +307,7 @@ function b_wet_general_field_group_info() {
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'If yes, Which NOAA resources were used as part of your MWEE professional development?',
-    'weight' => '20',
+    'weight' => '21',
     'children' => array(
       0 => 'field_teacher_esources_noaa_expe',
       1 => 'field_teacher_resources_marine_s',
@@ -702,7 +702,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'Which additional practices did your MWEE professional development and/or the support you received include? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_connections_were_made_to_l',
       1 => 'field_interactions_were_facilita',
@@ -739,7 +739,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'Did the workshops, institutes, or classes you participated in include the following professional development practices? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
-    'weight' => '24',
+    'weight' => '25',
     'children' => array(
       0 => 'field_sharing_of_information_and',
       1 => 'field_discussion_of_how_teachers',
@@ -843,7 +843,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'During your MWEE professional development, did you participate in any of these activities that  protect and/or restore ocean, co',
-    'weight' => '28',
+    'weight' => '29',
     'children' => array(
       0 => 'field_created_habitat',
       1 => 'field_installed_rain_barrel',
@@ -981,7 +981,7 @@ content analysis of qualitative data, etc.) methods.',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'If responded Yes to “Scientific-inquiry-based learning”  As part of your MWEE professional development, were you involved in...',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(
       0 => 'field_science_questions',
       1 => 'field_science__hypotheses',
@@ -1049,7 +1049,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'About what percent of your students are (percent should equal 100): ',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_hispanic_or_latino',
       1 => 'field_american_indian_or_alaska_',
@@ -1270,7 +1270,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'Please rank the 3 practices were most valuable in helping you implement MWEEs. (1 is the most valuable)',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_assistance_with_conduct_1',
       1 => 'field_assistance_with_est_1',
@@ -1306,7 +1306,7 @@ Engage students in:',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'What types of support did you receive from your MWEE professional development provider? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
-    'weight' => '25',
+    'weight' => '26',
     'children' => array(
       0 => 'field_assistance_with_conducting',
       1 => 'field_assistance_with_establishi',
@@ -1903,7 +1903,7 @@ Engaged teachers in:',
   $field_group->parent_name = 'group_teacher_main';
   $field_group->data = array(
     'label' => 'Which type(s) of MWEE professional development did you participate in or receive: (please select yes  or no for each type)',
-    'weight' => '16',
+    'weight' => '17',
     'children' => array(
       0 => 'field_teacher_one_day_workshops',
       1 => 'field_teacher_institute',

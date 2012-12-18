@@ -141,7 +141,7 @@ foreach ($header as $headerTitle => $headerValue) {
           if($responseCount > 0){
             $percentAnswered = ($allResults->$headerTitle->$question->count/($responseCount)*100);
           }
-          $detailOutput .= '<div><span class="label" display:block;>'.$allResults->$headerTitle->$question->label.'</span></div>';
+          $detailOutput .= '<div class="textDetail"><span class="label" display:block;>'.$allResults->$headerTitle->$question->label.'</span></div>';
         } else {
           $sum = $responseCount;
           $detailOutput .= '<span class="label label-inverse totalLabel"><strong>Total responses: </strong><span class="label label-info">'.$sum.'</span>&nbsp;<strong>Total unanswered</strong>: <span class="label">'.$allResults->$headerTitle->$question->count.'</span></span>';
@@ -182,7 +182,7 @@ foreach ($header as $headerTitle => $headerValue) {
       }
     }
   }
-  $output .= '</div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'.$labelStart.'</span><span class="likertEnd label label-inverse">'.$labelEnd.'</span><span id="'.$headerTitle.'More" class="btn details">See details</span></div>';
+  $output .= '</div><div class="barLabel resultDetail"><span class="likertStart label label-inverse">'.$labelStart.'</span><span class="likertEnd label label-inverse">'.$labelEnd.'</span></div><span id="'.$headerTitle.'More" class="btn details">See details</span>';
   $output .= '<div class="'.$headerTitle.'More resultDetail longDetail"><h5 class="detailHeader">Question details</h5>'.$detailOutput.'</div>';
   $output .= "</div>";
 }
@@ -204,10 +204,10 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
 //An object for wrapping individual questions in a group 
   var groupQuestion = new Object();
   groupQuestion = {
-    'group_education_methods':{
-      'id':'group_education_methods',
-      'question':'What education methods were used by your organization’s staff with students during your organization\'s typical B-WET-funded MWEE',
-      'fields': ['field_method_outdoor','field_method_field_work','field_method_place_based','field_method_scientific_inquiry','field_method_issue_investigation','field_method_service_learning']
+    'node_teacher_survey_form_group_edu_method':{
+      'id':'node_teacher_survey_form_group_edu_method',
+      'question':'What education methods were used during your MWEE professional development?',
+      'fields': ['field_teacher_method_scientific__1','field_method_outdoor','field_method_field_work','field_method_place_based','field_method_scientific_inquiry','field_method_issue_investigation','field_method_service_learning']
     },
     'group_evaluation':{
       'id':'group_evaluation',
@@ -264,10 +264,10 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
       'question':'Please answer the following questions with regard to the instruction your organization provides directly to students',
       'fields': ['field_title_1','field_per_esl','field_hours_taught','field_hours_taught_outdoors','field_length_participation','field_focus_on_science','field_were_any_noaa_resources_we','group_number_students','group_percent_students','group_mwee_aligined_with','group_provide_for_students','group_resources_group','group_education_methods','group_science','group_student_restore','group_students_will','group_students_able']
     },
-    'group_student_restore':{
-      'id':'group_student_restore',
-      'question':'Did students participate in any of these activities to protect and/or restore ocean, coastal and/or Great Lakes watersheds during your organization’s B-WET-funded MWEEs?',
-      'fields': ['field_created_habitat','field_conserved_water','field_installed_rain_barrel','field_gave_presentations','field_reduced_litter','field_participated_event','field_clean_up','field_restoration_activity','field_told_others','field_monitored_water_quality']
+    'node_teacher_survey_form_group_protect_activities':{
+      'id':'node_teacher_survey_form_group_protect_activities',
+      'question':'During your MWEE professional development, did you participate in any of these activities that protect and/or restore ocean, coastal, and/or Great Lakes watersheds?',
+      'fields': ['field_participated_in_a_restorat','field_limited_or_avoided_the_use','field_created_habitat','field_conserved_water','field_installed_rain_barrel','field_gave_presentations','field_reduced_litter','field_participated_event','field_clean_up','field_restoration_activity','field_told_others','field_monitored_water_quality']
     },
     'group_students_able':{
       'id':'group_students_able',
@@ -284,9 +284,9 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
       'question':'It is a goal of my organization’s B-WET-funded MWEEs that students will:',
       'fields': ['field_feel_connected','field_express_concern','field_confident_to_protect','field_likely_to_protect','field_conduct_investigations','field_express_interest','field_better_academically','field_better_standardized_tests','field_more_engaged','field_know_more_about_the_ocean_','field_know_more_about_climate_ch','field_be_better_able_to_make_inf']
     },
-    'group_teacher_able':{
-      'id':'group_teacher_able',
-      'question':'It is a goal of my organization’s B-WET-funded professional development that teachers will be able to:',
+    'node_teacher_survey_form_group_as_a_result':{
+      'id':'node_teacher_survey_form_group_as_a_result',
+      'question':'As a result of participating in the MWEE professional development, I am better able to:',
       'fields': ['field_teacher_define_watershed','field_teacher_identify_local_wat','field_teacher_identify_watershed','field_teacher_id_watershed_funct','field_teacher_recognize_processe','field_teacher_identify_human_con','field_teacher_identify_pollution','field_teacher_identify_actions']
     },
     'group_teacher_dev_align':{
@@ -321,13 +321,13 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
     },
     'group_teacher_pro_development':{
       'id':'group_teacher_pro_development',
-      'question':'Which of the following types of B-WET-funded MWEE professional development did you typically provide over the past grant year?',
+      'question':'Which type(s) of MWEE professional development did you participate in or receive:',
       'fields': ['field_teacher_one_day_workshops','field_teacher_institute','field_teacher_multi_day_workshop','field_teacher_college_level_cour','field_teacher_training','field_teacher_coaching','field_teacher_online_development']
     },
     'group_teacher_resources_group':{
       'id':'group_teacher_resources_group',
       'question':'Which NOAA resources were incorporated into your organization\'s typical B-WET-funded MWEE professional development?',
-      'fields': ['field_information_from_noaa_1','field_teacher_data_collected','field_noaa_expert_1','field_teacher_edu_program','field_teacher_labs_facilities','field_noaa_national_marine_1','field_noaa_national_estuarine_1']
+      'fields': ['field_information_from_noaa_rese','field_teacher_esources_noaa_expe','field_teacher_resources_marine_s','field_teacher_resources_estuarin','field_information_from_noaa_1','field_teacher_data_collected','field_teacher_esources_noaa_expe_1','field_teacher_edu_program','field_teacher_labs_facilities','field_teacher_resources_marine_s_1','field_teacher_resources_estuarin_1']
     },
     'group_teacher_science':{
       'id':'group_teacher_science',
@@ -353,6 +353,40 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
       'id':'group_teachers_number_supported',
       'question':'For about how many teachers, schools, and school districts did your organization provide professional development or support (e.g., trained in workshops, coached at schools or in the field) this past grant year as a result of your B-WET grant?',
       'fields': ['field_teachers_served','field_teachers_k_12_served','field_teachers_school_districts_']
+    },
+    'node_teacher_survey_form_group_pro_development_practices':{
+      'id':'node_teacher_survey_form_group_pro_development_practices',
+      'question':'Did the workshops, institutes, or classes you participated in include the following professional development practices? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
+      'fields': ['field_sharing_of_information_and','field_sharing_of_information_1','field_discussion_of_how_teachers','field_discussion_teachers_1',
+      'field_discussion_of_alignment_of','field_discussion_of_alignment_1','field_provision_of_examples_of_h','field_provision_of_examples_1',
+      'field_engaging_you_and_other_par','field_engaging_you_and_other_1','field_participating_along_with_o','field_participating_along_1',
+      'field_allowing_you_and_other_1_1','field_allowing_you_and_other_par_1','field_engaging_practices','field_engaging_practices_1',
+      'field_presentation_of_how_noaa_d','field_presentation_of_how_noaa_1','field_discussion_of_how_noaa_dat','field_discussion_of_how_noaa_1',
+      'field_examples_of_how_other_teac','field_examples_of_how_other_1','field_allow_you_and_other_partic','field_allow_you_and_other_1']
+    },
+    'node_teacher_survey_form_group_support':{
+      'id':'node_teacher_survey_form_group_support',
+      'question':'What types of support did you receive from your MWEE professional development provider? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
+      'fields': ['field_assistance_with_conducting','field_assistance_with_conduct_1','field_assistance_with_establishi','field_assistance_with_est_1',
+      'field_assistance_with_projects','field_assistance_projects_1','field_assistance_with_the_use_of','field_assistance_use_of_1',
+      'field_co_teaching_in_my_classroo','field_co_teaching_in_classroom_1','field_coaching_in_my_classroom','field_coaching_in_my_classroom_1',
+      'field_communicating_with_provide','field_communicating_with_1','field_communication_with_provide','field_communication_provide_1',
+      'field_demonstrations_in_my_class','field_demonstrations__class_1','field_assistance_with_the_use_of_1','field_assistance_use_of_1_1']
+    },
+    'node_teacher_survey_form_group_practices':{
+      'id':'node_teacher_survey_form_group_practices',
+      'question':'Which additional practices did your MWEE professional development and/or the support you received include? (a) Please indicate yes or no for each statement. (b) Then indicate which 3 practices were most valuable in helping you implement MWEEs.',
+      'fields': ['field_connections_were_made_to_l','field_connections_1','field_interactions_were_facilita','field_interactions_1',
+      'field_interactions_pro','field_interactions_pro_1','field_stipend','field_stipend_1',
+      'field_i_was_offered_continuing_e','field_i_was_offered_continuing_1','field_i_was_offered_graduate_cre','field_i_was_offered_graduate_1',
+      'field_i_was_provided_with_equipm','field_i_was_provided_equipm_1','field__was_provided_with_instruc','field__was_provided_instruc_1',
+      'field_i_was_provided_with_inform','field_i_was_provided_inform_1']
+    },
+    'node_teacher_survey_form_group_student_ethnicity':{
+      'id':'node_teacher_survey_form_group_student_ethnicity',
+      'question':'About what percent of your students are (percent should equal 100):',
+      'fields': ['field_american_indian_or_alaska_','field_asian','field_black_or_african_american','field_hispanic_or_latino',
+      'field_native_hawaiian_or_other_p','field_other','field_white']
     }
   }
 
@@ -385,7 +419,7 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
     } else {
       var searchParam = '';
     }
-    window.location = "/teacher/resultdownload"+searchParam;
+    window.location = window.location.pathname+"/main/download"+searchParam;
   })
 // Here we immediately call the function with jQuery as the parameter.
 }(jQuery));
