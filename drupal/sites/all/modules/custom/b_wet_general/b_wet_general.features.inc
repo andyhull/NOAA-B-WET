@@ -57,7 +57,7 @@ function b_wet_general_default_profile2_type() {
     "type" : "grantee",
     "label" : "Grantee Information",
     "weight" : "0",
-    "data" : { "registration" : 1, "use_page" : 1 },
+    "data" : { "registration" : 0, "use_page" : 1 },
     "rdf_mapping" : []
   }');
   $items['main'] = entity_import('profile2_type', '{
@@ -67,6 +67,15 @@ function b_wet_general_default_profile2_type() {
     "label" : "Main profile",
     "weight" : "0",
     "data" : { "registration" : true, "use_page" : true },
+    "rdf_mapping" : []
+  }');
+  $items['noaa_manager'] = entity_import('profile2_type', '{
+    "userCategory" : false,
+    "userView" : false,
+    "type" : "noaa_manager",
+    "label" : "NOAA Manager",
+    "weight" : "0",
+    "data" : { "registration" : 0, "use_page" : 1 },
     "rdf_mapping" : []
   }');
   return $items;

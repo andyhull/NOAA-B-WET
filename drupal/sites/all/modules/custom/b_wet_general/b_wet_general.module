@@ -78,7 +78,12 @@ function b_wet_general_form_alter(&$form, $form_state, $form_id) {
         '#weight' => -1, // Adjust so that you can place it whereever 
       );
       $form['links'] = array (
-        '#markup' => '<div class="span4 loginHelpers"><span style="float:left;"><h6>Need an account?</h6><a class="btn btn-small" href="/user/register" title="Create a new user account.">Create new account</a></span><span style="float:right;"><h6>Forgot your password?</h6><a class="btn btn-small" href="/user/password" title="Request new password via e-mail.">Request new password</a></span></div>',
+        '#markup' => '<div class="span5 loginHelpers"><span style="float:left;"><h6>Need an account?</h6>
+          <ul class="unstyled">
+            <li><a href="/grantee/register" title="Create a new user account.">Accounts for Grantees</a></li>
+            <li><a href="/noaamanager/register" title="Create a new user account.">Accounts for NOAA Managers</a></li>
+          </ul></span>
+          <span style="float:right;"><h6>Forgot your password?</h6><a href="/user/password" title="Request new password via e-mail.">Request new password</a></span></div>',
         '#weight' => 10000,
         );
       $form['actions']['submit']['#attributes']['class'][] = "btn btn-primary pull-right";

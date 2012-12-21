@@ -68,7 +68,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'grantee_survey' => 'grantee_survey',
   );
-  /* Filter criterion: Content: In which region(s) did you teach this past year? (check all that apply) (field_in_which_region_s_were_you) */
+  /* Filter criterion: Content: In which region did you teach this past year? (field_in_which_region_s_were_you) */
   $handler->display->display_options['filters']['field_in_which_region_s_were_you_value']['id'] = 'field_in_which_region_s_were_you_value';
   $handler->display->display_options['filters']['field_in_which_region_s_were_you_value']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['filters']['field_in_which_region_s_were_you_value']['field'] = 'field_in_which_region_s_were_you_value';
@@ -3169,7 +3169,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -5853,7 +5853,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -5883,7 +5883,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
-  /* Field: Content: Do you identify yourself as (check all that apply): */
+  /* Field: Content: What is your race? (check all that apply): */
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';
@@ -6782,8 +6782,10 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: In what 5-DIGIT zip code is your organization located? */
   $handler->display->display_options['fields']['field_zipcode']['id'] = 'field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['table'] = 'field_data_field_zipcode';
@@ -6795,7 +6797,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -6825,7 +6827,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
-  /* Field: Content: Do you identify yourself as (check all that apply): */
+  /* Field: Content: What is your race? (check all that apply): */
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';
@@ -8058,7 +8060,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -8088,7 +8090,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
-  /* Field: Content: Do you identify yourself as (check all that apply): */
+  /* Field: Content: What is your race? (check all that apply): */
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';
@@ -8939,7 +8941,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'teacher_survey' => 'teacher_survey',
   );
-  /* Filter criterion: Content: In which region(s) did you teach this past year? (check all that apply) (field_in_which_region_s_were_you) */
+  /* Filter criterion: Content: In which region did you teach this past year? (field_in_which_region_s_were_you) */
   $handler->display->display_options['filters']['field_in_which_region_s_were_you_value']['id'] = 'field_in_which_region_s_were_you_value';
   $handler->display->display_options['filters']['field_in_which_region_s_were_you_value']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['filters']['field_in_which_region_s_were_you_value']['field'] = 'field_in_which_region_s_were_you_value';
@@ -9005,7 +9007,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -9035,7 +9037,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
-  /* Field: Content: Do you identify yourself as (check all that apply): */
+  /* Field: Content: What is your race? (check all that apply): */
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';
@@ -9884,6 +9886,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['label'] = 'Teacher ID';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_1']['element_class'] = 'text';
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   /* Field: Content: Are you currently a PreK-12 teacher or educator?  */
@@ -9919,7 +9922,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -9949,7 +9952,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
-  /* Field: Content: Do you identify yourself as (check all that apply): */
+  /* Field: Content: What is your race? (check all that apply): */
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';
@@ -11065,21 +11068,21 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_question_length']['id'] = 'field_question_length';
   $handler->display->display_options['fields']['field_question_length']['table'] = 'field_data_field_question_length';
   $handler->display->display_options['fields']['field_question_length']['field'] = 'field_question_length';
-  $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_length']['element_class'] = 'number groupSurvey';
   $handler->display->display_options['fields']['field_question_length']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_question_length']['type'] = 'list_key';
   /* Field: Content: This questionnaire was .... */
   $handler->display->display_options['fields']['field_question_complete']['id'] = 'field_question_complete';
   $handler->display->display_options['fields']['field_question_complete']['table'] = 'field_data_field_question_complete';
   $handler->display->display_options['fields']['field_question_complete']['field'] = 'field_question_complete';
-  $handler->display->display_options['fields']['field_question_complete']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_complete']['element_class'] = 'number groupSurvey';
   $handler->display->display_options['fields']['field_question_complete']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_question_complete']['type'] = 'list_key';
   /* Field: Content: This questionnaire was .... */
   $handler->display->display_options['fields']['field_question_informative']['id'] = 'field_question_informative';
   $handler->display->display_options['fields']['field_question_informative']['table'] = 'field_data_field_question_informative';
   $handler->display->display_options['fields']['field_question_informative']['field'] = 'field_question_informative';
-  $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number';
+  $handler->display->display_options['fields']['field_question_informative']['element_class'] = 'number groupSurvey';
   $handler->display->display_options['fields']['field_question_informative']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_question_informative']['type'] = 'list_key';
   /* Field: Content: How can this questionnaire be improved? */
@@ -11142,7 +11145,7 @@ function b_wet_general_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: In which region(s) did you teach this past year? (check all that apply) */
+  /* Field: Content: In which region did you teach this past year? */
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['id'] = 'field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['table'] = 'field_data_field_in_which_region_s_were_you';
   $handler->display->display_options['fields']['field_in_which_region_s_were_you']['field'] = 'field_in_which_region_s_were_you';
@@ -11172,7 +11175,7 @@ function b_wet_general_views_default_views() {
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_class'] = 'number';
   $handler->display->display_options['fields']['field_which_of_these_categories_']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_which_of_these_categories_']['type'] = 'list_key';
-  /* Field: Content: Do you identify yourself as (check all that apply): */
+  /* Field: Content: What is your race? (check all that apply): */
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['id'] = 'field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['table'] = 'field_data_field_do_you_identify_yourself_a';
   $handler->display->display_options['fields']['field_do_you_identify_yourself_a']['field'] = 'field_do_you_identify_yourself_a';

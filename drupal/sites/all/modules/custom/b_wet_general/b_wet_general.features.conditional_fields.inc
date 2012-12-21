@@ -10015,17 +10015,10 @@ function b_wet_general_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => array(
-        5 => '5',
-        0 => NULL,
-        1 => NULL,
-        2 => NULL,
-        3 => NULL,
-        4 => NULL,
-      ),
+      'value_form' => '7',
       'value' => array(
         0 => array(
-          'value' => '5',
+          'value' => '7',
         ),
       ),
       'values' => array(),

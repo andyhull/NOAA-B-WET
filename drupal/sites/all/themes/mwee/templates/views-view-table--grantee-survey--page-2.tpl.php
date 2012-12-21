@@ -17,6 +17,11 @@
  * @ingroup views_templates
  */
 ?>
+<script>
+    $('#pageLoad').hide();
+    spinner.stop(target);
+
+</script>
 <?php
 b_wet_general_generateCsv($rows, $header);
 ?>

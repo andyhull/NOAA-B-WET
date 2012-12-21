@@ -4384,7 +4384,7 @@ function b_wet_general_field_default_fields() {
   $fields['node-grantee_survey-field_in_which_region_s_were_you'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_in_which_region_s_were_you',
@@ -4438,7 +4438,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_in_which_region_s_were_you',
-      'label' => 'In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)',
+      'label' => 'In which region were your organization\'s MWEEs offered this past grant year?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -19884,14 +19884,12 @@ function b_wet_general_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'Hispanic or Latino',
           1 => 'American Indian or Alaska Native',
           2 => 'Asian',
           3 => 'Black or African American',
           4 => 'Native Hawaiian or Other Pacific Islander',
           5 => 'White',
-          6 => 'Other ____________________',
-          7 => 'I prefer not to answer',
+          6 => 'I prefer not to answer',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -19924,7 +19922,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_do_you_identify_yourself_a',
-      'label' => 'Do you identify yourself as (check all that apply):',
+      'label' => 'What is your race? (check all that apply):',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -20900,7 +20898,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '13',
+        'weight' => '17',
       ),
     ),
   );
@@ -21944,7 +21942,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -21953,7 +21951,7 @@ function b_wet_general_field_default_fields() {
   $fields['node-teacher_survey-field_in_which_region_s_were_you'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_in_which_region_s_were_you',
@@ -22007,7 +22005,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_in_which_region_s_were_you',
-      'label' => 'In which region(s) did you teach this past year? (check all that apply)',
+      'label' => 'In which region did you teach this past year?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -22017,7 +22015,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -23262,7 +23260,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -23526,7 +23524,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -28227,6 +28225,74 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-teacher_survey-field_what_is_your_ethnicity_che'.
+  $fields['node-teacher_survey-field_what_is_your_ethnicity_che'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_what_is_your_ethnicity_che',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Hispanic or Latino',
+          1 => 'Not Hispanic or Latino',
+          2 => 'I prefer not to respond',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'teacher_survey',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 172,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_what_is_your_ethnicity_che',
+      'label' => 'What is your ethnicity? (check one):',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '9',
+      ),
+    ),
+  );
+
   // Exported field: 'node-teacher_survey-field_what_noaa_does'.
   $fields['node-teacher_survey-field_what_noaa_does'] = array(
     'field_config' => array(
@@ -28362,7 +28428,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -28502,7 +28568,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -28566,7 +28632,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -28630,7 +28696,7 @@ function b_wet_general_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -28763,6 +28829,69 @@ function b_wet_general_field_default_fields() {
     ),
   );
 
+  // Exported field: 'profile2-main-field_contact_information'.
+  $fields['profile2-main-field_contact_information'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_contact_information',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'profile2_private' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'main',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Please fill in your phone number and email address. ',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 3,
+        ),
+      ),
+      'entity_type' => 'profile2',
+      'field_name' => 'field_contact_information',
+      'label' => 'Contact Information',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '3',
+      ),
+    ),
+  );
+
   // Exported field: 'profile2-main-field_first_name'.
   $fields['profile2-main-field_first_name'] = array(
     'field_config' => array(
@@ -28822,7 +28951,7 @@ function b_wet_general_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '1',
+        'weight' => '0',
       ),
     ),
   );
@@ -28874,6 +29003,70 @@ function b_wet_general_field_default_fields() {
       'entity_type' => 'profile2',
       'field_name' => 'field_last_name',
       'label' => 'Last Name',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'profile2-main-field_title'.
+  $fields['profile2-main-field_title'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_title',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'main',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 2,
+        ),
+      ),
+      'entity_type' => 'profile2',
+      'field_name' => 'field_title',
+      'label' => 'Title',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -28992,6 +29185,7 @@ function b_wet_general_field_default_fields() {
   t('Communication with provider through newsletters or web-site  (e.g., an online community)');
   t('Connections were made to local community organizations and resources');
   t('Conserved water at school to protect the local watershed');
+  t('Contact Information');
   t('Created a schoolyard or backyard habitat');
   t('Created a schoolyard or backyard habitat (teacher)');
   t('Data collected by and accessible through NOAA');
@@ -29019,7 +29213,6 @@ function b_wet_general_field_default_fields() {
   t('Discussion of alignment of MWEEs with state, regional, or national standards');
   t('Discussion of how NOAA data can be used to obtain knowledge about local issues');
   t('Discussion of how teachers may be able to integrate MWEEs into their own curriculum or classroom activities');
-  t('Do you identify yourself as (check all that apply):');
   t('Elementary');
   t('Elementary (teacher)');
   t('Email listserv, web forum, Facebook page, or other tools for virtual interaction with other grantees');
@@ -29098,8 +29291,8 @@ function b_wet_general_field_default_fields() {
   t('In what 5-digit zip code is your organization located?');
   t('In what setting do you teach?');
   t('In which grade level(s) do you primarily teach? (select all that apply)');
-  t('In which region(s) did you teach this past year? (check all that apply)');
-  t('In which region(s) were your organization\'s MWEEs offered this past grant year? (check all that apply)');
+  t('In which region did you teach this past year?');
+  t('In which region were your organization\'s MWEEs offered this past grant year?');
   t('Included more than one teacher from individual schools');
   t('Including this past grant year, for how many years has your organization received funding (not including anticipated funding) from NOAA B-WET for the currently-funded project?');
   t('Incorporate MWEEs into my curriculum');
@@ -29191,6 +29384,7 @@ function b_wet_general_field_default_fields() {
   t('Place-based education');
   t('Place-based education (teacher)');
   t('Please explain why you selected the response you did.');
+  t('Please fill in your phone number and email address. ');
   t('PreK');
   t('PreK (teacher)');
   t('Presentation of how NOAA data can be used to support student scientific inquiry');
@@ -29231,6 +29425,7 @@ function b_wet_general_field_default_fields() {
   t('The B-WET grant has improved - or will improve - the overall quality of environmental education provided by my organization.');
   t('The health of our local watershed(s) has improved - or will improve - as a result of my organization\'s B-WET-funded MWEEs.');
   t('This questionnaire was ....');
+  t('Title');
   t('Told others about ways they can protect their local watershed');
   t('Told others about ways they can protect their local watershed (teacher)');
   t('Use NOAA resources to enhance my students\' MWEE experiences');
@@ -29242,6 +29437,8 @@ function b_wet_general_field_default_fields() {
   t('What component(s) of the MWEE professional development best prepared you to teach your students about local watersheds?');
   t('What is the total amount of funding for this project, from all sources, this past grant year?');
   t('What is the total amount of funding you received this past grant year from NOAA for your B-WET project?');
+  t('What is your ethnicity? (check one):');
+  t('What is your race? (check all that apply):');
   t('What percent of the participating students speak English as a second language (aka English Language Learners)?');
   t('What percent of the participating students\' schools are Title 1?');
   t('What percent of your students speak English as a second language (aka English Language Learners)?');

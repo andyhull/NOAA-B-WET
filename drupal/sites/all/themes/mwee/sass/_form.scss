@@ -54,7 +54,6 @@
 		display: inline;
 		margin: 5px 10px;
 		.controls {
-			// width: 10%;
 			display: inline;
 			label {
 				display: inline;
@@ -72,7 +71,6 @@
 			border: none;
 			@include box-shadow(none);
 			padding: 0px;
-			// @include filter-gradient(#fff, #fff);
 		}
 	}
 	//special formatting for certain form items. these are the fields with a custom 'other' field
@@ -89,7 +87,6 @@
 				border: none;
 				@include box-shadow(none);
 				padding: 0px;
-				// @include filter-gradient(#fff, #fff);
 			}
 		}
 	}
@@ -100,7 +97,7 @@
 	.form-item-field-led-evaluation-und-select, .form-item-field-what-subject-s-do-you-prim-und, 
 	.form-item-field-which-of-these-categories--und, .form-item-field-what-was-your-primary-reas-und, 
 	.form-item-field-in-what-setting-do-you-tea-und, .form-item-field-organization-no-select-und,
-	.form-item-field-led-evaluation-new-und {
+	.form-item-field-led-evaluation-new-und, .form-item-field-in-which-region-s-were-you-und {
 		@include blockForms;
 	}
 	//hide the drupal fields at the bottom of the form
@@ -160,7 +157,6 @@
 		@include border-radius(5px);
 		width: 300px;
 		padding: 3px;
-		// margin-left: 300px;
 		font-weight: bold;
 		color: #fff;
 		font-size: 13px;
@@ -268,7 +264,6 @@
     position: fixed;
     right: 0px;
     left: 0px;
-    // top: 108px;
     z-index: 1020;
     background: #84929A;
 		@include filter-gradient(#84929A, #788891, vertical);
@@ -291,6 +286,7 @@
 	}
 	//for the front page
 	.loginHelpers {
-		margin: 20px;
+		border-top: 1px solid #e3e3e3;
+		margin: 30px 0px;
 	}
 }
