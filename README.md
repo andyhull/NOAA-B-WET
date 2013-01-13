@@ -9,7 +9,7 @@ Overview
 --------
 
 This is all the drupal code in use on the NOAA B-WET project survey site <a herf="http://mwee.snre.umich.edu/">http://mwee.snre.umich.edu/</a>
-__Structure Notes:__
+### Structure Notes:
 The main Drupal instance is built on Drupal 7. There are a variety of modules in use on the site (see: <a href="http://mwee.snre.umich.edu/admin/modules">http://mwee.snre.umich.edu/admin/modules</a> for a complete list). 
 
 There is also a custom B-WET module that implements several custom php functions (see: /sites/all/modules/custom/b_wet_general)
