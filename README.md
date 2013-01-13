@@ -6,11 +6,11 @@ Drupal code for the NOAA B-WET project
 All features, modules, and custom code go here.
 
 Surveys
-==========
+-------
 
 All the surveys are custom content types. The site contains two surveys:
-	Grantee survey
-	Teacher survey
+	* Grantee survey
+	* Teacher survey
 	grantee survey is a custom content type
 	results view is controlled by a custom template:	
 		views-view-table--grantee-survey--page-1.tpl.php
