@@ -17,17 +17,18 @@
     		  <?php endif; ?>
     		</hgroup>
   	  <?php endif; ?>
-  	  
-  	  <div class="nav-collapse">
-    	  <nav role="navigation">
-      		<?php if ($primary_nav): ?>
-      		  <?php print $primary_nav; ?>
-      		<?php endif; ?>
-      		
-      		<?php if ($secondary_nav): ?>
-      		  <?php print $secondary_nav; ?>
-      		<?php endif; ?>
-    		</nav>
+      <div class="nav-collapse">
+    	  <?php if (!$front_page):?>
+      	  <nav role="navigation">
+        		<?php if ($primary_nav): ?>
+        		  <?php print $primary_nav; ?>
+        		<?php endif; ?>
+        		
+        		<?php if ($secondary_nav): ?>
+        		  <?php print $secondary_nav; ?>
+        		<?php endif; ?>
+      		</nav>
+        <?php endif; ?>  
   	  </div>         
   	</div>
   </div>
