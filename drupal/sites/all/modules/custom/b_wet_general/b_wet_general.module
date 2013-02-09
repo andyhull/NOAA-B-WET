@@ -11,6 +11,8 @@ include_once 'b_wet_general.features.inc';
 /**
 *  Implementation of hook_form_FORM_ID_alter
 */
+
+/*increase the max length of title fields*/
 function b_wet_general_form_field_ui_field_edit_form_alter(&$form, $form_state, $form_id) {
   $form['instance']['label'] = array(
     '#type' => 'textfield',
