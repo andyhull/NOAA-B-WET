@@ -38,7 +38,7 @@ function b_wet_general_grantee_dashboard() {
     $contact = "[CONTACT INFORMATION]";
   }
 
-	$output = t('<div id="mainResults"><h2>Hi, '.$name.' welcome to your dashboard</h2>
+	$output = t('<div id="mainResults"><h2>Hi, '.$name.'. Welcome to your dashboard</h2>
 <div class="well dashContainer">
   <i style="float:right" class="icon-pencil"></i>
 	<h4>Fill out your NOAA B-WET survey</h4>
