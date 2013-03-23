@@ -10,7 +10,7 @@ The NOAA B-WET site is built on Drupal 7, PHP 5.3.7, MySQL 5.5.9 and Apache 2.0.
 
 Installation
 ------------
-Prerequisites: PHP 5, MySQL 5, see <a href="http://drupal.org/requirements">http://drupal.org/requirements</a>for details.
+Prerequisites: PHP 5, MySQL 5, see <a href="http://drupal.org/requirements">http://drupal.org/requirements</a> for details.
 <ol>
 <li>Download the latest version of <a href="http://drupal.org/start">Drupal 7</a></li>
 <li>Install Drupal (for help see: <a href="http://drupal.org/documentation/install">http://drupal.org/documentation/install</a>)</li>
