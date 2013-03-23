@@ -10,10 +10,10 @@ The NOAA B-WET site is built on Drupal 7, PHP 5.3.7, MySQL 5.5.9 and Apache 2.0.
 
 Installation
 ------------
-Prerequisites: PHP 5, MySQL 5, see <a href="http://drupal.org/requirements">for details</a>
+Prerequisites: PHP 5, MySQL 5, see <a href="http://drupal.org/requirements">for details.</a>
 1. Download the latest version of <a href="http://drupal.org/start">Drupal 7</a>
 2. Install Drupal (for help see: <a href="http://drupal.org/documentation/install">http://drupal.org/documentation/install</a>)
-3. Once your Drupal installation is setup, copy the code from /drupal/sites/all/ in this repository to your Drupal *sites/all* directory. This will add all the modules and themes in use on the site.
+3. Once your Drupal installation is setup, copy the code from /drupal/sites/all/ in this repository to your Drupal _sites/all_ directory. This will add all the modules and themes in use on the site.
 4. Goto your admin/modules page and enable the newly added modules
 5. Install custom content types and views by reverting the custom b_wet_general module: admin/structure/features/b_wet_general (see: <a href="http://drupal.org/node/580026">http://drupal.org/node/580026</a> for an overview of using Features)
 
@@ -60,7 +60,7 @@ The results pages are custom views. We use a table view that is broken up into m
 
 Other
 -------
-The login page is the default home page for anonymous users. Once users login they are redirected to a custom dashboard page, which is determined by their user role. Dashboards are controlled by our custom module and the respective include files.
+The login page is the default home page for anonymous users. Once users login they are redirected to a custom dashboard page, which is determined by their user role. Dashboards are controlled by the custom b_wet module and the respective include files.
 
 
 
