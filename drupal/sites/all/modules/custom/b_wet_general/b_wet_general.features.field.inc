@@ -16780,7 +16780,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field__was_provided_instruc_1',
-      'label' => 'I was provided with instructional/educational/curriculum materials',
+      'label' => 'Ranking of: I was provided with instructional/educational/curriculum materials',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -17133,7 +17133,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_allow_you_and_other_1',
-      'label' => 'Allow you and other participating teachers time to plan how to integrate the use of NOAA data with your students',
+      'label' => 'Ranking of: Allow you and other participating teachers time to plan how to integrate the use of NOAA data with your students',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -17270,7 +17270,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_allowing_you_and_other_1',
-      'label' => 'Allowing you and other participating teachers time to plan how to implement MWEEs',
+      'label' => 'Ranking of: Allowing you and other participating teachers time to plan how to implement MWEEs',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -17671,7 +17671,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_assistance_projects_1',
-      'label' => 'Assistance with establishing restoration projects',
+      'label' => 'Ranking of: Assistance with establishing restoration projects',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -17741,7 +17741,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_assistance_use_of_1',
-      'label' => 'Assistance with the use of equipment or technologies',
+      'label' => 'Ranking of: Assistance with the use of equipment or technologies',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -17811,7 +17811,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_assistance_with_conduct_1',
-      'label' => 'Assistance with conducting field trips or field work',
+      'label' => 'Ranking of: Assistance with conducting field trips or field work',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -17948,7 +17948,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_assistance_with_est_1',
-      'label' => 'Assistance with establishing schoolyard habitats',
+      'label' => 'Ranking of: Assistance with establishing schoolyard habitats',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -18350,7 +18350,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_co_teaching_in_classroom_1',
-      'label' => 'Co-teaching in my classrooms or in field',
+      'label' => 'Ranking of: Co-teaching in my classrooms or in field',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -18554,7 +18554,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_coaching_in_my_classroom_1',
-      'label' => 'Coaching in my classroom',
+      'label' => 'Ranking of: Coaching in my classroom',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -18624,7 +18624,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_communicating_with_1',
-      'label' => 'Communicating with provider through personal phone calls or email',
+      'label' => 'Ranking of: Communicating with provider through personal phone calls or email',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -18761,7 +18761,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_communication_provide_1',
-      'label' => 'Communication with provider through newsletters or web-site  (e.g., an online community)',
+      'label' => 'Ranking of: Communication with provider through newsletters or web-site  (e.g., an online community)',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -18898,7 +18898,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_connections_1',
-      'label' => 'Connections were made to local community organizations and resources',
+      'label' => 'Ranking of: Connections were made to local community organizations and resources',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -19101,7 +19101,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_demonstrations__class_1',
-      'label' => 'Demonstrations in my classroom',
+      'label' => 'Ranking of: Demonstrations in my classroom',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -19507,7 +19507,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_discussion_of_alignment_1',
-      'label' => 'Discussion of alignment of MWEEs with state, regional, or national standards',
+      'label' => 'Ranking of: Discussion of alignment of MWEEs with state, regional, or national standards',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -19644,7 +19644,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_discussion_of_how_noaa_1',
-      'label' => 'Discussion of how NOAA data can be used to obtain knowledge about local issues',
+      'label' => 'Ranking of: Discussion of how NOAA data can be used to obtain knowledge about local issues',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -19848,7 +19848,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_discussion_teachers_1',
-      'label' => 'Discussion of how teachers may be able to integrate MWEEs into their own curriculum or classroom activities',
+      'label' => 'Ranking of: Discussion of how teachers may be able to integrate MWEEs into their own curriculum or classroom activities',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -20056,7 +20056,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_engaging_practices_1',
-      'label' => 'Engaging you and other participating teachers in activities/practices that can be used with your students',
+      'label' => 'Ranking of: Engaging you and other participating teachers in activities/practices that can be used with your students',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -20126,7 +20126,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_engaging_you_and_other_1',
-      'label' => 'Engaging you and other participating teachers in aligning MWEEs with your school or school district standards',
+      'label' => 'Ranking of: Engaging you and other participating teachers in aligning MWEEs with your school or school district standards',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -20263,7 +20263,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_examples_of_how_other_1',
-      'label' => 'Examples of how other teachers have used NOAA data with their students',
+      'label' => 'Ranking of: Examples of how other teachers have used NOAA data with their students',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -21024,7 +21024,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_i_was_offered_continuing_1',
-      'label' => 'I was offered continuing education credits',
+      'label' => 'Ranking of: I was offered continuing education credits',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -21161,7 +21161,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_i_was_offered_graduate_1',
-      'label' => 'I was offered graduate credits',
+      'label' => 'Ranking of: I was offered graduate credits',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -21298,7 +21298,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_i_was_provided_equipm_1',
-      'label' => 'I was provided with equipment',
+      'label' => 'Ranking of: I was provided with equipment',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -21368,7 +21368,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_i_was_provided_inform_1',
-      'label' => 'I was provided with information on how to obtain grants or  funding for MWEEs',
+      'label' => 'Ranking of: I was provided with information on how to obtain grants or  funding for MWEEs',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -22423,7 +22423,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_interactions_1',
-      'label' => 'Interactions were facilitated with NOAA scientists/staff',
+      'label' => 'Ranking of: Interactions were facilitated with NOAA scientists/staff',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -22560,7 +22560,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_interactions_pro_1',
-      'label' => 'Interactions were facilitated with natural resource  professionals',
+      'label' => 'Ranking of: Interactions were facilitated with natural resource  professionals',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -23715,7 +23715,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_participating_along_1',
-      'label' => 'Participating along with other teachers from my school, at the same time',
+      'label' => 'Ranking of: Participating along with other teachers from my school, at the same time',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -23923,7 +23923,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_presentation_of_how_noaa_1',
-      'label' => 'Presentation of how NOAA data can be used to support student scientific inquiry',
+      'label' => 'Ranking of: Presentation of how NOAA data can be used to support student scientific inquiry',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -24060,7 +24060,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_provision_of_examples_1',
-      'label' => 'Provision of examples of how MWEEs align with standards',
+      'label' => 'Ranking of: Provision of examples of how MWEEs align with standards',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -25335,7 +25335,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_sharing_of_information_1',
-      'label' => 'Sharing of information and examples illustrating how other teachers have integrated MWEEs',
+      'label' => 'Ranking of: Sharing of information and examples illustrating how other teachers have integrated MWEEs',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -25539,7 +25539,7 @@ function b_wet_general_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_stipend_1',
-      'label' => 'I was provided with a stipend',
+      'label' => 'Ranking of: I was provided with a stipend',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -29135,7 +29135,6 @@ function b_wet_general_field_default_fields() {
   t('Allow you and other participating teachers time to plan how to integrate the use of NOAA data with your students');
   t('Allowed teachers time to plan how they will implement MWEEs');
   t('Allowed teachers time to plan how they will integrate the use of NOAA data');
-  t('Allowing you and other participating teachers time to plan how to implement MWEEs');
   t('Allowing you and other participating teachers time to plan how to implement MWEEs ');
   t('American Indian or Alaska Native');
   t('Analyzing and interpreting data');
@@ -29377,7 +29376,6 @@ function b_wet_general_field_default_fields() {
   t('Participated in or helped coordinate a clean-up of a local stream, or beach (teacher)');
   t('Participated in or organized event(s) to raise awareness about the importance of watersheds');
   t('Participated in or organized event(s) to raise awareness about the importance of watersheds (teacher)');
-  t('Participating along with other teachers from my school, at the same time');
   t('Participating along with other teachers from my school, at the same time ');
   t('Perform better academically in science');
   t('Perform better on state standardized tests');
@@ -29400,6 +29398,36 @@ function b_wet_general_field_default_fields() {
   t('Provided instructional/educational/curriculum materials');
   t('Provided teacher stipends');
   t('Provision of examples of how MWEEs align with standards');
+  t('Ranking of: Allow you and other participating teachers time to plan how to integrate the use of NOAA data with your students');
+  t('Ranking of: Allowing you and other participating teachers time to plan how to implement MWEEs');
+  t('Ranking of: Assistance with conducting field trips or field work');
+  t('Ranking of: Assistance with establishing restoration projects');
+  t('Ranking of: Assistance with establishing schoolyard habitats');
+  t('Ranking of: Assistance with the use of equipment or technologies');
+  t('Ranking of: Co-teaching in my classrooms or in field');
+  t('Ranking of: Coaching in my classroom');
+  t('Ranking of: Communicating with provider through personal phone calls or email');
+  t('Ranking of: Communication with provider through newsletters or web-site  (e.g., an online community)');
+  t('Ranking of: Connections were made to local community organizations and resources');
+  t('Ranking of: Demonstrations in my classroom');
+  t('Ranking of: Discussion of alignment of MWEEs with state, regional, or national standards');
+  t('Ranking of: Discussion of how NOAA data can be used to obtain knowledge about local issues');
+  t('Ranking of: Discussion of how teachers may be able to integrate MWEEs into their own curriculum or classroom activities');
+  t('Ranking of: Engaging you and other participating teachers in activities/practices that can be used with your students');
+  t('Ranking of: Engaging you and other participating teachers in aligning MWEEs with your school or school district standards');
+  t('Ranking of: Examples of how other teachers have used NOAA data with their students');
+  t('Ranking of: I was offered continuing education credits');
+  t('Ranking of: I was offered graduate credits');
+  t('Ranking of: I was provided with a stipend');
+  t('Ranking of: I was provided with equipment');
+  t('Ranking of: I was provided with information on how to obtain grants or  funding for MWEEs');
+  t('Ranking of: I was provided with instructional/educational/curriculum materials');
+  t('Ranking of: Interactions were facilitated with NOAA scientists/staff');
+  t('Ranking of: Interactions were facilitated with natural resource  professionals');
+  t('Ranking of: Participating along with other teachers from my school, at the same time');
+  t('Ranking of: Presentation of how NOAA data can be used to support student scientific inquiry');
+  t('Ranking of: Provision of examples of how MWEEs align with standards');
+  t('Ranking of: Sharing of information and examples illustrating how other teachers have integrated MWEEs');
   t('Recognize that both natural processes and human  activities affect water flow and water quality in watersheds');
   t('Recognize that both natural processes and human activities affect  water flow and water quality in watersheds (teacher)');
   t('Recognize that both natural processes and human activities affect water flow and water quality in watersheds.');

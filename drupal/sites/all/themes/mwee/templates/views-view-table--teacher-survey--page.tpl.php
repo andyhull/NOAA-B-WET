@@ -48,6 +48,12 @@ foreach ($rows as $key =>$field){
              } elseif(strstr($allResults->$question->type, 'groupSurvey')){
               $labelStart = $labelStart;
               $labelEnd = $labelEnd;
+            } elseif(strstr($allResults->$question->type, 'groupConfident')){
+              $labelEnd .= " - Not at all Confident";
+              $labelStart .= " - Extremely Confident";
+             } elseif(strstr($labelEnd, 'informative')||strstr($labelEnd, 'Long')||strstr($labelEnd, 'Difficult')){
+                $labelStart = $labelStart;
+                $labelEnd = $labelEnd;
              } else {
               $labelEnd .= " - Extremely likely";
               $labelStart .= " - Extremely unlikely";
@@ -169,7 +175,13 @@ foreach ($header as $headerTitle => $headerValue) {
             $respondant = 'Respondents';
           }
           $output .= '<span class="'.$color.' barDetail" style="width:'.$percentAnswered.'%;">&nbsp;<div class="more">Value: '.$allResults->$headerTitle->$question->label.' <br/>Count: '.$allResults->$headerTitle->$question->count.' ('.round($percentAnswered).'% of total)</div></span>';
-          $detailOutput .= '<div class="detailLabel"><span class="label '.$color.'" style="width:'.$percentAnswered.'%; display:block;">'.$questionLabel.'</span>&nbsp;'.$allResults->$headerTitle->$question->count.'&nbsp;'.$respondant.' ('.round($percentAnswered).'%)</div>';
+          if($percentAnswered == '0') {
+            $defaultWidth = 1;
+            $color = 'color';
+          } else {
+            $defaultWidth = $percentAnswered;
+          }
+          $detailOutput .= '<div class="detailLabel"><span class="label '.$color.'" style="width:'.$defaultWidth.'%; display:block;"><span>'.$questionLabel.'</span></span>&nbsp;'.$allResults->$headerTitle->$question->count.'&nbsp;'.$respondant.' ('.round($percentAnswered).'%)</div>';
           // calculate the number of don't know responses
         } elseif ($questionLabel == "Don't Know") {
           $sum = $dontknowCount;
@@ -256,14 +268,14 @@ echo "<script>var dataLabels = ". $header_array.";</script>";
     },
     'group_science':{
       'id':'group_science',
-      'question':'Which of the following steps did you include: Engage students in:',
+      'question':'As part of your MWEE professional development, were you involved in:',
       'fields': ['field_science_questions','field_science__hypotheses','field_science_data','field_science_analyzing','field_science_conclusions','field_science_presentations']
     },
-    'group_student_instruction':{
-      'id':'group_student_instruction',
-      'question':'Please answer the following questions with regard to the instruction your organization provides directly to students',
-      'fields': ['field_title_1','field_per_esl','field_hours_taught','field_hours_taught_outdoors','field_length_participation','field_focus_on_science','field_were_any_noaa_resources_we','group_number_students','group_percent_students','group_mwee_aligined_with','group_provide_for_students','group_resources_group','group_education_methods','group_science','group_student_restore','group_students_will','group_students_able']
-    },
+    // 'group_student_instruction':{
+    //   'id':'group_student_instruction',
+    //   'question':'Please answer the following questions with regard to the instruction your organization provides directly to students',
+    //   'fields': ['field_title_1','field_per_esl','field_hours_taught','field_hours_taught_outdoors','field_length_participation','field_focus_on_science','field_were_any_noaa_resources_we','group_number_students','group_percent_students','group_mwee_aligined_with','group_provide_for_students','group_resources_group','group_education_methods','group_science','group_student_restore','group_students_will','group_students_able']
+    // },
     'node_teacher_survey_form_group_protect_activities':{
       'id':'node_teacher_survey_form_group_protect_activities',
       'question':'During your MWEE professional development, did you participate in any of these activities that protect and/or restore ocean, coastal, and/or Great Lakes watersheds?',

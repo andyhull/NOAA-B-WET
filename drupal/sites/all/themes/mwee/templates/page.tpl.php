@@ -12,16 +12,16 @@
     		<hgroup id="site-name-slogan">
     		  <?php if ($site_name): ?>
     			<h1>
-    			  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
+    			  <a href="<?php print $front_page; ?>" title="<?php print t('Dashboard Home'); ?>" class="brand"><?php print $site_name; ?></a>
     			</h1>
     		  <?php endif; ?>
     		</hgroup>
   	  <?php endif; ?>
       <div class="nav-collapse">
-    	  <?php if (!$front_page):?>
-      	  <nav role="navigation">
-        		<?php if ($primary_nav): ?>
-        		  <?php print $primary_nav; ?>
+        <?php if (!$is_front):?>
+          <nav role="navigation">
+            <?php if ($primary_nav): ?>
+              <?php print $primary_nav; ?>
         		<?php endif; ?>
         		
         		<?php if ($secondary_nav): ?>

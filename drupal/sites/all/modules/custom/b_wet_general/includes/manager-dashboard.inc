@@ -16,7 +16,7 @@ function b_wet_general_manager_dashboard() {
     $name = $mainUser->name;
   }
 
-	$output = t('<div id="mainResults"><h2>Hi, '.$name.'. Welcome to your dashboard</h2>
+	$output = t('<div id="mainResults"><h2>Hi, '.$name.'. Welcome to your dashboard.</h2>
 <div class="well dashContainer">
   <i style="float:right" class="icon-tasks"></i>
   <h4>View the results of the teacher surveys</h4>

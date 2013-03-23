@@ -5,11 +5,21 @@
   box-shadow: rgba(85, 170, 238, 0.5) 0px 0px 10px 0px;
 }
 
+/* line 10, ../sass/_colors.scss */
+.color {
+  background: #6E7E87;
+}
+
 /* line 33, ../sass/_helpers.scss */
 .activeHighlight {
   -webkit-box-shadow: rgba(85, 170, 238, 0.5) 0px 0px 10px 0px;
   -moz-box-shadow: rgba(85, 170, 238, 0.5) 0px 0px 10px 0px;
   box-shadow: rgba(85, 170, 238, 0.5) 0px 0px 10px 0px;
+}
+
+/* line 10, ../sass/_colors.scss */
+.color {
+  background: #6E7E87;
 }
 
 /* line 33, ../sass/_helpers.scss */
@@ -91,7 +101,7 @@
 /* line 42, ../sass/_form.scss */
 .form-wrapper {
   clear: both;
-  box-shadow: 1px 1px 10px #333;
+  box-shadow: 1px 1px 10px #333333;
   margin: 40px 0px;
   padding: 10px;
   background: #84929A;
@@ -294,7 +304,7 @@
 /* line 175, ../sass/_form.scss */
 .form-item-title {
   clear: both;
-  box-shadow: 1px 1px 10px #333;
+  box-shadow: 1px 1px 10px #333333;
   margin: 40px 0px;
   padding: 10px;
   background: #84929A;
@@ -489,7 +499,7 @@ body.logged-in .tableHeader-fixed {
 /* line 26, ../sass/_results.scss */
 .views-exposed-form {
   background: #E9EBED;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   padding: 5px;
   margin: 5px;
 }
@@ -497,7 +507,7 @@ body.logged-in .tableHeader-fixed {
 /* line 32, ../sass/_results.scss */
 .result {
   clear: both;
-  box-shadow: 1px 1px 10px #333;
+  box-shadow: 1px 1px 10px #333333;
   margin: 40px 0px;
   padding: 10px;
   background: #6E7E87;
@@ -592,7 +602,7 @@ body.logged-in .tableHeader-fixed {
   left: 10px;
   top: 45px;
   border: 13px solid;
-  border-color: #000 transparent transparent transparent;
+  border-color: black transparent transparent transparent;
 }
 
 /* line 106, ../sass/_results.scss */
@@ -627,7 +637,7 @@ body.logged-in .tableHeader-fixed {
   padding: 5px;
   margin-bottom: 10px;
   background-color: #8F9CA3;
-  border: 1px solid #84929A;
+  border: 1px solid #84929a;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -778,7 +788,7 @@ body {
   background-color: #EEEEEE;
   background-image: -moz-linear-gradient(center top, whitesmoke 0%, #eeeeee 100%);
   background-repeat: repeat-x;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-radius: 4px 4px 4px 4px;
   height: 36px;
   width: 100%;
@@ -791,9 +801,9 @@ body {
 
 /* line 49, ../sass/style.scss */
 .subnav .nav > li > a {
-  border-left: 1px solid #F5F5F5;
+  border-left: 1px solid whitesmoke;
   border-radius: 0 0 0 0;
-  border-right: 1px solid #E5E5E5;
+  border-right: 1px solid #e5e5e5;
   margin: 0;
   padding-bottom: 11px;
   padding-top: 11px;

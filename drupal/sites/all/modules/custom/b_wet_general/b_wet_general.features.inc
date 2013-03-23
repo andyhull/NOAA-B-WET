@@ -73,7 +73,7 @@ function b_wet_general_default_profile2_type() {
     "userCategory" : false,
     "userView" : false,
     "type" : "noaa_manager",
-    "label" : "NOAA Manager",
+    "label" : "NOAA Manager profile",
     "weight" : "0",
     "data" : { "registration" : 0, "use_page" : 1 },
     "rdf_mapping" : []
