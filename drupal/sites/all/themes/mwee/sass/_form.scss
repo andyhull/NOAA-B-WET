@@ -1,0 +1,292 @@
+@import "helpers";
+@import "compass/css3/images";
+@import "compass/utilities";
+
+@mixin forms() {
+	.progressContainer {
+		width: 50%;
+		.progressText {
+			text-align: left;
+			h3 {
+				font-size: 28px;
+				letter-spacing: -1px;
+				color: #555;
+			}
+		}
+	}
+	.progress {
+		height: 30px;
+		@include background-image(linear-gradient(top, #f9f9f9, #F2F2F2));
+	}
+	.progress .bar {
+		border: none;
+		margin: 0px;
+	}
+
+	.node-form {
+		//main questions
+		label {
+			@include labels();
+		}
+		.controls {
+			padding: 0px 20px;
+			input {
+				margin: 0px 5px;
+				float: none;
+			}
+		}
+		.help-block {
+			color: #333;
+		}
+	}
+	.form-wrapper {
+		clear: both;
+		box-shadow: 1px 1px 10px #333;
+		margin: 40px 0px;
+		padding: 10px;
+		background: #84929A;
+		float:none;
+		@include filter-gradient(#84929A, #788891, vertical);
+		@include background-image(linear-gradient(top, #84929A, #788891));
+		@include border-radius(5px);
+	}
+	.form-type-radio {
+		display: inline;
+		margin: 5px 10px;
+		.controls {
+			display: inline;
+			label {
+				display: inline;
+			}
+		}
+	}
+	//individual choices (radios and checkboxes)
+	.controls {
+		padding-left: 20px;
+		label {
+			background: transparent;
+			color: white;
+			font-size: 14px;
+			font-weight: normal;
+			border: none;
+			@include box-shadow(none);
+			padding: 0px;
+		}
+	}
+	//special formatting for certain form items. these are the fields with a custom 'other' field
+	.form-item-field-region-und-select, .form-item-field-organization-und-select, .form-item-field-evaluation-und-select,
+	.form-item-field-resources-noaa-data-und-select, .form-item-field-resources-education-progra-und-select,
+	.form-item-field-resources-facilities-und-select, .form-item-field-teacher-resources-noaa-dat-und-select,
+	.form-item-field-teacher-resources-edu-prog-und-select, .form-item-field-teacher-resources-faciliti-und-select {
+		.controls {
+			label {
+				background: transparent;
+				color: white;
+				font-size: 14px;
+				font-weight: normal;
+				border: none;
+				@include box-shadow(none);
+				padding: 0px;
+			}
+		}
+	}
+	//change these fields to block display
+	.form-item-field-noaa-funding-und, .form-item-field-funding-all-und, .form-item-field-organization-und-select,
+	.form-item-field-hours-taught-und, .form-item-field-hours-taught-outdoors-und, .form-item-field-length-participation-und, 
+	.form-item-field-teacher-hours-pro-developm-und, .form-item-field-teacher-outdoor-activity-und, .form-item-field-evaluation-test-und,
+	.form-item-field-led-evaluation-und-select, .form-item-field-what-subject-s-do-you-prim-und, 
+	.form-item-field-which-of-these-categories--und, .form-item-field-what-was-your-primary-reas-und, 
+	.form-item-field-in-what-setting-do-you-tea-und, .form-item-field-organization-no-select-und,
+	.form-item-field-led-evaluation-new-und, .form-item-field-in-which-region-s-were-you-und {
+		@include blockForms;
+	}
+	//hide the drupal fields at the bottom of the form
+	.vertical-tabs {
+		display: none;
+	}
+	.likertScale {
+		// filter-gradient is for IE see:
+		//http://compass-style.org/reference/compass/css3/images/#mixin-filter-gradient
+		@include filter-gradient($one, $five, horizontal);
+	  /* Fallback: */
+	  background: #fff;
+		@include background-image(linear-gradient(left, $one, $five));
+		@include border-radius(5px);
+		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
+		width: 585px;
+		padding: 5px;
+		margin-left: 95px;
+		font-weight: bold;
+		color: #fff;
+		.likertStart {
+			color: #333;
+		}
+	}
+	.padLeft {
+		margin-left: 145px;
+	}
+	.likertEnd {
+		text-align: right;
+		float: right;
+	}
+	.likertScaleSmall {
+		@include filter-gradient($one, $five, horizontal);
+	  /* Fallback: */
+	  background: #fff;
+		@include background-image(linear-gradient(left, $one, $five));
+		@include border-radius(5px);
+		width: 400px;
+		padding: 5px;
+		margin-left: 300px;
+		font-weight: bold;
+		color: #fff;
+		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
+		.likertStart {
+			color: #333;
+		}
+		.likertEnd {
+			text-align: right;
+			float: right;
+		}
+	}
+	.likertScaleExtraSmall {
+		@include filter-gradient($one, $five, horizontal);
+	  /* Fallback: */
+	  background: #fff;
+		@include background-image(linear-gradient(left, $one, $five));
+		@include border-radius(5px);
+		width: 300px;
+		padding: 3px;
+		font-weight: bold;
+		color: #fff;
+		font-size: 13px;
+		@include box-shadow(rgba(0, 0, 0, 0.1) 1px 1px);
+		.likertStart {
+			color: #333;
+		}
+		.likertEnd {
+			text-align: right;
+			float: right;
+		}
+	}
+	.noMargin {
+		margin-left: 95px;
+	}
+	.form-item-title {
+		clear: both;
+		box-shadow: 1px 1px 10px #333;
+		margin: 40px 0px;
+		padding: 10px;
+		background: #84929A;
+		@include filter-gradient(#84929A, #788891, vertical);
+		@include background-image(linear-gradient(top, #84929A, #788891));
+		@include border-radius(5px);
+	}
+
+	fieldset {
+		legend {
+			border-bottom: none;
+			float: left;
+		}
+		.fieldset-legend a{
+			@include labels();
+			&:hover {
+				color: #000;
+				text-decoration: none;
+			}
+		}
+		.controls {
+			label.control-label {
+				background: transparent;
+				@include box-shadow(0px 0px 0px #fff);
+				color: white;
+				font-size: 14px;
+				font-weight: normal;
+			}
+			label[for=edit-field-led-evaluation-und-select] {
+				@include labels();
+			}
+		}
+	}
+	//special cases for these fields
+	.form-item-field-evaluation-und-select, .form-item-field-region-und-select, 
+	.form-item-field-organization-und-select, .form-item-field-led-evaluation-und-select {
+		label{
+			@include labels();
+		}
+	}
+	.underlineText {
+		text-decoration: underline;
+	}
+	.form-type-checkbox {
+		padding-left:30px;
+	}
+	.titleHelp {
+		padding: 10px;
+	}
+	.tableFormat {
+		display: inline;
+		.form-type-radio {
+			float: left;
+			margin: -14px;
+		}
+		.questionEnd {
+			margin-right: 40px;
+		}
+	}
+	.questionTable {
+		padding-left: 15px;
+	}
+	.tableHeader {
+		width: 350px;
+		display: inline-block;
+		min-height: 30px;
+		font-weight: bold;
+		padding: 0px 5px;
+		font-size: 16px;
+		color: #000;
+	}
+	body.not-logged-in {
+		.tableHeader-fixed {
+			top: 45px;
+		}
+	}
+	body.logged-in {
+		.tableHeader-fixed {
+			top: 108px;
+		}
+	}
+	.tableHeader-fixed {
+    border-color: #D5D5D5;
+    border-radius: 0 0 0 0;
+    border-width: 0 0 1px;
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 20px rgba(0, 0, 0, 0.7);
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    z-index: 1020;
+    background: #84929A;
+		@include filter-gradient(#84929A, #788891, vertical);
+		@include background-image(linear-gradient(top, #84929A, #788891));
+		width: 100%;
+		padding-left: 60px;
+		padding-top: 10px;
+	}
+	.scaleLabel {
+		padding: 20px 10px;
+	}
+
+	.form-item-name, .form-item-pass, .form-item-mail {
+		label {
+			display: none;
+		}
+	}
+	.form-item-field-hispanic-or-latino-und-0-value {
+		float: none;
+	}
+	//for the front page
+	.loginHelpers {
+		border-top: 1px solid #e3e3e3;
+		margin: 30px 0px;
+	}
+}

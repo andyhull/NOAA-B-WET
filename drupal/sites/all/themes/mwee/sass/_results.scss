@@ -1,0 +1,180 @@
+@import "colors";
+@import "helpers";
+
+@mixin granteeQuestions() {
+  #mainResults {
+    background: #E9EBED;
+    width: 940px;
+    float: left;
+    padding: 10px;
+  }
+  #resultsToolbar {
+    width: 200px;
+    float: right;
+  }
+  .detailLabel {
+    .label {
+      padding: 2px 0px;
+    }
+  }
+  //format long text answers in the details box
+  .textDetail {
+    width: 800px;
+    overflow: auto;
+  }
+
+  .views-exposed-form {
+    background: #E9EBED;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+  }
+  .result {
+    clear: both;
+    box-shadow: 1px 1px 10px #333;
+    margin: 40px 0px;
+    padding: 10px;
+    background: #6E7E87;
+    @include filter-gradient(#6E7E87, #5C6970, vertical);
+    @include background-image(linear-gradient(top, #6E7E87, #5C6970));
+    @include border-radius(5px);
+  }
+	.questionTitle {
+		font-weight: bold;
+    @include labels();
+	}
+	.bar {
+		width: 500px;
+		height: 20px;
+    margin: 10px;
+    @include box-shadow(1px 1px 10px #40494F);
+		span {
+			height: 20px;
+			float: left;
+			&:hover{
+				@include box-shadow(1px 1px 20px #333);
+			}
+		}
+	}
+	.barLabel {
+		width: 500px;
+    margin: 10px;
+	}
+	.more {
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    width: 300px;
+    position: relative;
+		top: -75px;
+		text-align: center;
+		padding: 5px;
+    min-height: 40px;
+		@include border-radius(5px);
+    @include box-shadow(1px 1px 10px #333);
+    a {
+      padding: 5px;
+      display: block;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .more:before
+  {
+    // content: ' ';
+    // position: absolute;
+    // width: 0;
+    // height: 0;
+    // left: 28px;
+    // top: 18px;
+    // border: 11px solid;
+    // border-color: transparent transparent transparent  transparent  ;
+  }
+  .more:after
+  {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 10px;
+        top: 45px;
+        border: 13px solid;
+        border-color: #000 transparent transparent transparent;
+  }
+  //for the See Details button
+  .details {
+    position: relative;
+    left: -200px;
+    top: -60px;
+    float: right;
+  }
+  .resultDetail {
+    margin: 0px 10px;
+    padding: 5px;
+  }
+  .detailLabel {
+    width:400px;
+    padding: 5px;
+    margin: 0px 5px;
+  }
+  .longDetail {
+    background: transparent;
+  }
+  .detailHeader {
+    min-height: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #8F9CA3;
+    border: 1px solid #84929A;
+    @include border-radius(4px);
+    @include box-shadow (inset 0 1px 1px rgba(0, 0, 0, 0.05));
+  }
+  .totalLabel {
+    padding: 5px;
+  }
+}
+
+@mixin scaleColors() {
+  .color0 { 
+    color: #000;
+    background: lighten($one, 15);
+    @include filter-gradient(lighten($one, 15), $one, vertical);
+    @include background-image(linear-gradient(top, lighten($one, 15), $one));
+  }
+	.color1 { 
+    background: $one;
+    @include filter-gradient($one, darken($one, 15), vertical);
+    @include background-image(linear-gradient(top, $one, darken($one, 15)));
+  }
+	.color2 { 
+    background: $two;
+    @include filter-gradient($two, darken($two, 15), vertical);
+    @include background-image(linear-gradient(top, $two, darken($two, 15)));
+  }
+	.color3 { 
+    background: $three;
+    @include filter-gradient($three, darken($three, 15), vertical);
+    @include background-image(linear-gradient(top, $three, darken($three, 15)));
+  }
+	.color4 { 
+    background: $four;
+    @include filter-gradient($four, darken($four, 15), vertical);
+    @include background-image(linear-gradient(top, $four, darken($four, 15)));
+  }
+	.color5 { 
+    background: $five;
+    @include filter-gradient($five, darken($five, 15), vertical);
+    @include background-image(linear-gradient(top, $five, darken($five, 15)));
+  }
+  .color6 { 
+    background: $six;
+    @include filter-gradient($six, darken($six, 15), vertical);
+    @include background-image(linear-gradient(top, $six, darken($six, 15)));
+  }
+  .color7 { 
+    background: $seven;
+    @include filter-gradient($seven, darken($seven, 15), vertical);
+    @include background-image(linear-gradient(top, $seven, darken($seven, 15)));
+  }
+}

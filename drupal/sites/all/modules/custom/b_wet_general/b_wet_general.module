@@ -1,0 +1,187 @@
+<?php
+/**
+ * @file
+ * Code for the B-WET General feature.
+ */
+
+include_once 'b_wet_general.features.inc';
+
+
+//from http://drupal.org/node/233905
+/**
+*  Implementation of hook_form_FORM_ID_alter
+*/
+
+/*increase the max length of title fields*/
+function b_wet_general_form_field_ui_field_edit_form_alter(&$form, $form_state, $form_id) {
+  $form['instance']['label'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Custom Display label'),
+    '#description' => t('Label to appear in form.'),
+    '#default_value' => isset($form['#instance']['display_label']),
+    '#weight' => $form['instance']['label']['#weight'] + 1,
+    '#maxlength' => '1000',
+  );
+}
+
+/**
+*  Implementation of hook_field_display_alter
+*/
+function b_wet_general_theme_registry_alter(&$theme_registry) {
+  $theme_registry['field']['preprocess functions'][] = 'b_wet_general_preprocess_field';
+}
+
+/**
+*  Preprocess function to replace the regular label with the longer label
+*/
+function b_wet_general_preprocess_field(&$variables) {
+  $field = field_info_instance($variables['element']['#entity_type'], $variables['element']['#field_name'], $variables['element']['#bundle']);
+  if (isset($field['display_label']) && strlen(trim($field['display_label'])) > 0) {
+    $variables['label'] = $field['label'];
+  }
+}
+
+function b_wet_general_form_alter(&$form, $form_state, $form_id) {
+  if($form_id == 'content_field_overview_form'){
+      $form['_add_new_field']['label']['#maxlength'] = 255;
+      $form['_add_existing_field']['label']['#maxlength'] = 255;
+  }
+  else if($form_id == 'content_field_edit_form'){
+      $form['basic']['label']['#maxlength'] = 255;
+  }
+
+  switch($form_id) {  
+    case 'user_register_form':
+      $form['account']['name']['#attributes']['placeholder'] = t( 'Username' );
+      $form['account']['mail']['#attributes']['placeholder'] = t( 'E-mail address *' );
+      $form['profile_main[field_first_name][und][0][value]']['#title'] = t('Test');
+      $form['customtext'] = array(
+        '#markup' => '<h4>Create a new account to get started.</h4>',
+        '#weight' => -10, // Adjust so that you can place it whereever 
+      );
+    break;
+    case 'user_login':
+    // HTML5 placeholder attribute for the user login form
+      $form['name']['#attributes']['placeholder'] = t( 'Username' );
+      $form['pass']['#attributes']['placeholder'] = t( 'Password' );
+      $form['customtext'] = array(
+        '#markup' => '<h4>If you have an account go ahead and log in.</h4>',
+        '#weight' => -1, // Adjust so that you can place it whereever 
+      );
+    break;
+    case 'user_login_block':
+    // HTML5 placeholder attribute for the user login form
+      $form['name']['#attributes']['placeholder'] = t( 'Username' );
+      $form['name']['#size'] = 40;
+      $form['pass']['#size'] = 40;
+      $form['pass']['#attributes']['placeholder'] = t( 'Password' );
+      $form['customtext'] = array(
+        '#markup' => '<h4>If you have an account, go ahead and log in.</h4>',
+        '#weight' => -1, // Adjust so that you can place it whereever 
+      );
+      $form['links'] = array (
+        '#markup' => '<div class="span5 loginHelpers"><span style="float:left;"><h6>Need an account?</h6>
+          <ul class="unstyled">
+            <li><a href="/grantee/register" title="Create a new user account.">Accounts for Grantees</a></li>
+            <li><a href="/noaamanager/register" title="Create a new user account.">Accounts for NOAA Managers</a></li>
+          </ul></span>
+          <span style="float:right;"><h6>Forgot your password?</h6><a href="/user/password" title="Request new password via e-mail.">Request new password</a></span></div>',
+        '#weight' => 10000,
+        );
+      $form['actions']['submit']['#attributes']['class'][] = "btn btn-primary pull-right";
+    break;
+  }
+}
+
+function b_wet_general_generateCsv($data, $columns, $delimiter = ',', $enclosure = '"') {
+  ob_start();
+  header('Content-Type: text/csv; charset=utf-8');
+  header('Content-Disposition: attachment; filename=data.csv');
+   $handle = fopen('php://output', 'w');
+   fputcsv($handle, $columns, $delimiter, $enclosure);
+   foreach ($data as $line) {
+     fputcsv($handle, $line, $delimiter, $enclosure);
+   }
+   fclose($handle);
+   ob_end_flush(); //now the headers are sent
+   exit;
+}
+
+function b_wet_general_preprocess_user_profile(&$variables) {
+
+  $account = $variables['elements']['#account'];
+  //Add the user ID into the user profile as a variable
+  $variables['user_id'] = $account->uid;
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($variables['elements']) as $key) {
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+  }
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
+
+}
+
+/**
+  * Generic preprocess that is still working on D7
+  */
+function b_wet_general_preprocess_views_view_fields(&$vars) {
+  if (isset($vars['view']->name)) {
+    $function = 'b_wet_general_preprocess_views_view__'.$vars['view']->name; 
+    if (function_exists($function)) {
+     $function($vars);
+    }
+  }
+}
+
+/**
+  * Then the specific preprocess for the grantee survey
+  */
+function b_wet_general_preprocess_views_view__grantee_survey(&$vars) {
+  // my specific preprocess code
+  // $results = $vars->result;
+  // print_r($results);
+
+}
+
+/* Create the dashboards */
+ function b_wet_general_menu() { 
+   $items = array(); 
+   $items['dashboard/grantee'] = array( 
+    'page callback' => 'b_wet_general_grantee_dashboard',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'access callback' => 'b_wet_general_grantee_page_access',
+    'file' => 'includes/grantee-dashboard.inc',
+   ); 
+   $items['dashboard/manager'] = array( 
+    'page callback' => 'b_wet_general_manager_dashboard',
+    'access arguments' => array('access manager_dashboard content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/manager-dashboard.inc',
+   );  
+   return $items; 
+ }
+
+function b_wet_general_grantee_page_access() {
+  if(user_access('create grantee_survey content')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ * Add a new permission to control access to the manager dashboard
+ */
+function b_wet_general_permission() {
+  return array(
+    'access manager_dashboard content' => array(
+      'title' => t('Access the Manager dashboard'),
+    )
+  );
+}
+
+
+
