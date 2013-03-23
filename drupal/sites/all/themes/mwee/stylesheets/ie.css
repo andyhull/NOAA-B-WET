@@ -1,0 +1,44 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+/* line 6, ../sass/ie.scss */
+.likertScale {
+  width: 650px;
+}
+/* line 8, ../sass/ie.scss */
+.likertScale .likertStart {
+  float: left;
+}
+
+/* line 12, ../sass/ie.scss */
+.likertScaleSmall {
+  width: 440px;
+}
+/* line 14, ../sass/ie.scss */
+.likertScaleSmall .likertStart {
+  float: left;
+}
+
+/* line 19, ../sass/ie.scss */
+#pageLoad {
+  background: #666;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+}
+
+/* line 27, ../sass/ie.scss */
+.node-form .controls {
+  padding: 0px 15px;
+}
+
+/* line 32, ../sass/ie.scss */
+.questionTable.tableHeader-fixed .tableHeader {
+  width: 300px;
+}
+
+/* line 38, ../sass/ie.scss */
+.form-item-name label, .form-item-pass label, .form-item-mail label {
+  display: block;
+}

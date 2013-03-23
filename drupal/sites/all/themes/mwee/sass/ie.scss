@@ -1,0 +1,41 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+ .likertScale {
+	 	width: 650px;
+		.likertStart {
+			float: left;
+		}
+	}
+	.likertScaleSmall {
+		width: 440px;
+		.likertStart {
+			float: left;
+		}
+	}
+
+	#pageLoad {
+		background: #666;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+	}
+
+.node-form {
+	//main questions
+	.controls {
+		padding: 0px 15px;
+	}
+}
+.questionTable.tableHeader-fixed {
+	.tableHeader {
+		width: 300px;
+	}
+}
+
+.form-item-name, .form-item-pass, .form-item-mail {
+		label {
+			display: block;
+		}
+	}
